@@ -1,0 +1,44 @@
+<form nz-form  [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>姓名</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="userName" placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>电话</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="mobile" placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>邮箱</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="email" placeholder="" type="" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>密码</nz-form-label>
+    <nz-form-control [nzSpan]="12" >
+      <input nz-input  formControlName="password" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>时间</nz-form-label>
+    <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-range-picker nzShowTime formControlName="rangePickerTime"></nz-range-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>评论</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
+      <textarea formControlName="comment" nz-input rows="2" placeholder=""></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button nz-button nzType="primary">Submit</button>
+      <button nz-button nzType="primary" [nzGhost]="true" (click)="returnToList()">返回</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
