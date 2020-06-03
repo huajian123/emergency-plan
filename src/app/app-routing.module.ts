@@ -11,10 +11,8 @@ const routes: Routes = [
   {
     path: 'hazard',
     component: LayoutDefalutComponent,
-    // canActivate: [SimpleGuard],
     children: [
       { path: '', redirectTo: 'product', pathMatch: 'full' },
-      // { path: 'dashboard', component: DashboardComponent, data: { title: '仪表盘', titleI18n: 'dashboard' } },
       { path: 'product', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule) },
       { path: 'user', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
       { path: 'ceshi', loadChildren: () => import('./pages/ceshi/ceshi.module').then(m => m.CeshiModule) },

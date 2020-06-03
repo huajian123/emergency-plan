@@ -36,11 +36,9 @@
   <button nz-button (click)="addRow()" nzType="primary"><i nz-icon nzType="plus" nzTheme="outline"></i>新增</button>
   <br /><br />
 
-<!--
   <app-ufast-table [dataList]="listOfData" [tableConfig]="tableConfig" [getListHandle]="getDataList.bind(this)"></app-ufast-table>
--->
 
- <!-- <ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
+  <ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
     <app-product-edit [currentPageNum]="tableConfig.pageNum" [id]="itemId"  (returnBack)="returnToList($event)"></app-product-edit>
   </ng-container>
 
@@ -52,6 +50,6 @@
     <span class="operate-text" (click)="delete(id)"><i nz-icon nzType="delete" nzTheme="outline"></i>删除</span>
     <span class="operate-text" (click)="edit(id)"><i nz-icon nzType="edit" nzTheme="outline"></i>修改</span>
     <span class="operate-text" (click)="goDetail(id)"><i nz-icon nzType="diff" nzTheme="outline"></i>查看</span>
-  </ng-template>-->
+  </ng-template>
 </nz-content>
 

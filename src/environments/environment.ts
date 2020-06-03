@@ -1,10 +1,70 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+/*****
+ 开发环境配置
+ 开发构建命令(以下命令等效)：
+ ng build --target=development --environment=dev
+ ng build --dev --e=dev
+ ng build --dev
+ ng build
+ ****/
+const isIusUsedMock = false;
+
+// todo localUrl配置本机地址
+export const localUrl = 'http://192.168.1.106:4200';
+export const webServerUrl = `${localUrl}/site`;
+const mockServerUrl = `${localUrl}/site-model`;
+
+export const gatewayKey = {
+  Ius: 'ius',
+  /**
+   * 基础服务
+   */
+  Bs: 'bs',
+  /**
+   * mock服务
+   */
+  Mock: 'mock'
+};
+
+// 老吴才给
+/*companyPositon: {
+  cenL: 118.30612,
+    cenB: 34.29057
+},*/
+
+/*companyPositon: {
+  cenL: 120.676173,
+    cenB: 31.21611
+},*/
+
+// 六合
+/*companyPositon: {
+  cenL: 118.912782,
+    cenB: 32.187244
+},*/
 
 export const environment = {
+  sysName: '安环应急一体化管理平台',
+  sysNamePinYin: 'anhuanyingjiyitihuaguanlipingtai',
+ /* get sysName() {
+    return   '安环应急一体化管理平台' ;
+  },*/
+  // 厂区坐标
+  companyPositon: {
+    cenL: 118.30612,
+    cenB: 34.29057
+  },
   production: false,
-
+  baseUrl: {
+    ius: `${isIusUsedMock ? mockServerUrl : webServerUrl + '/ius'}`,
+    bs: `${webServerUrl}/gh`,
+    mock: mockServerUrl
+  },
+  otherData: {
+    sysRole: 0,
+    sysSite: '0',
+    defaultPath: '/',
+    fileServiceUrl: `${webServerUrl}/image`,    // 文件服务器
+  }
 };
 
 /*

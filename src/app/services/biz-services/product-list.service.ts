@@ -1,7 +1,9 @@
 import {Injectable, Injector} from '@angular/core';
-import {HttpUtilNs, HttpUtilService} from "../http/http-util.service";
+import {HttpUtilNs, HttpUtilService} from '../http/http-util.service';
 
 
+
+// tslint:disable-next-line:no-namespace
 export namespace ProductListInitServiceNs {
 /*  export interface HighRiskModel {
     id?: number;
@@ -19,7 +21,7 @@ export namespace ProductListInitServiceNs {
     constructor(private injector: Injector) {
       this.http = this.injector.get(HttpUtilService);
       this.defaultConfig = {
-        //gateway: HttpUtilNs.GatewayKey.Bs
+        /*gateway: HttpUtilNs.GatewayKey.Bs*/
       };
     }
 

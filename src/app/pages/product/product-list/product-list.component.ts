@@ -1,10 +1,8 @@
 import {Component, OnInit, ViewChild, TemplateRef} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {PageTypeEnum} from '../../../core/vo-common/BusinessEnum';
-import {MessageType, ShowMessageService} from "../../../share/show-message/show-message";
-import {ProductListInitService} from "../../../services/biz-services/product-list.service";
-import {UfastTableNs} from "../../../share/ufast-table/ufast-table.component";
-import {GoBackParam} from "../../../core/vo-common/ReturnBackVo";
+import {UfastTableNs} from '../../../share/ufast-table/ufast-table.component';
+import {GoBackParam} from '../../../core/vo-common/ReturnBackVo';
 
 interface DataItem {
   key: string;
@@ -30,7 +28,7 @@ export class ProductListComponent implements OnInit {
   tableConfig: UfastTableNs.TableConfig;
   @ViewChild('operationTpl', {static: true}) operationTpl: TemplateRef<any>;
 
-  constructor(private fb: FormBuilder,/* private messageService: ShowMessageService, private dataService: ProductListInitService*/) {
+  constructor(private fb: FormBuilder) {
     this.isCollapse = true;
     this.currentPage = this.pageTypeEnum.List;
     this.listOfData = [{
@@ -185,10 +183,10 @@ export class ProductListComponent implements OnInit {
       pageSize: this.tableConfig.pageSize,
       filters: {}
     };
-    //const {total, list, pageNum} = await this.dataService.getProductList(params);
-    //this.tableConfig.total = total;
-    //this.tableConfig.pageNum = pageNum;
-    //this.dataList = list || [];
+    /*const {total, list, pageNum} = await this.dataService.getProductList(params);
+    this.tableConfig.total = total;
+    this.tableConfig.pageNum = pageNum;
+    this.dataList = list || [];*/
   }
   ngOnInit(): void {
     this.initTable();

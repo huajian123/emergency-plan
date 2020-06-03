@@ -1,7 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-
-// @ts-ignore
-import { ModalOptionsForService, NzMessageService, NzModalRef, NzModalService } from 'ng-zorro-antd';
+import {  NzMessageService, NzModalRef, NzModalService } from 'ng-zorro-antd';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -24,35 +22,29 @@ export enum MessageCallback {
   providedIn: 'root'
 })
 export class ShowMessageService {
-  modalCtrl: NzModalRef[];
+/*  modalCtrl: NzModalRef[];
   loadEvent: EventEmitter<{ loading: boolean; message?: string }>;
-  private loading: boolean;
+  private loading: boolean;*/
 
   constructor(
-    private nzModalService: NzModalService,
+   /* private nzModalService: NzModalService,
     private router: Router,
-    private toastService: NzMessageService
+    private toastService: NzMessageService*/
   ) {
-    this.modalCtrl = [];
+  /*  this.modalCtrl = [];
     this.loadEvent = new EventEmitter();
 
-    (<Observable<any>>this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd))).subscribe((event: any) => {
+    (this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd)) as Observable<any>).subscribe((event: any) => {
       for (let i = 0, len = this.modalCtrl.length; i < len; i++) {
         this.modalCtrl[i].destroy(MessageCallback.Cancel);
       }
       this.modalCtrl = [];
     });
-    this.loading = false;
+    this.loading = false;*/
   }
-
-  /**
-   * 显示不同类型的弹框
-   * @param title
-   * @param message
-   * @param type
-   */
-  public showAlertMessage(title: string, message: string, type: MessageType = MessageType.Info): NzModalRef {
+ /* public showAlertMessage(title: string, message: string, type: MessageType = MessageType.Info): NzModalRef {
     let modalRef: NzModalRef = null;
+    // @ts-ignore
     const options: ModalOptionsForService = {
       nzTitle: title,
       nzContent: message,
@@ -93,20 +85,17 @@ export class ShowMessageService {
     return modalRef;
   }
 
-  /**
-   * 显示全局loading
-   * **/
   public showLoading(message?: string) {
     this.loading = true;
     this.loadEvent.emit({
       loading: this.loading,
-      message: message
+      message: '{message}',
     });
   }
 
-  /**
+  /!**
    * 关闭全局loading
-   */
+   *!/
   public closeLoading() {
     this.loading = false;
     this.loadEvent.emit({
@@ -114,23 +103,17 @@ export class ShowMessageService {
     });
   }
 
-  /**
+  /!**
    * loading是否正显示
-   */
+   *!/
   public loadingIsShow(): boolean {
     return this.loading;
   }
-
-  /**
-   * 显示消息
-   * @param message
-   * @param type
-   * @param duration
-   */
+  // tslint:disable-next-line:ban-types
   public showToastMessage(message: string, type: MessageType = MessageType.Info, duration: number = 2000): Function {
     const nzMessage = this.toastService.create(type, message, { nzDuration: duration });
     return () => {
       this.toastService.remove(nzMessage.messageId);
     };
-  }
+  }*/
 }

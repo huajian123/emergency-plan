@@ -1,14 +1,16 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-
 import { filter, map } from 'rxjs/operators';
-import {PageInfo} from "../../core/vo-common/PageInfo";
-import {ActionResult} from "../../core/vo-common/ActionResult";
-import {MessageType, ShowMessageService} from "../../share/show-message/show-message";
+import {PageInfo} from '../../core/vo-common/PageInfo';
+import {ActionResult} from '../../core/vo-common/ActionResult';
+import {MessageType, ShowMessageService} from '../../share/show-message/show-message';
+import {gatewayKey} from '../../../environments/environment';
 
 
 
+
+// tslint:disable-next-line:no-namespace
 export namespace HttpUtilNs {
 
   export interface UfastHttpRes {
@@ -28,7 +30,7 @@ export namespace HttpUtilNs {
   export interface UfastHttpResT<T> extends ActionResult<T> {
   }
 
-
+  export const GatewayKey = gatewayKey;
 
   export enum HttpMethod {
     Post = 'POST',
@@ -77,7 +79,7 @@ export namespace HttpUtilNs {
         this.loadingCounter--;
       }
       if (this.loadingCounter <= 0) {
-        this.messageService.closeLoading();
+      //  this.messageService.closeLoading();
         this.loadingCounter = 0;
       }
       // 不需要拦截处理
@@ -86,9 +88,9 @@ export namespace HttpUtilNs {
       }
       // 拦截处理
       if (item.code !== 0) {
-        this.messageService.showAlertMessage('', item.msg, MessageType.Warning);
+       // this.messageService.showAlertMessage('', item.msg, MessageType.Warning);
       } else if (needSuccessInfo) {
-        this.messageService.showToastMessage('操作成功', MessageType.Success);
+      //  this.messageService.showToastMessage('操作成功', MessageType.Success);
       }
       return item.code === 0;
     }
@@ -103,7 +105,7 @@ export namespace HttpUtilNs {
         this.loadingCounter--;
       }
       if (this.loadingCounter <= 0) {
-        this.messageService.closeLoading();
+      //  this.messageService.closeLoading();
         this.loadingCounter = 0;
       }
       // 不需要拦截处理
@@ -112,7 +114,7 @@ export namespace HttpUtilNs {
         responseSubject.complete();
         return;
       }
-      this.messageService.showAlertMessage('', error.msg, MessageType.Warning);
+    //  this.messageService.showAlertMessage('', error.msg, MessageType.Warning);
     }
 
     public getFullUrl(baseUrlName: string, path: string, isUpload?: boolean): string {
@@ -136,7 +138,7 @@ export namespace HttpUtilNs {
         this.loadingCounter++;
       }
       if (this.loadingCounter > 0) {
-        this.messageService.showLoading();
+       // this.messageService.showLoading();
       }
       this.http.get<ActionResult<any>>(url, options)
         .pipe(
@@ -162,7 +164,7 @@ export namespace HttpUtilNs {
         this.loadingCounter++;
       }
       if (this.loadingCounter > 0) {
-        this.messageService.showLoading();
+        // this.messageService.showLoading();
       }
       this.http.post<ActionResult<T>>(url, body, options)
         .pipe(
@@ -208,14 +210,6 @@ export namespace HttpUtilNs {
       return this.http.options<T>(url, options);
     }
 
-    /**
-     * 下载请求
-     * @param path
-     * @param params
-     * @param usePost
-     * @param gateway
-     * @constructor
-     */
     public DownLoadRequest<R>(path: string, params?: any, usePost?: boolean, gateway?: string): Observable<HttpEvent<R>> {
       const url = this.getFullUrl(gateway, path);
       const options: any = {
@@ -235,13 +229,7 @@ export namespace HttpUtilNs {
       return this.http.request<R>(request);
     }
 
-    /**
-     * 上传请求
-     * @param path
-     * @param body
-     * @param gateway
-     * @constructor
-     */
+
     public UploadRequest<R>(path: string, body?: FormData, gateway?: string): Observable<HttpEvent<R>> {
       const url = this.getFullUrl(gateway, path, true);
       const request = new HttpRequest(HttpMethod.Post, url, body, { reportProgress: true });
