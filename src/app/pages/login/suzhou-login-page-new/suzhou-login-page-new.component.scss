@@ -14,16 +14,18 @@ header {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 56px;
+  height: 143px;
   text-align: center;
   background: url(../../../../assets/imgs/suzhou-login/header-bg.png) no-repeat;
   background-size: 100% 100%;
 
   h1 {
     height: 100%;
-    line-height: 56px;
-    font-size: 28px;
-    color: #ffffff;
+    line-height: 143px;
+    font-family: PingFangSC-Medium;
+    font-size: 38px;
+    color: #7EFAFC;
+    letter-spacing: 1.58px;
   }
 }
 
@@ -40,7 +42,7 @@ main {
    width: 1250px;
    display: flex;
    height: 100%;
-   margin: 3% auto 0;
+   margin: 0 auto;
    align-items: flex-end;
    justify-content: space-between;
    flex-wrap:wrap;
@@ -58,8 +60,8 @@ main {
    text-align: center;
  }
  .entry img{
-   width: 160px;
-   height: 143px;
+   width: 154px;
+   height: 130px;
    display: block;
    margin: 35px auto 10px;
  }
