@@ -6,7 +6,7 @@ import {CeshiListComponent} from './ceshi-list/ceshi-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ceshi-list', pathMatch: 'full' },
-  { path: 'ceshi-list', component: CeshiListComponent , data: {title: '测试模块',keep: true}},
+  { path: 'ceshi-list', component: CeshiListComponent , data: {title: '测试模块', keep: true}},
 ];
 
 @NgModule({

@@ -7,8 +7,8 @@ import {Ceshi2DetailComponent} from './ceshi2-detail/ceshi2-detail.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'ceshi2-ceshi2list', pathMatch: 'full'},
-  {path: 'ceshi2-ceshi2list', component: Ceshi2ListComponent, data: {title: '测试模块2',keep: true}},
-  {path: 'ceshi2-ceshi2detail', component: Ceshi2DetailComponent, data: {title: '测试模块详情',keep: true}},
+  {path: 'ceshi2-ceshi2list', component: Ceshi2ListComponent, data: {title: '测试模块2', keep: true}},
+  {path: 'ceshi2-ceshi2detail', component: Ceshi2DetailComponent, data: {title: '测试模块详情', keep: true}},
 ];
 
 @NgModule({

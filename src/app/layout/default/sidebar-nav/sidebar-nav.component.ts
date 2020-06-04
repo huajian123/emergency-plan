@@ -23,26 +23,26 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
   routerPath = '';
   menus: Menu[] = [
     {
-      title: '自然灾害类',
-      icon: 'mail',
+      title: '测试模块2',
+      icon: 'home',
       open: false,
       selected: false,
       children: [
         {
-          title: '一级灾害',
+          title: '测试模块2',
           icon: 'mail',
           open: false,
           selected: false,
           children: [
             {
-              title: '二级灾害',
+              title: '测试模块2',
               icon: 'mail',
               open: false,
               selected: false,
               path: '/hazard/ceshi2/ceshi2-ceshi2list',
             },
             {
-              title: '三级灾害',
+              title: '测试详情',
               icon: 'mail',
               open: false,
               selected: false,
@@ -54,14 +54,14 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
     },
     {
       title: '测试模块',
-      icon: 'mail',
+      icon: 'home',
       open: false,
       selected: true,
       path: '/hazard/ceshi/ceshi-list',
     },
     {
       title: '用户模块',
-      icon: 'mail',
+      icon: 'home',
       open: false,
       children: [
         {
@@ -82,7 +82,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
     },
     {
       title: '商品模块',
-      icon: 'mail',
+      icon: 'home',
       open: false,
       children: [
         {
@@ -98,6 +98,37 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           selected: false,
           icon: 'mail',
           path: '/hazard/product/product-list',
+        },
+      ]
+    },
+    {
+      title: '自燃灾害',
+      icon: 'icon iconfont iconnatura',
+      open: false,
+      children: [
+        {
+          title: '一级灾害',
+          open: false,
+          selected: false,
+          path: '/hazard/natural-disaster/first',
+        },
+        {
+          title: '二级灾害',
+          open: false,
+          selected: false,
+          path: '/hazard/natural-disaster/second',
+        },
+        {
+          title: '三级灾害',
+          open: false,
+          selected: false,
+          path: '/hazard/natural-disaster/third',
+        },
+        {
+          title: '四级灾害',
+          open: false,
+          selected: false,
+          path: '/hazard/natural-disaster/fouth',
         },
       ]
     },
