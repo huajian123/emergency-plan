@@ -1,4 +1,4 @@
-<nz-content>
+<ng-container *ngIf="currentPage===pageTypeEnum.List">
   <!--头部版块-->
   <nz-page-header class="site-page-header" nzTitle="标准列表">
     <nz-breadcrumb nz-page-header-breadcrumb>
@@ -35,21 +35,19 @@
   <!--表格板块-->
   <button nz-button (click)="addRow()" nzType="primary"><i nz-icon nzType="plus" nzTheme="outline"></i>新增</button>
   <br /><br />
-
   <app-ufast-table [dataList]="listOfData" [tableConfig]="tableConfig" [getListHandle]="getDataList.bind(this)"></app-ufast-table>
+</ng-container>
 
-  <ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
-    <app-product-edit [currentPageNum]="tableConfig.pageNum" [id]="itemId"  (returnBack)="returnToList($event)"></app-product-edit>
-  </ng-container>
+<ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
+  <app-product-edit [currentPageNum]="tableConfig.pageNum" [id]="itemId"  (returnBack)="returnToList($event)"></app-product-edit>
+</ng-container>
 
-  <ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
-    <app-product-detial [currentPageNum]="tableConfig.pageNum"  [id]="itemId"  (returnBack)="returnToList($event)"></app-product-detial>
-  </ng-container>
+<ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
+  <app-product-detial [currentPageNum]="tableConfig.pageNum"  [id]="itemId"  (returnBack)="returnToList($event)"></app-product-detial>
+</ng-container>
 
-  <ng-template #operationTpl let-amount="amount" let-id="id">
-    <span class="operate-text" (click)="delete(id)"><i nz-icon nzType="delete" nzTheme="outline"></i>删除</span>
-    <span class="operate-text" (click)="edit(id)"><i nz-icon nzType="edit" nzTheme="outline"></i>修改</span>
-    <span class="operate-text" (click)="goDetail(id)"><i nz-icon nzType="diff" nzTheme="outline"></i>查看</span>
-  </ng-template>
-</nz-content>
-
+<ng-template #operationTpl let-amount="amount" let-id="id">
+  <span class="operate-text" (click)="delete(id)"><i nz-icon nzType="delete" nzTheme="outline"></i>删除</span>
+  <span class="operate-text" (click)="edit(id)"><i nz-icon nzType="edit" nzTheme="outline"></i>修改</span>
+  <span class="operate-text" (click)="goDetail(id)"><i nz-icon nzType="diff" nzTheme="outline"></i>查看</span>
+</ng-template>
