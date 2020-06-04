@@ -43,8 +43,8 @@ export const gatewayKey = {
 },*/
 
 export const environment = {
-  sysName: '安环应急一体化管理平台',
-  sysNamePinYin: 'anhuanyingjiyitihuaguanlipingtai',
+  sysName: '江苏省突发事件应对处置数字化系统',
+  sysNamePinYin: 'tufashijianyingduichuzhi',
  /* get sysName() {
     return   '安环应急一体化管理平台' ;
   },*/
