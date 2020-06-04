@@ -14,7 +14,7 @@ export class TabComponent implements OnInit {
     this.tabs = tabService.getTabArray();
   }
 
-  stopMounseEvent(e:MouseEvent){
+  stopMounseEvent(e: MouseEvent){
     e.stopPropagation();
     e.preventDefault();
   }

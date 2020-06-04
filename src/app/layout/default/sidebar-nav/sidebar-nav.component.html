@@ -1,5 +1,5 @@
 
-<ul nz-menu nzInlineCollapsed [nzInlineCollapsed]="isCollapsed" nzTheme="light" nzMode="inline">
+<ul nz-menu nzInlineCollapsed [nzInlineCollapsed]="isCollapsed" nzTheme="dark" nzMode="inline">
   <ng-container *ngTemplateOutlet="menuTpl;context:{$implicit: menus}"></ng-container>
   <ng-template #menuTpl let-menus>
     <ng-container *ngFor="let menu of menus">

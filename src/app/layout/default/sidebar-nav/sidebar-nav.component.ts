@@ -5,12 +5,12 @@ import {filter, map, tap} from 'rxjs/operators';
 import {TabService} from '../../../services/common-services/tab.service';
 
 interface Menu {
-  path?: string,
-  title: string,
-  icon?: string,
-  open?: boolean,
-  selected?: boolean,
-  children?: Menu[]
+  path?: string;
+  title: string;
+  icon?: string;
+  open?: boolean;
+  selected?: boolean;
+  children?: Menu[];
 }
 
 @Component({
@@ -20,29 +20,29 @@ interface Menu {
 })
 export class SidebarNavComponent implements OnInit, OnDestroy {
   @Input() isCollapsed: boolean;
-  routerPath: string = '';
+  routerPath = '';
   menus: Menu[] = [
     {
-      title: '测试模块2',
+      title: '自然灾害类',
       icon: 'mail',
       open: false,
       selected: false,
       children: [
         {
-          title: '测试模块2',
+          title: '一级灾害',
           icon: 'mail',
           open: false,
           selected: false,
           children: [
             {
-              title: '测试模块2',
+              title: '二级灾害',
               icon: 'mail',
               open: false,
               selected: false,
               path: '/hazard/ceshi2/ceshi2-ceshi2list',
             },
             {
-              title: '测试详情',
+              title: '三级灾害',
               icon: 'mail',
               open: false,
               selected: false,
@@ -110,10 +110,12 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
       .pipe(
         filter(event => event instanceof NavigationEnd),
         tap(() => {
-          this.routerPath = this.route.snapshot['_routerState'].url;
+          // @ts-ignore
+          this.routerPath = this.route.snapshot._routerState.url;
           this.clickMenuItem();
         }),
         map(() => this.route.snapshot),
+          // tslint:disable-next-line:no-shadowed-variable
         map(route => {
           while (route.firstChild) {
             route = route.firstChild;
@@ -121,14 +123,15 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           return route;
         })
       )
+      // tslint:disable-next-line:no-shadowed-variable
       .subscribe((route: ActivatedRouteSnapshot) => {
-        this.tabService.addTab({title: route.data['title'], path: this.routerPath});
+        this.tabService.addTab({title: route.data.title, path: this.routerPath});
         this.tabService.findIndex(this.routerPath);
       });
   }
 
   clickMenuItem() {
-    for (let item of this.menus) {
+    for (const item of this.menus) {
       item.open = false;
       item.selected = false;
       // 一级菜单
@@ -138,8 +141,8 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
         }
         continue;
       }
-      //二级菜单
-      for (let subItem of item.children) {
+      /*二级菜单*/
+      for (const subItem of item.children) {
         subItem.selected = false;
         subItem.open = false;
         if (!subItem.children || subItem.children?.length === 0) {
@@ -151,7 +154,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           }
           continue;
         }
-        for (let thirdItem of subItem.children) {
+        for (const thirdItem of subItem.children) {
           if (thirdItem.path === this.routerPath) {
             item.open = true;
             item.selected = true;
