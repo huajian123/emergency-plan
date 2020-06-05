@@ -26,6 +26,10 @@ const routes: Routes = [
                 path: 'public-health',
                 loadChildren: () => import('./pages/public-health/public-health.module').then(m => m.PublicHealthModule)
             },
+            {
+                path: 'social-security',
+                loadChildren: () => import('./pages/social-security/social-security.module').then(m => m.SocialSecurityModule)
+            },
         ],
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},

@@ -135,6 +135,37 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
               },
           ]
       },
+      {
+          title: '社会安全类',
+          icon: 'iconsocity',
+          open: false,
+          children: [
+              {
+                  title: '一级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/social-security/fist-security-disaster',
+              },
+              {
+                  title: '二级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/social-security/second-security-disaster',
+              },
+              {
+                  title: '三级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/social-security/third-security-disaster',
+              },
+              {
+                  title: '四级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/social-security/fourth-security-disaster',
+              },
+          ]
+      },
   ];
   subs: Array<Subscription> = [];
 
