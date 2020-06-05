@@ -13,6 +13,12 @@
     <nz-header class="head-nav">
       <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
          (click)="isCollapsed = !isCollapsed"></i>
+        <div>
+            <a (click)="1" class="project-picture"><img src="../../../assets/imgs/phone.svg" alt=""></a>
+            <span class="project-name">一键电话</span>
+            <a (click)="1" class="project-picture"><img src="../../../assets/imgs/management.svg" alt=""></a>
+            <span class="project-name">管理界面</span>
+        </div>
     </nz-header>
     <nz-content class="default-context">
       <app-tab></app-tab>
