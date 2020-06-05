@@ -24,59 +24,6 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
   routerPath = '';
   menus: Menu[] = [
     {
-      title: '测试模块2',
-      icon: 'home',
-      open: false,
-      selected: false,
-      children: [
-        {
-          title: '测试模块2',
-          open: false,
-          selected: false,
-          children: [
-            {
-              title: '测试模块2',
-              open: false,
-              selected: false,
-              path: '/hazard/ceshi2/ceshi2-ceshi2list',
-            },
-            {
-              title: '测试详情',
-              open: false,
-              selected: false,
-              path: '/hazard/ceshi2/ceshi2-ceshi2detail',
-            }
-          ]
-        }
-      ]
-    },
-    {
-      title: '测试模块',
-      icon: 'home',
-      open: false,
-      selected: true,
-      path: '/hazard/ceshi/ceshi-list',
-    },
-    {
-      title: '用户模块',
-      icon: 'home',
-      open: false,
-      children: [
-        {
-          title: '用户列表',
-          open: false,
-          selected: false,
-          path: '/hazard/user/user-list',
-        },
-        {
-          title: '用户种类',
-          open: false,
-          selected: false,
-          path: '/hazard/user/user-category',
-        },
-      ]
-    },
-    {
       title: '商品模块',
       icon: 'home',
       open: false,
@@ -104,25 +51,25 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           title: '一级灾害',
           open: false,
           selected: false,
-          path: '/hazard/natural-disaster/first',
+            path: '/hazard/natural-disaster/fist-natural-disaster',
         },
         {
           title: '二级灾害',
           open: false,
           selected: false,
-          path: '/hazard/natural-disaster/second',
+            path: '/hazard/natural-disaster/second-natural-disaster',
         },
         {
           title: '三级灾害',
           open: false,
           selected: false,
-          path: '/hazard/natural-disaster/third',
+            path: '/hazard/natural-disaster/third-natural-disaster',
         },
         {
           title: '四级灾害',
           open: false,
           selected: false,
-          path: '/hazard/natural-disaster/fouth',
+            path: '/hazard/natural-disaster/fourth-natural-disaster',
         },
       ]
     },
@@ -135,25 +82,56 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
                   title: '一级灾害',
                   open: false,
                   selected: false,
-                  path: '/hazard/accident-disaster/first',
+                  path: '/hazard/accident-disaster/first-accident-disaster',
               },
               {
                   title: '二级灾害',
                   open: false,
                   selected: false,
-                  path: '/hazard/accident-disaster/second',
+                  path: '/hazard/accident-disaster/second-accident-disaster',
               },
               {
                   title: '三级灾害',
                   open: false,
                   selected: false,
-                  path: '/hazard/accident-disaster/third',
+                  path: '/hazard/accident-disaster/third-accident-disaster',
               },
               {
                   title: '四级灾害',
                   open: false,
                   selected: false,
-                  path: '/hazard/accident-disaster/fouth',
+                  path: '/hazard/accident-disaster/fourth-accident-disaster',
+              },
+          ]
+      },
+      {
+          title: '公共卫生类',
+          icon: 'iconpublic',
+          open: false,
+          children: [
+              {
+                  title: '一级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/public-health/first-health-disaster',
+              },
+              {
+                  title: '二级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/public-health/second-health-disaster',
+              },
+              {
+                  title: '三级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/public-health/third-health-disaster',
+              },
+              {
+                  title: '四级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/public-health/fourth-health-disaster',
               },
           ]
       },

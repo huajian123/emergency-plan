@@ -9,9 +9,11 @@ import {FourthAccidentDisasterComponent} from './fourth-accident-disaster/fourth
 
 
 @NgModule({
-    declarations: [FirstAccidentDisasterComponent,
+    declarations: [
+        FirstAccidentDisasterComponent,
         SecondAccidentDisasterComponent,
-        ThirdAccidentDisasterComponent, FourthAccidentDisasterComponent],
+        ThirdAccidentDisasterComponent,
+        FourthAccidentDisasterComponent],
     imports: [
         CommonModule,
         AccidentDisastersRoutingModule

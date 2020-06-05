@@ -14,9 +14,6 @@ const routes: Routes = [
         children: [
             {path: '', redirectTo: 'product', pathMatch: 'full'},
             {path: 'product', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule)},
-            {path: 'user', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)},
-            {path: 'ceshi', loadChildren: () => import('./pages/ceshi/ceshi.module').then(m => m.CeshiModule)},
-            {path: 'ceshi2', loadChildren: () => import('./pages/ceshi2/ceshi2.module').then(m => m.Ceshi2Module)},
             {
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)
@@ -24,6 +21,10 @@ const routes: Routes = [
             {
                 path: 'accident-disaster',
                 loadChildren: () => import('./pages/accident-disasters/accident-disasters.module').then(m => m.AccidentDisastersModule)
+            },
+            {
+                path: 'public-health',
+                loadChildren: () => import('./pages/public-health/public-health.module').then(m => m.PublicHealthModule)
             },
         ],
     },

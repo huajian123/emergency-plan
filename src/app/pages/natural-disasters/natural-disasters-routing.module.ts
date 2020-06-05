@@ -7,11 +7,11 @@ import {SecondNaturalDisasterComponent} from './second-natural-disaster/second-n
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'first', pathMatch: 'full'},
-  {path: 'first', component: FistNaturalDisasterComponent, data: {title: '一级灾害', keep: true}},
-  {path: 'second', component: SecondNaturalDisasterComponent, data: {title: '二级灾害', keep: true}},
-  {path: 'third', component: ThirdNaturalDisasterComponent, data: {title: '三级灾害', keep: true}},
-  {path: 'fouth', component: FourthNaturalDisasterComponent, data: {title: '四级灾害', keep: true}},
+    {path: '', redirectTo: 'fist-natural-disaster', pathMatch: 'full'},
+    {path: 'fist-natural-disaster', component: FistNaturalDisasterComponent, data: {title: '一级灾害', keep: true}},
+    {path: 'second-natural-disaster', component: SecondNaturalDisasterComponent, data: {title: '二级灾害', keep: true}},
+    {path: 'third-natural-disaster', component: ThirdNaturalDisasterComponent, data: {title: '三级灾害', keep: true}},
+    {path: 'fourth-natural-disaster', component: FourthNaturalDisasterComponent, data: {title: '四级灾害', keep: true}},
 ];
 
 @NgModule({

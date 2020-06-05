@@ -8,11 +8,11 @@ import {SecondAccidentDisasterComponent} from './second-accident-disaster/second
 
 
 const routes: Routes = [
-    {path: '', redirectTo: 'first', pathMatch: 'full'},
-    {path: 'first', component: FirstAccidentDisasterComponent, data: {title: '一级灾害', keep: true}},
-    {path: 'second', component: SecondAccidentDisasterComponent, data: {title: '二级灾害', keep: true}},
-    {path: 'third', component: ThirdAccidentDisasterComponent, data: {title: '三级灾害', keep: true}},
-    {path: 'fouth', component: FourthAccidentDisasterComponent, data: {title: '四级灾害', keep: true}},
+    {path: '', redirectTo: 'first-accident-disaster', pathMatch: 'full'},
+    {path: 'first-accident-disaster', component: FirstAccidentDisasterComponent, data: {title: '一级灾害', keep: true}},
+    {path: 'second-accident-disaster', component: SecondAccidentDisasterComponent, data: {title: '二级灾害', keep: true}},
+    {path: 'third-accident-disaster', component: ThirdAccidentDisasterComponent, data: {title: '三级灾害', keep: true}},
+    {path: 'fourth-accident-disaster', component: FourthAccidentDisasterComponent, data: {title: '四级灾害', keep: true}},
 ];
 
 @NgModule({
