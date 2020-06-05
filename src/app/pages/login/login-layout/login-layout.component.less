@@ -1,20 +1,15 @@
 @import "../../../../assets/styles/varibles.less";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  background-image: url(../../../../assets/imgs/suzhou-login/bg.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  height: 100%;
+  min-width: 1300px;
+  background: url(../../../../assets/imgs/suzhou-login/bg.png) no-repeat;
+  background-size: 100% 100%;
 }
 
 .wrap {
-  flex: 1;
   padding: 8% 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 
 .ant-form-item {
@@ -35,27 +30,8 @@
   }
 
 }
-.login-wrap input{
-  position: relative;
-  text-indent:35px;
-  outline: none;
-  border-radius: 0;
-  user-select: none;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid #1C95DC;
-  color: #fff;
-  background: rgba(28, 149, 220, 0.3);
-}
-.icon-name{
-  width: 32px;;
-  height: 32px;
-  display: inline-block;
-  position: absolute;
-  left: 1%;
-  top: 19%;
-}
+
+
 .title {
   position: relative;
   color: #00F5FF;
@@ -83,8 +59,29 @@
   font-family: PingFangSC-Medium;
   opacity: 0.8;
 }
+.login-wrap input{
+  position: relative;
+  text-indent:35px;
+  outline: none;
+  border-radius: 0;
+  user-select: none;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #1C95DC;
+  color: #fff;
+  background: rgba(28, 149, 220, 0.3);
+}
+.icon-name{
+  width: 32px;;
+  height: 32px;
+  display: inline-block;
+  position: absolute;
+  left: 1%;
+  top: 19%;
+}
 .desc {
- margin-top: 15px;
+  margin-top: 15px;
   line-height: 33px;
   color: #00C8FF;
   font-size: 24px;

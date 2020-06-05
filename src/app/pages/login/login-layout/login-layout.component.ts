@@ -16,7 +16,8 @@ export class LoginLayoutComponent implements OnInit {
 
     constructor(private fb: FormBuilder, private router: Router) {}
     public async submitForm() {
-        Object.keys(this.validateForm.controls).forEach(key => {
+        console.log('提交');
+   /*     Object.keys(this.validateForm.controls).forEach(key => {
             if (this.validateForm.controls[key]) {
                 this.validateForm.controls[key].markAsDirty();
                 this.validateForm.controls[key].updateValueAndValidity();
@@ -26,10 +27,10 @@ export class LoginLayoutComponent implements OnInit {
         if (this.validateForm.invalid) {
             return;
         }
-        const params = this.validateForm.getRawValue();
+        const params = this.validateForm.getRawValue();*/
 
         // await this.dataService.login(params);
-        this.router.navigate(['/login-model']);
+        this.router.navigate(['/suzhou-login']);
 
     }
 

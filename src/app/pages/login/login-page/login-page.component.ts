@@ -16,11 +16,11 @@ export enum PageTypeEnum {
 }
 
 @Component({
-  selector: 'app-suzhou-login-page-new',
-  templateUrl: './suzhou-login-page-new.component.html',
-  styleUrls: ['./suzhou-login-page-new.component.scss']
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss']
 })
-export class SuzhouLoginPageNewComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
   currentPageNum: number;
   pageTypeEnum = PageTypeEnum;
   parkIntroductionInfo: NoticeModel;
@@ -50,21 +50,21 @@ export class SuzhouLoginPageNewComponent implements OnInit {
 
   // 跳转回环保
   goEnvir() {
-    window.open('http://192.168.10.6:9090/portal/entrance/home.do', '_blank');
+    /*window.open(localUrl + '/hazard/natural-disaster/', '_blank');*/
   }
 
   // 跳转回应急
   goEmergency() {
-    window.open('http://172.16.71.10:60089/ei', '_blank');
+    window.open(localUrl + '/hazard/natural-disaster/', '_blank');
   }
 
   goSafe() {
-    window.open(localUrl + '/main/index', '_blank');
+    window.open( '', '_blank');
   }
 
   // 跳转到封闭园区
   goCompany() {
-    window.open('http://47.103.93.6:9025/#/login', '_blank');
+    window.open('', '_blank');
   }
 
   // 跳转公告页

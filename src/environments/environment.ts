@@ -9,7 +9,7 @@
 const isIusUsedMock = false;
 
 // todo localUrl配置本机地址
-export const localUrl = 'http://192.168.1.106:4200';
+export const localUrl = 'http://localhost:4200';
 export const webServerUrl = `${localUrl}/site`;
 const mockServerUrl = `${localUrl}/site-model`;
 

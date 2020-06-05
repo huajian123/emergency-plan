@@ -3,6 +3,7 @@ import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, NavigationStart, 
 import {Subscription} from 'rxjs';
 import {filter, map, tap} from 'rxjs/operators';
 import {TabService} from '../../../services/common-services/tab.service';
+import {NzIconService} from 'ng-zorro-antd';
 
 interface Menu {
   path?: string;
@@ -102,8 +103,8 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
       ]
     },
     {
-      title: '自燃灾害',
-      icon: 'icon iconfont iconnatura',
+      title: '自燃灾害类',
+      icon: 'icon-tuichu',
       open: false,
       children: [
         {
@@ -135,7 +136,10 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
   ];
   subs: Array<Subscription> = [];
 
-  constructor(private router: Router, private route: ActivatedRoute, private tabService: TabService) {
+  constructor(private router: Router, private route: ActivatedRoute, private tabService: TabService, private iconService: NzIconService) {
+    this.iconService.fetchFromIconfont({
+      scriptUrl: 'https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'
+    });
     this.routerPath = this.router.url;
     this.subs[0] = this.router.events
       .pipe(
