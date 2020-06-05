@@ -6,7 +6,7 @@ import {LoginLayoutComponent} from './login-layout/login-layout.component';
 
 const routes: Routes = [
   { path: '', component: LoginLayoutComponent },
-  {path: 'suzhou-login', component: LoginPageComponent, data: {cache: false}},
+  {path: 'login-page', component: LoginPageComponent, data: {cache: false}},
 ];
 
 @NgModule({

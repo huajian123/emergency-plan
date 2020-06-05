@@ -50,7 +50,7 @@ export class LoginPageComponent implements OnInit {
 
   // 跳转回环保
   goEnvir() {
-    /*window.open(localUrl + '/hazard/natural-disaster/', '_blank');*/
+      window.open('', '_blank');
   }
 
   // 跳转回应急

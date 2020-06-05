@@ -30,7 +30,7 @@ export class LoginLayoutComponent implements OnInit {
         const params = this.validateForm.getRawValue();*/
 
         // await this.dataService.login(params);
-        this.router.navigate(['/suzhou-login']);
+        this.router.navigate(['/login-page']);
 
     }
 

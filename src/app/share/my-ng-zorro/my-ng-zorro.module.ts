@@ -13,7 +13,8 @@ import {
   NzTableModule,
   NzDividerModule,
   NzTabsModule,
-  NzDatePickerModule, NzDropDownModule,
+    NzDatePickerModule,
+    NzDropDownModule,
 } from 'ng-zorro-antd';
 
 

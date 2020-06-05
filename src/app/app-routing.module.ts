@@ -21,6 +21,10 @@ const routes: Routes = [
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)
             },
+            {
+                path: 'accident-disaster',
+                loadChildren: () => import('./pages/accident-disasters/accident-disasters.module').then(m => m.AccidentDisastersModule)
+            },
         ],
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},

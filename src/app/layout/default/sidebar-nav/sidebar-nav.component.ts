@@ -3,7 +3,7 @@ import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, NavigationStart, 
 import {Subscription} from 'rxjs';
 import {filter, map, tap} from 'rxjs/operators';
 import {TabService} from '../../../services/common-services/tab.service';
-import {NzIconService} from 'ng-zorro-antd';
+import {NzIconService} from 'ng-zorro-antd/';
 
 interface Menu {
   path?: string;
@@ -31,20 +31,17 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
       children: [
         {
           title: '测试模块2',
-          icon: 'mail',
           open: false,
           selected: false,
           children: [
             {
               title: '测试模块2',
-              icon: 'mail',
               open: false,
               selected: false,
               path: '/hazard/ceshi2/ceshi2-ceshi2list',
             },
             {
               title: '测试详情',
-              icon: 'mail',
               open: false,
               selected: false,
               path: '/hazard/ceshi2/ceshi2-ceshi2detail',
@@ -69,14 +66,12 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           title: '用户列表',
           open: false,
           selected: false,
-          icon: 'mail',
           path: '/hazard/user/user-list',
         },
         {
           title: '用户种类',
           open: false,
           selected: false,
-          icon: 'mail',
           path: '/hazard/user/user-category',
         },
       ]
@@ -90,21 +85,19 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
           title: '商品种类',
           open: false,
           selected: false,
-          icon: 'mail',
           path: '/hazard/product/product-category',
         },
         {
           title: '商品列表',
           open: false,
           selected: false,
-          icon: 'mail',
           path: '/hazard/product/product-list',
         },
       ]
     },
     {
       title: '自燃灾害类',
-      icon: 'icon-tuichu',
+        icon: 'iconnatura',
       open: false,
       children: [
         {
@@ -133,12 +126,43 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
         },
       ]
     },
+      {
+          title: '事故灾害类',
+          icon: 'iconaccident',
+          open: false,
+          children: [
+              {
+                  title: '一级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/accident-disaster/first',
+              },
+              {
+                  title: '二级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/accident-disaster/second',
+              },
+              {
+                  title: '三级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/accident-disaster/third',
+              },
+              {
+                  title: '四级灾害',
+                  open: false,
+                  selected: false,
+                  path: '/hazard/accident-disaster/fouth',
+              },
+          ]
+      },
   ];
   subs: Array<Subscription> = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private tabService: TabService, private iconService: NzIconService) {
     this.iconService.fetchFromIconfont({
-      scriptUrl: 'https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'
+        scriptUrl: 'https://at.alicdn.com/t/font_1863242_95qatt77gpl.js'
     });
     this.routerPath = this.router.url;
     this.subs[0] = this.router.events
