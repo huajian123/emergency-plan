@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {LayoutDefalutComponent} from './layout/default/default.component';
+import {ManageLayoutComponent} from "./layout/manage-layout/manage-layout.component";
 
 
 const routes: Routes = [
@@ -30,6 +31,15 @@ const routes: Routes = [
                 path: 'social-security',
                 loadChildren: () => import('./pages/social-security/social-security.module').then(m => m.SocialSecurityModule)
             },
+        ],
+    },
+    {
+        path: 'hazard',
+        component: ManageLayoutComponent,
+        children: [
+            {path: '', redirectTo: 'people-manage', pathMatch: 'full'},
+            {path: 'people-manage', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule)},
+
         ],
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},

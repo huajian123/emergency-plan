@@ -1,0 +1,27 @@
+<app-top-progress-bar></app-top-progress-bar>
+<nz-layout style="min-height: 100%" >
+    <nz-sider nzTheme="dark" class="side-shadow" [nzWidth]="256" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo">
+            <a href="">
+                <img src="./assets/logo-color.svg" alt=""/>
+                <h1 [ngClass]="{'hidden':isCollapsed,'show':!isCollapsed}">应急预案管理</h1>
+            </a>
+        </div>
+        <app-sidebar-nav [menus]="menus" [isCollapsed]="isCollapsed"></app-sidebar-nav>
+    </nz-sider>
+    <nz-layout>
+        <nz-header class="head-nav">
+            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+               (click)="isCollapsed = !isCollapsed"></i>
+            <div>
+                <a class="project-picture"><img src="../../../assets/imgs/management.svg" alt=""></a>
+                <span class="project-name" >首页</span>
+            </div>
+        </nz-header>
+        <nz-content class="default-context">
+            <app-tab></app-tab>
+            <router-outlet></router-outlet>
+        </nz-content>
+        <nz-footer>江苏国恒安全评价</nz-footer>
+    </nz-layout>
+</nz-layout>
