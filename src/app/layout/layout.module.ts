@@ -13,4 +13,4 @@ import { ManageLayoutComponent } from './manage-layout/manage-layout.component';
         ShareModule,
     ]
 })
-export class LayoutModule { }
+export class LayoutModule {  }
