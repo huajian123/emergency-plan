@@ -5,7 +5,8 @@ import { FistNaturalDisasterComponent } from './fist-natural-disaster/fist-natur
 import { SecondNaturalDisasterComponent } from './second-natural-disaster/second-natural-disaster.component';
 import { ThirdNaturalDisasterComponent } from './third-natural-disaster/third-natural-disaster.component';
 import { FourthNaturalDisasterComponent } from './fourth-natural-disaster/fourth-natural-disaster.component';
-import {NzCardModule, NzGridModule} from 'ng-zorro-antd';
+import {NzButtonModule, NzCardModule, NzGridModule} from 'ng-zorro-antd';
+import { NaturalDisasterPlanComponent } from './second-natural-disaster/natural-disaster-plan/natural-disaster-plan.component';
 
 
 @NgModule({
@@ -13,12 +14,14 @@ import {NzCardModule, NzGridModule} from 'ng-zorro-antd';
         FistNaturalDisasterComponent,
     SecondNaturalDisasterComponent,
         ThirdNaturalDisasterComponent,
-        FourthNaturalDisasterComponent],
+        FourthNaturalDisasterComponent,
+        NaturalDisasterPlanComponent],
     imports: [
         CommonModule,
         NaturalDisastersRoutingModule,
         NzGridModule,
-        NzCardModule
+        NzCardModule,
+        NzButtonModule
     ]
 })
 export class NaturalDisastersModule { }
