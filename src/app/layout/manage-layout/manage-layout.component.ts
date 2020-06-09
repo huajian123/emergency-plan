@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Menu} from "../default/sidebar-nav/sidebar-nav.component";
+import {Menu} from '../default/sidebar-nav/sidebar-nav.component';
 
 @Component({
   selector: 'app-manage-layout',

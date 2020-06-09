@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {Menu} from "./sidebar-nav/sidebar-nav.component";
+import {Router} from '@angular/router';
+import {Menu} from './sidebar-nav/sidebar-nav.component';
 
 @Component({
   selector: 'app-defalut',

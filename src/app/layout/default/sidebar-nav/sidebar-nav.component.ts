@@ -55,7 +55,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
   }
 
   clickMenuItem() {
-    if(!this.menus)return;
+    if (!this.menus) {return; }
     for (const item of this.menus) {
       item.open = false;
       item.selected = false;
