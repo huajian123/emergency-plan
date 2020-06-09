@@ -4,13 +4,16 @@ import { CommonModule } from '@angular/common';
 import { PeopleManageRoutingModule } from './people-manage-routing.module';
 import { TableListComponent } from './table-list/table-list.component';
 import { FormModelComponent } from './form-model/form-model.component';
+import {ShareModule} from "../../share/share.module";
+import {NzSelectModule, NzTypographyModule} from "ng-zorro-antd";
 
 
 @NgModule({
   declarations: [TableListComponent, FormModelComponent],
   imports: [
     CommonModule,
-    PeopleManageRoutingModule
+    PeopleManageRoutingModule,
+    ShareModule,
   ]
 })
 export class PeopleManageModule { }
