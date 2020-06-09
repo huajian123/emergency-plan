@@ -51,7 +51,7 @@ export class AntTableComponent implements OnInit {
 
   // 修改一页几条的页码
   onPageSizeChange($event){
-    this.changePageSize.emit($event)
+    this.changePageSize.emit($event);
   }
 
   ngOnInit(): void {
