@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MyCommentModule} from './comment/my-comment.module';
 import {MyNgZorroModule} from './my-ng-zorro/my-ng-zorro.module';
 import {RouterModule} from '@angular/router';
+import {QuicklinkModule} from "ngx-quicklink";
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {RouterModule} from '@angular/router';
     ReactiveFormsModule,
     MyCommentModule,
     MyNgZorroModule,
+    QuicklinkModule,
     RouterModule,
   ],
   exports: [
@@ -22,6 +24,7 @@ import {RouterModule} from '@angular/router';
     ReactiveFormsModule,
     MyCommentModule,
     MyNgZorroModule,
+    QuicklinkModule,
     RouterModule,
   ]
 })
