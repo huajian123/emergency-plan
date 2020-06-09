@@ -34,11 +34,11 @@ const routes: Routes = [
         ],
     },
     {
-        path: 'hazard',
+        path: 'hazard-manage',
         component: ManageLayoutComponent,
         children: [
             {path: '', redirectTo: 'people-manage', pathMatch: 'full'},
-            {path: 'people-manage', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule)},
+            {path: 'people-manage', loadChildren: () => import('./pages/people-manage/people-manage.module').then(m => m.PeopleManageModule)},
 
         ],
     },

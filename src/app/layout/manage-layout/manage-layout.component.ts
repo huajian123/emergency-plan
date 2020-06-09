@@ -10,33 +10,21 @@ export class ManageLayoutComponent implements OnInit {
   isCollapsed = false;
   menus: Menu[] = [
     {
-      title: '社会安全类',
+      title: '表格模板',
       icon: 'iconsocity',
       open: false,
       children: [
         {
-          title: '一级灾害',
+          title: '表格',
           open: false,
           selected: false,
-          path: '/hazard/social-security/fist-security-disaster',
+          path: '/hazard-manage/people-manage/table-model',
         },
         {
-          title: '二级灾害',
+          title: '表单',
           open: false,
           selected: false,
-          path: '/hazard/social-security/second-security-disaster',
-        },
-        {
-          title: '三级灾害',
-          open: false,
-          selected: false,
-          path: '/hazard/social-security/third-security-disaster',
-        },
-        {
-          title: '四级灾害',
-          open: false,
-          selected: false,
-          path: '/hazard/social-security/fourth-security-disaster',
+          path: '/hazard-manage/people-manage/form-model',
         },
       ]
     },

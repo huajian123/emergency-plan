@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {filter, map, tap} from 'rxjs/operators';
@@ -19,9 +19,9 @@ export interface Menu {
   templateUrl: './sidebar-nav.component.html',
   styleUrls: ['./sidebar-nav.component.less']
 })
-export class SidebarNavComponent implements OnInit, OnDestroy {
+export class SidebarNavComponent implements OnInit, OnDestroy{
   @Input() isCollapsed: boolean;
-  @Input() menus: Menu[];
+  @Input() menus: Menu[]=[];
   routerPath = '';
   subs: Array<Subscription> = [];
 
@@ -98,6 +98,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    this.clickMenuItem();
   }
 
   ngOnDestroy() {
