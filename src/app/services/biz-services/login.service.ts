@@ -5,7 +5,7 @@ import {ActionResult} from '../../core/vo-common/ActionResult';
 
 // tslint:disable-next-line:no-namespace
 export namespace LoginServiceNs {
-   /* import LoginInfoModel = BasicInfoServiceNs.LoginInfoModel;*/
+    /* import LoginInfoModel = BasicInfoServiceNs.LoginInfoModel;*/
 
     export enum ChildSystemEnum {
         ENVIRONMENTAL = 1, // 智慧环保
@@ -32,10 +32,10 @@ export namespace LoginServiceNs {
             };
         }
 
-      /*  public login(param: LoginModel): Promise<ActionResult<LoginInfoModel>> {
-            return this.http.Post('/user/login', param, {needSuccessInfo: false, needIntercept: false}).toPromise();
-        }
-*/
+        /*  public login(param: LoginModel): Promise<ActionResult<LoginInfoModel>> {
+              return this.http.Post('/user/login', param, {needSuccessInfo: false, needIntercept: false}).toPromise();
+          }
+  */
         public goChildSystem(param: { subsystemType: ChildSystemEnum, userId: number }): Promise<string> {
             return this.http.Post('/basic/subsystem/login', param).toPromise();
         }
@@ -44,9 +44,9 @@ export namespace LoginServiceNs {
             return this.http.Post('/basic/subsystem/loginOut', param).toPromise();
         }
 
-       /* public test(): Promise<any> {
-            return this.http.Post('/basic/storagetankinfo/add', {'userAccount': 'ceshi', 'password': '123'}).toPromise();
-        }*/
+        /* public test(): Promise<any> {
+             return this.http.Post('/basic/storagetankinfo/add', {'userAccount': 'ceshi', 'password': '123'}).toPromise();
+         }*/
     }
 }
 

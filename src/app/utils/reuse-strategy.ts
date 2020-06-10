@@ -12,8 +12,16 @@ import {RouteReuseStrategy, ActivatedRouteSnapshot, DetachedRouteHandle} from '@
 
 export class SimpleReuseStrategy implements RouteReuseStrategy {
 
-  static _cacheRouters: { [key: string]: any } = {};
+  static cacheRouters: { [key: string]: any } = {};
   public static waitDelete: string;
+
+  public static deleteRouteSnapshot(path: string): void {
+    if (SimpleReuseStrategy.cacheRouters[path]) {
+      SimpleReuseStrategy.cacheRouters[path]?.handle?.componentRef.destroy();
+      delete SimpleReuseStrategy.cacheRouters[path];
+    }
+    SimpleReuseStrategy.waitDelete = path;
+  }
 
 
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
@@ -24,60 +32,47 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
   // 获取存储路由
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
     // 从缓存中获取快照，若无则返回null
-    if (!route.routeConfig || route.routeConfig.loadChildren || !SimpleReuseStrategy._cacheRouters[route.routeConfig.path]) {
+    if (!route.routeConfig || route.routeConfig.loadChildren || !SimpleReuseStrategy.cacheRouters[route.routeConfig.path]) {
       return null;
     }
-    return SimpleReuseStrategy._cacheRouters[route.routeConfig.path].handle;
+    return SimpleReuseStrategy.cacheRouters[route.routeConfig.path].handle;
 
   }
 
 
-  //路由离开时才会触发
-  //路由离开时是否需要保存页面，这是实现自定义路由复用策略最重要的一个方法
+  // 路由离开时才会触发
+  // 路由离开时是否需要保存页面，这是实现自定义路由复用策略最重要的一个方法
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
     // 默认对所有路由复用 可通过给路由配置项增加data: { keep: true }来进行选择性使用
     // {path: 'search', component: SearchComponent, data: {keep: true}},
-    if (!route.data.keep) {
-      return false;
-    } else {
-      return true;
-    }
+    return route.data.keep;
   }
 
 
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
-       if(SimpleReuseStrategy.waitDelete && SimpleReuseStrategy.waitDelete==route.routeConfig.path){
-         //如果待删除是当前路由则不存储快照
-         SimpleReuseStrategy.waitDelete=null
-         return;
-       }
-
-    // 只要有waitDelete就不存储，因为右键删除时点击非当前tab，同样会存储快照
- /*   if (SimpleReuseStrategy.waitDelete) {
+    if (SimpleReuseStrategy.waitDelete && SimpleReuseStrategy.waitDelete === route.routeConfig.path) {
+      // 如果待删除是当前路由则不存储快照
       SimpleReuseStrategy.waitDelete = null;
       return;
-    }*/
+    }
+    // 只要有waitDelete就不存储，因为右键删除时点击非当前tab，同样会存储快照
+    /*  if (SimpleReuseStrategy.waitDelete&& SimpleReuseStrategy.waitDelete==route.routeConfig.path) {
+        SimpleReuseStrategy.waitDelete = null;
+        return;
+      }*/
 
     // 按path作为key存储路由快照&组件当前实例对象
     // path等同RouterModule.forRoot中的配置
-    SimpleReuseStrategy._cacheRouters[route.routeConfig.path] = {
+    SimpleReuseStrategy.cacheRouters[route.routeConfig.path] = {
       snapshot: route,
-      handle: handle
+      handle
     };
   }
 
-  //如果shouldDetach方法返回true，会调用这个方法来保存页面
+  // 如果shouldDetach方法返回true，会调用这个方法来保存页面
   shouldAttach(route: ActivatedRouteSnapshot): boolean {
     // 在缓存中有的都认为允许还原路由
-    return !!route.routeConfig && !!SimpleReuseStrategy._cacheRouters[route.routeConfig.path];
-  }
-
-  public static deleteRouteSnapshot(path: string): void {
-    if (SimpleReuseStrategy._cacheRouters[path]) {
-      SimpleReuseStrategy._cacheRouters[path]?.handle?.componentRef.destroy();
-      delete SimpleReuseStrategy._cacheRouters[path];
-    }
-    SimpleReuseStrategy.waitDelete = path;
+    return !!route.routeConfig && !!SimpleReuseStrategy.cacheRouters[route.routeConfig.path];
   }
 
 }

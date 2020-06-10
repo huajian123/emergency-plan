@@ -14,15 +14,15 @@ export const webServerUrl = `${localUrl}/site`;
 const mockServerUrl = `${localUrl}/site-model`;
 
 export const gatewayKey = {
-  Ius: 'ius',
-  /**
-   * 基础服务
-   */
-  Bs: 'bs',
-  /**
-   * mock服务
-   */
-  Mock: 'mock'
+    Ius: 'ius',
+    /**
+     * 基础服务
+     */
+    Bs: 'bs',
+    /**
+     * mock服务
+     */
+    Mock: 'mock'
 };
 
 // 老吴才给
@@ -43,28 +43,28 @@ export const gatewayKey = {
 },*/
 
 export const environment = {
-  sysName: '江苏省突发事件应对处置数字化系统',
-  sysNamePinYin: 'tufashijianyingduichuzhi',
- /* get sysName() {
-    return   '安环应急一体化管理平台' ;
-  },*/
-  // 厂区坐标
-  companyPositon: {
-    cenL: 118.30612,
-    cenB: 34.29057
-  },
-  production: false,
-  baseUrl: {
-    ius: `${isIusUsedMock ? mockServerUrl : webServerUrl + '/ius'}`,
-    bs: `${webServerUrl}/gh`,
-    mock: mockServerUrl
-  },
-  otherData: {
-    sysRole: 0,
-    sysSite: '0',
-    defaultPath: '/',
-    fileServiceUrl: `${webServerUrl}/image`,    // 文件服务器
-  }
+    sysName: '江苏省突发事件应对处置数字化系统',
+    sysNamePinYin: 'tufashijianyingduichuzhi',
+    /* get sysName() {
+       return   '安环应急一体化管理平台' ;
+     },*/
+    // 厂区坐标
+    companyPositon: {
+        cenL: 118.30612,
+        cenB: 34.29057
+    },
+    production: false,
+    baseUrl: {
+        ius: `${isIusUsedMock ? mockServerUrl : webServerUrl + '/ius'}`,
+        bs: `${webServerUrl}/gh`,
+        mock: mockServerUrl
+    },
+    otherData: {
+        sysRole: 0,
+        sysSite: '0',
+        defaultPath: '/',
+        fileServiceUrl: `${webServerUrl}/image`,    // 文件服务器
+    }
 };
 
 /*

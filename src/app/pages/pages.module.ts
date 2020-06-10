@@ -8,15 +8,15 @@ import {SocialSecurityModule} from './social-security/social-security.module';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    LoginModule,
-    ProductRoutingModule,
-    AccidentDisastersModule,
-      NaturalDisastersModule,
-      SocialSecurityModule
-  ],
+    declarations: [],
+    imports: [
+        CommonModule,
+        LoginModule,
+        ProductRoutingModule,
+        AccidentDisastersModule,
+        NaturalDisastersModule,
+        SocialSecurityModule
+    ],
     exports: [LoginModule, ProductRoutingModule, AccidentDisastersModule, NaturalDisastersModule, SocialSecurityModule]
 })
 export class PagesModule {

@@ -19,40 +19,43 @@ registerLocaleData(zh);
 
 
 export function StartupServiceFactory(startupService: StartupService) {
-  return () => startupService.load();
+    return () => startupService.load();
 }
 
 // 初始化服务
 const APPINIT_PROVIDES = [
-  StartupService,
-  {
-    provide: APP_INITIALIZER,
-    useFactory: StartupServiceFactory,
-    deps: [StartupService],
-    multi: true,
-  },
+    StartupService,
+    {
+        provide: APP_INITIALIZER,
+        useFactory: StartupServiceFactory,
+        deps: [StartupService],
+        multi: true,
+    },
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    ServicesModule,
-    PagesModule,
-    ShareModule,
-    LayoutModule,
-    AppRoutingModule,
-  ],
-  exports: [
-    ShareModule,
-    AppRoutingModule
-  ],
-  providers: [{provide: RouteReuseStrategy, useClass: SimpleReuseStrategy},{provide: NZ_I18N, useValue: zh_CN}, ...APPINIT_PROVIDES,],
+    declarations: [],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        ServicesModule,
+        PagesModule,
+        ShareModule,
+        LayoutModule,
+        AppRoutingModule,
+    ],
+    exports: [
+        ShareModule,
+        AppRoutingModule
+    ],
+    providers: [{provide: RouteReuseStrategy, useClass: SimpleReuseStrategy}, {
+        provide: NZ_I18N,
+        useValue: zh_CN
+    }, ...APPINIT_PROVIDES],
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-    throwIfAlreadyLoaded(parentModule, 'CoreModule');
-  }
+    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+        throwIfAlreadyLoaded(parentModule, 'CoreModule');
+    }
 }

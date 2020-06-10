@@ -1,4 +1,4 @@
 export class GoBackParam {
-  refesh: boolean;
-  pageNo?: number;
+    refesh: boolean;
+    pageNo?: number;
 }

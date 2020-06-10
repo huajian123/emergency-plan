@@ -1,23 +1,23 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'card-table-wrap',
-  templateUrl: './card-table-wrap.component.html',
-  styleUrls: ['./card-table-wrap.component.less']
+    selector: 'app-card-table-wrap',
+    templateUrl: './card-table-wrap.component.html',
+    styleUrls: ['./card-table-wrap.component.less']
 })
 export class CardTableWrapComponent implements OnInit {
-  @Input() needAddBtn: boolean;
-  @Output() add = new EventEmitter<any>();
+    @Input() needAddBtn: boolean;
+    @Output() add = new EventEmitter<any>();
 
-  constructor() {
-    this.needAddBtn = false;
-  }
+    constructor() {
+        this.needAddBtn = false;
+    }
 
-  addBtnClick(){
-    this.add.emit();
-  }
+    addBtnClick() {
+        this.add.emit();
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

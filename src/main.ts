@@ -16,7 +16,7 @@ export function preloaderFinished() {
 
   function remove() {
     // preloader value null when running --hmr
-    if (!preloader) return;
+    if (!preloader) { return; }
     preloader.addEventListener('transitionend', () => {
       preloader.className = 'preloader-hidden';
     });

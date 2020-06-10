@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-fist-natural-disaster',
-  templateUrl: './fist-natural-disaster.component.html',
-  styleUrls: ['./fist-natural-disaster.component.less']
+    selector: 'app-fist-natural-disaster',
+    templateUrl: './fist-natural-disaster.component.html',
+    styleUrls: ['./fist-natural-disaster.component.less']
 })
 export class FistNaturalDisasterComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

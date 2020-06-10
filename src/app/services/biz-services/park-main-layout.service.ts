@@ -42,23 +42,16 @@ export namespace ParkMainLayoutServiceNs {
         }
 
         // 新增列表
-       /* public addNotice(param: SearchCommonVO<{ noticeType: number }>): Promise<PageInfo<NoticeModel>> {
-            return this.http.Post('/basic/notice/insert', param, {needSuccessInfo: true}).toPromise();
-        }*/
+        /* public addNotice(param: SearchCommonVO<{ noticeType: number }>): Promise<PageInfo<NoticeModel>> {
+             return this.http.Post('/basic/notice/insert', param, {needSuccessInfo: true}).toPromise();
+         }*/
 
         // 删除通知列表
-       /* public delNotice(id: number): Promise<PageInfo<NoticeModel>> {
-            return this.http.Post('/basic/notice/delete', {id: id}, {needSuccessInfo: true}).toPromise();
-        }*/
+        /* public delNotice(id: number): Promise<PageInfo<NoticeModel>> {
+             return this.http.Post('/basic/notice/delete', {id: id}, {needSuccessInfo: true}).toPromise();
+         }*/
 
 
-       /* public editNotice(params: NoticeModel): Promise<void> {
-            return this.http.Post('/basic/notice/update', params, {needSuccessInfo: true}).toPromise();
-        }
-
-        public getNoticeInfo(id: number): Promise<NoticeModel> {
-            return this.http.Post('/basic/notice/queryById', {id: id}).toPromise();
-        }*/
     }
 }
 

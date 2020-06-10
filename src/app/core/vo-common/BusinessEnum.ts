@@ -1,7 +1,7 @@
 export enum PageTypeEnum {
-  List = 1,
-  AddOrEdit,
-  DetailOrExamine
+    List = 1,
+    AddOrEdit,
+    DetailOrExamine
 }
 
 /*
@@ -49,6 +49,6 @@ export interface EntprScopeModel {
 */
 
 export interface OptionsInterface {
-  value: string | number;
-  label: string;
+    value: string | number;
+    label: string;
 }

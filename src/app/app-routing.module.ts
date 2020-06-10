@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {LayoutDefalutComponent} from './layout/default/default.component';
-import {ManageLayoutComponent} from "./layout/manage-layout/manage-layout.component";
+import {ManageLayoutComponent} from './layout/manage-layout/manage-layout.component';
 import {QuicklinkStrategy} from 'ngx-quicklink';
-import {LoginLayoutComponent} from "./pages/login/login-layout/login-layout.component";
+import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.component';
 
 const routes: Routes = [
     {path: 'login', component: LoginLayoutComponent},
@@ -36,7 +36,10 @@ const routes: Routes = [
         component: ManageLayoutComponent,
         children: [
             {path: '', redirectTo: 'people-manage', pathMatch: 'full'},
-            {path: 'people-manage', loadChildren: () => import('./pages/people-manage/people-manage.module').then(m => m.PeopleManageModule)},
+            {
+                path: 'people-manage',
+                loadChildren: () => import('./pages/people-manage/people-manage.module').then(m => m.PeopleManageModule)
+            },
 
         ],
     },

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {FistNaturalDisasterComponent} from './fist-natural-disaster/fist-natural-disaster.component';
 import {FourthNaturalDisasterComponent} from './fourth-natural-disaster/fourth-natural-disaster.component';
 import {ThirdNaturalDisasterComponent} from './third-natural-disaster/third-natural-disaster.component';
@@ -15,7 +15,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
-export class NaturalDisastersRoutingModule { }
+export class NaturalDisastersRoutingModule {
+}

@@ -127,6 +127,7 @@ export class UfastTableComponent implements OnInit, OnDestroy {
     this._tableConfig = this.defaultConfig;
   }
   private calcAuxData() {
+    // tslint:disable-next-line:one-variable-per-declaration
     let leftWidth = this._tableConfig.showCheckbox ? 30 : 0,
       rightWidth = 0,
       enableFix = true;

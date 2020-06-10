@@ -7,12 +7,12 @@ import {LoginLayoutComponent} from './login-layout/login-layout.component';
 
 
 @NgModule({
-  declarations: [ LoginLayoutComponent, LoginPageComponent],
-  imports: [
-    CommonModule,
-    ShareModule,
-    LoginRoutingModule,
-  ]
+    declarations: [LoginLayoutComponent, LoginPageComponent],
+    imports: [
+        CommonModule,
+        ShareModule,
+        LoginRoutingModule,
+    ]
 })
 export class LoginModule {
 }
