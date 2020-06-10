@@ -31,8 +31,12 @@ export abstract class BaseHttp {
     );
   }
 
-  protected post(path: string, param: any): Observable<any> {
-    return this.http.get(this.uri + path, param);
+  protected post<T>(path: string, param?: any, config?: MyHttpConfig): Observable<any> {
+    const params = new HttpParams({fromString: queryString.stringify(param)});
+    return this.http.post<ActionResult<T>>(this.uri + path, params).pipe(
+        filter((item) => this.handleFilter(item, config.needSuccessInfo)),
+        map(item => item.data)
+    );
   }
 
   handleFilter(item, needSuccessInfo) {

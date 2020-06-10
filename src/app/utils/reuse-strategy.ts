@@ -46,17 +46,17 @@ export class SimpleReuseStrategy implements RouteReuseStrategy {
 
 
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
-    /*   if(SimpleReuseStrategy.waitDelete && SimpleReuseStrategy.waitDelete==route.routeConfig.path){
+       if(SimpleReuseStrategy.waitDelete && SimpleReuseStrategy.waitDelete==route.routeConfig.path){
          //如果待删除是当前路由则不存储快照
          SimpleReuseStrategy.waitDelete=null
          return;
-       }*/
+       }
 
     // 只要有waitDelete就不存储，因为右键删除时点击非当前tab，同样会存储快照
-    if (SimpleReuseStrategy.waitDelete) {
+ /*   if (SimpleReuseStrategy.waitDelete) {
       SimpleReuseStrategy.waitDelete = null;
       return;
-    }
+    }*/
 
     // 按path作为key存储路由快照&组件当前实例对象
     // path等同RouterModule.forRoot中的配置

@@ -19,7 +19,7 @@ export class TabService {
   }
 
   addTab(param: TabModel) {
-    if (!this._tabArray.find((value) => value.title === param.title)) {
+    if (!this._tabArray.find((value) => value.path === param.path)) {
       this._tabArray.push(param);
     }
   }

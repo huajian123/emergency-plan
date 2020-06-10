@@ -1,9 +1,8 @@
 import { Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {filter, map, tap} from 'rxjs/operators';
+import {filter, map, mergeMap, tap} from 'rxjs/operators';
 import {TabService} from '../../../services/common-services/tab.service';
-import {NzIconService} from 'ng-zorro-antd/';
 
 export interface Menu {
   path?: string;
@@ -25,33 +24,31 @@ export class SidebarNavComponent implements OnInit, OnDestroy{
   routerPath = '';
   subs: Array<Subscription> = [];
 
-  constructor(private router: Router, private route: ActivatedRoute, private tabService: TabService, private iconService: NzIconService) {
-    this.iconService.fetchFromIconfont({
-        scriptUrl: 'https://at.alicdn.com/t/font_1863242_95qatt77gpl.js'
-    });
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private tabService: TabService) {
     this.routerPath = this.router.url;
     this.subs[0] = this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-        tap(() => {
-          // @ts-ignore
-          this.routerPath = this.route.snapshot._routerState.url;
-          this.clickMenuItem();
-        }),
-        map(() => this.route.snapshot),
-          // tslint:disable-next-line:no-shadowed-variable
-        map(route => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        })
-      )
-      // tslint:disable-next-line:no-shadowed-variable
-      .subscribe((route: ActivatedRouteSnapshot) => {
-        this.tabService.addTab({title: route.data.title, path: this.routerPath});
-        this.tabService.findIndex(this.routerPath);
-      });
+        .pipe(
+            filter(event => event instanceof NavigationEnd),
+            tap(() => {
+              this.routerPath = this.activatedRoute.snapshot['_routerState'].url;
+              this.clickMenuItem();
+            }),
+            map(() => this.activatedRoute),
+            map((route) => {
+              while (route.firstChild) {
+                route = route.firstChild;
+              }
+              return route;
+            }),
+            filter((route) => route.outlet === 'primary'),
+            mergeMap((route) =>{
+              return  route.data
+            }),
+        )
+        .subscribe((routeData) => {
+          this.tabService.addTab({title: routeData['title'], path: this.routerPath});
+          this.tabService.findIndex(this.routerPath);
+        });
   }
 
   clickMenuItem() {
