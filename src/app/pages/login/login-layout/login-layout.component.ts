@@ -31,7 +31,6 @@ export class LoginLayoutComponent implements OnInit {
         const params = this.validateForm.getRawValue();
         console.log(params);
         //await this.dataService.UserLogin(params);
-        //console.log(this.dataService.UserLogin(params));
         this.router.navigate(['/login-page']);
 
     }
