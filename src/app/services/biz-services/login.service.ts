@@ -3,6 +3,7 @@ import {BaseHttp} from '../http/base-http';
 import {HttpClient} from '@angular/common/http';
 import {API_CONFIG} from '../services.module';
 import {Observable} from 'rxjs';
+import {NzMessageService} from 'ng-zorro-antd';
 
 
 export interface LoginModel {
@@ -16,12 +17,12 @@ export interface LoginModel {
 
 export class LoginService extends BaseHttp {
 
-    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string) {
-        super(http, uri);
+    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message:NzMessageService) {
+        super(http, uri,message);
     }
 
     public UserLogin(params: LoginModel): Observable<any> {
-        return this.post('/user/login', params);
+        return this.post('/user/login', params,{needSuccessInfo:true});
     }
 
 }

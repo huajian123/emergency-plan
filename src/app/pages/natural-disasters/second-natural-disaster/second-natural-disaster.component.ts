@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NaturalDisastersListService} from '../../../services/biz-services/natural-disasters-list.service';
 
 
 export enum PageTypeEnum {
@@ -17,8 +18,10 @@ export enum PageTypeEnum {
     styleUrls: ['./second-natural-disaster.component.less']
 })
 export class SecondNaturalDisasterComponent implements OnInit {
+    id: number;
     currentPageNum: number;
     pageTypeEnum = PageTypeEnum;
+    dataInfo: [];
 
     // 回跳主页
     goMainPage() {
@@ -29,11 +32,29 @@ export class SecondNaturalDisasterComponent implements OnInit {
         this.currentPageNum = this.pageTypeEnum.FloodDroughtControl;
     }
 
-    constructor() {
+    constructor(private dataService: NaturalDisastersListService) {
+        this.id = 1;
         this.currentPageNum = this.pageTypeEnum.MainPage;
+        this.dataInfo = [];
+    }
+
+    async getNaturalListInfo(params) {
+        this.id = params;
+        await this.dataService.getNaturalDisastersList(this.id).subscribe((data) => {
+            data.forEach(item => {
+                const value = item.plainName;
+                // @ts-ignore
+                this.dataInfo.push(value);
+                //console.log(this.dataInfo);
+            });
+
+        });
+
+
     }
 
     ngOnInit(): void {
+        this.getNaturalListInfo(this.id);
     }
 
 }
