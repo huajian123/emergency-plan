@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
+import {LoginModel, LoginService} from '../../../services/biz-services/login.service';
+import {ActionResult} from '../../../core/vo-common/ActionResult';
+
 
 
 @Component({
@@ -13,12 +16,10 @@ export class LoginLayoutComponent implements OnInit {
     validateForm: FormGroup;
     sysName = environment.sysName;
     sysNamePinYin = environment.sysNamePinYin;
-
-
-    constructor(private fb: FormBuilder, private router: Router) {
+    constructor(private fb: FormBuilder, private router: Router, private dataService: LoginService) {
     }
 
-    public async submitForm() {
+    public async  submitForm() {
         Object.keys(this.validateForm.controls).forEach(key => {
             if (this.validateForm.controls[key]) {
                 this.validateForm.controls[key].markAsDirty();
@@ -30,8 +31,12 @@ export class LoginLayoutComponent implements OnInit {
         }
         const params = this.validateForm.getRawValue();
         console.log(params);
-        //await this.dataService.UserLogin(params);
-        this.router.navigate(['/login-page']);
+        // @ts-ignore
+        const userInfo: ActionResult<LoginModel> = await this.dataService.UserLogin(params);
+        console.log(userInfo);
+        if(userInfo.code !=0){
+            this.router.navigate(['/login-page']);
+        }
 
     }
 
