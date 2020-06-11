@@ -32,8 +32,7 @@ export abstract class BaseHttp {
     }
 
     protected post<T>(path: string, param?: any, config?: MyHttpConfig): Observable<any> {
-        const params = new HttpParams({fromString: queryString.stringify(param)});
-        return this.http.post<ActionResult<T>>(this.uri + path, params).pipe(
+        return this.http.post<ActionResult<T>>(this.uri + path, param).pipe(
             filter((item) => this.handleFilter(item, config.needSuccessInfo)),
             map(item => item.data)
         );
