@@ -12,7 +12,6 @@ const routes: Routes = [
         component: LayoutDefalutComponent,
         children: [
             {path: '', redirectTo: 'product', pathMatch: 'full'},
-            {path: 'product', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule)},
             {
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)

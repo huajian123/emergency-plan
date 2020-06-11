@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
+
 
 @Component({
     selector: 'app-login-layout',
@@ -9,34 +10,35 @@ import {environment} from '../../../../environments/environment';
     styleUrls: ['./login-layout.component.less']
 })
 export class LoginLayoutComponent implements OnInit {
-    validateForm!: FormGroup;
+    validateForm: FormGroup;
     sysName = environment.sysName;
     sysNamePinYin = environment.sysNamePinYin;
 
 
-    constructor(private fb: FormBuilder, private router: Router) {}
+    constructor(private fb: FormBuilder, private router: Router) {
+    }
+
     public async submitForm() {
-        console.log('提交');
-   /*     Object.keys(this.validateForm.controls).forEach(key => {
+        Object.keys(this.validateForm.controls).forEach(key => {
             if (this.validateForm.controls[key]) {
                 this.validateForm.controls[key].markAsDirty();
                 this.validateForm.controls[key].updateValueAndValidity();
             }
-
         });
         if (this.validateForm.invalid) {
             return;
         }
-        const params = this.validateForm.getRawValue();*/
-
-        // await this.dataService.login(params);
+        const params = this.validateForm.getRawValue();
+        console.log(params);
+        //await this.dataService.UserLogin(params);
+        //console.log(this.dataService.UserLogin(params));
         this.router.navigate(['/login-page']);
 
     }
 
     ngOnInit(): void {
         this.validateForm = this.fb.group({
-            userName: [null, [Validators.required]],
+            account: [null, [Validators.required]],
             password: [null, [Validators.required]],
         });
     }
