@@ -4,12 +4,7 @@ import {NaturalDisastersListService} from '../../../services/biz-services/natura
 
 export enum PageTypeEnum {
     MainPage,
-    FloodDroughtControl, // 防汛防旱
-    EarthquakeEmergency, // 地震应急
-    MeteorologicalDisasters, // 气象灾害
-    NaturalDisasters, // 自然灾害
-    GeologicalDisasters, // 地质灾害
-    TyphoonEmergency  // 台风灾害
+    indexControl
 }
 
 @Component({
@@ -18,35 +13,61 @@ export enum PageTypeEnum {
     styleUrls: ['./second-natural-disaster.component.less']
 })
 export class SecondNaturalDisasterComponent implements OnInit {
+    indexControl: number; // 防汛防旱
     id: number;
     currentPageNum: number;
     pageTypeEnum = PageTypeEnum;
     dataInfo: [];
+    colorArray: any;
+    isTrue: boolean;
 
     // 回跳主页
     goMainPage() {
         this.currentPageNum = this.pageTypeEnum.MainPage;
     }
 
-    goDetailPlan() {
-        this.currentPageNum = this.pageTypeEnum.FloodDroughtControl;
+
+    goDetailPlan(params) {
+        this.indexControl = params;
+        this.currentPageNum = this.pageTypeEnum.indexControl;
     }
 
     constructor(private dataService: NaturalDisastersListService) {
+        this.isTrue = true;
         this.id = 1;
         this.currentPageNum = this.pageTypeEnum.MainPage;
         this.dataInfo = [];
+        this.colorArray = [
+            '#28B8D3',
+            '#D65BD1',
+            '#F58A77',
+            '#8678FD',
+            '#589EFF',
+            '#F7A656',
+            '#fedcbd',
+            '#7f7522',
+            '#224b8f',
+            '#64492b',
+            '#d71345',
+            '#426ab3',
+            '#7f7522',
+            '#444693',
+            '#402e4c'
+        ];
     }
 
-    async getNaturalListInfo(params) {
+    getNaturalListInfo(params) {
         this.id = params;
-        await this.dataService.getNaturalDisastersList(this.id).subscribe((data) => {
-            data.forEach(item => {
-                const value = item.plainName;
+        this.dataService.getNaturalDisastersList(this.id).subscribe((data) => {
+            data.forEach((item, index) => {
+                const valueColumn = {
+                    value: item.plainName,
+                    key: index
+                };
                 // @ts-ignore
-                this.dataInfo.push(value);
-                //console.log(this.dataInfo);
+                this.dataInfo.push(valueColumn);
             });
+
 
         });
 

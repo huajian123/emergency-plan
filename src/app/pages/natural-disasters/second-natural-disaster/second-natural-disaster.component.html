@@ -1,52 +1,14 @@
 <ng-container *ngIf="currentPageNum===pageTypeEnum.MainPage">
-        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32}" nzJustify="space-around">
-            <div nz-col [nzSpan]="7">
-                <nz-card class="fh" (click)="goDetailPlan()">
-                    <p>{{this.dataInfo[0]}}</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="7">
-                <nz-card class="dz">
-                    <p>{{this.dataInfo[1]}}</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="7">
-                <nz-card class="qx">
-                    <p>{{this.dataInfo[2]}}</p>
-                </nz-card>
-            </div>
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32}" nzJustify="space-between">
+        <div nz-col [nzSpan]="7" nzOffset="1" *ngFor="let items of dataInfo">
+            <nz-card class="fh" [style.background-color]="colorArray[items['key']]"
+                     (click)="goDetailPlan(items['key'])">
+                <p>{{items['value']}}</p>
+            </nz-card>
         </div>
-        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }" nzJustify="space-around">
-            <div nz-col [nzSpan]="7">
-                <nz-card class="zr">
-                    <p>{{this.dataInfo[3]}}</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="7">
-               <!-- <nz-card class="zh">
-                    <p>江苏省突发地质灾害预案</p>
-                </nz-card>-->
-            </div>
-            <div nz-col [nzSpan]="7">
-               <!-- <nz-card class="tf">
-                    <p>江苏省防御台风应急预案</p>
-                </nz-card>-->
-            </div>
-        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="currentPageNum===pageTypeEnum.indexControl">
+    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
 </ng-container>
 
-<ng-container *ngIf="currentPageNum===pageTypeEnum.FloodDroughtControl">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
-</ng-container>
-<ng-container *ngIf="currentPageNum===pageTypeEnum.EarthquakeEmergency">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
-</ng-container>
-<ng-container *ngIf="currentPageNum===pageTypeEnum.MeteorologicalDisasters">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
-</ng-container>
-<ng-container *ngIf="currentPageNum===pageTypeEnum.NaturalDisasters">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
-</ng-container>
-<!--<ng-container *ngIf="currentPageNum===pageTypeEnum.GeologicalDisasters">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
-</ng-container>-->
