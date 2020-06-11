@@ -14,7 +14,7 @@ import {
     NzDividerModule,
     NzTabsModule,
     NzDatePickerModule,
-    NzDropDownModule, NzTypographyModule, NzSelectModule, NzCardModule,
+    NzDropDownModule, NzTypographyModule, NzSelectModule, NzCardModule, NzMessageModule,
 } from 'ng-zorro-antd';
 import {NzSpaceModule} from 'ng-zorro-antd/space';
 
@@ -41,6 +41,7 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzSelectModule,
         NzSpaceModule,
         NzCardModule,
+        NzMessageModule,
     ],
     exports: [
         NzFormModule,
@@ -62,6 +63,7 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzSelectModule,
         NzSpaceModule,
         NzCardModule,
+        NzMessageModule,
     ]
 })
 export class MyNgZorroModule {

@@ -19,19 +19,20 @@ export class ActionResult<T> {
 
 export abstract class BaseHttp {
 
-    constructor(public http: HttpClient, public uri: string, private message?: NzMessageService) {
+    protected constructor(public http: HttpClient, public uri: string, public message?: NzMessageService) {
     }
 
     protected get<T>(path: string, param?, config?: MyHttpConfig): Observable<any> {
         config = config || {};
         const params = new HttpParams({fromString: queryString.stringify(param)});
         return this.http.get<ActionResult<T>>(this.uri + path, {params}).pipe(
-            filter((item) => this.handleFilter(item, config.needSuccessInfo)),
+            filter((item) => this.handleFilter(item, config?.needSuccessInfo)),
             map(item => item.data)
         );
     }
 
     protected post<T>(path: string, param?: any, config?: MyHttpConfig): Observable<any> {
+        config = config || {};
         return this.http.post<ActionResult<T>>(this.uri + path, param).pipe(
             filter((item) => this.handleFilter(item, config.needSuccessInfo)),
             map(item => item.data)
@@ -40,9 +41,9 @@ export abstract class BaseHttp {
 
     handleFilter(item, needSuccessInfo) {
         if (item.code !== 0) {
-            this.message.success('操作成功');
+            this.message.error(item.msg);
         } else if (needSuccessInfo) {
-            this.message.error('操作失败');
+            this.message.success('操作成功');
         }
         return item.code === 0;
     }

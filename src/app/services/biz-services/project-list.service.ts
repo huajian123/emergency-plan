@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {API_CONFIG} from '../services.module';
 import {PageInfo} from '../../VO/types';
+import {NzMessageService} from 'ng-zorro-antd';
 
 export interface ProjectModel {
     productName: string;
@@ -15,8 +16,8 @@ export interface ProjectModel {
 })
 export class ProjectListService extends BaseHttp {
 
-    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string) {
-        super(http, uri);
+    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
+        super(http, uri, message);
     }
 
     public getProjectlist(params): Observable<PageInfo<ProjectModel>> {
