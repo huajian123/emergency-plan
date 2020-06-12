@@ -1,11 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NaturalDisastersListService} from '../../../services/biz-services/natural-disasters-list.service';
+import {PageTypeEnum} from 'src/app/core/vo-common/BusinessEnum';
 
-
-export enum PageTypeEnum {
-    MainPage,
-    indexControl
-}
 
 @Component({
     selector: 'app-second-natural-disaster',
@@ -13,29 +9,27 @@ export enum PageTypeEnum {
     styleUrls: ['./second-natural-disaster.component.less']
 })
 export class SecondNaturalDisasterComponent implements OnInit {
-    indexControl: number; // 防汛防旱
     id: number;
     currentPageNum: number;
     pageTypeEnum = PageTypeEnum;
     dataInfo: [];
     colorArray: any;
-    isTrue: boolean;
+    itemId: number;
 
     // 回跳主页
     goMainPage() {
-        this.currentPageNum = this.pageTypeEnum.MainPage;
+        this.currentPageNum = this.pageTypeEnum.List;
     }
 
 
-    goDetailPlan(params) {
-        this.indexControl = params;
-        this.currentPageNum = this.pageTypeEnum.indexControl;
+    goDetailPlan(param) {
+        this.itemId = param;
+        this.currentPageNum = this.pageTypeEnum.DetailOrExamine;
     }
 
     constructor(private dataService: NaturalDisastersListService) {
-        this.isTrue = true;
         this.id = 1;
-        this.currentPageNum = this.pageTypeEnum.MainPage;
+        this.currentPageNum = this.pageTypeEnum.List;
         this.dataInfo = [];
         this.colorArray = [
             '#28B8D3',
@@ -62,13 +56,12 @@ export class SecondNaturalDisasterComponent implements OnInit {
             data.forEach((item, index) => {
                 const valueColumn = {
                     value: item.plainName,
-                    key: index
+                    key: index,
+                    id: item.id,
                 };
                 // @ts-ignore
                 this.dataInfo.push(valueColumn);
             });
-
-
         });
 
 

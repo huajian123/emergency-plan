@@ -1,14 +1,14 @@
-<ng-container *ngIf="currentPageNum===pageTypeEnum.MainPage">
+<ng-container *ngIf="currentPageNum===pageTypeEnum.List">
     <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32}" nzJustify="space-between">
         <div nz-col [nzSpan]="7" nzOffset="1" *ngFor="let items of dataInfo">
             <nz-card class="fh" [style.background-color]="colorArray[items['key']]"
-                     (click)="goDetailPlan(items['key'])">
+                     (click)="goDetailPlan(items['id'])">
                 <p>{{items['value']}}</p>
             </nz-card>
         </div>
     </div>
 </ng-container>
-<ng-container *ngIf="currentPageNum===pageTypeEnum.indexControl">
-    <app-natural-disaster-plan (returnBack)="goMainPage()"></app-natural-disaster-plan>
+<ng-container *ngIf="currentPageNum===pageTypeEnum.DetailOrExamine">
+    <app-natural-disaster-plan (returnBack)="goMainPage()" [id]="itemId"></app-natural-disaster-plan>
 </ng-container>
 
