@@ -11,25 +11,6 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
     isCollapsed = false;
     menus: Menu[] = [
         {
-            title: '商品模块',
-            icon: 'home',
-            open: false,
-            children: [
-                {
-                    title: '商品种类',
-                    open: false,
-                    selected: false,
-                    path: '/hazard/product/product-category',
-                },
-                {
-                    title: '商品列表',
-                    open: false,
-                    selected: false,
-                    path: '/hazard/product/product-list',
-                },
-            ]
-        },
-        {
             title: '自燃灾害类',
             icon: 'iconnatura',
             open: false,

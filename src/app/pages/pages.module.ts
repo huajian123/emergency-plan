@@ -4,6 +4,8 @@ import {LoginModule} from './login/login.module';
 import {AccidentDisastersModule} from './accident-disasters/accident-disasters.module';
 import {NaturalDisastersModule} from './natural-disasters/natural-disasters.module';
 import {SocialSecurityModule} from './social-security/social-security.module';
+import {PublicHealthRoutingModule} from './public-health/public-health-routing.module';
+import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.module';
 
 
 @NgModule({
@@ -13,9 +15,11 @@ import {SocialSecurityModule} from './social-security/social-security.module';
         LoginModule,
         AccidentDisastersModule,
         NaturalDisastersModule,
-        SocialSecurityModule
+        SocialSecurityModule,
+        PublicHealthRoutingModule,
+        PeopleManageRoutingModule
     ],
-    exports: [LoginModule,AccidentDisastersModule, NaturalDisastersModule, SocialSecurityModule]
+    exports: [LoginModule, AccidentDisastersModule, NaturalDisastersModule, SocialSecurityModule, PublicHealthRoutingModule, PeopleManageRoutingModule]
 })
 export class PagesModule {
 }

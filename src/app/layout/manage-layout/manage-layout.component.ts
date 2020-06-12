@@ -28,6 +28,30 @@ export class ManageLayoutComponent implements OnInit {
                 },
             ]
         },
+        {
+            title: '指挥汇报管理',
+            icon: 'iconsocity',
+            selected: false,
+            path: '/hazard-manage/people-manage/report-command',
+        },
+        {
+            title: '小队管理',
+            icon: 'iconsocity',
+            selected: false,
+            path: '/hazard-manage/people-manage/teams',
+        },
+        {
+            title: '部门管理',
+            icon: 'iconsocity',
+            selected: false,
+            path: '/hazard-manage/people-manage/departments',
+        },
+        {
+            title: '预案管理',
+            icon: 'iconsocity',
+            selected: false,
+            path: '/hazard-manage/people-manage/plans',
+        },
     ];
 
     constructor() {

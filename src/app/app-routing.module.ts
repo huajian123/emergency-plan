@@ -11,7 +11,7 @@ const routes: Routes = [
         path: 'hazard',
         component: LayoutDefalutComponent,
         children: [
-            {path: '', redirectTo: 'product', pathMatch: 'full'},
+            {path: '', redirectTo: 'hazard', pathMatch: 'full'},
             {
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)

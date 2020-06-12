@@ -5,10 +5,20 @@ import {PeopleManageRoutingModule} from './people-manage-routing.module';
 import {TableListComponent} from './table-list/table-list.component';
 import {FormModelComponent} from './form-model/form-model.component';
 import {ShareModule} from '../../share/share.module';
+import {CommandReportManagementComponent} from './command-report-management/command-report-management.component';
+import {ManagementTeamsComponent} from './management-teams/management-teams.component';
+import {ManagementDepartmentsComponent} from './management-departments/management-departments.component';
+import {ManagementPlansComponent} from './management-plans/management-plans.component';
+import {CommandReportDetailComponent} from './command-report-management/command-report-detail/command-report-detail.component';
+import {CommandReportAddEditComponent} from './command-report-management/command-report-add-edit/command-report-add-edit.component';
+import {TeamsAddEditComponent} from './management-teams/teams-add-edit/teams-add-edit.component';
+import {DepartmentsAddEditComponent} from './management-departments/departments-add-edit/departments-add-edit.component';
+import {PlansAddEditComponent} from './management-plans/plans-add-edit/plans-add-edit.component';
+import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail.component';
 
 
 @NgModule({
-    declarations: [TableListComponent, FormModelComponent],
+    declarations: [TableListComponent, FormModelComponent, CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportDetailComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
     imports: [
         CommonModule,
         PeopleManageRoutingModule,
