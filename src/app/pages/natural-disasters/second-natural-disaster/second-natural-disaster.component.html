@@ -1,5 +1,5 @@
 <ng-container *ngIf="currentPageNum===pageTypeEnum.List">
-    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32}" nzJustify="space-between">
+    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32}" nzJustify="space-center">
         <div nz-col [nzSpan]="7" nzOffset="1" *ngFor="let items of dataInfo">
             <nz-card class="fh" [style.background-color]="colorArray[items['key']]"
                      (click)="goDetailPlan(items['id'])">
