@@ -18,9 +18,9 @@
 <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24}">
     <div nz-col nzSpan="23" nzOffset="1" nzJustify="center" style="padding: 15px;margin-top: 20px;cursor: pointer">
         <nz-tabset nzSize="large">
-            <nz-tab [nzTitle]="txt['departmentName']" *ngFor="let txt of teamInfo">
+            <nz-tab [nzTitle]="txt['responsibilityName']" *ngFor="let txt of teamInfo">
                 <div style="background-color: #FFF7F0;margin-top: 20px;padding: 15px;">
-                    <div class="main-title" style="color: #FF860F;">&nbsp;{{txt['responsibilityName']}}</div>
+                    <div class="main-title" style="color: #FF860F;">&nbsp;{{txt['responsibilityName']}}负责人</div>
                     <dl class="bg-one" style=" border: 1px solid #FF860F;margin-left: 20px;">
                         <dt style="color: #FF860F;letter-spacing: 2px;">{{txt['departmentName']}}</dt>
                         <br/>
