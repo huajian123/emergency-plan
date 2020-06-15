@@ -32,12 +32,12 @@ export class NaturalDisastersListService extends BaseHttp {
 
     /*预案列表查询接口*/
     public getNaturalDisastersList(id: number): Observable<NaturalDisastersModel[]> {
-        return this.get('/getPlainList/' + id, {}, {needSuccessInfo: true});
+        return this.get('/getPlainList/' + id, {});
     }
 
     /*预案详情接口*/
     public getNaturalDisastersPlan(id: number): Observable<any> {
-        return this.get('/getEmergencyTeam/' + id, {}, {needSuccessInfo: true});
+        return this.get('/getEmergencyTeam/' + id, {});
     }
 
 }

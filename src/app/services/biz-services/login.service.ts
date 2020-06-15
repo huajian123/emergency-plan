@@ -17,12 +17,12 @@ export interface LoginModel {
 
 export class LoginService extends BaseHttp {
 
-    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message:NzMessageService) {
-        super(http, uri,message);
+    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
+        super(http, uri, message);
     }
 
     public UserLogin(params: LoginModel): Observable<any> {
-        return this.post('/user/login', params,{needSuccessInfo:true});
+        return this.post('/user/login', params);
     }
 
 }

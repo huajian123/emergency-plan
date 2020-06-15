@@ -6,7 +6,7 @@ import {API_CONFIG} from '../services.module';
 import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
-export interface ProjectModel {
+export interface TeamListModel {
     productName: string;
     casNo: string;
 }
@@ -14,14 +14,14 @@ export interface ProjectModel {
 @Injectable({
     providedIn: 'root'
 })
-export class ProjectListService extends BaseHttp {
+export class TeamListService extends BaseHttp {
 
     constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
         super(http, uri, message);
     }
 
-    public getProjectlist(params): Observable<PageInfo<ProjectModel>> {
-        return this.get('/data/major/hazard/sensors', params,{needSuccessInfo: true});
+    public getTeamList(params): Observable<PageInfo<TeamListModel>> {
+        return this.get('/data/major/hazard/sensors', params);
     }
 
 }
