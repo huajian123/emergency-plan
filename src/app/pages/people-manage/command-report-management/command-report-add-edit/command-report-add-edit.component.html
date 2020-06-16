@@ -1,1 +1,20 @@
-<p>command-report-add-edit works!</p>
+<nz-page-header class="site-page-header" nzTitle="新增汇报信息"></nz-page-header>
+<div class="normal-wrap">
+    <div class="form-wrap">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" nzType="flex" nzJustify="start">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzRequired>灾害类型</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <nz-select ngModel="lucy" formControlName="disasters">
+                        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                    </nz-select>
+                    <!--<nz-form-explain *ngIf="validateForm.get('disasters').dirty && validateForm.get('disasters').errors">请选择灾害类型
+                    </nz-form-explain>-->
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+    <button nz-button nzType="primary" [nzGhost]="true" (click)="returnToList()" class="m-l-sm">返回</button>
+</div>
+

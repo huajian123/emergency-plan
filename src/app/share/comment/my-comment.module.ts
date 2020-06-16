@@ -3,24 +3,26 @@ import {CommonModule} from '@angular/common';
 import {TopProgressBarComponent} from './top-progress-bar/top-progress-bar.component';
 import {CardTableWrapComponent} from './card-table-wrap/card-table-wrap.component';
 import {MyNgZorroModule} from '../my-ng-zorro/my-ng-zorro.module';
-import { AntTableComponent } from './ant-table/ant-table.component';
+import {AntTableComponent} from './ant-table/ant-table.component';
+import {MapPipe} from '../directives/pipe/map.pipe';
 
 
 @NgModule({
-  declarations: [
-    TopProgressBarComponent,
-    CardTableWrapComponent,
-    AntTableComponent
-  ],
-  imports: [
-    CommonModule,
-    MyNgZorroModule
-  ],
-  exports: [
-    TopProgressBarComponent,
-    CardTableWrapComponent,
-    AntTableComponent
-  ]
+    declarations: [
+        TopProgressBarComponent,
+        CardTableWrapComponent,
+        AntTableComponent,
+        MapPipe
+    ],
+    imports: [
+        CommonModule,
+        MyNgZorroModule,
+    ],
+    exports: [
+        TopProgressBarComponent,
+        CardTableWrapComponent,
+        AntTableComponent
+    ]
 })
 export class MyCommentModule {
 }

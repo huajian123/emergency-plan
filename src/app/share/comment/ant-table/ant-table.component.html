@@ -22,7 +22,8 @@
         <ng-container *ngTemplateOutlet="head.tdTemplate;context:row"></ng-container>
       </ng-container>
       <ng-template #roleTpl>
-        <ng-container>{{row[head.field]}}</ng-container>
+          <ng-container *ngIf="head.pipe">{{row[head.field] | map:head.pipe}}</ng-container>
+          <ng-container *ngIf="!head.pipe">{{row[head.field]}}</ng-container>
       </ng-template>
     </td>
   </tr>

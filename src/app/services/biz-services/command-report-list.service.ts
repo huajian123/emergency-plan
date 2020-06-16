@@ -7,8 +7,12 @@ import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
 export interface CommandReportListModel {
-    productName: string;
-    casNo: string;
+    id?: number,
+    accidentGrade: number,
+    accidentType?: number,
+    sendDepartmentName: string,
+    acceptDepartmentName: string,
+    temporary?: string
 }
 
 @Injectable({
@@ -21,7 +25,11 @@ export class CommandReportListService extends BaseHttp {
     }
 
     public getCommandReportList(params): Observable<PageInfo<CommandReportListModel>> {
-        return this.get('/data/major/hazard/sensors', params);
+        return this.get('/departments', params);
+    }
+
+    public getDeleteList(id: number): Observable<CommandReportListModel> {
+        return this.delete('/department' + id, {});
     }
 
 }

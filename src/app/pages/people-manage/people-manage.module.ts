@@ -9,7 +9,6 @@ import {CommandReportManagementComponent} from './command-report-management/comm
 import {ManagementTeamsComponent} from './management-teams/management-teams.component';
 import {ManagementDepartmentsComponent} from './management-departments/management-departments.component';
 import {ManagementPlansComponent} from './management-plans/management-plans.component';
-import {CommandReportDetailComponent} from './command-report-management/command-report-detail/command-report-detail.component';
 import {CommandReportAddEditComponent} from './command-report-management/command-report-add-edit/command-report-add-edit.component';
 import {TeamsAddEditComponent} from './management-teams/teams-add-edit/teams-add-edit.component';
 import {DepartmentsAddEditComponent} from './management-departments/departments-add-edit/departments-add-edit.component';
@@ -18,7 +17,7 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
 
 
 @NgModule({
-    declarations: [TableListComponent, FormModelComponent, CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportDetailComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
+    declarations: [TableListComponent, FormModelComponent, CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
     imports: [
         CommonModule,
         PeopleManageRoutingModule,

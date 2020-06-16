@@ -38,7 +38,8 @@ export abstract class BaseHttp {
             map(item => item.data)
         );
     }
-    protected delete<T>(path: string, param?:any, config?: MyHttpConfig): Observable<any> {
+
+    protected delete<T>(path: string, param?: any, config?: MyHttpConfig): Observable<any> {
         config = config || {};
         const params = new HttpParams({fromString: queryString.stringify(param)});
         return this.http.delete<ActionResult<T>>(this.uri + path, {params}).pipe(
@@ -46,6 +47,15 @@ export abstract class BaseHttp {
             map(item => item.data)
         );
     }
+
+    protected put<T>(path: string, param?: any, config?: MyHttpConfig): Observable<any> {
+        config = config || {};
+        return this.http.put<ActionResult<T>>(this.uri + path, param).pipe(
+            filter((item) => this.handleFilter(item, config.needSuccessInfo)),
+            map(item => item.data)
+        );
+    }
+
 
     handleFilter(item, needSuccessInfo) {
         if (item.code !== 0) {
