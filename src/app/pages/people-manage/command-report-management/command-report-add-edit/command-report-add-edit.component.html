@@ -4,17 +4,60 @@
         <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" nzType="flex" nzJustify="start">
             <nz-form-item>
                 <nz-form-label [nzSpan]="6" nzRequired>灾害类型</nz-form-label>
-                <nz-form-control [nzSpan]="14">
-                    <nz-select ngModel="lucy" formControlName="disasters">
-                        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-form-control [nzSpan]="10">
+                    <nz-select nzPlaceHolder="请下拉选择类型" formControlName="accidentType">
+                        <nz-option *ngFor="let item of disasterTypeOptions" [nzLabel]="item.label"
+                                   [nzValue]="item.value"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzRequired>级别</nz-form-label>
+                <nz-form-control [nzSpan]="10">
+                    <nz-radio-group (ngModelChange)="changeValue($event)" formControlName="accidentGrade">
+                        <label nz-radio nzValue="1">一级</label>
+                        <label nz-radio nzValue="3">三级</label>
+                        <label nz-radio nzValue="4">四级</label>
+                    </nz-radio-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item *ngIf="isTrue">
+                <nz-form-label [nzSpan]="6">由</nz-form-label>
+                <nz-form-control [nzSpan]="5">
+                    <nz-select ngModel="lucy" formControlName="sendDepartmentName">
                         <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
                     </nz-select>
-                    <!--<nz-form-explain *ngIf="validateForm.get('disasters').dirty && validateForm.get('disasters').errors">请选择灾害类型
-                    </nz-form-explain>-->
+                </nz-form-control>
+                <nz-form-label [nzSpan]="1" nzNoColon>向</nz-form-label>
+                <nz-form-control [nzSpan]="5">
+                    <nz-select ngModel="jack" formControlName="acceptDepartmentName">
+                        <nz-option nzValue="jack" nzLabel="jack"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+                <nz-form-label [nzSpan]="1" nzNoColon>汇报</nz-form-label>
+            </nz-form-item>
+            <nz-form-item *ngIf="!isTrue">
+                <nz-form-label [nzSpan]="6">由</nz-form-label>
+                <nz-form-control [nzSpan]="5">
+                    <nz-select ngModel="lucy" formControlName="sendDepartmentName">
+                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+                <nz-form-label [nzSpan]="1" nzNoColon>向</nz-form-label>
+                <nz-form-control [nzSpan]="5">
+                    <nz-select ngModel="jack" formControlName="acceptDepartmentName">
+                        <nz-option nzValue="jack" nzLabel="jack"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+                <nz-form-label [nzSpan]="1" nzNoColon>指挥</nz-form-label>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control [nzSpan]="6">
+                    <button nz-button nzType="primary" class="btn">提交</button>
+                    <button nz-button nzType="default" (click)="returnToList()">返回</button>
                 </nz-form-control>
             </nz-form-item>
         </form>
     </div>
-    <button nz-button nzType="primary" [nzGhost]="true" (click)="returnToList()" class="m-l-sm">返回</button>
 </div>
 

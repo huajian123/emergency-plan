@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
 import {PeopleManageRoutingModule} from './people-manage-routing.module';
 import {TableListComponent} from './table-list/table-list.component';
 import {FormModelComponent} from './form-model/form-model.component';
@@ -14,6 +13,7 @@ import {TeamsAddEditComponent} from './management-teams/teams-add-edit/teams-add
 import {DepartmentsAddEditComponent} from './management-departments/departments-add-edit/departments-add-edit.component';
 import {PlansAddEditComponent} from './management-plans/plans-add-edit/plans-add-edit.component';
 import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail.component';
+import {NzRadioModule} from 'ng-zorro-antd';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
         CommonModule,
         PeopleManageRoutingModule,
         ShareModule,
+        NzRadioModule,
     ]
 })
 export class PeopleManageModule {

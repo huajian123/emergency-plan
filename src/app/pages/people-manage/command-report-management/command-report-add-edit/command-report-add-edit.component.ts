@@ -1,5 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MapPipe, MapSet} from 'src/app/share/directives/pipe/map.pipe';
+
+interface OptionsInterface {
+    value: string;
+    label: string;
+}
 
 @Component({
     selector: 'app-command-report-add-edit',
@@ -8,10 +14,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class CommandReportAddEditComponent implements OnInit {
     @Output() returnBack: EventEmitter<any>;
-    // 如果有id，则表示为编辑，否则为新增
     @Input() id: number;
     @Input() currentPageNum: number;
     validateForm!: FormGroup;
+    disasterTypeOptions: OptionsInterface[];
+    isTrue: boolean;
 
     submitForm(): void {
         Object.keys(this.validateForm.controls).forEach(key => {
@@ -22,12 +29,29 @@ export class CommandReportAddEditComponent implements OnInit {
 
     initForm() {
         this.validateForm = this.fb.group({
-            disasters: [null, [Validators.required]],
+            accidentType: [null, [Validators.required]],
+            accidentGrade: [null, [Validators.required]],
+            sendDepartmentName: [null, [Validators.required]],
+            acceptDepartmentName: [null, [Validators.required]],
         });
     }
 
+
     constructor(private fb: FormBuilder) {
         this.returnBack = new EventEmitter<any>();
+        this.isTrue = true;
+
+    }
+
+    changeValue(event) {
+        switch (event) {
+            case '1':
+                this.isTrue = true;
+                break;
+            default:
+                this.isTrue = false;
+                break;
+        }
     }
 
     returnToList() {
@@ -35,6 +59,7 @@ export class CommandReportAddEditComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.disasterTypeOptions = [...MapPipe.transformMapToArray(MapSet.disasterType)];
         this.initForm();
     }
 
