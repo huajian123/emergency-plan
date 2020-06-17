@@ -22,37 +22,49 @@
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item *ngIf="isTrue">
-                <nz-form-label [nzSpan]="6">由</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="5">
+                    <nz-form-text>由</nz-form-text>
+                </nz-form-control>
                 <nz-form-control [nzSpan]="5">
                     <nz-select ngModel="lucy" formControlName="sendDepartmentName">
                         <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
                     </nz-select>
                 </nz-form-control>
-                <nz-form-label [nzSpan]="1" nzNoColon>向</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="1">
+                    <nz-form-text>向</nz-form-text>
+                </nz-form-control>
                 <nz-form-control [nzSpan]="5">
                     <nz-select ngModel="jack" formControlName="acceptDepartmentName">
                         <nz-option nzValue="jack" nzLabel="jack"></nz-option>
                     </nz-select>
                 </nz-form-control>
-                <nz-form-label [nzSpan]="1" nzNoColon>汇报</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="1">
+                    <nz-form-text>汇报</nz-form-text>
+                </nz-form-control>
             </nz-form-item>
             <nz-form-item *ngIf="!isTrue">
-                <nz-form-label [nzSpan]="6">由</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="5">
+                    <nz-form-text>由</nz-form-text>
+                </nz-form-control>
                 <nz-form-control [nzSpan]="5">
                     <nz-select ngModel="lucy" formControlName="sendDepartmentName">
                         <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
                     </nz-select>
                 </nz-form-control>
-                <nz-form-label [nzSpan]="1" nzNoColon>向</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="1">
+                    <nz-form-text>向</nz-form-text>
+                </nz-form-control>
                 <nz-form-control [nzSpan]="5">
                     <nz-select ngModel="jack" formControlName="acceptDepartmentName">
                         <nz-option nzValue="jack" nzLabel="jack"></nz-option>
                     </nz-select>
                 </nz-form-control>
-                <nz-form-label [nzSpan]="1" nzNoColon>指挥</nz-form-label>
+                <nz-form-control [nzSpan]="1" nzOffset="1">
+                    <nz-form-text>指挥</nz-form-text>
+                </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-                <nz-form-control [nzSpan]="6">
+                <nz-form-control [nzSpan]="6" nzOffset="5">
                     <button nz-button nzType="primary" class="btn">提交</button>
                     <button nz-button nzType="default" (click)="returnToList()">返回</button>
                 </nz-form-control>
