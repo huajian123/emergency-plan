@@ -17,7 +17,7 @@ export class CommandReportAddEditComponent implements OnInit {
     @Input() id: number;
     @Input() currentPageNum: number;
     validateForm!: FormGroup;
-    disasterTypeOptions: OptionsInterface[];
+    accidentTypeOptions: OptionsInterface[];
     isTrue: boolean;
 
     submitForm(): void {
@@ -59,7 +59,7 @@ export class CommandReportAddEditComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.disasterTypeOptions = [...MapPipe.transformMapToArray(MapSet.disasterType)];
+        this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
         this.initForm();
     }
 
