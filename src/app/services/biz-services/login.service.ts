@@ -7,8 +7,14 @@ import {NzMessageService} from 'ng-zorro-antd';
 
 
 export interface LoginModel {
+    id?: number;
     account: string;
     password: string;
+    createTime?: Date,
+    createBy?: string,
+    updateTime?: Date,
+    updateBy?: string,
+    role?: number
 }
 
 @Injectable({
@@ -21,7 +27,7 @@ export class LoginService extends BaseHttp {
         super(http, uri, message);
     }
 
-    public UserLogin(params: LoginModel): Observable<any> {
+    public UserLogin(params: LoginModel): Observable<LoginModel> {
         return this.post('/user/login', params);
     }
 
