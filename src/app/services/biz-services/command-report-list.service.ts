@@ -7,37 +7,37 @@ import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
 export interface CommandReportListModel {
-    id?: number,
-    accidentGrade: number,
-    accidentType?: number,
-    sendDepartmentName: string,
-    acceptDepartmentName: string,
-    temporary?: string
+    id?: number;
+    accidentGrade: number;
+    accidentType?: number;
+    sendDepartmentName: string;
+    acceptDepartmentName: string;
+    temporary?: string;
 }
 
 export interface AddUpDownDepartmentModel {
-    accidentGrade: number,
-    accidentType: number,
-    sendDepartmentName: string,
-    acceptDepartmentName: string,
-    createBy: string
+    accidentGrade: number;
+    accidentType: number;
+    sendDepartmentName: string;
+    acceptDepartmentName: string;
+    createBy: string;
 }
 
 export interface DepartmentNameModel {
-    selectDepartmentDTOS: SelectDepartmentDTOS[],
-    emergencyTeamDTOS: EmergencyTeamDTOS[],
+    selectDepartmentDTOS: SelectDepartmentDTOS[];
+    emergencyTeamDTOS: EmergencyTeamDTOS[];
 }
 
 export interface SelectDepartmentDTOS {
-    id: number,
-    departmentName: string,
-    departmentPhone?: string,
+    id: number;
+    departmentName: string;
+    departmentPhone?: string;
 }
 
 export interface EmergencyTeamDTOS {
-    id: number,
-    resyName: string,
-    resyDetail: string,
+    id: number;
+    resyName: string;
+    resyDetail: string;
 }
 
 @Injectable({

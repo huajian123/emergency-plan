@@ -7,8 +7,14 @@ import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
 export interface PlanListModel {
-    productName: string;
-    casNo: string;
+    id?: number;
+    planName: string;
+    accidentType: number;
+    updateTime: Date;
+    updateBy: string;
+    createTime: Date;
+    createBy: string;
+    delFlag?: boolean;
 }
 
 @Injectable({

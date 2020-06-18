@@ -10,11 +10,11 @@ export interface LoginModel {
     id?: number;
     account: string;
     password: string;
-    createTime?: Date,
-    createBy?: string,
-    updateTime?: Date,
-    updateBy?: string,
-    role?: number
+    createTime?: Date;
+    createBy?: string;
+    updateTime?: Date;
+    updateBy?: string;
+    role?: number;
 }
 
 @Injectable({

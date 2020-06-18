@@ -7,18 +7,18 @@ import {NzMessageService} from 'ng-zorro-antd';
 
 
 export interface NaturalDisastersModel {
-    id: number,
-    plainName: string,
-    accidentType: number
+    id: number;
+    plainName: string;
+    accidentType: number;
 }
 
 export interface CommanderInfoModel {
-    id?: number,
-    departmentName: string,
-    departmentPhone: string,
-    responsibilityName: string,
-    responsibilityDetail: string,
-    grade?: string
+    id?: number;
+    departmentName: string;
+    departmentPhone: string;
+    responsibilityName: string;
+    responsibilityDetail: string;
+    grade?: string;
 }
 
 @Injectable({

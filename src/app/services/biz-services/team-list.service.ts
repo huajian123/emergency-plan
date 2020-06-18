@@ -8,14 +8,14 @@ import {NzMessageService} from 'ng-zorro-antd';
 import {CommandReportListModel} from './command-report-list.service';
 
 export interface TeamListModel {
-    id?: number,
-    responsibilityName: string,
-    responsibilityDetail: string,
-    createTime?: Date,
-    createBy: string,
-    updateTime?: Date,
-    updateBy: string,
-    delFlag?: boolean
+    id?: number;
+    responsibilityName: string;
+    responsibilityDetail: string;
+    createTime?: Date;
+    createBy: string;
+    updateTime?: Date;
+    updateBy: string;
+    delFlag?: boolean;
 }
 
 
