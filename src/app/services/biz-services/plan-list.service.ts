@@ -26,8 +26,14 @@ export class PlanListService extends BaseHttp {
         super(http, uri, message);
     }
 
+    /*获取所有的预案列表*/
     public getPlanList(params): Observable<PageInfo<PlanListModel>> {
-        return this.get('/data/major/hazard/sensors', params);
+        return this.post('/plans', params);
+    }
+
+    /*预案删除*/
+    public getPlanListDelete(id: number): Observable<any> {
+        return this.delete('/plan/' + id, {});
     }
 
 }
