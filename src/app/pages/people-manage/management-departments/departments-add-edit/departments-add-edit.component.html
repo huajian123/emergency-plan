@@ -1,1 +1,28 @@
-<p>departments-add-edit works!</p>
+<nz-page-header class="site-page-header" nzTitle="新增部门信息"></nz-page-header>
+<div class="normal-wrap">
+    <div class="form-wrap">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" nzType="flex" nzJustify="start">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzRequired>部门名称</nz-form-label>
+                <nz-form-control [nzSpan]="10">
+                    <input nz-input placeholder="请输入部门名称" formControlName="departmentName"/>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzRequired>座机</nz-form-label>
+                <nz-form-control [nzSpan]="10">
+                    <input nz-input placeholder="请输入座机" formControlName="departmentPhone"/>
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-control [nzSpan]="6" nzOffset="5">
+                    <button nz-button nzType="primary" class="btn">提交</button>
+                    <button nz-button nzType="default" (click)="returnToList()">返回</button>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+</div>
+
+

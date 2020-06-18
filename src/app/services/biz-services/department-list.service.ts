@@ -3,12 +3,23 @@ import {BaseHttp} from '../http/base-http';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {API_CONFIG} from '../services.module';
-import {PageInfo} from '../../VO/types';
+import {PageInfo, SearchCommonVO} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
+
 export interface DepartmentsManagementListModel {
-    productName: string;
-    casNo: string;
+    id?: number;
+    departmentName: string;
+    departmentPhone: string;
+    createTime?: string;
+    createBy: string;
+    updateTime?: string;
+    updateBy: string;
+    delFlag?: boolean;
+}
+
+export interface searchParamModel {
+    name: string;
 }
 
 @Injectable({
@@ -20,8 +31,28 @@ export class DepartmentsManagementListService extends BaseHttp {
         super(http, uri, message);
     }
 
-    public getDepartmentsManagementList(params): Observable<PageInfo<DepartmentsManagementListModel>> {
-        return this.get('/data/major/hazard/sensors', params);
+    /*部门列表*/
+    public getDepartmentsList(params: SearchCommonVO<searchParamModel>): Observable<PageInfo<DepartmentsManagementListModel>> {
+        return this.post('/depts', params);
     }
 
+    /*新增部门*/
+    public addDepartments(params: DepartmentsManagementListModel): Observable<DepartmentsManagementListModel> {
+        return this.post('/dept', params);
+    }
+
+    /*编辑部门*/
+    public editDepartments(params: DepartmentsManagementListModel): Observable<DepartmentsManagementListModel> {
+        return this.put('/dept/' + params.id, params);
+    }
+
+    /*部门详情*/
+    public getDepartmentsDetail(id: number): Observable<DepartmentsManagementListModel> {
+        return this.get('/dept/' + id, {});
+    }
+
+    /*删除部门*/
+    public getDepartmentsDelete(id: number): Observable<any> {
+        return this.delete('/dept/' + id, {});
+    }
 }

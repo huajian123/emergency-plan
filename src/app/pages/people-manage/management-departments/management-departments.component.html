@@ -1,1 +1,37 @@
-<p>management-departments works!</p>
+<ng-container *ngIf="currentPage===pageTypeEnum.List">
+    <nz-page-header class="site-page-header" nzTitle="部门管理列表"></nz-page-header>
+    <!--  <form nz-form  class="ant-advanced-search-form" (ngSubmit)="getDataList({pageIndex: 1})">-->
+    <form nz-form class="ant-advanced-search-form">
+        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24}">
+            <div nz-col [nzSpan]="8" nzOffset="1">
+                <nz-form-item>
+                    <nz-form-label [nzFor]="">部门名称</nz-form-label>
+                    <nz-form-control>
+                        <!--<input nz-input placeholder="请输入部门名称" [(ngModel)]="searchParam.name" name="departmentName"/>-->
+                        <input nz-input placeholder="请输入部门名称" name="departmentName"/>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="8">
+                <button nz-button [nzType]="'primary'" type="submit"><i nz-icon nzType="search"></i>搜索</button>
+                <button nz-button (click)="resetForm()"><i nz-icon nzType="close-circle" nzTheme="outline"></i>重置
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="normal-wrap">
+        <app-card-table-wrap [needAddBtn]="true" (add)="add()">
+            <app-ant-table (changePageSize)="changePageSize($event)" (changePageNum)="getDataList($event)"
+                           [tableConfig]="tableConfig" [tableData]="dataList"></app-ant-table>
+        </app-card-table-wrap>
+    </div>
+</ng-container>
+<ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
+    <app-departments-add-edit [id]="itemId"
+                              (returnBack)="returnToList($event)"
+                              [currentPageNum]="tableConfig.pageIndex"></app-departments-add-edit>
+</ng-container>
+<ng-template #operationTpl let-id="id">
+    <span class="operate-text" (click)="edit(id)">编辑</span>
+    <span class="operate-text" (click)="del(id)">删除</span>
+</ng-template>
