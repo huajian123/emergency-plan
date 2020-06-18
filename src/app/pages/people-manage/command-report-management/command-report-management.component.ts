@@ -5,6 +5,7 @@ import {SearchCommonVO} from '../../../VO/types';
 import {CommandReportListModel, CommandReportListService} from 'src/app/services/biz-services/command-report-list.service';
 import {PageTypeEnum} from 'src/app/core/vo-common/BusinessEnum';
 import {GoBackParam} from 'src/app/core/vo-common/ReturnBackVo';
+import {concatMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-command-report-management',
@@ -37,13 +38,16 @@ export class CommandReportManagementComponent implements OnInit {
         this.currentPage = this.pageTypeEnum.AddOrEdit;
     }
 
+
     /*删除*/
     del(id) {
+        const that = this;
         this.modal.confirm({
             nzTitle: '<i>确定删除此项？</i>',
             nzOnOk: () => {
-                // @ts-ignore
-                this.dataService.getDeleteList(id).then(() => this.getDataList(this.tableConfig.pageIndex));
+                this.dataService.getDeleteList(id).pipe(concatMap(() => {
+                    return this.getDataList({pageIndex: this.tableConfig.pageIndex} as NzTableQueryParams);
+                })).subscribe();
             },
             nzOkText: '已删除',
             nzOnCancel: () => {
@@ -121,8 +125,7 @@ export class CommandReportManagementComponent implements OnInit {
     async returnToList(e?: GoBackParam) {
         this.currentPage = this.pageTypeEnum.List;
         if (!(!!e && e.refesh)) {
-            // @ts-ignore
-            await this.getDataList(e.pageNo);
+            await this.getDataList({pageIndex: e.pageIndex} as NzTableQueryParams);
         }
     }
 

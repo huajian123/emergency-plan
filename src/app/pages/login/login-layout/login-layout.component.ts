@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
 import {LoginService} from '../../../services/biz-services/login.service';
+import {EVENT_KEY} from 'src/environments/staticVariable';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class LoginLayoutComponent implements OnInit {
         }
         const params = this.validateForm.getRawValue();
         await this.dataService.UserLogin(params).subscribe((res) => {
+            window.sessionStorage.setItem(EVENT_KEY.loginInfo, JSON.stringify(res));
             this.router.navigate(['/login-page']);
         });
 

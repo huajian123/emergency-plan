@@ -10,6 +10,10 @@ interface OptionsInterface {
     label: string;
 }
 
+interface OptionIndex extends OptionsInterface {
+    indexNum: number;
+}
+
 @Component({
     selector: 'app-command-report-add-edit',
     templateUrl: './command-report-add-edit.component.html',
@@ -19,12 +23,13 @@ export class CommandReportAddEditComponent implements OnInit {
     @Output() returnBack: EventEmitter<any>;
     @Input() id: number;
     @Input() currentPageNum: number;
-    validateForm!: FormGroup;
+    validateForm: FormGroup;
     accidentTypeOptions: OptionsInterface[];
     isTrue: string;
     loginInfo: LoginInfoModel;
-    departmentNameOptions: OptionsInterface[];
+    departmentNameOptions: OptionIndex[];
     departmentOptions: OptionsInterface[];
+
 
     constructor(private fb: FormBuilder, private dataService: CommandReportListService) {
         this.returnBack = new EventEmitter<any>();
@@ -86,7 +91,7 @@ export class CommandReportAddEditComponent implements OnInit {
     changeValue(event) {
         this.isTrue = '';
         switch (event) {
-            case '1':
+            case 1:
                 this.isTrue = '汇报';
                 break;
             default:
@@ -100,16 +105,21 @@ export class CommandReportAddEditComponent implements OnInit {
     }
 
     getDepartmentName() {
+        this.departmentNameOptions.length = 0;
         this.dataService.getDepartmentNameList().subscribe(data => {
-            data.selectDepartmentDTOS.forEach(item => {
-                this.departmentNameOptions.push({label: item.departmentName, value: item.id});
+            data.selectDepartmentDTOS.forEach((item, index) => {
+                this.departmentNameOptions.push({label: item.departmentName, value: item.id, indexNum: index});
             });
         });
     }
 
     changeDepartmentFn(index) {
-        const arrayObj = this.departmentNameOptions.splice(this.departmentNameOptions.findIndex(item => item.value === index), 1);
-        this.departmentOptions = this.departmentNameOptions.filter(item => !arrayObj.includes(item));
+        this.departmentOptions.length = 0;
+        if (index !== null) {
+            const arrayObj = this.departmentNameOptions.splice(this.departmentNameOptions.findIndex(ele => ele.indexNum === (index - 1)), 1);
+            this.departmentOptions = this.departmentNameOptions.filter(ele => !arrayObj.includes(ele));
+        }
+        this.getDepartmentName();
     }
 
     ngOnInit(): void {

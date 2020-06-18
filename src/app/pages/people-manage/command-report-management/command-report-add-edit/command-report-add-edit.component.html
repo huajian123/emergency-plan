@@ -15,52 +15,34 @@
                 <nz-form-label [nzSpan]="6" nzRequired>级别</nz-form-label>
                 <nz-form-control [nzSpan]="10">
                     <nz-radio-group (ngModelChange)="changeValue($event)" formControlName="accidentGrade">
-                        <label nz-radio nzValue="1">一级</label>
-                        <label nz-radio nzValue="3">三级</label>
-                        <label nz-radio nzValue="4">四级</label>
+                        <label nz-radio [nzValue]="1">一级</label>
+                        <label nz-radio [nzValue]="3">三级</label>
+                        <label nz-radio [nzValue]="4">四级</label>
                     </nz-radio-group>
                 </nz-form-control>
             </nz-form-item>
-            <nz-form-item *ngIf="isTrue">
+            <nz-form-item>
                 <nz-form-control [nzSpan]="1" nzOffset="5">
                     <nz-form-text>由</nz-form-text>
                 </nz-form-control>
                 <nz-form-control [nzSpan]="5">
-                    <nz-select ngModel="lucy" formControlName="sendDepartmentName">
-                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                    <nz-select (ngModelChange)="changeDepartmentFn($event)" nzPlaceHolder="请下拉选择类型"
+                               formControlName="sendDepartment">
+                        <nz-option *ngFor="let item of departmentNameOptions" [nzLabel]="item.label"
+                                   [nzValue]="item.value"></nz-option>
                     </nz-select>
                 </nz-form-control>
                 <nz-form-control [nzSpan]="1" nzOffset="1">
                     <nz-form-text>向</nz-form-text>
                 </nz-form-control>
                 <nz-form-control [nzSpan]="5">
-                    <nz-select ngModel="jack" formControlName="acceptDepartmentName">
-                        <nz-option nzValue="jack" nzLabel="jack"></nz-option>
+                    <nz-select nzPlaceHolder="请下拉选择类型" formControlName="acceptDepartment">
+                        <nz-option *ngFor="let item of departmentOptions" [nzLabel]="item.label"
+                                   [nzValue]="item.value"></nz-option>
                     </nz-select>
                 </nz-form-control>
                 <nz-form-control [nzSpan]="1" nzOffset="1">
-                    <nz-form-text>汇报</nz-form-text>
-                </nz-form-control>
-            </nz-form-item>
-            <nz-form-item *ngIf="!isTrue">
-                <nz-form-control [nzSpan]="1" nzOffset="5">
-                    <nz-form-text>由</nz-form-text>
-                </nz-form-control>
-                <nz-form-control [nzSpan]="5">
-                    <nz-select ngModel="lucy" formControlName="sendDepartmentName">
-                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                    </nz-select>
-                </nz-form-control>
-                <nz-form-control [nzSpan]="1" nzOffset="1">
-                    <nz-form-text>向</nz-form-text>
-                </nz-form-control>
-                <nz-form-control [nzSpan]="5">
-                    <nz-select ngModel="jack" formControlName="acceptDepartmentName">
-                        <nz-option nzValue="jack" nzLabel="jack"></nz-option>
-                    </nz-select>
-                </nz-form-control>
-                <nz-form-control [nzSpan]="1" nzOffset="1">
-                    <nz-form-text>指挥</nz-form-text>
+                    <nz-form-text>{{isTrue}}</nz-form-text>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
