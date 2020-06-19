@@ -38,7 +38,10 @@ export class ManagementPlansComponent implements OnInit {
         this.currentPage = this.pageTypeEnum.AddOrEdit;
     }
 
-
+    detail(id) {
+        this.itemId = id;
+        this.currentPage = this.pageTypeEnum.DetailOrExamine;
+    }
     /*删除*/
     del(id) {
         const that = this;

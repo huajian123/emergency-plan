@@ -2,19 +2,25 @@ import {NgModule} from '@angular/core';
 import {
     NzBreadCrumbModule,
     NzButtonModule,
+    NzCardModule,
     NzCheckboxModule,
+    NzDatePickerModule,
+    NzDescriptionsModule,
+    NzDividerModule,
+    NzDropDownModule,
     NzFormModule,
     NzIconModule,
     NzInputModule,
     NzLayoutModule,
     NzMenuModule,
+    NzMessageModule,
+    NzModalModule,
     NzPageHeaderModule,
-    NzToolTipModule,
+    NzSelectModule,
     NzTableModule,
-    NzDividerModule,
     NzTabsModule,
-    NzDatePickerModule,
-    NzDropDownModule, NzTypographyModule, NzSelectModule, NzCardModule, NzMessageModule, NzModalModule,
+    NzToolTipModule,
+    NzTypographyModule,
 } from 'ng-zorro-antd';
 import {NzSpaceModule} from 'ng-zorro-antd/space';
 
@@ -43,6 +49,7 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzCardModule,
         NzMessageModule,
         NzModalModule,
+        NzDescriptionsModule
     ],
     exports: [
         NzFormModule,
@@ -65,7 +72,8 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzSpaceModule,
         NzCardModule,
         NzMessageModule,
-        NzModalModule
+        NzModalModule,
+        NzDescriptionsModule
     ]
 })
 export class MyNgZorroModule {

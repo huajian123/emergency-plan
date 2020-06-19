@@ -8,11 +8,17 @@
     </div>
 </ng-container>
 <ng-container *ngIf="currentPage===pageTypeEnum.AddOrEdit">
-    <app-command-report-add-edit [id]="itemId"
-                                 (returnBack)="returnToList($event)"
-                                 [currentPageNum]="tableConfig.pageIndex"></app-command-report-add-edit>
+    <app-plans-add-edit [id]="itemId"
+                        (returnBack)="returnToList($event)"
+                        [currentPageNum]="tableConfig.pageIndex"></app-plans-add-edit>
+</ng-container>
+<ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
+    <app-plans-detail [id]="itemId"
+                      (returnBack)="returnToList($event)"
+                      [currentPageNum]="tableConfig.pageIndex"></app-plans-detail>
 </ng-container>
 <ng-template #operationTpl let-id="id">
     <span class="operate-text" (click)="edit(id)">编辑</span>
+    <span class="operate-text" (click)="detail(id)">查看</span>
     <span class="operate-text" (click)="del(id)">删除</span>
 </ng-template>
