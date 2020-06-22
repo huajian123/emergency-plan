@@ -6,6 +6,7 @@ import {API_CONFIG} from '../services.module';
 import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
+
 export interface PlanListModel {
     id?: number;
     planName: string;
@@ -15,6 +16,24 @@ export interface PlanListModel {
     createTime: Date;
     createBy: string;
     delFlag?: boolean;
+}
+
+export interface PlanDetailModel {
+    id?: number;
+    accidentType: number,
+    planName: string,
+    planDeptResyEntities: PlanDeptResyEntitiesDTOS[];
+}
+
+export interface PlanDeptResyEntitiesDTOS {
+    id?: number;
+    resyId?: number,
+    resyName?: string;
+    resyDetail: string;
+    deptId?: number,
+    deptName: string;
+    deptPhone: string;
+    grade?: number;
 }
 
 @Injectable({
@@ -29,6 +48,11 @@ export class PlanListService extends BaseHttp {
     /*获取所有的预案列表*/
     public getPlanList(params): Observable<PageInfo<PlanListModel>> {
         return this.post('/plans', params);
+    }
+
+    /*获取预案详情*/
+    public getPlanDetail(id: number): Observable<PlanDetailModel> {
+        return this.get('/plan/' + id, {});
     }
 
     /*预案删除*/

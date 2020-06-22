@@ -89,7 +89,10 @@
                                 </nz-form-item>
                             </nz-card>
                             <ng-template #Template>
-                                <a><i nz-icon nzType="delete" nzTheme="twotone" (click)="del(i)"></i></a>
+                                <a nz-popconfirm nzPopconfirmTitle="你确定删除此项?"
+                                   (nzOnConfirm)="del(i)" (nzOnCancel)="cancel()">
+                                    <i nz-icon nzType="delete" nzTheme="twotone"></i>
+                                </a>
                             </ng-template>
                         </tr>
                         </tbody>

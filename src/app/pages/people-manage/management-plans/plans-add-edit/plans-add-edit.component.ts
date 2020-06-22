@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MapPipe, MapSet} from '../../../../share/directives/pipe/map.pipe';
-import {NzModalService} from 'ng-zorro-antd';
+
 
 interface OptionsInterface {
     value: string | number;
@@ -26,7 +26,7 @@ export class PlansAddEditComponent implements OnInit {
         backgroundColor: '#F2FDFF'
     };
 
-    constructor(private fb: FormBuilder, private modalService: NzModalService) {
+    constructor(private fb: FormBuilder) {
         this.accidentTypeOptions = [];
         this.returnBack = new EventEmitter<any>();
     }
@@ -36,18 +36,11 @@ export class PlansAddEditComponent implements OnInit {
     }
 
     del(index: number) {
-        this.modalService.confirm({
-            nzTitle: '确定删除？',
-            nzOnOk: () => {
-                this.items.removeAt(index);
-            },
-            nzOkText: 'OK',
-            nzOnCancel: () => {
-                return;
-            },
-            nzCancelText: 'Cancel'
-        });
+        this.items.removeAt(index);
+    }
 
+    cancel() {
+        return;
     }
 
     createUser(): FormGroup {
