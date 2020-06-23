@@ -18,8 +18,8 @@ export interface DepartmentsManagementListModel {
     delFlag?: boolean;
 }
 
-export interface searchParamModel {
-    name: string;
+export interface SearchModel {
+    name?: string;
 }
 
 @Injectable({
@@ -32,7 +32,7 @@ export class DepartmentsManagementListService extends BaseHttp {
     }
 
     /*部门列表*/
-    public getDepartmentsList(params: SearchCommonVO<searchParamModel>): Observable<PageInfo<DepartmentsManagementListModel>> {
+    public getDepartmentsList(params: SearchCommonVO<SearchModel>): Observable<PageInfo<DepartmentsManagementListModel>> {
         return this.post('/depts', params);
     }
 

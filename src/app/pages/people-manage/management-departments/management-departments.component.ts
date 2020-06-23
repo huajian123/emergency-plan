@@ -5,7 +5,7 @@ import {NzModalService, NzTableQueryParams} from 'ng-zorro-antd';
 import {
     DepartmentsManagementListModel,
     DepartmentsManagementListService,
-    searchParamModel
+    SearchModel
 } from 'src/app/services/biz-services/department-list.service';
 import {SearchCommonVO} from 'src/app/VO/types';
 import {concatMap} from 'rxjs/operators';
@@ -25,16 +25,17 @@ export class ManagementDepartmentsComponent implements OnInit {
     itemId: number;
     currentPage: number;
     pageTypeEnum = PageTypeEnum;
-    searchParam: searchParamModel;
+    searchParam: SearchModel;
 
     constructor(private dataService: DepartmentsManagementListService, private modal: NzModalService) {
         this.currentPage = this.pageTypeEnum.List;
+        this.searchParam = {};
         this.dataList = [];
     }
 
     /*重置*/
     resetForm(): void {
-        this.validateForm.reset();
+        this.searchParam = {};
     }
 
     /*新建*/
@@ -106,8 +107,8 @@ export class ManagementDepartmentsComponent implements OnInit {
         const params: SearchCommonVO<any> = {
             pageSize: this.tableConfig.pageSize,
             pageNum: e?.pageIndex || this.tableConfig.pageIndex,
-            filters: {
-                /* name: this.searchParam.name || '',*/
+            searchDTO: {
+                name: this.searchParam.name || '',
             }
         };
         await this.dataService.getDepartmentsList(params).subscribe((data) => {

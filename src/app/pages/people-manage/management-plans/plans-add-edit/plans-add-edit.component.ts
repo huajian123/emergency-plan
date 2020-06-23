@@ -152,21 +152,21 @@ export class PlansAddEditComponent implements OnInit {
     }
 
     /*下拉选择部门*/
-    changeSelValueDept(event) {
-        /*setTimeout(() => {*/
-        this.validateForm.get('departmentPhone').setValue(this.deptOptions.find(res => res.value === event).departmentPhone);
-        /* }, 300);*/
-
+    changeSelValueDept(e) {
+        if (e === null) {
+            return;
+        }
+        this.validateForm.get('departmentPhone').setValue(this.deptOptions.find(res => res.value === e).departmentPhone);
     }
 
     /*下拉选择小队*/
-    changeSelValueTeam(event, index) {
-        this.items.at(index).get('resyDetail').setValue(this.resyOptions.find(res => res.value === event).resyDetail);
+    changeSelValueTeam(e, index) {
+        this.items.at(index).get('resyDetail').setValue(this.resyOptions.find(res => res.value === e).resyDetail);
     }
 
     /*管理小队中部门下拉*/
-    changeSelValue(event, index) {
-        this.items.at(index).get('departmentPhone').setValue(this.deptOptions.find(res => res.value === event).departmentPhone);
+    changeSelValue(e, index) {
+        this.items.at(index).get('departmentPhone').setValue(this.deptOptions.find(res => res.value === e).departmentPhone);
     }
 
     ngOnInit(): void {

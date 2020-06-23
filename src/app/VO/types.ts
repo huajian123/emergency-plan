@@ -23,5 +23,5 @@ export class PageInfo<T> {
 export class SearchCommonVO<T> {
     pageNum: number;
     pageSize: number;
-    filters?: T;
+    searchDTO?: T;
 }
