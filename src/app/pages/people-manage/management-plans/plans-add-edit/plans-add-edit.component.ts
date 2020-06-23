@@ -132,8 +132,7 @@ export class PlansAddEditComponent implements OnInit {
     async getDetail() {
         await this.dataService.getPlanDetail(this.id).subscribe(data => {
             this.validateForm.patchValue(data);
-            data.planDeptResyEntities.forEach((item, index) => {
-                //console.log(item);
+            data.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {
                     case 1:
                         const field = this.createUser();
@@ -146,7 +145,6 @@ export class PlansAddEditComponent implements OnInit {
                         this.validateForm.get('deptPhone').setValue(infoData.deptPhone);
                         break;
                 }
-
             });
         });
 
@@ -155,7 +153,10 @@ export class PlansAddEditComponent implements OnInit {
 
     /*下拉选择部门*/
     changeSelValueDept(event) {
+        /*setTimeout(() => {*/
         this.validateForm.get('departmentPhone').setValue(this.deptOptions.find(res => res.value === event).departmentPhone);
+        /* }, 300);*/
+
     }
 
     /*下拉选择小队*/

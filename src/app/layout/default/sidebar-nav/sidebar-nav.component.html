@@ -1,4 +1,3 @@
-
 <ul nz-menu nzInlineCollapsed [nzInlineCollapsed]="isCollapsed" nzTheme="dark" nzMode="inline">
   <ng-container *ngTemplateOutlet="menuTpl;context:{$implicit: menus}"></ng-container>
   <ng-template #menuTpl let-menus>
@@ -6,8 +5,7 @@
         <!--一级菜单-->
       <li nz-menu-item [nzSelected]="menu.selected" *ngIf="!menu.children||menu.children.length===0" >
         <a [routerLink]="[menu.path]">
-            <!-- <i nz-icon [nzType]="menu.icon"></i>-->
-            <i nz-icon [nzIconfont]="menu.icon"></i>
+          <i nz-icon [nzType]="menu.icon"></i>
           <span>{{menu.title}}</span>
         </a>
       </li>
@@ -17,8 +15,7 @@
           <ng-container *ngFor="let menuSecond of menu.children">
             <li nz-menu-item [nzSelected]="menuSecond.selected" *ngIf="!menuSecond.children">
               <a [routerLink]="[menuSecond.path]">
-                  <!-- <i nz-icon [nzType]="menuSecond.icon"></i>-->
-                  <i nz-icon [nzIconfont]="menuSecond.icon"></i>
+                <i nz-icon [nzType]="menuSecond.icon"></i>
                 <span>{{menuSecond.title}}</span>
               </a>
             </li>
