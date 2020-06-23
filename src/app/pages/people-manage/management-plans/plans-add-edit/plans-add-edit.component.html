@@ -23,8 +23,9 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="8" nzRequired>负责部门</nz-form-label>
                     <nz-form-control [nzSpan]="10">
-                        <nz-select nzPlaceHolder="请下拉选择部门" formControlName="departmentName">
-                            <nz-option *ngFor="let item of accidentTypeOptions" [nzLabel]="item.label"
+                        <nz-select nzPlaceHolder="请下拉选择部门" formControlName="deptId"
+                                   (ngModelChange)="changeSelValueDept($event)">
+                            <nz-option *ngFor="let item of deptOptions" [nzLabel]="item.label"
                                        [nzValue]="item.value"></nz-option>
                         </nz-select>
                     </nz-form-control>
@@ -32,14 +33,19 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="8">座机</nz-form-label>
                     <nz-form-control [nzSpan]="10">
-                        <input nz-input placeholder="请输入座机" formControlName="departmentPhone"/>
+                        <input nz-input placeholder="请输入座机" formControlName="deptPhone" readonly/>
                     </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
                     <nz-form-label [nzSpan]="8" nzRequired>岗位职责</nz-form-label>
                     <nz-form-control [nzSpan]="10">
                     <textarea formControlName="resyDetail" nz-input rows="6"
-                              placeholder="请输入岗位职责..."></textarea>
+                              placeholder="请输入岗位职责..." readonly></textarea>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control [nzSpan]="10" nzOffset="8">
+                        <input nz-input formControlName="resyId" [hidden]="true"/>
                     </nz-form-control>
                 </nz-form-item>
             </nz-card>
@@ -49,9 +55,9 @@
                         <i nz-icon nzType="plus"></i>
                         <span>新增小队</span>
                     </button>
-                    <nz-table style=" width: 100%;" formArrayName="items" [nzData]="items.value"
+                    <nz-table style=" width: 100%;" formArrayName="addEmergencyTeamDTOS" [nzData]="items.value"
                               [nzShowPagination]="false"
-                              [nzBordered]="false">
+                              [nzBordered]="false" [nzShowPagination]="false">
                         <tbody>
                         <tr *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
                             <nz-divider [nzDashed]="true"></nz-divider>
@@ -59,32 +65,34 @@
                                 <nz-form-item>
                                     <nz-form-label [nzSpan]="6" nzRequired>小队岗位</nz-form-label>
                                     <nz-form-control [nzSpan]="14">
-                                        <nz-select formControlName="resyName">
-                                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                                        <nz-select nzPlaceHolder="请下拉选择小队" formControlName="resyId"
+                                                   (ngModelChange)="changeSelValueTeam($event,i)">
+                                            <nz-option *ngFor="let item of resyOptions" [nzLabel]="item.label"
+                                                       [nzValue]="item.value"></nz-option>
                                         </nz-select>
                                     </nz-form-control>
                                 </nz-form-item>
                                 <nz-form-item>
                                     <nz-form-label [nzSpan]="6" nzRequired>负责部门</nz-form-label>
                                     <nz-form-control [nzSpan]="14">
-                                        <nz-select formControlName="departmentName">
-                                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                                        <nz-select nzPlaceHolder="请下拉选择部门" formControlName="deptId"
+                                                   (ngModelChange)="changeSelValue($event,i)">
+                                            <nz-option *ngFor="let item of deptOptions" [nzLabel]="item.label"
+                                                       [nzValue]="item.value"></nz-option>
                                         </nz-select>
                                     </nz-form-control>
                                 </nz-form-item>
                                 <nz-form-item>
                                     <nz-form-label [nzSpan]="6">座机</nz-form-label>
                                     <nz-form-control [nzSpan]="14">
-                                        <input nz-input placeholder="请输入座机" formControlName="departmentPhone"/>
+                                        <input nz-input placeholder="请输入座机" formControlName="deptPhone" readonly/>
                                     </nz-form-control>
                                 </nz-form-item>
                                 <nz-form-item>
                                     <nz-form-label [nzSpan]="6" nzRequired>岗位职责</nz-form-label>
                                     <nz-form-control [nzSpan]="14">
                     <textarea formControlName="resyDetail" nz-input rows="6"
-                              placeholder="请输入岗位职责..."></textarea>
+                              placeholder="请输入岗位职责..." readonly></textarea>
                                     </nz-form-control>
                                 </nz-form-item>
                             </nz-card>

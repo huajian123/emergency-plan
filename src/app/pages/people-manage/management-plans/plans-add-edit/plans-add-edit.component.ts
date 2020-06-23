@@ -1,11 +1,22 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MapPipe, MapSet} from '../../../../share/directives/pipe/map.pipe';
+import {PlanListService} from 'src/app/services/biz-services/plan-list.service';
+import {LoginInfoModel} from 'src/app/core/vo-common/BusinessEnum';
+import {EVENT_KEY} from 'src/environments/staticVariable';
 
 
 interface OptionsInterface {
     value: string | number;
     label: string;
+}
+
+interface DeptOptionsInterface extends OptionsInterface {
+    departmentPhone?: string;
+}
+
+interface ResyOptionsInterface extends OptionsInterface {
+    resyDetail?: string;
 }
 
 @Component({
@@ -19,15 +30,19 @@ export class PlansAddEditComponent implements OnInit {
     @Input() id: number;
     @Input() currentPageNum: number;
     accidentTypeOptions: OptionsInterface[];
-
+    deptOptions: DeptOptionsInterface[];
+    resyOptions: ResyOptionsInterface[];
+    loginInfo: LoginInfoModel;
     save = {
         width: '900px',
         margin: 'auto',
         backgroundColor: '#F2FDFF'
     };
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private dataService: PlanListService) {
         this.accidentTypeOptions = [];
+        this.deptOptions = [];
+        this.resyOptions = [];
         this.returnBack = new EventEmitter<any>();
     }
 
@@ -43,68 +58,124 @@ export class PlansAddEditComponent implements OnInit {
         return;
     }
 
-    createUser(): FormGroup {
-        return this.fb.group({
-            resyName: [null, [Validators.required]],
-            departmentName: [null, [Validators.required]],
-            departmentPhone: [null],
-            resyDetail: [null, [Validators.required]],
-        });
-    }
-
-    get items() {
-        return this.validateForm.controls.items as FormArray;
-    }
 
     initForm() {
         this.validateForm = this.fb.group({
             planName: [null, [Validators.required]],
             accidentType: [null, [Validators.required]],
-            departmentName: [null, [Validators.required]],
-            departmentPhone: [null],
+            deptId: [null, [Validators.required]],
+            deptPhone: [null],
+            resyId: [9, [Validators.required]],
             resyDetail: [null, [Validators.required]],
-            items: this.fb.array([]),
+            addEmergencyTeamDTOS: this.fb.array([]),
         });
     }
 
-    submitForm(): void {
+    createUser(): FormGroup {
+        return this.fb.group({
+            resyId: [null, [Validators.required]],
+            deptId: [null, [Validators.required]],
+            deptPhone: [null],
+            resyDetail: [null, [Validators.required]],
+        });
+    }
+
+    get items() {
+        return this.validateForm.controls['addEmergencyTeamDTOS'] as FormArray;
+    }
+
+    async submitForm() {
         Object.keys(this.validateForm.controls).forEach(key => {
             this.validateForm.controls[key].markAsDirty();
             this.validateForm.controls[key].updateValueAndValidity();
         });
-        if ((this.validateForm.invalid) || (this.validateForm.controls.items).invalid) {
+        if ((this.validateForm.invalid) || (this.validateForm.controls['addEmergencyTeamDTOS'] as FormGroup).invalid) {
             return;
         }
+        const params = this.validateForm.getRawValue();
+        let submitHandel = null;
+        if (!this.id) {
+            params.createBy = this.loginInfo.createBy;
+            submitHandel = this.dataService.addPlan(params).subscribe();
+        } else {
+            params.id = this.id;
+            params.updateBy = this.loginInfo.account;
+            console.log(params);
+            submitHandel = this.dataService.editPlan(params).subscribe();
+        }
 
+        await submitHandel;
+        this.returnBack.emit({refesh: true, pageNo: this.currentPageNum});
     }
 
     returnToList() {
         this.returnBack.emit({refesh: false, pageNo: this.currentPageNum});
     }
 
-    ngOnInit(): void {
-        this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
-        this.initForm();
-        const userList = [
-            {
-                resyName: '1',
-                departmentName: '00001',
-                departmentPhone: 'John Brown',
-                resyDetail: 'New York No. 1 Lake Park',
-            },
-            {
-                resyName: '2',
-                departmentName: '00002',
-                departmentPhone: 'John Brown',
-                resyDetail: 'New York No. 2 Lake Park',
-            },
-        ];
-        userList.forEach((i) => {
-            const field = this.createUser();
-            field.patchValue(i);
-            this.items.push(field);
+
+    // 获取部门、小队信息列表
+    async getDeptResyListInfos() {
+        await this.dataService.getDeptResyList().subscribe(res => {
+            /*部门*/
+            res.selectDepartmentDTOS.forEach(item => {
+                this.deptOptions.push({value: item.id, label: item.departmentName, departmentPhone: item.departmentPhone});
+            });
+            /*小队*/
+            res.emergencyTeamDTOS.forEach(item => {
+                this.resyOptions.push({value: item.id, label: item.resyName, resyDetail: item.resyDetail});
+            });
+            this.validateForm.get('resyDetail').setValue(res.command.resyDetail);
+        });
+    }
+
+    /*获取预案详情*/
+    async getDetail() {
+        await this.dataService.getPlanDetail(this.id).subscribe(data => {
+            this.validateForm.patchValue(data);
+            data.planDeptResyEntities.forEach((item, index) => {
+                //console.log(item);
+                switch (item.grade) {
+                    case 1:
+                        const field = this.createUser();
+                        field.patchValue(item);
+                        this.items.push(field);
+                        break;
+                    default:
+                        const infoData = {deptId: item.deptId, deptPhone: item.deptPhone};
+                        this.validateForm.get('deptId').setValue(infoData.deptId);
+                        this.validateForm.get('deptPhone').setValue(infoData.deptPhone);
+                        break;
+                }
+
+            });
         });
 
+
+    }
+
+    /*下拉选择部门*/
+    changeSelValueDept(event) {
+        this.validateForm.get('departmentPhone').setValue(this.deptOptions.find(res => res.value === event).departmentPhone);
+    }
+
+    /*下拉选择小队*/
+    changeSelValueTeam(event, index) {
+        this.items.at(index).get('resyDetail').setValue(this.resyOptions.find(res => res.value === event).resyDetail);
+    }
+
+    /*管理小队中部门下拉*/
+    changeSelValue(event, index) {
+        this.items.at(index).get('departmentPhone').setValue(this.deptOptions.find(res => res.value === event).departmentPhone);
+    }
+
+    ngOnInit(): void {
+        this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
+        this.loginInfo = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
+        this.initForm();
+        this.getDeptResyListInfos();
+        if (this.id) {
+            this.getDetail();
+        }
     }
 
 }

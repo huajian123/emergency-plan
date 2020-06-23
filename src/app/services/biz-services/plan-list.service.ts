@@ -36,6 +36,40 @@ export interface PlanDeptResyEntitiesDTOS {
     grade?: number;
 }
 
+export interface DeptResyMessageModel {
+    selectDepartmentDTOS: DepartmentDTOS[];
+    emergencyTeamDTOS: EmergencyTeamDTOS[];
+    command?: EmergencyTeamDTOS;
+}
+
+export interface DepartmentDTOS {
+    id?: number;
+    departmentName: string;
+    departmentPhone: string;
+}
+
+export interface EmergencyTeamDTOS {
+    id?: number;
+    resyName: string;
+    resyDetail: string;
+}
+
+export interface AddEditEmergencyTeamModel {
+    id?: number;
+    accidentType: number
+    addEmergencyTeamDTOS: EmergencyTeamModel[];
+    createBy?: string;
+    updateBy?: string;
+    deptId: number;
+    resyId: number;
+    planName: string;
+}
+
+export interface EmergencyTeamModel {
+    deptId: number;
+    resyId: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -55,9 +89,25 @@ export class PlanListService extends BaseHttp {
         return this.get('/plan/' + id, {});
     }
 
+    /*新增预案*/
+    public addPlan(params: AddEditEmergencyTeamModel): Observable<any> {
+        return this.post('/plan', params);
+    }
+
+    /*编辑预案*/
+    public editPlan(params: AddEditEmergencyTeamModel): Observable<any> {
+        return this.put('/plan/' + params.id, params);
+    }
+
     /*预案删除*/
     public getPlanListDelete(id: number): Observable<any> {
         return this.delete('/plan/' + id, {});
+    }
+
+    /*部门、小队信息接口下拉菜单*/
+    public getDeptResyList(): Observable<DeptResyMessageModel> {
+        return this.get('/dept-resy-message', {});
+
     }
 
 }
