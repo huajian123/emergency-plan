@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PeopleManageRoutingModule} from './people-manage-routing.module';
-import {TableListComponent} from './table-list/table-list.component';
-import {FormModelComponent} from './form-model/form-model.component';
 import {ShareModule} from '../../share/share.module';
 import {CommandReportManagementComponent} from './command-report-management/command-report-management.component';
 import {ManagementTeamsComponent} from './management-teams/management-teams.component';
@@ -17,7 +15,7 @@ import {NzRadioModule} from 'ng-zorro-antd';
 
 
 @NgModule({
-    declarations: [TableListComponent, FormModelComponent, CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
+    declarations: [CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
     imports: [
         CommonModule,
         PeopleManageRoutingModule,
