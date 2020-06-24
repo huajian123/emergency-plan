@@ -1,6 +1,7 @@
 <ng-container *ngIf="currentPage===pageTypeEnum.List">
     <nz-page-header class="site-page-header" nzTitle="部门管理列表"></nz-page-header>
-    <form nz-form class="ant-advanced-search-form" (ngSubmit)="getDataList({pageIndex: 1,pageSize:10})">
+    <form nz-form class="ant-advanced-search-form"
+          (ngSubmit)="getDataList({pageIndex: 1,pageSize:10,sort:null,filter:null})">
         <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24}">
             <div nz-col [nzSpan]="8" nzOffset="1">
                 <nz-form-item>
