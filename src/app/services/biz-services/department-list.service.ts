@@ -11,9 +11,9 @@ export interface DepartmentsManagementListModel {
     id?: number;
     departmentName: string;
     departmentPhone: string;
-    createTime?: string;
+    createTime?: Date;
     createBy: string;
-    updateTime?: string;
+    updateTime?: Date;
     updateBy: string;
     delFlag?: boolean;
 }
