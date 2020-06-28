@@ -49,7 +49,7 @@ export class CommandReportManagementComponent implements OnInit {
                     return this.getDataList({pageIndex: this.tableConfig.pageIndex} as NzTableQueryParams);
                 })).subscribe();
             },
-            nzOkText: '已删除',
+            nzOkText: '确定',
             nzOnCancel: () => {
                 return;
             },

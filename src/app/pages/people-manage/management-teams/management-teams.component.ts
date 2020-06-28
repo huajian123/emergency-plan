@@ -49,7 +49,7 @@ export class ManagementTeamsComponent implements OnInit {
                     return this.getDataList({pageIndex: this.tableConfig.pageIndex} as NzTableQueryParams);
                 })).subscribe();
             },
-            nzOkText: '已删除',
+            nzOkText: '确定',
             nzOnCancel: () => {
                 return;
             },
@@ -67,13 +67,13 @@ export class ManagementTeamsComponent implements OnInit {
                 },
                 {
                     title: '职责内容',
-                    width: 100,
+                    width: 180,
                     field: 'responsibilityDetail',
                 },
                 {
                     title: '操作',
                     tdTemplate: this.operationTpl,
-                    width: 150,
+                    width: 80,
                 }
             ],
             total: 0,
