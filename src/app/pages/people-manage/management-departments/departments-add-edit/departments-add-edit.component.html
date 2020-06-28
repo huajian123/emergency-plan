@@ -5,13 +5,13 @@
             <nz-form-item>
                 <nz-form-label [nzSpan]="6" nzRequired>部门名称</nz-form-label>
                 <nz-form-control [nzSpan]="10">
-                    <input nz-input placeholder="请输入部门名称" formControlName="departmentName"/>
+                    <input nz-input placeholder="请输入部门名称" formControlName="departmentName" [nzMax]="50"/>
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
                 <nz-form-label [nzSpan]="6" nzRequired>座机</nz-form-label>
                 <nz-form-control [nzSpan]="10">
-                    <input nz-input placeholder="请输入座机" formControlName="departmentPhone"/>
+                    <input nz-input placeholder="请输入座机" formControlName="departmentPhone" [nzMax]="20"/>
                 </nz-form-control>
             </nz-form-item>
 
