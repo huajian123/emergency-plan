@@ -4,6 +4,7 @@ import {LayoutDefalutComponent} from './layout/default/default.component';
 import {ManageLayoutComponent} from './layout/manage-layout/manage-layout.component';
 import {QuicklinkStrategy} from 'ngx-quicklink';
 import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.component';
+import {StatusWarningLayoutComponent} from "./layout/status-warning-layout/status-warning-layout.component";
 
 const routes: Routes = [
     {path: 'login', component: LoginLayoutComponent},
@@ -38,6 +39,18 @@ const routes: Routes = [
             {
                 path: 'people-manage',
                 loadChildren: () => import('./pages/people-manage/people-manage.module').then(m => m.PeopleManageModule)
+            },
+
+        ],
+    },
+    {
+        path: 'status-warning',
+        component: StatusWarningLayoutComponent,
+        children: [
+            {path: '', redirectTo: 'earthquake-warning', pathMatch: 'full'},
+            {
+                path: 'earthquake-warning',
+                loadChildren: () => import('./pages/status-warning/status-warning.module').then(m => m.StatusWarningModule)
             },
 
         ],

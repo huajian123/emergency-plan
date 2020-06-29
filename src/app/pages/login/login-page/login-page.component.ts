@@ -32,6 +32,10 @@ export class LoginPageComponent implements OnInit {
         window.open(localUrl + '/hazard/natural-disaster/', '_blank');
     }
 
+    // 跳转回应急
+    goStatusWarning() {
+        window.open(localUrl + '/status-warning/earthquake-warning/earthquake-level', '_blank');
+    }
 
     ngOnInit() {
 
