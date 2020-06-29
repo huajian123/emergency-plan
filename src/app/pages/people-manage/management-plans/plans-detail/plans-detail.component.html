@@ -15,7 +15,7 @@
             </nz-descriptions>
         </nz-card>
         <nz-card nzTitle="▏管理小队" [nzBordered]="false">
-            <nz-card nzType="inner" nzTitle="小队" [nzBordered]="false" *ngFor="let txt of teamInfos">
+            <nz-card nzType="inner" [nzTitle]="txt['resyName']" [nzBordered]="false" *ngFor="let txt of teamInfos">
                 <nz-descriptions>
                     <nz-descriptions-item nzTitle="小队岗位" [nzSpan]="1">{{txt['resyName']}}</nz-descriptions-item>
                     <nz-descriptions-item nzTitle="负责部门">{{txt['deptName']}}</nz-descriptions-item>
