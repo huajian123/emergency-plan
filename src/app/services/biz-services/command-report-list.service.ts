@@ -10,16 +10,20 @@ export interface CommandReportListModel {
     id?: number;
     accidentGrade: number;
     accidentType?: number;
-    sendDepartmentName: string;
-    acceptDepartmentName: string;
+    sendDepartment: number;
+    acceptDepartment: number;
+    sendDepartmentName?: string;
+    acceptDepartmentName?: string;
     temporary?: string;
 }
 
 export interface AddUpDownDepartmentModel {
     accidentGrade: number;
     accidentType: number;
-    sendDepartmentName: string;
-    acceptDepartmentName: string;
+    acceptDepartment: number;
+    sendDepartmentName?: string;
+    sendDepartment: number;
+    acceptDepartmentName?: string;
     createBy: string;
 }
 

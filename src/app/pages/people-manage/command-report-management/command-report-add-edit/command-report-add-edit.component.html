@@ -36,7 +36,8 @@
                     <nz-form-text>向</nz-form-text>
                 </nz-form-control>
                 <nz-form-control [nzSpan]="5">
-                    <nz-select nzPlaceHolder="请下拉选择类型" formControlName="acceptDepartment">
+                    <nz-select (ngModelChange)="changeDepartmentFns($event)" nzPlaceHolder="请下拉选择类型"
+                               formControlName="acceptDepartment">
                         <nz-option *ngFor="let item of departmentOptions" [nzLabel]="item.label"
                                    [nzValue]="item.value"></nz-option>
                     </nz-select>

@@ -10,9 +10,6 @@ interface OptionsInterface {
     label: string;
 }
 
-interface OptionIndex extends OptionsInterface {
-    indexNum: number;
-}
 
 @Component({
     selector: 'app-command-report-add-edit',
@@ -27,7 +24,7 @@ export class CommandReportAddEditComponent implements OnInit {
     accidentTypeOptions: OptionsInterface[];
     isTrue: string;
     loginInfo: LoginInfoModel;
-    departmentNameOptions: OptionIndex[];
+    departmentNameOptions: OptionsInterface[];
     departmentOptions: OptionsInterface[];
 
 
@@ -59,6 +56,7 @@ export class CommandReportAddEditComponent implements OnInit {
             return;
         }
         const params = this.validateForm.getRawValue();
+
         let submitHandel = null;
         if (!this.id) {
             params.createBy = this.loginInfo.createBy;
@@ -66,6 +64,7 @@ export class CommandReportAddEditComponent implements OnInit {
         } else {
             params.id = this.id;
             params.updateBy = this.loginInfo.account;
+            //console.log(params);
             submitHandel = this.dataService.editCommandReport(params).subscribe();
         }
 
@@ -79,6 +78,8 @@ export class CommandReportAddEditComponent implements OnInit {
             accidentGrade: [null, [Validators.required]],
             sendDepartment: [null, [Validators.required]],
             acceptDepartment: [null, [Validators.required]],
+            sendDepartmentName: [null],
+            acceptDepartmentName: [null],
         });
     }
 
@@ -104,22 +105,37 @@ export class CommandReportAddEditComponent implements OnInit {
         this.returnBack.emit({refesh: false, pageNo: this.currentPageNum});
     }
 
-    getDepartmentName() {
-        this.departmentNameOptions.length = 0;
-        this.dataService.getDepartmentNameList().subscribe(data => {
+    async getDepartmentName() {
+        this.departmentNameOptions = [];
+        await this.dataService.getDepartmentNameList().subscribe(data => {
             data.selectDepartmentDTOS.forEach((item, index) => {
-                this.departmentNameOptions.push({label: item.departmentName, value: item.id, indexNum: index});
+                this.departmentNameOptions.push({label: item.departmentName, value: item.id});
             });
         });
     }
 
     changeDepartmentFn(index) {
-        this.departmentOptions.length = 0;
-        if (index !== null) {
-            const arrayObj = this.departmentNameOptions.splice(this.departmentNameOptions.findIndex(ele => ele.indexNum === (index - 1)), 1);
-            this.departmentOptions = this.departmentNameOptions.filter(ele => !arrayObj.includes(ele));
+        this.departmentOptions = [];
+        if (index === null) {
+            return;
         }
+        const datas = this.departmentNameOptions.find(ele => {
+            return ele.value === index;
+        });
+        this.validateForm.get('sendDepartmentName').setValue(datas.label);
+        const arrayObj = this.departmentNameOptions.splice(this.departmentNameOptions.findIndex(ele => ele.value === index), 1);
+        this.departmentOptions = this.departmentNameOptions.filter(ele => !arrayObj.includes(ele));
         this.getDepartmentName();
+    }
+
+    changeDepartmentFns(e) {
+        if (e === null) {
+            return;
+        }
+        const data = this.departmentOptions.find(ele => {
+            return ele.value === e;
+        });
+        this.validateForm.get('acceptDepartmentName').setValue(data.label);
     }
 
     ngOnInit(): void {
