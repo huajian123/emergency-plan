@@ -11,6 +11,7 @@ import {
     NzFormModule,
     NzIconModule,
     NzInputModule,
+    NzInputNumberModule,
     NzLayoutModule,
     NzMenuModule,
     NzMessageModule,
@@ -51,7 +52,8 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzMessageModule,
         NzModalModule,
         NzDescriptionsModule,
-        NzPopconfirmModule
+        NzPopconfirmModule,
+        NzInputNumberModule
     ],
     exports: [
         NzFormModule,
@@ -76,7 +78,8 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzMessageModule,
         NzModalModule,
         NzDescriptionsModule,
-        NzPopconfirmModule
+        NzPopconfirmModule,
+        NzInputNumberModule
     ]
 })
 export class MyNgZorroModule {

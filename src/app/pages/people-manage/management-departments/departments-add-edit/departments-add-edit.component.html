@@ -11,7 +11,8 @@
             <nz-form-item>
                 <nz-form-label [nzSpan]="6" nzRequired>座机</nz-form-label>
                 <nz-form-control [nzSpan]="10">
-                    <input nz-input placeholder="请输入座机" formControlName="departmentPhone" maxlength="20"/>
+                    <nz-input-number placeholder="请输入座机" formControlName="departmentPhone"
+                                     [nzMax]="20"></nz-input-number>
                 </nz-form-control>
             </nz-form-item>
 
