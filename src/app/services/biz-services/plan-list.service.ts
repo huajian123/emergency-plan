@@ -20,17 +20,17 @@ export interface PlanListModel {
 
 export interface PlanDetailModel {
     id?: number;
-    accidentType: number,
-    planName: string,
+    accidentType: number;
+    planName: string;
     planDeptResyEntities: PlanDeptResyEntitiesDTOS[];
 }
 
 export interface PlanDeptResyEntitiesDTOS {
     id?: number;
-    resyId?: number,
+    resyId?: number;
     resyName?: string;
     resyDetail: string;
-    deptId?: number,
+    deptId?: number;
     deptName: string;
     deptPhone: string;
     grade?: number;
@@ -56,7 +56,7 @@ export interface EmergencyTeamDTOS {
 
 export interface AddEditEmergencyTeamModel {
     id?: number;
-    accidentType: number
+    accidentType: number;
     addEmergencyTeamDTOS: EmergencyTeamModel[];
     createBy?: string;
     updateBy?: string;

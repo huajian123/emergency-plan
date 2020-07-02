@@ -6,10 +6,10 @@ import {API_CONFIG} from '../services.module';
 import {NzMessageService} from 'ng-zorro-antd';
 
 export enum DisasterEnum {
-    NaturalDisaster = 1
+    PublicHealth = 3
 }
 
-export interface NaturalDisastersModel {
+export interface PublicHealthModel {
     id?: number;
     accidentType: number;
     planName: string;
@@ -38,8 +38,8 @@ export class NaturalDisastersListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getNaturalDisastersList(id: number): Observable<NaturalDisastersModel> {
-        return this.get('/plan/' + DisasterEnum.NaturalDisaster + '/' + id, {});
+    public getPublicHealthList(id: number): Observable<PublicHealthModel[]> {
+        return this.get('/plans/' + DisasterEnum.PublicHealth + '/' + id, {});
     }
 
 

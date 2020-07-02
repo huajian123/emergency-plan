@@ -69,7 +69,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
             for (const subItem of item.children) {
                 subItem.selected = false;
                 subItem.open = false;
-                if (!subItem.children || subItem.children?.length === 0) {
+                if (!subItem.children || subItem.children.length === 0) {
                     if (subItem.path === this.routerPath) {
                         item.open = true;
                         item.selected = true;

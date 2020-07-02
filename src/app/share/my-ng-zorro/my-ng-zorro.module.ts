@@ -9,6 +9,7 @@ import {
     NzDividerModule,
     NzDropDownModule,
     NzFormModule,
+    NzGridModule,
     NzIconModule,
     NzInputModule,
     NzInputNumberModule,
@@ -55,7 +56,11 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzDescriptionsModule,
         NzPopconfirmModule,
         NzInputNumberModule,
-        NzRadioModule
+        NzRadioModule,
+        NzGridModule,
+        NzCardModule,
+        NzButtonModule,
+
     ],
     exports: [
         NzFormModule,
@@ -82,7 +87,10 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzDescriptionsModule,
         NzPopconfirmModule,
         NzInputNumberModule,
-        NzRadioModule
+        NzRadioModule,
+        NzGridModule,
+        NzCardModule,
+        NzButtonModule,
     ]
 })
 export class MyNgZorroModule {

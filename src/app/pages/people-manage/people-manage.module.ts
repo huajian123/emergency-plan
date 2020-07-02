@@ -18,7 +18,7 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
     imports: [
         CommonModule,
         PeopleManageRoutingModule,
-        ShareModule,
+        ShareModule
     ]
 })
 export class PeopleManageModule {

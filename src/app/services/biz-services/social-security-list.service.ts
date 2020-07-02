@@ -6,14 +6,15 @@ import {API_CONFIG} from '../services.module';
 import {NzMessageService} from 'ng-zorro-antd';
 
 export enum DisasterEnum {
-    NaturalDisaster = 1
+    SocialSecurity = 4
 }
 
-export interface NaturalDisastersModel {
+export interface SocialSecurityModel {
     id?: number;
     accidentType: number;
     planName: string;
     planDeptResyEntities: CommanderInfoModel[];
+
 }
 
 export interface CommanderInfoModel {
@@ -27,7 +28,6 @@ export interface CommanderInfoModel {
     grade?: number;
 }
 
-
 @Injectable({
     providedIn: 'root'
 })
@@ -38,8 +38,8 @@ export class NaturalDisastersListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getNaturalDisastersList(id: number): Observable<NaturalDisastersModel> {
-        return this.get('/plan/' + DisasterEnum.NaturalDisaster + '/' + id, {});
+    public getSocialSecurityList(id: number): Observable<SocialSecurityModel[]> {
+        return this.get('/plans/' + DisasterEnum.SocialSecurity + '/' + id, {});
     }
 
 
