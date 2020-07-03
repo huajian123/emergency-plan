@@ -7,6 +7,7 @@ import {SecondEarthquakeDisasterComponent} from './earthquake-disaster/second/se
 import {SecondMeteorologicalDisasterComponent} from './meteorological-disaster/second/second-natural-disaster.component';
 import {SecondNaturalDisasterReliefComponent} from './natural-disaster-relief/second/second-natural-disaster.component';
 import {SecondGeologicalDisasterComponent} from './geological-disaster/second/second-natural-disaster.component';
+import {SecondTyphoonDisasterComponent} from './typhoon-disaster/second/second-natural-disaster.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {SecondGeologicalDisasterComponent} from './geological-disaster/second/se
         SecondEarthquakeDisasterComponent,
         SecondMeteorologicalDisasterComponent,
         SecondNaturalDisasterReliefComponent,
-        SecondGeologicalDisasterComponent
+        SecondGeologicalDisasterComponent,
+        SecondTyphoonDisasterComponent
     ],
     imports: [
         CommonModule,

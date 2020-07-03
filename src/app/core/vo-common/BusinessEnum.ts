@@ -29,7 +29,7 @@ export enum AccidentEnum {
     communication = 19,
     HazardousChemicals = 20,
     ProductionSafety = 21,
-    forestFire = 22,
+    ForestFire = 22,
     WaterSearchRescue = 23,
     RailTraffic = 24
 }

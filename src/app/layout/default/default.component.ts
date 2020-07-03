@@ -215,28 +215,531 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
             open: false,
             children: [
                 {
-                    title: '一级灾害',
+                    title: '重特大道路交通',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/accident-disaster/first-accident-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/road-traffic-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/road-traffic-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/road-traffic-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/road-traffic-fourth',
+                        }]
                 },
                 {
-                    title: '二级灾害',
+                    title: '突发环境',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/accident-disaster/second-accident-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
                 },
                 {
-                    title: '三级灾害',
+                    title: '辐射',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/accident-disaster/third-accident-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
                 },
                 {
-                    title: '四级灾害',
+                    title: '太湖蓝藻',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/accident-disaster/fourth-accident-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '重污染天气',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '核应急',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '特种设备',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '铁路事故',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '港口危险化学品',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '大面积停电',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '重特大火灾',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '通信保障',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '危险化学品',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '生产安全',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '森林火灾',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '水上搜救',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
+                },
+                {
+                    title: '轨道交通运营',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/first-accident-disaster',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/second-accident-disaster',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/third-accident-disaster',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                        }]
                 },
             ]
         },
@@ -277,29 +780,326 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
             open: false,
             children: [
                 {
-                    title: '一级灾害',
+                    title: '恐怖袭击',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/social-security/fist-security-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/terrorist-attacks-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/terrorist-attacks-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/terrorist-attacks-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/terrorist-attacks-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '二级灾害',
+                    title: '群体性事件',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/social-security/second-security-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/mass-incident-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/mass-incident-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/mass-incident-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/mass-incident-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '三级灾害',
+                    title: '价格异动',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/social-security/third-security-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/price-changes-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/price-changes-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/price-changes-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/price-changes-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '四级灾害',
+                    title: '粮食应急',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/social-security/fourth-security-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/grain-emergency-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/grain-emergency-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/grain-emergency-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/grain-emergency-fourth',
+                        },
+                    ]
                 },
+                {
+                    title: '网络与信息安全',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/network-information-security-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/network-information-security-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/network-information-security-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/network-information-security-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '涉外突发',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/foreign-affairs-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/foreign-affairs-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/foreign-affairs-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/foreign-affairs-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '金融突发',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/financial-accident-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/financial-accident-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/financial-accident-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/financial-accident-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '政府性债务',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/government-debt-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/government-debt-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/government-debt-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/government-debt-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '军粮应急',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/commissary-emergency-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/commissary-emergency-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/commissary-emergency-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/commissary-emergency-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '救灾物资',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/relief-supplies-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/relief-supplies-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/relief-supplies-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/social-security/relief-supplies-fourth',
+                        },
+                    ]
+                },
+
             ]
         },
     ];

@@ -2,19 +2,20 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {AccidentDisastersRoutingModule} from './accident-disasters-routing.module';
-import {FirstAccidentDisasterComponent} from './first-accident-disaster/first-accident-disaster.component';
-import {SecondAccidentDisasterComponent} from './second-accident-disaster/second-accident-disaster.component';
-import {ThirdAccidentDisasterComponent} from './third-accident-disaster/third-accident-disaster.component';
-import {FourthAccidentDisasterComponent} from './fourth-accident-disaster/fourth-accident-disaster.component';
+import {ShareModule} from '../../share/share.module';
+import {SecondRoadTrafficComponent} from './road-traffic/second/second-accident-disaster.component';
+import {SecondEnvironmentalComponent} from './environmental/second/second-accident-disaster.component';
+import {SecondRadiationAccidentComponent} from './radiation-accident/second/second-accident-disaster.component';
 
 
 @NgModule({
     declarations: [
-        FirstAccidentDisasterComponent,
-        SecondAccidentDisasterComponent,
-        ThirdAccidentDisasterComponent,
-        FourthAccidentDisasterComponent],
+        SecondRoadTrafficComponent,
+        SecondEnvironmentalComponent,
+        SecondRadiationAccidentComponent,
+    ],
     imports: [
+        ShareModule,
         CommonModule,
         AccidentDisastersRoutingModule
     ]
