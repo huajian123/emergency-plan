@@ -22,14 +22,14 @@ export class LoginPageComponent implements OnInit {
     /*临时*/
     goAlert() {
         this.modal.info({
-            /* nzTitle: '此模块还在开发中...',*/
             nzContent: '<p>此模块还在开发中...</p>',
             nzOnOk: () => console.log('OK')
         });
     }
+
     // 跳转回应急
     goEmergency() {
-        window.open(localUrl + '/hazard/natural-disaster/', '_blank');
+        window.open(localUrl + '/hazard/natural-disaster/drought-and-flood-first', '_blank');
     }
 
     // 跳转回应急

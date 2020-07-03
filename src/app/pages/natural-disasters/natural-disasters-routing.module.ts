@@ -18,6 +18,10 @@ import {SecondNaturalDisasterReliefComponent} from './natural-disaster-relief/se
 import {ThirdNaturalDisasterReliefComponent} from './natural-disaster-relief/third/third-natural-disaster.component';
 import {FourthNaturalDisasterReliefComponent} from './natural-disaster-relief/fourth/fourth-natural-disaster.component';
 import {FourthMeteorologicalDisasterComponent} from './meteorological-disaster/fourth/fourth-natural-disaster.component';
+import {FirstGeologicalDisasterComponent} from './geological-disaster/first/first-natural-disaster.component';
+import {SecondGeologicalDisasterComponent} from './geological-disaster/second/second-natural-disaster.component';
+import {ThirdGeologicalDisasterComponent} from './geological-disaster/third/third-natural-disaster.component';
+import {FourthGeologicalDisasterComponent} from './geological-disaster/fourth/fourth-natural-disaster.component';
 
 
 const routes: Routes = [
@@ -42,6 +46,11 @@ const routes: Routes = [
     {path: 'natural-disaster-relief-second', component: SecondNaturalDisasterReliefComponent, data: {title: '二级灾害', keep: true}},
     {path: 'natural-disaster-relief-third', component: ThirdNaturalDisasterReliefComponent, data: {title: '三级灾害', keep: true}},
     {path: 'natural-disaster-relief-fourth', component: FourthNaturalDisasterReliefComponent, data: {title: '四级灾害', keep: true}},
+    /*地质*/
+    {path: 'geological-disaster-first', component: FirstGeologicalDisasterComponent, data: {title: '一级灾害', keep: true}},
+    {path: 'geological-disaster-second', component: SecondGeologicalDisasterComponent, data: {title: '二级灾害', keep: true}},
+    {path: 'geological-disaster-third', component: ThirdGeologicalDisasterComponent, data: {title: '三级灾害', keep: true}},
+    {path: 'geological-disaster-fourth', component: FourthGeologicalDisasterComponent, data: {title: '四级灾害', keep: true}},
 ];
 
 @NgModule({
