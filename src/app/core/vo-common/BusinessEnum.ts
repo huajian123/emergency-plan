@@ -26,7 +26,7 @@ export enum AccidentEnum {
     PortHazardousChemicals = 16,
     Blackout = 17,
     FireAccident = 18,
-    communication = 19,
+    Communication = 19,
     HazardousChemicals = 20,
     ProductionSafety = 21,
     ForestFire = 22,
