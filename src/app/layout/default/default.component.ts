@@ -780,28 +780,228 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
             open: false,
             children: [
                 {
-                    title: '一级灾害',
+                    title: '食品安全',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/public-health/first-health-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/food-safety-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/food-safety-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/food-safety-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/food-safety-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '二级灾害',
+                    title: '突发公共卫生',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/public-health/second-health-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/public-health-event-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/public-health-event-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/public-health-event-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/public-health-event-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '三级灾害',
+                    title: '公共卫生医疗救急',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/public-health/third-health-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/medical-aid-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/medical-aid-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/medical-aid-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/medical-aid-fourth',
+                        },
+                    ]
                 },
                 {
-                    title: '四级灾害',
+                    title: '鼠疫控制',
+                    icon: 'bars',
                     open: false,
                     selected: false,
-                    path: '/hazard/public-health/fourth-health-disaster',
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/plague-control-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/plague-control-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/plague-control-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/plague-control-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '流感',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/influenza-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/influenza-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/influenza-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/influenza-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '动物疫情',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/animal-epidemic-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/animal-epidemic-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/animal-epidemic-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/animal-epidemic-fourth',
+                        },
+                    ]
+                },
+                {
+                    title: '药品医疗器械',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/safety-mmedical-devices-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/safety-mmedical-devices-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/safety-mmedical-devices-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/public-health/safety-mmedical-devices-fourth',
+                        },
+                    ]
                 },
             ]
         },

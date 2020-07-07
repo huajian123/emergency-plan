@@ -21,7 +21,18 @@ export class CommandReportAddEditComponent implements OnInit {
     @Input() id: number;
     @Input() currentPageNum: number;
     validateForm: FormGroup;
+    /*中间数组变量*/
+    temporaryNameOptions: OptionsInterface[];
+    /*灾害类型下拉*/
     accidentTypeOptions: OptionsInterface[];
+    /*自然灾害名称下拉*/
+    naturalNameOptions: OptionsInterface[];
+    /*事故灾害名称下拉*/
+    accidentNameOptions: OptionsInterface[];
+    /*公共卫生下拉*/
+    publicHealthNameOptions: OptionsInterface[];
+    /*社会安全下拉*/
+    socialSecurityNameOptions: OptionsInterface[];
     isTrue: string;
     loginInfo: LoginInfoModel;
     departmentNameOptions: OptionsInterface[];
@@ -30,8 +41,12 @@ export class CommandReportAddEditComponent implements OnInit {
 
     constructor(private fb: FormBuilder, private dataService: CommandReportListService) {
         this.returnBack = new EventEmitter<any>();
+        this.temporaryNameOptions = [];
         this.accidentTypeOptions = [];
+        this.naturalNameOptions = [];
         this.departmentNameOptions = [];
+        this.publicHealthNameOptions = [];
+        this.socialSecurityNameOptions = [];
         this.departmentOptions = [];
         this.isTrue = '汇报';
         this.loginInfo = {
@@ -64,7 +79,6 @@ export class CommandReportAddEditComponent implements OnInit {
         } else {
             params.id = this.id;
             params.updateBy = this.loginInfo.account;
-            //console.log(params);
             submitHandel = this.dataService.editCommandReport(params).subscribe();
         }
 
@@ -75,6 +89,7 @@ export class CommandReportAddEditComponent implements OnInit {
     initForm() {
         this.validateForm = this.fb.group({
             accidentType: [null, [Validators.required]],
+            accidentId: [null, [Validators.required]],
             accidentGrade: [null, [Validators.required]],
             sendDepartment: [null, [Validators.required]],
             acceptDepartment: [null, [Validators.required]],
@@ -85,6 +100,7 @@ export class CommandReportAddEditComponent implements OnInit {
 
     async getDetail() {
         await this.dataService.getCommandReportDetail(this.id).subscribe((res) => {
+            /* console.log(res);*/
             this.validateForm.patchValue(res);
         });
     }
@@ -98,6 +114,27 @@ export class CommandReportAddEditComponent implements OnInit {
             default:
                 this.isTrue = '指挥';
                 break;
+        }
+    }
+
+    changeAccidentIdValue(index) {
+        this.temporaryNameOptions = [];
+        if (index !== null) {
+            switch (index) {
+                case 1:
+                    this.temporaryNameOptions = [...this.naturalNameOptions];
+                    break;
+                case 2:
+                    this.temporaryNameOptions = [...this.accidentNameOptions];
+                    break;
+                case 3:
+                    this.temporaryNameOptions = [...this.publicHealthNameOptions];
+                    break;
+                default:
+                    this.temporaryNameOptions = [...this.socialSecurityNameOptions];
+                    break;
+            }
+            /* this.validateForm.get('accidentId').reset();*/
         }
     }
 
@@ -141,6 +178,10 @@ export class CommandReportAddEditComponent implements OnInit {
     ngOnInit(): void {
         this.loginInfo = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
         this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
+        this.naturalNameOptions = [...MapPipe.transformMapToArray(MapSet.naturalDisastersType)];
+        this.accidentNameOptions = [...MapPipe.transformMapToArray(MapSet.accidentDisastersType)];
+        this.publicHealthNameOptions = [...MapPipe.transformMapToArray(MapSet.publicHealthType)];
+        this.socialSecurityNameOptions = [...MapPipe.transformMapToArray(MapSet.socialSecurityType)];
         this.initForm();
         this.getDepartmentName();
         if (this.id) {
