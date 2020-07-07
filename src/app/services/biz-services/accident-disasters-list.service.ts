@@ -30,14 +30,14 @@ export interface CommanderInfoModel {
 @Injectable({
     providedIn: 'root'
 })
-export class NaturalDisastersListService extends BaseHttp {
+export class AccidentDisastersListService extends BaseHttp {
 
     constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
         super(http, uri, message);
     }
 
     /*预案详情接口*/
-    public getAccidentDisastersList(id: number): Observable<AccidentDisastersModel[]> {
+    public getAccidentDisastersList(id: number): Observable<AccidentDisastersModel> {
         return this.get('/plans/' + DisasterEnum.AccidentDisaster + '/' + id, {});
     }
 
