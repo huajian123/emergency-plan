@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
     templateUrl: './first-health-disaster.component.html',
     styleUrls: ['./first-health-disaster.component.less']
 })
-export class FirstHealthDisasterComponent implements OnInit {
+export class FirstFoodSafetyComponent implements OnInit {
 
     constructor() {
     }

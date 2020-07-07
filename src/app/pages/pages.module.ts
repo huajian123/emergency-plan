@@ -6,6 +6,7 @@ import {NaturalDisastersModule} from './natural-disasters/natural-disasters.modu
 import {SocialSecurityModule} from './social-security/social-security.module';
 import {PublicHealthRoutingModule} from './public-health/public-health-routing.module';
 import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.module';
+import {StatusWarningModule} from './status-warning/status-warning.module';
 
 
 @NgModule({
@@ -17,9 +18,18 @@ import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.m
         NaturalDisastersModule,
         SocialSecurityModule,
         PublicHealthRoutingModule,
-        PeopleManageRoutingModule
+        PeopleManageRoutingModule,
+        StatusWarningModule
     ],
-    exports: [LoginModule, AccidentDisastersModule, NaturalDisastersModule, SocialSecurityModule, PublicHealthRoutingModule, PeopleManageRoutingModule]
+    exports: [
+        LoginModule,
+        AccidentDisastersModule,
+        NaturalDisastersModule,
+        SocialSecurityModule,
+        PublicHealthRoutingModule,
+        PeopleManageRoutingModule,
+        StatusWarningModule
+    ]
 })
 export class PagesModule {
 }

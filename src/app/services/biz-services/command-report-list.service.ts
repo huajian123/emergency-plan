@@ -9,6 +9,7 @@ import {NzMessageService} from 'ng-zorro-antd';
 export interface CommandReportListModel {
     id?: number;
     accidentGrade: number;
+    accidentId?: number;
     accidentType?: number;
     sendDepartment: number;
     acceptDepartment: number;
@@ -18,6 +19,7 @@ export interface CommandReportListModel {
 }
 
 export interface AddUpDownDepartmentModel {
+    accidentId?: number;
     accidentGrade: number;
     accidentType: number;
     acceptDepartment: number;

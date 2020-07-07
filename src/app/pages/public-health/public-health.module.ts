@@ -1,18 +1,25 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PublicHealthRoutingModule} from './public-health-routing.module';
-import {FirstHealthDisasterComponent} from './first-health-disaster/first-health-disaster.component';
-import {SecondHealthDisasterComponent} from './second-health-disaster/second-health-disaster.component';
-import {ThirdHealthDisasterComponent} from './third-health-disaster/third-health-disaster.component';
-import {FourthHealthDisasterComponent} from './fourth-health-disaster/fourth-health-disaster.component';
+import {SecondAnimalEpidemicComponent} from './animal-epidemic/second/second-health-disaster.component';
+import {SecondFoodSafetyComponent} from './food-safety/second/second-health-disaster.component';
+import {SecondInfluenzaComponent} from './influenza/second/second-health-disaster.component';
+import {SecondMedicalAidComponent} from './medical-aid/second/second-health-disaster.component';
+import {SecondPlagueControlComponent} from './plague-control/second/second-health-disaster.component';
+import {SecondPublicHealthComponent} from './public-health-event/second/second-health-disaster.component';
+import {SecondSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/second/second-health-disaster.component';
 
 
 @NgModule({
     declarations: [
-        FirstHealthDisasterComponent,
-        SecondHealthDisasterComponent,
-        ThirdHealthDisasterComponent,
-        FourthHealthDisasterComponent],
+        SecondFoodSafetyComponent,
+        SecondAnimalEpidemicComponent,
+        SecondInfluenzaComponent,
+        SecondMedicalAidComponent,
+        SecondPlagueControlComponent,
+        SecondPublicHealthComponent,
+        SecondSafetyMmedicalDevicesComponent
+    ],
     imports: [
         CommonModule,
         PublicHealthRoutingModule
