@@ -255,25 +255,25 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/first-accident-disaster',
+                            path: '/hazard/accident-disaster/environmental-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/second-accident-disaster',
+                            path: '/hazard/accident-disaster/environmental-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/third-accident-disaster',
+                            path: '/hazard/accident-disaster/environmental-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                            path: '/hazard/accident-disaster/environmental-fourth',
                         }]
                 },
                 {
@@ -286,25 +286,25 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/first-accident-disaster',
+                            path: '/hazard/accident-disaster/radiation-accident-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/second-accident-disaster',
+                            path: '/hazard/accident-disaster/radiation-accident-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/third-accident-disaster',
+                            path: '/hazard/accident-disaster/radiation-accident-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                            path: '/hazard/accident-disaster/radiation-accident-fourth',
                         }]
                 },
                 {
@@ -317,25 +317,56 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/first-accident-disaster',
+                            path: '/hazard/accident-disaster/algae-outbreak-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/second-accident-disaster',
+                            path: '/hazard/accident-disaster/algae-outbreak-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/third-accident-disaster',
+                            path: '/hazard/accident-disaster/algae-outbreak-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                            path: '/hazard/accident-disaster/algae-outbreak-fourth',
+                        }]
+                },
+                {
+                    title: '太湖湖泛',
+                    icon: 'bars',
+                    open: false,
+                    selected: false,
+                    children: [
+                        {
+                            title: '一级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/lake-flooding-first',
+                        },
+                        {
+                            title: '二级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/lake-flooding-second',
+                        },
+                        {
+                            title: '三级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/lake-flooding-third',
+                        },
+                        {
+                            title: '四级灾害',
+                            open: false,
+                            selected: false,
+                            path: '/hazard/accident-disaster/lake-flooding-fourth',
                         }]
                 },
                 {
@@ -348,25 +379,25 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/first-accident-disaster',
+                            path: '/hazard/accident-disaster/pollution-weather-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/second-accident-disaster',
+                            path: '/hazard/accident-disaster/pollution-weather-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/third-accident-disaster',
+                            path: '/hazard/accident-disaster/pollution-weather-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                            path: '/hazard/accident-disaster/pollution-weather-fourth',
                         }]
                 },
                 {
@@ -379,25 +410,25 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/first-accident-disaster',
+                            path: '/hazard/accident-disaster/nuclear-event-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/second-accident-disaster',
+                            path: '/hazard/accident-disaster/nuclear-event-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/third-accident-disaster',
+                            path: '/hazard/accident-disaster/nuclear-event-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard/accident-disaster/fourth-accident-disaster',
+                            path: '/hazard/accident-disaster/nuclear-event-fourth',
                         }]
                 },
                 {
