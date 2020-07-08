@@ -93,15 +93,16 @@ export class CommandReportAddEditComponent implements OnInit {
             accidentGrade: [null, [Validators.required]],
             sendDepartment: [null, [Validators.required]],
             acceptDepartment: [null, [Validators.required]],
-            sendDepartmentName: [null],
-            acceptDepartmentName: [null],
+            sendDepartmentName: [null, [Validators.required]],
+            acceptDepartmentName: [null, [Validators.required]],
         });
     }
 
     async getDetail() {
         await this.dataService.getCommandReportDetail(this.id).subscribe((res) => {
-            /* console.log(res);*/
+            console.log(res.acceptDepartmentName);
             this.validateForm.patchValue(res);
+            this.validateForm.get('accidentId').setValue(res.accidentId);
         });
     }
 
@@ -122,19 +123,19 @@ export class CommandReportAddEditComponent implements OnInit {
         if (index !== null) {
             switch (index) {
                 case 1:
-                    this.temporaryNameOptions = [...this.naturalNameOptions];
+                    this.temporaryNameOptions = this.naturalNameOptions;
                     break;
                 case 2:
-                    this.temporaryNameOptions = [...this.accidentNameOptions];
+                    this.temporaryNameOptions = this.accidentNameOptions;
                     break;
                 case 3:
-                    this.temporaryNameOptions = [...this.publicHealthNameOptions];
+                    this.temporaryNameOptions = this.publicHealthNameOptions;
                     break;
                 default:
-                    this.temporaryNameOptions = [...this.socialSecurityNameOptions];
+                    this.temporaryNameOptions = this.socialSecurityNameOptions;
                     break;
             }
-            /* this.validateForm.get('accidentId').reset();*/
+            this.validateForm.get('accidentId').reset();
         }
     }
 
@@ -151,28 +152,37 @@ export class CommandReportAddEditComponent implements OnInit {
         });
     }
 
+    /*发送部门下拉*/
     changeDepartmentFn(index) {
         this.departmentOptions = [];
-        if (index === null) {
-            return;
+        try {
+            if (index !== null) {
+                const datas = this.departmentNameOptions.find(ele => {
+                    return ele.value === index;
+                });
+                this.validateForm.get('sendDepartmentName').setValue(datas.label);
+            }
+        } catch (err) {
+            console.log('该部门已删除');
         }
-        const datas = this.departmentNameOptions.find(ele => {
-            return ele.value === index;
-        });
-        this.validateForm.get('sendDepartmentName').setValue(datas.label);
         const arrayObj = this.departmentNameOptions.splice(this.departmentNameOptions.findIndex(ele => ele.value === index), 1);
         this.departmentOptions = this.departmentNameOptions.filter(ele => !arrayObj.includes(ele));
         this.getDepartmentName();
     }
 
+    /*接受部门下拉*/
     changeDepartmentFns(e) {
-        if (e === null) {
-            return;
+        try {
+            if (e !== null) {
+                const data = this.departmentOptions.find(ele => {
+                    return ele.value === e;
+                });
+                this.validateForm.get('acceptDepartmentName').setValue(data.label);
+            }
+        } catch (err) {
+            console.log('该部门已删除');
         }
-        const data = this.departmentOptions.find(ele => {
-            return ele.value === e;
-        });
-        this.validateForm.get('acceptDepartmentName').setValue(data.label);
+
     }
 
     ngOnInit(): void {

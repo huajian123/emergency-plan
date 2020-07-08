@@ -17,7 +17,8 @@ export class DepartmentsAddEditComponent implements OnInit {
     validateForm: FormGroup;
     loginInfo: LoginInfoModel;
 
-    constructor(private fb: FormBuilder, private dataService: DepartmentsManagementListService, private ufastValidotors: UfastValidatorsService,) {
+    constructor(private fb: FormBuilder, private dataService: DepartmentsManagementListService,
+                private ufastValidotors: UfastValidatorsService) {
         this.returnBack = new EventEmitter<any>();
     }
 
@@ -47,7 +48,7 @@ export class DepartmentsAddEditComponent implements OnInit {
     initForm() {
         this.validateForm = this.fb.group({
             departmentName: ['', [Validators.required]],
-            departmentPhone: ['', [Validators.required, this.ufastValidotors.telephoneValidator()]],
+            departmentPhone: ['', [Validators.required, this.ufastValidotors.mobileOrTeleValidator()]],
         });
     }
 
