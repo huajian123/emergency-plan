@@ -8,6 +8,7 @@ import {SecondMedicalAidComponent} from './medical-aid/second/second-health-disa
 import {SecondPlagueControlComponent} from './plague-control/second/second-health-disaster.component';
 import {SecondPublicHealthComponent} from './public-health-event/second/second-health-disaster.component';
 import {SecondSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/second/second-health-disaster.component';
+import {ShareModule} from '../../share/share.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {SecondSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/se
     ],
     imports: [
         CommonModule,
-        PublicHealthRoutingModule
+        PublicHealthRoutingModule,
+        ShareModule,
     ]
 })
 export class PublicHealthModule {

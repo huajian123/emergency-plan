@@ -31,15 +31,15 @@ export interface CommanderInfoModel {
 @Injectable({
     providedIn: 'root'
 })
-export class NaturalDisastersListService extends BaseHttp {
+export class SocialSecurityListService extends BaseHttp {
 
     constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
         super(http, uri, message);
     }
 
     /*预案详情接口*/
-    public getSocialSecurityList(id: number): Observable<SocialSecurityModel[]> {
-        return this.get('/plans/' + DisasterEnum.SocialSecurity + '/' + id, {});
+    public getSocialSecurityList(id: number): Observable<SocialSecurityModel> {
+        return this.get('/plan/' + DisasterEnum.SocialSecurity + '/' + id, {});
     }
 
 

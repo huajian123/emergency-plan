@@ -19,7 +19,7 @@ export class SecondAlgaeOutbreakComponent implements OnInit {
     dataInfo: AccidentDisastersModel;
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
-    naturalEnum = AccidentEnum;
+    accidentEnum = AccidentEnum;
 
     constructor(private dataService: AccidentDisastersListService) {
         this.dataInfo = {
@@ -41,7 +41,7 @@ export class SecondAlgaeOutbreakComponent implements OnInit {
     }
 
     async getAccidentDisastersDetail() {
-        await this.dataService.getAccidentDisastersList(this.naturalEnum.RoadTraffic).subscribe(res => {
+        await this.dataService.getAccidentDisastersList(this.accidentEnum.AlgaeOutbreak).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {

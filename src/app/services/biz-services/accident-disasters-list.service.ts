@@ -38,7 +38,7 @@ export class AccidentDisastersListService extends BaseHttp {
 
     /*预案详情接口*/
     public getAccidentDisastersList(id: number): Observable<AccidentDisastersModel> {
-        return this.get('/plans/' + DisasterEnum.AccidentDisaster + '/' + id, {});
+        return this.get('/plan/' + DisasterEnum.AccidentDisaster + '/' + id, {});
     }
 
 
