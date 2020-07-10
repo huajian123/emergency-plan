@@ -14,7 +14,15 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
 
 
 @NgModule({
-    declarations: [CommandReportManagementComponent, ManagementTeamsComponent, ManagementDepartmentsComponent, ManagementPlansComponent, CommandReportAddEditComponent, TeamsAddEditComponent, DepartmentsAddEditComponent, PlansAddEditComponent, PlansDetailComponent],
+    declarations: [CommandReportManagementComponent,
+        ManagementTeamsComponent,
+        ManagementDepartmentsComponent,
+        ManagementPlansComponent,
+        CommandReportAddEditComponent,
+        TeamsAddEditComponent,
+        DepartmentsAddEditComponent,
+        PlansAddEditComponent,
+        PlansDetailComponent],
     imports: [
         CommonModule,
         PeopleManageRoutingModule,

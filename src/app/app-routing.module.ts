@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {LayoutDefalutComponent} from './layout/default/default.component';
 import {ManageLayoutComponent} from './layout/manage-layout/manage-layout.component';
 import {QuicklinkStrategy} from 'ngx-quicklink';
 import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.component';
-import {StatusWarningLayoutComponent} from "./layout/status-warning-layout/status-warning-layout.component";
+import {StatusWarningLayoutComponent} from './layout/status-warning-layout/status-warning-layout.component';
 
 const routes: Routes = [
     {path: 'login', component: LoginLayoutComponent},
@@ -44,12 +44,12 @@ const routes: Routes = [
         ],
     },
     {
-        path: 'status-warning',
+        path: 'hazard-status',
         component: StatusWarningLayoutComponent,
         children: [
-            {path: '', redirectTo: 'earthquake-warning', pathMatch: 'full'},
+            {path: '', redirectTo: 'status-warning', pathMatch: 'full'},
             {
-                path: 'earthquake-warning',
+                path: 'status-warning',
                 loadChildren: () => import('./pages/status-warning/status-warning.module').then(m => m.StatusWarningModule)
             },
 

@@ -1,19 +1,20 @@
 <nz-page-header class="site-page-header" nzTitle="地震灾害判别"></nz-page-header>
 <div class="normal-wrap" style="padding: 50px;">
     <div nz-row [nzGutter]="24" class="nzgutter">
-        <div nz-col nzSpan="12">
+        <div nz-col nzSpan="11">
             发生灾害地区
-            <nz-select [(ngModel)]="selectedProvince" (ngModelChange)="provinceChange($event)">
-                <nz-option *ngFor="let p of provinceData" [nzValue]="p" [nzLabel]="p"></nz-option>
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.province"
+                       (ngModelChange)="changeProvince($event)">
+                <nz-option *ngFor="let item of provinceData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
             </nz-select>
             市
-            <nz-select [(ngModel)]="selectedCity">
-                <nz-option *ngFor="let c of cityData[selectedProvince]" [nzValue]="c" [nzLabel]="c"></nz-option>
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.city">
+                <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
             </nz-select>
-            区
+            区(县)
         </div>
-        <div nz-col nzSpan="12">
-            <nz-space [nzSize]="20">
+        <div nz-col nzSpan="13">
+            <nz-space>
                 <nz-space-item>
                     <div class="first" (click)="clickAlert()">启动一级</div>
                 </nz-space-item>

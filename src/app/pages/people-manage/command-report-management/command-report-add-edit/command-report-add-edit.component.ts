@@ -100,7 +100,6 @@ export class CommandReportAddEditComponent implements OnInit {
 
     async getDetail() {
         await this.dataService.getCommandReportDetail(this.id).subscribe((res) => {
-            console.log(res.acceptDepartmentName);
             this.validateForm.patchValue(res);
             this.validateForm.get('accidentId').setValue(res.accidentId);
         });

@@ -34,7 +34,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转回应急
     goStatusWarning() {
-        window.open(localUrl + '/status-warning/earthquake-warning/earthquake-level', '_blank');
+        window.open(localUrl + '/hazard-status/status-warning/natural-drought-and-flood-level', '_blank');
     }
 
     ngOnInit() {
