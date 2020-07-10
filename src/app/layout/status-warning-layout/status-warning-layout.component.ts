@@ -73,7 +73,7 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '地震灾害判别',
+                            title: '地质灾害判别',
                             selected: false,
                             path: '/hazard-status/status-warning/natural-geological-level',
                         },
@@ -86,7 +86,7 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '地震灾害判别',
+                            title: '台风灾害判别',
                             selected: false,
                             path: '/hazard-status/status-warning/typhoon-level',
                         },
@@ -106,28 +106,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '道路交通灾害判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/road-traffic-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/road-traffic-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/road-traffic-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/road-traffic-fourth',
+                            path: '/hazard-status/status-warning/accident-road-traffic-level',
                         }]
                 },
                 {
@@ -137,28 +118,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '突发环境灾害判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/environmental-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/environmental-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/environmental-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/environmental-fourth',
+                            path: '/hazard-status/status-warning/accident-environmental-level',
                         }]
                 },
                 {
@@ -168,28 +130,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '辐射灾害判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/radiation-accident-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/radiation-accident-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/radiation-accident-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/radiation-accident-fourth',
+                            path: '/hazard-status/status-warning/accident-radiation-level',
                         }]
                 },
                 {
@@ -199,28 +142,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '太湖蓝藻灾害判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/algae-outbreak-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/algae-outbreak-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/algae-outbreak-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/algae-outbreak-fourth',
+                            path: '/hazard-status/status-warning/accident-algae-outbreak-level',
                         }]
                 },
                 {
@@ -230,28 +154,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '太湖湖泛判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/lake-flooding-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/lake-flooding-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/lake-flooding-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/lake-flooding-fourth',
+                            path: '/hazard-status/status-warning/accident-lake-flooding-level',
                         }]
                 },
                 {
@@ -261,28 +166,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '重污染天气判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/pollution-weather-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/pollution-weather-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/pollution-weather-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/pollution-weather-fourth',
+                            path: '/hazard-status/status-warning/accident-pollution-weather-level',
                         }]
                 },
                 {
@@ -292,28 +178,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '核应急判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/nuclear-event-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/nuclear-event-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/nuclear-event-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/nuclear-event-fourth',
+                            path: '/hazard-status/status-warning/accident-nuclear-event-level',
                         }]
                 },
                 {
@@ -323,28 +190,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '特种设备判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/special-equipment-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/special-equipment-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/special-equipment-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/special-equipment-fourth',
+                            path: '/hazard-status/status-warning/accident-special-equipment-level',
                         }]
                 },
                 {
@@ -354,28 +202,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '铁路事故判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/railway-accident-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/railway-accident-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/railway-accident-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/railway-accident-fourth',
+                            path: '/hazard-status/status-warning/accident-railway-accident-level',
                         }]
                 },
                 {
@@ -385,28 +214,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '港口危险化学品判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/port-hazardous-chemicals-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/port-hazardous-chemicals-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/port-hazardous-chemicals-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/port-hazardous-chemicals-fourth',
+                            path: '/hazard-status/status-warning/accident-port-hazardous-chemicals-level',
                         }]
                 },
                 {
@@ -416,28 +226,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '大面积停电判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/blackout-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/blackout-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/blackout-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/blackout-fourth',
+                            path: '/hazard-status/status-warning/accident-blackout-level',
                         }]
                 },
                 {
@@ -447,28 +238,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '重特大火灾判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/fire-accident-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/fire-accident-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/fire-accident-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/fire-accident-fourth',
+                            path: '/hazard-status/status-warning/accident-fire-accident-level',
                         }]
                 },
                 {
@@ -478,28 +250,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '通信保障判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/communication-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/communication-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/communication-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/communication-fourth',
+                            path: '/hazard-status/status-warning/accident-communication-level',
                         }]
                 },
                 {
@@ -509,28 +262,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '危险化学品判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/hazardous-chemicals-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/hazardous-chemicals-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/hazardous-chemicals-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/hazardous-chemicals-fourth',
+                            path: '/hazard-status/status-warning/accident-hazardous-chemicals-level',
                         }]
                 },
                 {
@@ -540,28 +274,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '生产安全判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/production-safety-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/production-safety-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/production-safety-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/production-safety-fourth',
+                            path: '/hazard-status/status-warning/accident-production-safety-level',
                         }]
                 },
                 {
@@ -571,28 +286,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '森林火灾判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/forest-fire-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/forest-fire-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/forest-fire-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/forest-fire-fourth',
+                            path: '/hazard-status/status-warning/accident-forest-fire-level',
                         }]
                 },
                 {
@@ -602,28 +298,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '水上搜救判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/water-search-rescue-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/water-search-rescue-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/water-search-rescue-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/water-search-rescue-fourth',
+                            path: '/hazard-status/status-warning/accident-water-search-rescue-level',
                         }]
                 },
                 {
@@ -633,28 +310,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '轨道交通运营判别',
                             selected: false,
-                            path: '/hazard/accident-disaster/rail-traffic-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/rail-traffic-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/rail-traffic-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/accident-disaster/rail-traffic-fourth',
+                            path: '/hazard-status/status-warning/accident-rail-traffic-level',
                         }]
                 },
             ]
@@ -671,28 +329,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '食品安全判别',
                             selected: false,
-                            path: '/hazard/public-health/food-safety-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/food-safety-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/food-safety-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/food-safety-fourth',
+                            path: '/hazard-status/status-warning/public-food-safety-level',
                         },
                     ]
                 },
@@ -703,28 +342,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '公共卫生判别',
                             selected: false,
-                            path: '/hazard/public-health/public-health-event-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/public-health-event-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/public-health-event-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/public-health-event-fourth',
+                            path: '/hazard-status/status-warning/public-health-event-level',
                         },
                     ]
                 },
@@ -735,28 +355,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '医疗救急判别',
                             selected: false,
-                            path: '/hazard/public-health/medical-aid-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/medical-aid-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/medical-aid-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/medical-aid-fourth',
+                            path: '/hazard-status/status-warning/public-medical-aid-level',
                         },
                     ]
                 },
@@ -767,28 +368,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '鼠疫灾害控制判别',
                             selected: false,
-                            path: '/hazard/public-health/plague-control-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/plague-control-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/plague-control-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/plague-control-fourth',
+                            path: '/hazard-status/status-warning/public-plague-control-level',
                         },
                     ]
                 },
@@ -799,28 +381,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '流感疫情判别',
                             selected: false,
-                            path: '/hazard/public-health/influenza-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/influenza-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/influenza-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/influenza-fourth',
+                            path: '/hazard-status/status-warning/public-influenza-level',
                         },
                     ]
                 },
@@ -831,28 +394,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '动物疫情判别',
                             selected: false,
-                            path: '/hazard/public-health/animal-epidemic-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/animal-epidemic-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/animal-epidemic-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/animal-epidemic-fourth',
+                            path: '/hazard-status/status-warning/public-animal-epidemic-level',
                         },
                     ]
                 },
@@ -863,28 +407,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '药品医疗器械判别',
                             selected: false,
-                            path: '/hazard/public-health/safety-mmedical-devices-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/safety-mmedical-devices-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/safety-mmedical-devices-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/public-health/safety-mmedical-devices-fourth',
+                            path: '/hazard-status/status-warning/public-medical-devices-level',
                         },
                     ]
                 },
@@ -902,28 +427,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '恐怖袭击判别',
                             selected: false,
-                            path: '/hazard/social-security/terrorist-attacks-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/terrorist-attacks-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/terrorist-attacks-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/terrorist-attacks-fourth',
+                            path: '/hazard-status/status-warning/social-terrorist-attacks-level',
                         },
                     ]
                 },
@@ -934,28 +440,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '群体性事件判别',
                             selected: false,
-                            path: '/hazard/social-security/mass-incident-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/mass-incident-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/mass-incident-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/mass-incident-fourth',
+                            path: '/hazard-status/status-warning/social-mass-incident-level',
                         },
                     ]
                 },
@@ -966,28 +453,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '价格异动判别',
                             selected: false,
-                            path: '/hazard/social-security/price-changes-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/price-changes-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/price-changes-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/price-changes-fourth',
+                            path: '/hazard-status/status-warning/social-price-changes-level',
                         },
                     ]
                 },
@@ -998,28 +466,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '粮食应急危机判别',
                             selected: false,
-                            path: '/hazard/social-security/grain-emergency-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/grain-emergency-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/grain-emergency-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/grain-emergency-fourth',
+                            path: '/hazard-status/status-warning/social-grain-emergency-level',
                         },
                     ]
                 },
@@ -1030,28 +479,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '网络与信息安全判别',
                             selected: false,
-                            path: '/hazard/social-security/network-information-security-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/network-information-security-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/network-information-security-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/network-information-security-fourth',
+                            path: '/hazard-status/status-warning/social-network-information-level',
                         },
                     ]
                 },
@@ -1062,28 +492,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '涉外突发灾害判别',
                             selected: false,
-                            path: '/hazard/social-security/foreign-affairs-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/foreign-affairs-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/foreign-affairs-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/foreign-affairs-fourth',
+                            path: '/hazard-status/status-warning/social-foreign-affairs-level',
                         },
                     ]
                 },
@@ -1094,28 +505,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '金融突发灾害判别',
                             selected: false,
-                            path: '/hazard/social-security/financial-accident-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/financial-accident-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/financial-accident-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/financial-accident-fourth',
+                            path: '/hazard-status/status-warning/social-financial-accident-level',
                         },
                     ]
                 },
@@ -1126,28 +518,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '政府性债务危机判别',
                             selected: false,
-                            path: '/hazard/social-security/government-debt-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/government-debt-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/government-debt-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/government-debt-fourth',
+                            path: '/hazard-status/status-warning/social-government-debt-level',
                         },
                     ]
                 },
@@ -1158,28 +531,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '军粮应急危机判别',
                             selected: false,
-                            path: '/hazard/social-security/commissary-emergency-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/commissary-emergency-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/commissary-emergency-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/commissary-emergency-fourth',
+                            path: '/hazard-status/status-warning/social-commissary-emergency-level',
                         },
                     ]
                 },
@@ -1190,28 +544,9 @@ export class StatusWarningLayoutComponent implements OnInit {
                     selected: false,
                     children: [
                         {
-                            title: '一级灾害',
-                            open: false,
+                            title: '救灾物资应急判别',
                             selected: false,
-                            path: '/hazard/social-security/relief-supplies-first',
-                        },
-                        {
-                            title: '二级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/relief-supplies-second',
-                        },
-                        {
-                            title: '三级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/relief-supplies-third',
-                        },
-                        {
-                            title: '四级灾害',
-                            open: false,
-                            selected: false,
-                            path: '/hazard/social-security/relief-supplies-fourth',
+                            path: '/hazard-status/status-warning/social-relief-supplies-level',
                         },
                     ]
                 },

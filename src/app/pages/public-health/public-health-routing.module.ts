@@ -24,10 +24,10 @@ import {FirstMedicalAidComponent} from './medical-aid/first/first-health-disaste
 import {SecondMedicalAidComponent} from './medical-aid/second/second-health-disaster.component';
 import {ThirdMedicalAidComponent} from './medical-aid/third/third-health-disaster.component';
 import {FourthMedicalAidComponent} from './medical-aid/fourth/fourth-health-disaster.component';
-import {FirstSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/first/first-health-disaster.component';
-import {SecondSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/second/second-health-disaster.component';
-import {ThirdSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/third/third-health-disaster.component';
-import {FourthSafetyMmedicalDevicesComponent} from './safety-mmedical-devices/fourth/fourth-health-disaster.component';
+import {FirstSafetyMedicalDevicesComponent} from './safety-medical-devices/first/first-health-disaster.component';
+import {SecondSafetyMedicalDevicesComponent} from './safety-medical-devices/second/second-health-disaster.component';
+import {ThirdSafetyMedicalDevicesComponent} from './safety-medical-devices/third/third-health-disaster.component';
+import {FourthSafetyMedicalDevicesComponent} from './safety-medical-devices/fourth/fourth-health-disaster.component';
 
 
 const routes: Routes = [
@@ -63,10 +63,10 @@ const routes: Routes = [
     {path: 'animal-epidemic-third', component: ThirdAnimalEpidemicComponent, data: {title: '三级灾害', keep: false}},
     {path: 'animal-epidemic-fourth', component: FourthAnimalEpidemicComponent, data: {title: '四级灾害', keep: false}},
     /*药品医疗器械*/
-    {path: 'safety-mmedical-devices-first', component: FirstSafetyMmedicalDevicesComponent, data: {title: '一级灾害', keep: false}},
-    {path: 'safety-mmedical-devices-second', component: SecondSafetyMmedicalDevicesComponent, data: {title: '二级灾害', keep: false}},
-    {path: 'safety-mmedical-devices-third', component: ThirdSafetyMmedicalDevicesComponent, data: {title: '三级灾害', keep: false}},
-    {path: 'safety-mmedical-devices-fourth', component: FourthSafetyMmedicalDevicesComponent, data: {title: '四级灾害', keep: false}},
+    {path: 'safety-medical-devices-first', component: FirstSafetyMedicalDevicesComponent, data: {title: '一级灾害', keep: false}},
+    {path: 'safety-medical-devices-second', component: SecondSafetyMedicalDevicesComponent, data: {title: '二级灾害', keep: false}},
+    {path: 'safety-medical-devices-third', component: ThirdSafetyMedicalDevicesComponent, data: {title: '三级灾害', keep: false}},
+    {path: 'safety-medical-devices-fourth', component: FourthSafetyMedicalDevicesComponent, data: {title: '四级灾害', keep: false}},
 
 ];
 
