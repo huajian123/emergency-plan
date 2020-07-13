@@ -4,7 +4,6 @@ import {CitiesNameModel, CitiesNameService} from 'src/app/services/biz-services/
 export interface OptionsInterface {
     value: number;
     label: string;
-    url: string;
 }
 
 export interface SelectedInterface {
@@ -23,9 +22,6 @@ export class EarthquakeWarningComponent implements OnInit {
     selected: SelectedInterface;
     dataInfo: CitiesNameModel[];
 
-    clickAlert() {
-        console.log('1');
-    }
 
     constructor(private dataService: CitiesNameService) {
         this.provinceData = [];
@@ -40,7 +36,7 @@ export class EarthquakeWarningComponent implements OnInit {
         await this.dataService.getCitiesNameList().subscribe(res => {
             this.dataInfo = res;
             res.forEach(item => {
-                this.provinceData.push({value: item.id, label: item.cityName, url: item.emergentUrl});
+                this.provinceData.push({value: item.id, label: item.cityName});
             });
         });
     }
@@ -49,7 +45,7 @@ export class EarthquakeWarningComponent implements OnInit {
         this.cityData = [];
         this.selected.city = '';
         this.dataInfo.find(data => data.id === eve).countDTOS.forEach(item => {
-            this.cityData.push({value: item.id, label: item.countName, url: item.emergentUrl});
+            this.cityData.push({value: item.id, label: item.countName});
         });
     }
 
