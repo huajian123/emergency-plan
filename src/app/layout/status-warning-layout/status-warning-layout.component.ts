@@ -10,7 +10,7 @@ export class StatusWarningLayoutComponent implements OnInit {
     isCollapsed = false;
     menus: Menu[] = [
         {
-            title: '自燃灾害类',
+            title: '自然灾害类',
             icon: 'iconnatura',
             open: false,
             children: [

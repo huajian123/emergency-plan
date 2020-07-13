@@ -15,7 +15,7 @@ export enum MapKeyType {
 
 export const MapSet = {
         accidentType: {
-            1: '自燃灾害类',
+            1: '自然灾害类',
             2: '事故灾害类',
             3: '公共卫生类',
             4: '社会安全类',
