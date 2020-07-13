@@ -5,6 +5,7 @@ import {
     NaturalDisastersModel
 } from '../../../../services/biz-services/natural-disasters-list.service';
 import {NaturalEnum} from '../../../../core/vo-common/BusinessEnum';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
     selector: 'app-second-natural-disaster',
@@ -20,7 +21,7 @@ export class SecondEarthquakeDisasterComponent implements OnInit {
     teamInfos: CommanderInfoModel[];
     naturalEnum = NaturalEnum;
 
-    constructor(private dataService: NaturalDisastersListService) {
+    constructor(private dataService: NaturalDisastersListService, public message?: NzMessageService) {
         this.dataInfo = {
             id: null,
             accidentType: null,
@@ -66,6 +67,9 @@ export class SecondEarthquakeDisasterComponent implements OnInit {
         });
     }
 
+    sendMsg(){
+        this.message.success('发送信息成功');
+    }
 
     ngOnInit(): void {
         this.getNaturalDisastersDetail();
