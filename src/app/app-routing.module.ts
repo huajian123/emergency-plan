@@ -7,6 +7,7 @@ import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.comp
 import {StatusWarningLayoutComponent} from './layout/status-warning-layout/status-warning-layout.component';
 import {EmergencyPlayComponent} from './layout/emergency-play/emergency-play.component';
 import {LocalEmergencyLayoutComponent} from './layout/local-emergency-layout/local-emergency-layout.component';
+import {ExpertWarehouseComponent} from './pages/expert-warehouse/expert-warehouse.component';
 
 
 const routes: Routes = [
@@ -73,6 +74,10 @@ const routes: Routes = [
             },
 
         ],
+    },
+    {
+        path: 'hazard-expert-warehouse',
+        component: ExpertWarehouseComponent,
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: '**', redirectTo: '/login'}
