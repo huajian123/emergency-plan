@@ -5,6 +5,7 @@ import {ManageLayoutComponent} from './layout/manage-layout/manage-layout.compon
 import {QuicklinkStrategy} from 'ngx-quicklink';
 import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.component';
 import {StatusWarningLayoutComponent} from './layout/status-warning-layout/status-warning-layout.component';
+import {EmergencyPlayComponent} from "./layout/emergency-play/emergency-play.component";
 
 const routes: Routes = [
     {path: 'login', component: LoginLayoutComponent},
@@ -54,6 +55,10 @@ const routes: Routes = [
             },
 
         ],
+    },
+    {
+        path: 'hazard-emergency-plan',
+        component: EmergencyPlayComponent,
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: '**', redirectTo: '/login'}

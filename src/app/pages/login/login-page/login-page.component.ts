@@ -27,6 +27,12 @@ export class LoginPageComponent implements OnInit {
         });
     }
 
+    // 跳转应急预案库
+    goEmergencyPlanFile(){
+
+        window.open(localUrl + '/hazard-emergency-plan', '_blank');
+    }
+
     // 跳转回应急
     goEmergency() {
         window.open(localUrl + '/hazard/natural-disaster/drought-and-flood-first', '_blank');
