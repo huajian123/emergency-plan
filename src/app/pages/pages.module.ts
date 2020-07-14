@@ -7,6 +7,7 @@ import {SocialSecurityModule} from './social-security/social-security.module';
 import {PublicHealthRoutingModule} from './public-health/public-health-routing.module';
 import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.module';
 import {StatusWarningModule} from './status-warning/status-warning.module';
+import {LocalEmergencyModule} from './local-emergency/local-emergency.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {StatusWarningModule} from './status-warning/status-warning.module';
         SocialSecurityModule,
         PublicHealthRoutingModule,
         PeopleManageRoutingModule,
-        StatusWarningModule
+        StatusWarningModule,
+        LocalEmergencyModule
     ],
     exports: [
         LoginModule,
@@ -28,7 +30,8 @@ import {StatusWarningModule} from './status-warning/status-warning.module';
         SocialSecurityModule,
         PublicHealthRoutingModule,
         PeopleManageRoutingModule,
-        StatusWarningModule
+        StatusWarningModule,
+        LocalEmergencyModule
     ]
 })
 export class PagesModule {
