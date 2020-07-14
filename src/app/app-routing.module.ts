@@ -63,7 +63,7 @@ const routes: Routes = [
         component: EmergencyPlayComponent,
     },
     {
-        path: 'regional-response',
+        path: 'hazard-regional-response',
         component: LocalEmergencyLayoutComponent,
         children: [
             {path: '', redirectTo: 'local-emergency', pathMatch: 'full'},

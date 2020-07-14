@@ -14,13 +14,6 @@
         <nz-header class="head-nav">
             <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
                (click)="isCollapsed = !isCollapsed"></i>
-            <div>
-                <a routerLink="/hazard-manage/people-manage" target="_blank" class="project-picture"><img
-                        src="../../../assets/imgs/management.svg" alt="">
-                    <span class="project-name">管理界面</span>
-                </a>
-
-            </div>
         </nz-header>
         <nz-content class="default-context">
             <app-tab></app-tab>

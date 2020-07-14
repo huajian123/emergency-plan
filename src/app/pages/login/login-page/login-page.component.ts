@@ -55,7 +55,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转地方响应
     goLocalEmergency() {
-        window.open(localUrl + '/regional-response/local-emergency/drought-and-flood-first', '_blank');
+        window.open(localUrl + '/hazard-regional-response/local-emergency/drought-and-flood-first', '_blank');
     }
 
     ngOnInit() {
