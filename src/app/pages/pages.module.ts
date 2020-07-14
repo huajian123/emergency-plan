@@ -8,10 +8,11 @@ import {PublicHealthRoutingModule} from './public-health/public-health-routing.m
 import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.module';
 import {StatusWarningModule} from './status-warning/status-warning.module';
 import {LocalEmergencyModule} from './local-emergency/local-emergency.module';
+import { ExpertWarehouseComponent } from './expert-warehouse/expert-warehouse.component';
 
 
 @NgModule({
-    declarations: [],
+    declarations: [ExpertWarehouseComponent],
     imports: [
         CommonModule,
         LoginModule,

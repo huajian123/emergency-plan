@@ -27,9 +27,14 @@ export class LoginPageComponent implements OnInit {
         });
     }
 
+    // 跳转到专家库
+    goExpertWarehouse(){
+        window.open(localUrl + '/hazard-expert-warehouse', '_blank');
+    }
+
+
     // 跳转应急预案库
     goEmergencyPlanFile() {
-
         window.open(localUrl + '/hazard-emergency-plan', '_blank');
     }
 

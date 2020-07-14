@@ -1,6 +1,6 @@
 import {InjectionToken, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {environment} from '../../environments/environment';
+import {downLoadUrl, environment, localUrl} from '../../environments/environment';
 
 export const API_CONFIG = new InjectionToken('ApiConfigToken');
 export const DOWNLOAD_CONFIT = new InjectionToken('DownLoadConfigToken');
@@ -11,8 +11,8 @@ export const DOWNLOAD_CONFIT = new InjectionToken('DownLoadConfigToken');
         CommonModule
     ],
     providers: [
-        {provide: API_CONFIG, useValue: environment.production ? '/' : '/site'},
-        {provide: DOWNLOAD_CONFIT, useValue: environment.production ? '/' : 'http://192.168.131.1:9998/'}
+        {provide: API_CONFIG, useValue: environment.production ? localUrl : '/site'},
+        {provide: DOWNLOAD_CONFIT, useValue: environment.production ? downLoadUrl : downLoadUrl}
     ]
 })
 export class ServicesModule {

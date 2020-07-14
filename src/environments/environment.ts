@@ -9,7 +9,8 @@
 const isIusUsedMock = false;
 
 // todo localUrl配置本机地址
-export const localUrl = 'http://localhost:4200';
+export const localUrl = 'http://192.168.1.106:4208';
+export const downLoadUrl = 'http://192.168.131.1:9998/';
 export const webServerUrl = `${localUrl}/site`;
 const mockServerUrl = `${localUrl}/site-model`;
 
@@ -25,22 +26,6 @@ export const gatewayKey = {
     Mock: 'mock'
 };
 
-// 老吴才给
-/*companyPositon: {
-  cenL: 118.30612,
-    cenB: 34.29057
-},*/
-
-/*companyPositon: {
-  cenL: 120.676173,
-    cenB: 31.21611
-},*/
-
-// 六合
-/*companyPositon: {
-  cenL: 118.912782,
-    cenB: 32.187244
-},*/
 
 export const environment = {
     sysName: '江苏省突发事件应对处置数字化系统',
