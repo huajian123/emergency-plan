@@ -4,54 +4,34 @@
         <span>总预案</span>
     </div>
     <ul class="file-list">
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《总应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
+        <li  *ngFor="let item of dataList.allType"><a [href]="item.planUrl" target="_blank"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《{{item.planName}}》</span><i nz-icon nzType="download" nzTheme="outline"></i></a></li>
     </ul>
 
     <div class="kind-title">
         <span>自然灾害类</span>
     </div>
     <ul class="file-list">
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省地震应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省防御台风应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省气象灾害应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省气象灾害应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省突发地质灾害应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省自然灾害救助应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
+        <li  *ngFor="let item of dataList.naturalDisaster"><a [href]="item.planUrl" target="_blank"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《{{item.planName}}》</span><i nz-icon nzType="download" nzTheme="outline"></i></a></li>
     </ul>
 
     <div class="kind-title">
         <span>事故灾害类</span>
     </div>
     <ul class="file-list">
-        <li (click)="downFile()"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省处置铁路交通事故应急预案》11</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省大面积停电事件应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省辐射事故应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省水上搜救应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省太湖湖泛应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省太湖蓝藻暴发应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省特种设备重特大事故应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省突发环境事件应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省重污染天气应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省事故重特大生产安全事故应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省危险化学品生产安全事故应急预案 （报审稿）》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省森林火灾应急预案（报审稿）》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
+        <li  *ngFor="let item of dataList.accidentDisaster"><a [href]="item.planUrl" target="_blank"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《{{item.planName}}》</span><i nz-icon nzType="download" nzTheme="outline"></i></a></li>
     </ul>
 
     <div class="kind-title">
         <span>公共卫生类</span>
     </div>
     <ul class="file-list">
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省食品安全事故应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省突发重大动物疫情应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省药品和医疗器械安全突发事件应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
+        <li  *ngFor="let item of dataList.publicHealth"><a [href]="item.planUrl" target="_blank"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《{{item.planName}}》</span><i nz-icon nzType="download" nzTheme="outline"></i></a></li>
     </ul>
 
     <div class="kind-title">
         <span>社会安全类</span>
     </div>
     <ul class="file-list">
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省食品安全事故应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省突发重大动物疫情应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
-        <li><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《江苏省药品和医疗器械安全突发事件应急预案》</span><i nz-icon nzType="download" nzTheme="outline"></i></li>
+        <li  *ngFor="let item of dataList.societySafety"><a [href]="item.planUrl" target="_blank"><span><i class="file-ico" nz-icon nzType="file-text" nzTheme="outline"></i>《{{item.planName}}》</span><i nz-icon nzType="download" nzTheme="outline"></i></a></li>
     </ul>
 </section>
