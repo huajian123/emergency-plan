@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {BaseHttp} from '../http/base-http';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {API_CONFIG} from '../services.module';
+import {API_CONFIG, DOWNLOAD_CONFIT} from '../services.module';
 import {PageInfo} from '../../VO/types';
 import {NzMessageService} from 'ng-zorro-antd';
 
@@ -75,7 +75,7 @@ export interface EmergencyTeamModel {
 })
 export class PlanListService extends BaseHttp {
 
-    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, public message: NzMessageService) {
+    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, @Inject(DOWNLOAD_CONFIT) public downLoadUri: string, public message: NzMessageService) {
         super(http, uri, message);
     }
 
@@ -107,7 +107,16 @@ export class PlanListService extends BaseHttp {
     /*部门、小队信息接口下拉菜单*/
     public getDeptResyList(): Observable<DeptResyMessageModel> {
         return this.get('/dept-resy-message', {});
+    }
 
+    public downLoadPlan(downloadUrl: string, fileName: string) {
+        console.log(downloadUrl);
+        console.log(this.downLoadUri);
+        console.log(this.downLoadUri + downloadUrl);
+        return this.post('/download-plan', {
+            downloadUrl: this.downLoadUri + downloadUrl,
+            fileName,
+        });
     }
 
 }
