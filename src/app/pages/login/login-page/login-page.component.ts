@@ -45,12 +45,12 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转省级联动
     goProvincialLinkage() {
-        window.open(localUrl + '/provincial-linkage/natural-disaster/drought-and-flood-first', '_blank');
+        /* window.open(localUrl + '/provincial-linkage/natural-disaster/drought-and-flood-first', '_blank');*/
     }
 
     // 跳转地方响应
     goLocalEmergency() {
-        window.open(localUrl + '/local-emergency/natural-disaster/drought-and-flood-first', '_blank');
+        window.open(localUrl + '/regional-response/local-emergency/drought-and-flood-first', '_blank');
     }
 
     ngOnInit() {

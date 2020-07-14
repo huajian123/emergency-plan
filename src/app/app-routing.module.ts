@@ -6,6 +6,7 @@ import {QuicklinkStrategy} from 'ngx-quicklink';
 import {LoginLayoutComponent} from './pages/login/login-layout/login-layout.component';
 import {StatusWarningLayoutComponent} from './layout/status-warning-layout/status-warning-layout.component';
 import {EmergencyPlayComponent} from './layout/emergency-play/emergency-play.component';
+import {LocalEmergencyLayoutComponent} from './layout/local-emergency-layout/local-emergency-layout.component';
 
 
 const routes: Routes = [
@@ -61,63 +62,18 @@ const routes: Routes = [
         path: 'hazard-emergency-plan',
         component: EmergencyPlayComponent,
     },
-    /*  {
-          path: 'provincial-linkage',
-          component: ProvincialLinkageLayoutComponent,
-          children: [
-              {path: '', redirectTo: 'provincial-linkage', pathMatch: 'full'},
-              {
-                  path: 'natural-disaster',
-                  loadChildren: () =>
-                      import('./pages/provincial-natural-disaster/provincial-natural-disaster.module').then(m =>
-                          m.ProvincialNaturalDisasterModule)
-              },
-              {
-                  path: 'accident-disaster',
-                  loadChildren: () =>
-                      import('./pages/provincial-accident-disaster/provincial-accident-disaster.module').then(m =>
-                          m.ProvincialAccidentDisasterModule)
-              },
-              {
-                  path: 'public-health',
-                  loadChildren: () =>
-                      import('./pages/provincial-public-health/provincial-public-health.module').then(m =>
-                          m.ProvincialPublicHealthModule)
-              },
-              {
-                  path: 'social-security',
-                  loadChildren: () =>
-                      import('./pages/provincial-social-security/provincial-social-security.module').then(m =>
-                          m.ProvincialSocialSecurityModule)
-              },
-          ],
-      },
-      {
-          path: 'local-emergency',
-          component: LocalEmergencyLayoutComponent,
-          children: [
-              {path: '', redirectTo: 'local-emergency', pathMatch: 'full'},
-              {
-                  path: 'local-natural-disaster',
-                  loadChildren: () =>
-                      import('./pages/local-natural-disaster/local-natural-disaster.module').then(m => m.LocalNaturalDisasterModule)
-              },
-              {
-                  path: 'local-accident-disaster',
-                  loadChildren: () =>
-                      import('./pages/local-accident-disaster/local-accident-disaster.module').then(m => m.LocalAccidentDisasterModule)
-              },
-              {
-                  path: 'local-public-health',
-                  loadChildren: () => import('./pages/local-public-health/local-public-health.module').then(m => m.LocalPublicHealthModule)
-              },
-              {
-                  path: 'local-social-security',
-                  loadChildren: () =>
-                      import('./pages/local-social-security/local-social-security.module').then(m => m.LocalSocialSecurityModule)
-              },
-          ],
-      },*/
+    {
+        path: 'regional-response',
+        component: LocalEmergencyLayoutComponent,
+        children: [
+            {path: '', redirectTo: 'local-emergency', pathMatch: 'full'},
+            {
+                path: 'local-emergency',
+                loadChildren: () => import('./pages/local-emergency/local-emergency.module').then(m => m.LocalEmergencyModule)
+            },
+
+        ],
+    },
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: '**', redirectTo: '/login'}
 ];
