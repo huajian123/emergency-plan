@@ -17,6 +17,7 @@ export class PlansDetailComponent implements OnInit {
     constructor(private dataService: PlanListService) {
         this.dataInfo = {
             id: null,
+            accidentId: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],

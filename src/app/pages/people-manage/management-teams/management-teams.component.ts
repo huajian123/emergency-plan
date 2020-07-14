@@ -62,7 +62,7 @@ export class ManagementTeamsComponent implements OnInit {
             headers: [
                 {
                     title: '职责名称',
-                    width: 100,
+                    width: 80,
                     field: 'responsibilityName',
                 },
                 {

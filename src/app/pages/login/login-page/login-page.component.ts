@@ -28,19 +28,29 @@ export class LoginPageComponent implements OnInit {
     }
 
     // 跳转应急预案库
-    goEmergencyPlanFile(){
+    goEmergencyPlanFile() {
 
         window.open(localUrl + '/hazard-emergency-plan', '_blank');
     }
 
-    // 跳转回应急
+    // 跳转决策指挥
     goEmergency() {
         window.open(localUrl + '/hazard/natural-disaster/drought-and-flood-first', '_blank');
     }
 
-    // 跳转回应急
+    // 跳转状态预警
     goStatusWarning() {
         window.open(localUrl + '/hazard-status/status-warning/natural-drought-and-flood-level', '_blank');
+    }
+
+    // 跳转省级联动
+    goProvincialLinkage() {
+        window.open(localUrl + '/provincial-linkage/natural-disaster/drought-and-flood-first', '_blank');
+    }
+
+    // 跳转地方响应
+    goLocalEmergency() {
+        window.open(localUrl + '/local-emergency/natural-disaster/drought-and-flood-first', '_blank');
     }
 
     ngOnInit() {

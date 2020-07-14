@@ -29,9 +29,20 @@ export class PlansAddEditComponent implements OnInit {
     @Output() returnBack: EventEmitter<any>;
     @Input() id: number;
     @Input() currentPageNum: number;
-    accidentTypeOptions: OptionsInterface[];
     deptOptions: DeptOptionsInterface[];
     resyOptions: ResyOptionsInterface[];
+    /*中间数组变量*/
+    temporaryNameOptions: OptionsInterface[];
+    /*灾害类型下拉*/
+    accidentTypeOptions: OptionsInterface[];
+    /*自然灾害名称下拉*/
+    naturalNameOptions: OptionsInterface[];
+    /*事故灾害名称下拉*/
+    accidentNameOptions: OptionsInterface[];
+    /*公共卫生下拉*/
+    publicHealthNameOptions: OptionsInterface[];
+    /*社会安全下拉*/
+    socialSecurityNameOptions: OptionsInterface[];
     loginInfo: LoginInfoModel;
     save = {
         width: '900px',
@@ -41,6 +52,10 @@ export class PlansAddEditComponent implements OnInit {
 
     constructor(private fb: FormBuilder, private dataService: PlanListService) {
         this.accidentTypeOptions = [];
+        this.temporaryNameOptions = [];
+        this.naturalNameOptions = [];
+        this.publicHealthNameOptions = [];
+        this.socialSecurityNameOptions = [];
         this.deptOptions = [];
         this.resyOptions = [];
         this.returnBack = new EventEmitter<any>();
@@ -63,6 +78,8 @@ export class PlansAddEditComponent implements OnInit {
         this.validateForm = this.fb.group({
             planName: [null, [Validators.required]],
             accidentType: [null, [Validators.required]],
+            accidentId: [null, [Validators.required]],
+            accidentName: [null, [Validators.required]],
             deptId: [null, [Validators.required]],
             deptPhone: [null],
             resyId: [9, [Validators.required]],
@@ -96,6 +113,7 @@ export class PlansAddEditComponent implements OnInit {
         let submitHandel = null;
         if (!this.id) {
             params.createBy = this.loginInfo.createBy;
+            console.log(params);
             submitHandel = this.dataService.addPlan(params).subscribe();
         } else {
             params.id = this.id;
@@ -132,6 +150,7 @@ export class PlansAddEditComponent implements OnInit {
     async getDetail() {
         await this.dataService.getPlanDetail(this.id).subscribe(data => {
             this.validateForm.patchValue(data);
+            this.validateForm.get('accidentId').setValue(data.accidentId);
             data.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {
                     case 1:
@@ -149,6 +168,38 @@ export class PlansAddEditComponent implements OnInit {
         });
 
 
+    }
+
+    changeAccidentIdValue(e) {
+        this.temporaryNameOptions = [];
+        if (e !== null) {
+            switch (e) {
+                case 1:
+                    this.temporaryNameOptions = this.naturalNameOptions;
+                    break;
+                case 2:
+                    this.temporaryNameOptions = this.accidentNameOptions;
+                    break;
+                case 3:
+                    this.temporaryNameOptions = this.publicHealthNameOptions;
+                    break;
+                default:
+                    this.temporaryNameOptions = this.socialSecurityNameOptions;
+                    break;
+            }
+            this.validateForm.get('accidentId').reset();
+        }
+    }
+
+    /*灾害名称下拉列表*/
+    changeDisasterName(e) {
+        if (e === null) {
+            return;
+        }
+        try {
+            this.validateForm.get('accidentName').setValue(this.temporaryNameOptions.find(res => res.value === e).label);
+        } catch (e) {
+        }
     }
 
     /*下拉选择部门*/
@@ -176,8 +227,12 @@ export class PlansAddEditComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
         this.loginInfo = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
+        this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
+        this.naturalNameOptions = [...MapPipe.transformMapToArray(MapSet.naturalDisastersType)];
+        this.accidentNameOptions = [...MapPipe.transformMapToArray(MapSet.accidentDisastersType)];
+        this.publicHealthNameOptions = [...MapPipe.transformMapToArray(MapSet.publicHealthType)];
+        this.socialSecurityNameOptions = [...MapPipe.transformMapToArray(MapSet.socialSecurityType)];
         this.initForm();
         this.getDeptResyListInfos();
         if (this.id) {

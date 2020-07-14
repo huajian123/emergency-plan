@@ -5,11 +5,22 @@ import {ShareModule} from '../share/share.module';
 import {SidebarNavComponent} from './default/sidebar-nav/sidebar-nav.component';
 import {TabComponent} from './default/tab/tab.component';
 import {ManageLayoutComponent} from './manage-layout/manage-layout.component';
-import { StatusWarningLayoutComponent } from './status-warning-layout/status-warning-layout.component';
-import { EmergencyPlayComponent } from './emergency-play/emergency-play.component';
+import {StatusWarningLayoutComponent} from './status-warning-layout/status-warning-layout.component';
+import {EmergencyPlayComponent} from './emergency-play/emergency-play.component';
+import {ProvincialLinkageLayoutComponent} from './provincial-linkage-layout/provincial-linkage-layout.component';
+import {LocalEmergencyLayoutComponent} from './local-emergency-layout/local-emergency-layout.component';
 
 @NgModule({
-    declarations: [LayoutDefalutComponent, SidebarNavComponent, TabComponent, ManageLayoutComponent, StatusWarningLayoutComponent, EmergencyPlayComponent],
+    declarations: [
+        LayoutDefalutComponent,
+        SidebarNavComponent,
+        TabComponent,
+        ManageLayoutComponent,
+        StatusWarningLayoutComponent,
+        EmergencyPlayComponent,
+        ProvincialLinkageLayoutComponent,
+        LocalEmergencyLayoutComponent
+    ],
     imports: [
         CommonModule,
         ShareModule,

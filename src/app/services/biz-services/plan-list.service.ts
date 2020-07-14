@@ -10,6 +10,7 @@ import {NzMessageService} from 'ng-zorro-antd';
 export interface PlanListModel {
     id?: number;
     planName: string;
+    accidentId: number;
     accidentType: number;
     updateTime: Date;
     updateBy: string;
@@ -20,6 +21,7 @@ export interface PlanListModel {
 
 export interface PlanDetailModel {
     id?: number;
+    accidentId: number;
     accidentType: number;
     planName: string;
     planDeptResyEntities: PlanDeptResyEntitiesDTOS[];
@@ -56,6 +58,8 @@ export interface EmergencyTeamDTOS {
 
 export interface AddEditEmergencyTeamModel {
     id?: number;
+    accidentId: number;
+    accidentName: string;
     accidentType: number;
     addEmergencyTeamDTOS: EmergencyTeamModel[];
     createBy?: string;
@@ -75,7 +79,8 @@ export interface EmergencyTeamModel {
 })
 export class PlanListService extends BaseHttp {
 
-    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, @Inject(DOWNLOAD_CONFIT) public downLoadUri: string, public message: NzMessageService) {
+    constructor(public http: HttpClient, @Inject(API_CONFIG) public uri: string, @Inject(DOWNLOAD_CONFIT) public downLoadUri: string,
+                public message: NzMessageService) {
         super(http, uri, message);
     }
 
