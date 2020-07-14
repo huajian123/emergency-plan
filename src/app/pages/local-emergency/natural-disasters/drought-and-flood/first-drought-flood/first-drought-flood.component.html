@@ -1,24 +1,36 @@
+<!--<ng-container *ngIf="currentPage===pageTypeEnum.List">-->
 <nz-layout>
     <nz-content>
-        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24}">
-            <div nz-row>
-                <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                <div nz-col class="" nzSpan="6">col-6</div>
-                <div nz-col class="" nzSpan="6">col-6</div>
-                <div nz-col class="" nzSpan="6">col-6</div>
+        <div nz-row nzJustify="space-around">
+            <div nz-col nzSpan="5" class="gutter-row-odd" [nzOffset]="1">南京市</div>
+            <div nz-col nzSpan="5" class="gutter-row-odd">无锡市</div>
+            <div nz-col nzSpan="5" class="gutter-row-odd">徐州市</div>
+            <div nz-col nzSpan="5" class="gutter-row-odd">常州市</div>
             </div>
-            <!-- <div nz-row>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-             </div>
-             <div nz-row>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-                 <div nz-col class="gutter-row" nzSpan="6">col-6</div>
-             </div>-->
+        <div nz-row nzJustify="space-around" class="marginTop">
+            <div nz-col nzSpan="5" class="gutter-row-even" [nzOffset]="1">苏州市</div>
+            <div nz-col nzSpan="5" class="gutter-row-even">南通市</div>
+            <div nz-col nzSpan="5" class="gutter-row-even">连云港市</div>
+            <div nz-col nzSpan="5" class="gutter-row-even">淮安市</div>
+        </div>
+        <div nz-row nzJustify="space-around" class="marginTop">
+            <div nz-col nzSpan="5" class="gutter-row-oddd" [nzOffset]="1">盐城市</div>
+            <div nz-col nzSpan="5" class="gutter-row-oddd">扬州市</div>
+            <div nz-col nzSpan="5" class="gutter-row-oddd">镇江市</div>
+            <div nz-col nzSpan="5" class="gutter-row-oddd">泰州市</div>
+        </div>
+        <div nz-row nzJustify="space-around" class="marginTop">
+            <div nz-col nzSpan="5" class="gutter-row-evenn" [nzOffset]="1">宿迁市</div>
+            <div nz-col nzSpan="5"></div>
+            <div nz-col nzSpan="5"></div>
+            <div nz-col nzSpan="5"></div>
         </div>
     </nz-content>
 </nz-layout>
+<!--</ng-container>-->
+<!--<ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
+    <app-first-drought-flood-detail [id]="itemId"
+                                    (returnBack)="returnToList($event)"
+                                    [currentPageNum]="tableConfig.pageIndex"></app-first-drought-flood-detail>
+</ng-container>-->
+
