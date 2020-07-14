@@ -17,6 +17,7 @@ export interface PlanListModel {
     createTime: Date;
     createBy: string;
     delFlag?: boolean;
+    planUrl?: string;
 }
 
 export interface PlanDetailModel {
@@ -74,6 +75,14 @@ export interface EmergencyTeamModel {
     resyId: number;
 }
 
+export interface EmergencyPlanFileList {
+    allType: PlanListModel[];
+    accidentDisaster: PlanListModel[];
+    naturalDisaster: PlanListModel[];
+    publicHealth: PlanListModel[];
+    societySafety: PlanListModel[];
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -114,10 +123,11 @@ export class PlanListService extends BaseHttp {
         return this.get('/dept-resy-message', {});
     }
 
+    public getPlans(): Observable<EmergencyPlanFileList> {
+        return this.get('/plans', {});
+    }
+
     public downLoadPlan(downloadUrl: string, fileName: string) {
-        console.log(downloadUrl);
-        console.log(this.downLoadUri);
-        console.log(this.downLoadUri + downloadUrl);
         return this.post('/download-plan', {
             downloadUrl: this.downLoadUri + downloadUrl,
             fileName,
