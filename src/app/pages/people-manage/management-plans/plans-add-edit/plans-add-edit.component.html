@@ -12,8 +12,19 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="8" nzRequired>预案类别</nz-form-label>
                     <nz-form-control [nzSpan]="10">
-                        <nz-select nzPlaceHolder="请下拉选择预案" formControlName="accidentType">
+                        <nz-select (ngModelChange)="changeAccidentIdValue($event)" nzPlaceHolder="请下拉选择预案"
+                                   formControlName="accidentType">
                             <nz-option *ngFor="let item of accidentTypeOptions" [nzLabel]="item.label"
+                                       [nzValue]="item.value"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="8" nzRequired>灾害名称</nz-form-label>
+                    <nz-form-control [nzSpan]="10">
+                        <nz-select (ngModelChange)="changeDisasterName($event)" nzPlaceHolder="请下拉选择类型"
+                                   formControlName="accidentId">
+                            <nz-option *ngFor="let item of temporaryNameOptions" [nzLabel]="item.label"
                                        [nzValue]="item.value"></nz-option>
                         </nz-select>
                     </nz-form-control>
