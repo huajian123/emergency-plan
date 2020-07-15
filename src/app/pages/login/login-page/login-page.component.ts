@@ -52,7 +52,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转省级联动
     goProvincialLinkage() {
-        /* window.open(localUrl + '/provincial-linkage/natural-disaster/drought-and-flood-first', '_blank');*/
+         window.open(localUrl + '/hazard-provincial/provincial-linkage/first-drought-pro', '_blank');
     }
 
     // 跳转地方响应

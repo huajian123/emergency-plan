@@ -9,6 +9,7 @@ import {EmergencyPlayComponent} from './layout/emergency-play/emergency-play.com
 import {LocalEmergencyLayoutComponent} from './layout/local-emergency-layout/local-emergency-layout.component';
 import {ExpertWarehouseComponent} from './pages/expert-warehouse/expert-warehouse.component';
 import {ResourceWarehouseComponent} from "./pages/resource-warehouse/resource-warehouse.component";
+import {ProvincialLinkageLayoutComponent} from "./layout/provincial-linkage-layout/provincial-linkage-layout.component";
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
         path: 'hazard',
         component: LayoutDefalutComponent,
         children: [
-            {path: '', redirectTo: 'hazard', pathMatch: 'full'},
+            {path: '', redirectTo: 'natural-disaster', pathMatch: 'full'},
             {
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)
@@ -83,6 +84,17 @@ const routes: Routes = [
     {
         path: 'hazard-resource-warehouse',
         component: ResourceWarehouseComponent,
+    },
+    {
+        path: 'hazard-provincial',
+        component: ProvincialLinkageLayoutComponent,
+        children: [
+            {path: '', redirectTo: 'provincial-linkage', pathMatch: 'full'},
+            {
+                path: 'provincial-linkage',
+                loadChildren: () => import('./pages/provincial-linkage/provincial-linkage.module').then(m => m.ProvincialLinkageModule)
+            },
+        ],
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: '**', redirectTo: '/login'}
