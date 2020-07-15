@@ -10,7 +10,6 @@ import {AccidentTypeEnum, DisasterLevelEnum, NaturalEnum} from '../../../../core
     styleUrls: ['./first-drought-pro.component.less']
 })
 export class FirstDroughtProComponent implements OnInit {
-    data: ProvincialLinkageModel;
     accidentId = NaturalEnum.DroughtAndFlood;
     accidentType = AccidentTypeEnum.Nature;
     planGrade = DisasterLevelEnum.LevelOne;
