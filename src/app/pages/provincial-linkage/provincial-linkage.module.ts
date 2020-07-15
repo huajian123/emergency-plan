@@ -8,10 +8,14 @@ import { SecondDroughtProComponent } from './drought-and-flood/second-drought-pr
 import { ThirdDroughtProComponent } from './drought-and-flood/third-drought-pro/third-drought-pro.component';
 import { FourthDroughtProComponent } from './drought-and-flood/fourth-drought-pro/fourth-drought-pro.component';
 import { OrganizationListComponent } from './organization-list/organization-list.component';
+import { EarthquakeProFirstComponent } from './earthquake/earthquake-pro-first/earthquake-pro-first.component';
+import { EarthquakeProSecondComponent } from './earthquake/earthquake-pro-second/earthquake-pro-second.component';
+import { EarthquakeProThirdComponent } from './earthquake/earthquake-pro-third/earthquake-pro-third.component';
+import { EarthquakeProFourthComponent } from './earthquake/earthquake-pro-fourth/earthquake-pro-fourth.component';
 
 
 @NgModule({
-    declarations: [FirstDroughtProComponent, SecondDroughtProComponent, ThirdDroughtProComponent, FourthDroughtProComponent, OrganizationListComponent],
+    declarations: [FirstDroughtProComponent, SecondDroughtProComponent, ThirdDroughtProComponent, FourthDroughtProComponent, OrganizationListComponent, EarthquakeProFirstComponent, EarthquakeProSecondComponent, EarthquakeProThirdComponent, EarthquakeProFourthComponent],
     imports: [
         CommonModule,
         ProvincialLinkageRoutingModule,

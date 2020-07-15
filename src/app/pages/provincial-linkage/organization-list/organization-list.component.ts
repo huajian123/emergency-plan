@@ -29,9 +29,11 @@ export class OrganizationListComponent implements OnInit {
 
     getDataList() {
         this.dataService.getProvincialLinkage(this.accidentId, this.accidentType, this.planGrade).subscribe(res => {
+            console.log(res);
             if (res) {
                 this.data = res;
             }
+            console.log(this.data);
         });
     }
 
