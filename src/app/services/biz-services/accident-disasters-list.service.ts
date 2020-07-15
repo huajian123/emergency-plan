@@ -11,6 +11,7 @@ export enum DisasterEnum {
 
 export interface AccidentDisastersModel {
     id?: number;
+    planGrade: number;
     accidentType: number;
     planName: string;
     planDeptResyEntities: CommanderInfoModel[];
@@ -37,8 +38,8 @@ export class AccidentDisastersListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getAccidentDisastersList(id: number): Observable<AccidentDisastersModel> {
-        return this.get('/plan/' + DisasterEnum.AccidentDisaster + '/' + id, {});
+    public getAccidentDisastersList(param: { id: number, planGrade: number }): Observable<AccidentDisastersModel> {
+        return this.get('/plan/' + DisasterEnum.AccidentDisaster + '/' + param.id + '/' + param.planGrade, {});
     }
 
 

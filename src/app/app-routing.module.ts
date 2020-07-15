@@ -8,7 +8,7 @@ import {StatusWarningLayoutComponent} from './layout/status-warning-layout/statu
 import {EmergencyPlayComponent} from './layout/emergency-play/emergency-play.component';
 import {LocalEmergencyLayoutComponent} from './layout/local-emergency-layout/local-emergency-layout.component';
 import {ExpertWarehouseComponent} from './pages/expert-warehouse/expert-warehouse.component';
-import {ResourceWarehouseComponent} from "./pages/resource-warehouse/resource-warehouse.component";
+import {ResourceWarehouseComponent} from './pages/resource-warehouse/resource-warehouse.component';
 
 
 const routes: Routes = [

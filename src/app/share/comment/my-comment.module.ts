@@ -12,7 +12,7 @@ import {MapPipe} from '../directives/pipe/map.pipe';
         TopProgressBarComponent,
         CardTableWrapComponent,
         AntTableComponent,
-        MapPipe
+        MapPipe,
     ],
     imports: [
         CommonModule,
@@ -21,7 +21,7 @@ import {MapPipe} from '../directives/pipe/map.pipe';
     exports: [
         TopProgressBarComponent,
         CardTableWrapComponent,
-        AntTableComponent
+        AntTableComponent,
     ]
 })
 export class MyCommentModule {

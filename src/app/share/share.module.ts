@@ -5,6 +5,7 @@ import {MyCommentModule} from './comment/my-comment.module';
 import {MyNgZorroModule} from './my-ng-zorro/my-ng-zorro.module';
 import {RouterModule} from '@angular/router';
 import {QuicklinkModule} from 'ngx-quicklink';
+import {BizComment} from './biz-comment/biz-comment.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {QuicklinkModule} from 'ngx-quicklink';
         MyNgZorroModule,
         QuicklinkModule,
         RouterModule,
+        BizComment,
     ],
     exports: [
         CommonModule,
@@ -26,6 +28,7 @@ import {QuicklinkModule} from 'ngx-quicklink';
         MyNgZorroModule,
         QuicklinkModule,
         RouterModule,
+        BizComment
     ]
 })
 export class ShareModule {

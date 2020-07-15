@@ -11,6 +11,7 @@ export enum DisasterEnum {
 
 export interface SocialSecurityModel {
     id?: number;
+    planGrade: number;
     accidentType: number;
     planName: string;
     planDeptResyEntities: CommanderInfoModel[];
@@ -38,8 +39,8 @@ export class SocialSecurityListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getSocialSecurityList(id: number): Observable<SocialSecurityModel> {
-        return this.get('/plan/' + DisasterEnum.SocialSecurity + '/' + id, {});
+    public getSocialSecurityList(param: { id: number, planGrade: number }): Observable<SocialSecurityModel> {
+        return this.get('/plan/' + DisasterEnum.SocialSecurity + '/' + param.id + '/' + param.planGrade, {});
     }
 
 

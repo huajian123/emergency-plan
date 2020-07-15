@@ -69,7 +69,9 @@ export interface LoginInfoModel {
 }
 
 
-/*export interface OptionsInterface {
-    value: string | number;
-    label: string;
-}*/
+export enum DisasterLevelEnum {
+    LevelOne = 1,
+    LevelTwo = 2,
+    LevelThree = 3,
+    LevelFour = 4
+}

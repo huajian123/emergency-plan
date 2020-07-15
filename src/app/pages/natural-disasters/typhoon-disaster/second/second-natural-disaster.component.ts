@@ -4,7 +4,7 @@ import {
     NaturalDisastersListService,
     NaturalDisastersModel
 } from '../../../../services/biz-services/natural-disasters-list.service';
-import {NaturalEnum} from '../../../../core/vo-common/BusinessEnum';
+import {DisasterLevelEnum, NaturalEnum} from '../../../../core/vo-common/BusinessEnum';
 
 @Component({
     selector: 'app-second-natural-disaster',
@@ -19,10 +19,12 @@ export class SecondTyphoonDisasterComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     naturalEnum = NaturalEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: NaturalDisastersListService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -40,7 +42,10 @@ export class SecondTyphoonDisasterComponent implements OnInit {
     }
 
     async getNaturalDisastersDetail() {
-        await this.dataService.getNaturalDisastersList(this.naturalEnum.Typhoon).subscribe(res => {
+        await this.dataService.getNaturalDisastersList({
+            id: this.naturalEnum.Typhoon,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {
