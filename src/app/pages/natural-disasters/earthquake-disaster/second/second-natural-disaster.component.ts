@@ -4,7 +4,7 @@ import {
     NaturalDisastersListService,
     NaturalDisastersModel
 } from '../../../../services/biz-services/natural-disasters-list.service';
-import {NaturalEnum} from '../../../../core/vo-common/BusinessEnum';
+import {DisasterLevelEnum, NaturalEnum} from '../../../../core/vo-common/BusinessEnum';
 import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
@@ -20,10 +20,12 @@ export class SecondEarthquakeDisasterComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     naturalEnum = NaturalEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: NaturalDisastersListService, public message?: NzMessageService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -41,7 +43,10 @@ export class SecondEarthquakeDisasterComponent implements OnInit {
     }
 
     async getNaturalDisastersDetail() {
-        await this.dataService.getNaturalDisastersList(this.naturalEnum.Earthquake).subscribe(res => {
+        await this.dataService.getNaturalDisastersList({
+            id: this.naturalEnum.Earthquake,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {
@@ -67,7 +72,7 @@ export class SecondEarthquakeDisasterComponent implements OnInit {
         });
     }
 
-    sendMsg(){
+    sendMsg() {
         this.message.success('发送信息成功');
     }
 

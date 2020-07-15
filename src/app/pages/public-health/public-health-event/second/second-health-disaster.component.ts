@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CommanderInfoModel, PublicHealthListService, PublicHealthModel} from '../../../../services/biz-services/public-health-list.service';
-import {PublicHealthEnum} from '../../../../core/vo-common/BusinessEnum';
+import {DisasterLevelEnum, PublicHealthEnum} from '../../../../core/vo-common/BusinessEnum';
 
 @Component({
     selector: 'app-second-health-disaster',
@@ -15,10 +15,12 @@ export class SecondPublicHealthComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     publicHealthEnum = PublicHealthEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: PublicHealthListService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -36,7 +38,10 @@ export class SecondPublicHealthComponent implements OnInit {
     }
 
     async getPublicHealthDetail() {
-        await this.dataService.getPublicHealthList(this.publicHealthEnum.PublicHealth).subscribe(res => {
+        await this.dataService.getPublicHealthList({
+            id: this.publicHealthEnum.PublicHealth,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {

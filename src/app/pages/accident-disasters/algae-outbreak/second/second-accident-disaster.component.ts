@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {AccidentEnum} from 'src/app/core/vo-common/BusinessEnum';
+import {AccidentEnum, DisasterLevelEnum} from 'src/app/core/vo-common/BusinessEnum';
 import {
     AccidentDisastersListService,
     AccidentDisastersModel,
@@ -20,10 +20,12 @@ export class SecondAlgaeOutbreakComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     accidentEnum = AccidentEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: AccidentDisastersListService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -41,7 +43,10 @@ export class SecondAlgaeOutbreakComponent implements OnInit {
     }
 
     async getAccidentDisastersDetail() {
-        await this.dataService.getAccidentDisastersList(this.accidentEnum.AlgaeOutbreak).subscribe(res => {
+        await this.dataService.getAccidentDisastersList({
+            id: this.accidentEnum.AlgaeOutbreak,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {

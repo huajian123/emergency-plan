@@ -22,6 +22,7 @@ export interface PlanListModel {
 
 export interface PlanDetailModel {
     id?: number;
+    planGrade: number;
     accidentId: number;
     accidentType: number;
     planName: string;
@@ -60,6 +61,7 @@ export interface EmergencyTeamDTOS {
 export interface AddEditEmergencyTeamModel {
     id?: number;
     accidentId: number;
+    planGrade: number;
     accidentName: string;
     accidentType: number;
     addEmergencyTeamDTOS: EmergencyTeamModel[];

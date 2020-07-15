@@ -4,7 +4,7 @@ import {
     AccidentDisastersModel,
     CommanderInfoModel
 } from '../../../../services/biz-services/accident-disasters-list.service';
-import {AccidentEnum} from '../../../../core/vo-common/BusinessEnum';
+import {AccidentEnum, DisasterLevelEnum} from '../../../../core/vo-common/BusinessEnum';
 
 @Component({
     selector: 'app-second-accident-disaster',
@@ -19,10 +19,12 @@ export class SecondBlackoutComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     accidentEnum = AccidentEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: AccidentDisastersListService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -40,7 +42,10 @@ export class SecondBlackoutComponent implements OnInit {
     }
 
     async getAccidentDisastersDetail() {
-        await this.dataService.getAccidentDisastersList(this.accidentEnum.Blackout).subscribe(res => {
+        await this.dataService.getAccidentDisastersList({
+            id: this.accidentEnum.Blackout,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {

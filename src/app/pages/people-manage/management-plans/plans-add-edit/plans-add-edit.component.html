@@ -29,6 +29,16 @@
                         </nz-select>
                     </nz-form-control>
                 </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="8" nzRequired>灾害等级</nz-form-label>
+                    <nz-form-control [nzSpan]="10">
+                        <nz-select nzPlaceHolder="请下拉选择类型"
+                                   formControlName="planGrade">
+                            <nz-option *ngFor="let item of disasterLevelOptions" [nzLabel]="item.label"
+                                       [nzValue]="item.value"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
             </nz-card>
             <nz-card nzTitle="▏总指挥" [nzBordered]="false">
                 <nz-form-item>

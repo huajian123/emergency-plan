@@ -12,6 +12,7 @@ export enum DisasterEnum {
 export interface NaturalDisastersModel {
     id?: number;
     accidentType: number;
+    planGrade: number;
     planName: string;
     planDeptResyEntities: CommanderInfoModel[];
 }
@@ -38,8 +39,8 @@ export class NaturalDisastersListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getNaturalDisastersList(id: number): Observable<NaturalDisastersModel> {
-        return this.get('/plan/' + DisasterEnum.NaturalDisaster + '/' + id, {});
+    public getNaturalDisastersList(param: { id: number, planGrade: number }): Observable<NaturalDisastersModel> {
+        return this.get('/plan/' + DisasterEnum.NaturalDisaster + '/' + param.id + '/' + param.planGrade, {});
     }
 
 

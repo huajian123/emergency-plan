@@ -4,7 +4,7 @@ import {
     SocialSecurityListService,
     SocialSecurityModel
 } from '../../../../services/biz-services/social-security-list.service';
-import {SocialSecurityEnum} from '../../../../core/vo-common/BusinessEnum';
+import {DisasterLevelEnum, SocialSecurityEnum} from '../../../../core/vo-common/BusinessEnum';
 
 @Component({
     selector: 'app-second-natural-disaster',
@@ -19,10 +19,12 @@ export class SecondTerroristAttacksComponent implements OnInit {
     commanderInfos: CommanderInfoModel;
     teamInfos: CommanderInfoModel[];
     socialSecurityEnum = SocialSecurityEnum;
+    disasterLevel = DisasterLevelEnum;
 
     constructor(private dataService: SocialSecurityListService) {
         this.dataInfo = {
             id: null,
+            planGrade: null,
             accidentType: null,
             planName: '',
             planDeptResyEntities: [],
@@ -40,7 +42,10 @@ export class SecondTerroristAttacksComponent implements OnInit {
     }
 
     async getSocialSecurityDetail() {
-        await this.dataService.getSocialSecurityList(this.socialSecurityEnum.TerroristAttacks).subscribe(res => {
+        await this.dataService.getSocialSecurityList({
+            id: this.socialSecurityEnum.TerroristAttacks,
+            planGrade: this.disasterLevel.LevelTwo
+        }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {
                 switch (item.grade) {

@@ -11,6 +11,7 @@ export enum DisasterEnum {
 
 export interface PublicHealthModel {
     id?: number;
+    planGrade: number;
     accidentType: number;
     planName: string;
     planDeptResyEntities: CommanderInfoModel[];
@@ -38,8 +39,8 @@ export class PublicHealthListService extends BaseHttp {
     }
 
     /*预案详情接口*/
-    public getPublicHealthList(id: number): Observable<PublicHealthModel> {
-        return this.get('/plan/' + DisasterEnum.PublicHealth + '/' + id, {});
+    public getPublicHealthList(param: { id: number, planGrade: number }): Observable<PublicHealthModel> {
+        return this.get('/plan/' + DisasterEnum.PublicHealth + '/' + param.id + '/' + param.planGrade, {});
     }
 
 

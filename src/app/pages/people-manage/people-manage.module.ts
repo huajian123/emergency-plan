@@ -14,7 +14,8 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
 
 
 @NgModule({
-    declarations: [CommandReportManagementComponent,
+    declarations: [
+        CommandReportManagementComponent,
         ManagementTeamsComponent,
         ManagementDepartmentsComponent,
         ManagementPlansComponent,
