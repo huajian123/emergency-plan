@@ -1,0 +1,24 @@
+<ng-container *ngIf="data.bureau.length>0 || data.office.length>0">
+    <div class="organization-wrap">
+        <div class="organization-item" *ngFor="let item of data.office;">
+            <h5>{{item.deptName}}</h5>
+            <span>{{item.deptDetail}}</span>
+            <div class="btn">
+                <button nz-button nzType="primary" (click)="goPage(item.deptUrl)">进入平台</button>
+            </div>
+        </div>
+    </div>
+    <header>省应急管理厅下属处室</header>
+    <div class="organization-wrap">
+        <div class="organization-item" *ngFor="let item of data.bureau">
+            <h5>{{item.deptName}}</h5>
+            <span>{{item.deptDetail}}</span>
+        </div>
+    </div>
+</ng-container>
+
+<nz-result *ngIf="data.office.length===0&&data.bureau.length===0" nzStatus="404" nzTitle="暂时没有数据" nzSubTitle="请联系管理员">
+    <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="sendMsg()">联系管理员</button>
+    </div>
+</nz-result>

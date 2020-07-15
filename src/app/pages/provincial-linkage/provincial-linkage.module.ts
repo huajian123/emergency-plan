@@ -7,10 +7,11 @@ import { FirstDroughtProComponent } from './drought-and-flood/first-drought-pro/
 import { SecondDroughtProComponent } from './drought-and-flood/second-drought-pro/second-drought-pro.component';
 import { ThirdDroughtProComponent } from './drought-and-flood/third-drought-pro/third-drought-pro.component';
 import { FourthDroughtProComponent } from './drought-and-flood/fourth-drought-pro/fourth-drought-pro.component';
+import { OrganizationListComponent } from './organization-list/organization-list.component';
 
 
 @NgModule({
-    declarations: [FirstDroughtProComponent, SecondDroughtProComponent, ThirdDroughtProComponent, FourthDroughtProComponent],
+    declarations: [FirstDroughtProComponent, SecondDroughtProComponent, ThirdDroughtProComponent, FourthDroughtProComponent, OrganizationListComponent],
     imports: [
         CommonModule,
         ProvincialLinkageRoutingModule,

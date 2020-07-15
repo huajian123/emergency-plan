@@ -4,6 +4,15 @@ export enum PageTypeEnum {
     DetailOrExamine
 }
 
+// 灾害类型
+export enum AccidentTypeEnum {
+    Nature = 1,
+    Accident,
+    PublicHealth,
+    SocietySafe
+}
+
+
 export enum NaturalEnum {
     DroughtAndFlood = 1,
     Earthquake = 2,
