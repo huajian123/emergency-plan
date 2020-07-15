@@ -43,6 +43,8 @@ export class PlansAddEditComponent implements OnInit {
     publicHealthNameOptions: OptionsInterface[];
     /*社会安全下拉*/
     socialSecurityNameOptions: OptionsInterface[];
+    /*灾害等级*/
+    disasterLevelOptions: OptionsInterface[];
     loginInfo: LoginInfoModel;
     save = {
         width: '900px',
@@ -56,6 +58,7 @@ export class PlansAddEditComponent implements OnInit {
         this.naturalNameOptions = [];
         this.publicHealthNameOptions = [];
         this.socialSecurityNameOptions = [];
+        this.disasterLevelOptions = [];
         this.deptOptions = [];
         this.resyOptions = [];
         this.returnBack = new EventEmitter<any>();
@@ -79,6 +82,7 @@ export class PlansAddEditComponent implements OnInit {
             planName: [null, [Validators.required]],
             accidentType: [null, [Validators.required]],
             accidentId: [null, [Validators.required]],
+            planGrade: [null, [Validators.required]],
             accidentName: [null, [Validators.required]],
             deptId: [null, [Validators.required]],
             deptPhone: [null],
@@ -149,6 +153,7 @@ export class PlansAddEditComponent implements OnInit {
     /*获取预案详情*/
     async getDetail() {
         await this.dataService.getPlanDetail(this.id).subscribe(data => {
+            console.log(data);
             this.validateForm.patchValue(data);
             this.validateForm.get('accidentId').setValue(data.accidentId);
             data.planDeptResyEntities.forEach(item => {
@@ -229,6 +234,7 @@ export class PlansAddEditComponent implements OnInit {
     ngOnInit(): void {
         this.loginInfo = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
         this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
+        this.disasterLevelOptions = [...MapPipe.transformMapToArray(MapSet.disasterLevel)];
         this.naturalNameOptions = [...MapPipe.transformMapToArray(MapSet.naturalDisastersType)];
         this.accidentNameOptions = [...MapPipe.transformMapToArray(MapSet.accidentDisastersType)];
         this.publicHealthNameOptions = [...MapPipe.transformMapToArray(MapSet.publicHealthType)];
