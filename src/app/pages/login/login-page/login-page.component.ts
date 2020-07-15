@@ -19,6 +19,8 @@ export class LoginPageComponent implements OnInit {
         this.currentPageNum = this.pageTypeEnum.List;
     }
 
+
+
     /*临时*/
     goAlert() {
         this.modal.info({
@@ -56,6 +58,11 @@ export class LoginPageComponent implements OnInit {
     // 跳转地方响应
     goLocalEmergency() {
         window.open(localUrl + '/hazard-regional-response/local-emergency/drought-and-flood-first', '_blank');
+    }
+
+    // 跳转到资源调配
+    goResourcesWarehouse(){
+        window.open(localUrl + '/hazard-resource-warehouse', '_blank');
     }
 
     ngOnInit() {

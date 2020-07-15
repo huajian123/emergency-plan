@@ -9,10 +9,11 @@ import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.m
 import {StatusWarningModule} from './status-warning/status-warning.module';
 import {LocalEmergencyModule} from './local-emergency/local-emergency.module';
 import { ExpertWarehouseComponent } from './expert-warehouse/expert-warehouse.component';
+import { ResourceWarehouseComponent } from './resource-warehouse/resource-warehouse.component';
 
 
 @NgModule({
-    declarations: [ExpertWarehouseComponent],
+    declarations: [ExpertWarehouseComponent, ResourceWarehouseComponent],
     imports: [
         CommonModule,
         LoginModule,
