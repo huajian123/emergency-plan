@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Menu} from './sidebar-nav/sidebar-nav.component';
+import {EVENT_KEY} from "../../../environments/staticVariable";
 
 @Component({
     selector: 'app-defalut',
@@ -8,6 +9,7 @@ import {Menu} from './sidebar-nav/sidebar-nav.component';
     styleUrls: ['./default.component.less']
 })
 export class LayoutDefalutComponent implements OnInit, OnDestroy {
+    isManage = false;
     isCollapsed = false;
     menus: Menu[] = [
         {
@@ -1336,6 +1338,11 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
     ];
 
     constructor(private router: Router) {
+        const data = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
+        console.log(data);
+        if (data && data.role === 1) {
+            this.isManage = true;
+        }
     }
 
     ngOnInit(): void {
