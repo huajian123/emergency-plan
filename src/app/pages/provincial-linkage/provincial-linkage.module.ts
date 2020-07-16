@@ -12,6 +12,10 @@ import {EarthquakeProFirstComponent} from './nature/earthquake/earthquake-pro-fi
 import {EarthquakeProSecondComponent} from './nature/earthquake/earthquake-pro-second/earthquake-pro-second.component';
 import {EarthquakeProThirdComponent} from './nature/earthquake/earthquake-pro-third/earthquake-pro-third.component';
 import {EarthquakeProFourthComponent} from './nature/earthquake/earthquake-pro-fourth/earthquake-pro-fourth.component';
+import { FirstHazardProComponent } from './accident-disaster/hazardous-chemical/first-hazard-pro/first-hazard-pro.component';
+import { SecondHazardProComponent } from './accident-disaster/hazardous-chemical/second-hazard-pro/second-hazard-pro.component';
+import { ThirdHazardProComponent } from './accident-disaster/hazardous-chemical/third-hazard-pro/third-hazard-pro.component';
+import { FourthHazardProComponent } from './accident-disaster/hazardous-chemical/fourth-hazard-pro/fourth-hazard-pro.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import {EarthquakeProFourthComponent} from './nature/earthquake/earthquake-pro-f
         EarthquakeProFirstComponent,
         EarthquakeProSecondComponent,
         EarthquakeProThirdComponent,
-        EarthquakeProFourthComponent],
+        EarthquakeProFourthComponent,
+        FirstHazardProComponent,
+        SecondHazardProComponent,
+        ThirdHazardProComponent,
+        FourthHazardProComponent],
     imports: [
         CommonModule,
         ProvincialLinkageRoutingModule,

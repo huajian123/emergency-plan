@@ -627,25 +627,25 @@ export class ProvincialLinkageLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-provincial/accident-disaster/provincial-linkageous-chemicals-first',
+                            path: '/hazard-provincial/provincial-linkage/hazardous-chemicals-pro-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-provincial/accident-disaster/provincial-linkageous-chemicals-second',
+                            path: '/hazard-provincial/provincial-linkage/hazardous-chemicals-pro-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-provincial/accident-disaster/provincial-linkageous-chemicals-third',
+                            path: '/hazard-provincial/provincial-linkage/hazardous-chemicals-pro-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-provincial/accident-disaster/provincial-linkageous-chemicals-fourth',
+                            path: '/hazard-provincial/provincial-linkage/hazardous-chemicals-pro-fourth',
                         }]
                 },
                 {

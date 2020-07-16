@@ -8,6 +8,10 @@ import {EarthquakeProFirstComponent} from './nature/earthquake/earthquake-pro-fi
 import {EarthquakeProSecondComponent} from './nature/earthquake/earthquake-pro-second/earthquake-pro-second.component';
 import {EarthquakeProThirdComponent} from './nature/earthquake/earthquake-pro-third/earthquake-pro-third.component';
 import {EarthquakeProFourthComponent} from './nature/earthquake/earthquake-pro-fourth/earthquake-pro-fourth.component';
+import {FirstHazardProComponent} from './accident-disaster/hazardous-chemical/first-hazard-pro/first-hazard-pro.component';
+import {SecondHazardProComponent} from './accident-disaster/hazardous-chemical/second-hazard-pro/second-hazard-pro.component';
+import {ThirdHazardProComponent} from './accident-disaster/hazardous-chemical/third-hazard-pro/third-hazard-pro.component';
+import {FourthHazardProComponent} from './accident-disaster/hazardous-chemical/fourth-hazard-pro/fourth-hazard-pro.component';
 
 
 const routes: Routes = [
@@ -25,10 +29,10 @@ const routes: Routes = [
   {path: 'earthquake-pro-fourth', component: EarthquakeProFourthComponent, data: {title: '地震四级', keep: false}},
 
   /*危险化学品*/
-  {path: 'hazardous-chemicals-pro-first', component: EarthquakeProFourthComponent, data: {title: '地震四级', keep: false}},
-  {path: 'hazardous-chemicals-pro-second', component: EarthquakeProFourthComponent, data: {title: '地震四级', keep: false}},
-  {path: 'hazardous-chemicals-pro-third', component: EarthquakeProFourthComponent, data: {title: '地震四级', keep: false}},
-  {path: 'hazardous-chemicals-pro-fourth', component: EarthquakeProFourthComponent, data: {title: '地震四级', keep: false}},
+  {path: 'hazardous-chemicals-pro-first', component: FirstHazardProComponent, data: {title: '危化一级', keep: false}},
+  {path: 'hazardous-chemicals-pro-second', component: SecondHazardProComponent, data: {title: '危化二级', keep: false}},
+  {path: 'hazardous-chemicals-pro-third', component: ThirdHazardProComponent, data: {title: '危化三级', keep: false}},
+  {path: 'hazardous-chemicals-pro-fourth', component: FourthHazardProComponent, data: {title: '危化四级', keep: false}},
 
 ];
 
