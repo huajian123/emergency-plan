@@ -41,10 +41,12 @@ import {FinancialAccidentWarningComponent} from './social-security-warning/finan
 import {GovernmentDebtWarningComponent} from './social-security-warning/government-debt-warning/government-debt-warning.component';
 import {CommissaryEmergencyWarningComponent} from './social-security-warning/commissary-emergency-warning/commissary-emergency-warning.component';
 import {ReliefSuppliesWarningComponent} from './social-security-warning/relief-supplies-warning/relief-supplies-warning.component';
+import {TotalPlanComponent} from './total-plan/total-plan.component';
 
 
 const routes: Routes = [
     {path: '', redirectTo: 'natural-drought-and-flood-level', pathMatch: 'full'},
+    {path: 'total-plan', component: TotalPlanComponent, data: {title: '总预案判别', keep: false}},
     /*自然灾害*/
     {path: 'natural-drought-and-flood-level', component: DroughtAndFloodWarningComponent, data: {title: '汛旱灾害判别', keep: false}},
     {path: 'natural-earthquake-level', component: EarthquakeWarningComponent, data: {title: '地震灾害判别', keep: false}},

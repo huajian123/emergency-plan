@@ -43,6 +43,7 @@ import {PriceChangesWarningComponent} from './social-security-warning/price-chan
 import {ReliefSuppliesWarningComponent} from './social-security-warning/relief-supplies-warning/relief-supplies-warning.component';
 import {TerroristAttacksWarningComponent} from './social-security-warning/terrorist-attacks-warning/terrorist-attacks-warning.component';
 import {RoadTrafficWarningComponent} from './accident-disaster-warning/road-traffic-warning/road-traffic-warning.component';
+import { TotalPlanComponent } from './total-plan/total-plan.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import {RoadTrafficWarningComponent} from './accident-disaster-warning/road-traf
         PriceChangesWarningComponent,
         ReliefSuppliesWarningComponent,
         TerroristAttacksWarningComponent,
-        RoadTrafficWarningComponent],
+        RoadTrafficWarningComponent,
+        TotalPlanComponent],
     imports: [
         CommonModule,
         StatusWarningRoutingModule,

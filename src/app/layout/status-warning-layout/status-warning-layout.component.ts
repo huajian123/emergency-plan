@@ -10,6 +10,13 @@ export class StatusWarningLayoutComponent implements OnInit {
     isCollapsed = false;
     menus: Menu[] = [
         {
+            title: '总预案',
+            icon: 'iconnatura',
+            open: false,
+            selected: false,
+            path: '/hazard-status/status-warning/total-plan',
+        },
+        {
             title: '自然灾害类',
             icon: 'iconnatura',
             open: false,
