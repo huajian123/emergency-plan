@@ -16,6 +16,10 @@ import { FirstHazardProComponent } from './accident-disaster/hazardous-chemical/
 import { SecondHazardProComponent } from './accident-disaster/hazardous-chemical/second-hazard-pro/second-hazard-pro.component';
 import { ThirdHazardProComponent } from './accident-disaster/hazardous-chemical/third-hazard-pro/third-hazard-pro.component';
 import { FourthHazardProComponent } from './accident-disaster/hazardous-chemical/fourth-hazard-pro/fourth-hazard-pro.component';
+import { FoodProFirstComponent } from './public-health/food-safety/food-pro-first/food-pro-first.component';
+import { FoodProSecondComponent } from './public-health/food-safety/food-pro-second/food-pro-second.component';
+import { FoodProThirdComponent } from './public-health/food-safety/food-pro-third/food-pro-third.component';
+import { FoodProFourthComponent } from './public-health/food-safety/food-pro-fourth/food-pro-fourth.component';
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { FourthHazardProComponent } from './accident-disaster/hazardous-chemical
         FirstHazardProComponent,
         SecondHazardProComponent,
         ThirdHazardProComponent,
-        FourthHazardProComponent],
+        FourthHazardProComponent,
+        FoodProFirstComponent,
+        FoodProSecondComponent,
+        FoodProThirdComponent,
+        FoodProFourthComponent],
     imports: [
         CommonModule,
         ProvincialLinkageRoutingModule,

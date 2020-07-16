@@ -12,6 +12,10 @@ import {FirstHazardProComponent} from './accident-disaster/hazardous-chemical/fi
 import {SecondHazardProComponent} from './accident-disaster/hazardous-chemical/second-hazard-pro/second-hazard-pro.component';
 import {ThirdHazardProComponent} from './accident-disaster/hazardous-chemical/third-hazard-pro/third-hazard-pro.component';
 import {FourthHazardProComponent} from './accident-disaster/hazardous-chemical/fourth-hazard-pro/fourth-hazard-pro.component';
+import {FoodProFirstComponent} from './public-health/food-safety/food-pro-first/food-pro-first.component';
+import {FoodProSecondComponent} from './public-health/food-safety/food-pro-second/food-pro-second.component';
+import {FoodProThirdComponent} from './public-health/food-safety/food-pro-third/food-pro-third.component';
+import {FoodProFourthComponent} from './public-health/food-safety/food-pro-fourth/food-pro-fourth.component';
 
 
 const routes: Routes = [
@@ -34,6 +38,11 @@ const routes: Routes = [
   {path: 'hazardous-chemicals-pro-third', component: ThirdHazardProComponent, data: {title: '危化三级', keep: false}},
   {path: 'hazardous-chemicals-pro-fourth', component: FourthHazardProComponent, data: {title: '危化四级', keep: false}},
 
+  /*食品安全*/
+  {path: 'hazardous-food-pro-first', component: FoodProFirstComponent, data: {title: '食品安全一级', keep: false}},
+  {path: 'hazardous-food-pro-second', component: FoodProSecondComponent, data: {title: '食品安全二级', keep: false}},
+  {path: 'hazardous-food-pro-third', component: FoodProThirdComponent, data: {title: '食品安全三级', keep: false}},
+  {path: 'hazardous-food-pro-fourth', component: FoodProFourthComponent, data: {title: '食品安全四级', keep: false}},
 ];
 
 @NgModule({
