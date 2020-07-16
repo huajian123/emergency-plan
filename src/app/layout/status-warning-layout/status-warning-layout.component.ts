@@ -11,7 +11,7 @@ export class StatusWarningLayoutComponent implements OnInit {
     menus: Menu[] = [
         {
             title: '总预案',
-            icon: 'iconnatura',
+            icon: 'icontotal',
             open: false,
             selected: false,
             path: '/hazard-status/status-warning/total-plan',
