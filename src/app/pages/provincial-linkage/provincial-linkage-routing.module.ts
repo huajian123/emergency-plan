@@ -16,10 +16,12 @@ import {FoodProFirstComponent} from './public-health/food-safety/food-pro-first/
 import {FoodProSecondComponent} from './public-health/food-safety/food-pro-second/food-pro-second.component';
 import {FoodProThirdComponent} from './public-health/food-safety/food-pro-third/food-pro-third.component';
 import {FoodProFourthComponent} from './public-health/food-safety/food-pro-fourth/food-pro-fourth.component';
+import {TotalPlanComponent} from './total-plan/total-plan.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'first-drought-pro', pathMatch: 'full'},
+  {path: '', redirectTo: 'total-plan-pro', pathMatch: 'full'},
+  {path: 'total-plan-pro', component: TotalPlanComponent, data: {title: '总预案', keep: false}},
   /*防汛防旱*/
   {path: 'first-drought-pro', component: FirstDroughtProComponent, data: {title: '汛旱一级', keep: false}},
   {path: 'second-drought-pro', component: SecondDroughtProComponent, data: {title: '汛旱二级', keep: false}},

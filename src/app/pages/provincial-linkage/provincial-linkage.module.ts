@@ -20,6 +20,7 @@ import { FoodProFirstComponent } from './public-health/food-safety/food-pro-firs
 import { FoodProSecondComponent } from './public-health/food-safety/food-pro-second/food-pro-second.component';
 import { FoodProThirdComponent } from './public-health/food-safety/food-pro-third/food-pro-third.component';
 import { FoodProFourthComponent } from './public-health/food-safety/food-pro-fourth/food-pro-fourth.component';
+import { TotalPlanComponent } from './total-plan/total-plan.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FoodProFourthComponent } from './public-health/food-safety/food-pro-fou
         FoodProFirstComponent,
         FoodProSecondComponent,
         FoodProThirdComponent,
-        FoodProFourthComponent],
+        FoodProFourthComponent,
+        TotalPlanComponent],
     imports: [
         CommonModule,
         ProvincialLinkageRoutingModule,
