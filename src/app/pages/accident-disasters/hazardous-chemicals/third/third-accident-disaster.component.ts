@@ -61,7 +61,7 @@ export class ThirdHazardousChemicalsComponent implements OnInit {
         window.open('this.provinceName.emergencyUrl', '_blank');
     }
 
-    async getNaturalDisastersDetail() {
+    async getAccidentlDisastersDetail() {
         await this.dataService.getAccidentDisastersList({
             id: this.accidentEnum.HazardousChemicals,
             planGrade: this.disasterLevel.LevelThree
@@ -111,6 +111,6 @@ export class ThirdHazardousChemicalsComponent implements OnInit {
                 }
             });
         });
-        this.getNaturalDisastersDetail();
+        this.getAccidentlDisastersDetail();
     }
 }

@@ -68,7 +68,7 @@ export class ThirdEarthquakeDisasterComponent implements OnInit {
     async getNaturalDisastersDetail() {
         await this.dataService.getNaturalDisastersList({
             id: this.naturalEnum.Earthquake,
-            planGrade: this.disasterLevel.LevelOne
+            planGrade: this.disasterLevel.LevelThree
         }).subscribe(res => {
             this.dataInfo = res;
             this.dataInfo.planDeptResyEntities.forEach(item => {

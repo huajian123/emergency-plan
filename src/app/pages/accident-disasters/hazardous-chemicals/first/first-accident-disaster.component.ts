@@ -42,7 +42,7 @@ export class FirstHazardousChemicalsComponent implements OnInit {
         this.returnBack = new EventEmitter<any>();
     }
 
-    async getNaturalDisastersDetail() {
+    async getAccidentlDisastersDetail() {
         await this.dataService.getAccidentDisastersList({
             id: this.accidentEnum.HazardousChemicals,
             planGrade: this.disasterLevel.LevelOne
@@ -77,6 +77,6 @@ export class FirstHazardousChemicalsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getNaturalDisastersDetail();
+        this.getAccidentlDisastersDetail();
     }
 }

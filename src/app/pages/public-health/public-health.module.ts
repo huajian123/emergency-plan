@@ -9,10 +9,16 @@ import {SecondPlagueControlComponent} from './plague-control/second/second-healt
 import {SecondPublicHealthComponent} from './public-health-event/second/second-health-disaster.component';
 import {ShareModule} from '../../share/share.module';
 import {SecondSafetyMedicalDevicesComponent} from './safety-medical-devices/second/second-health-disaster.component';
+import {FirstFoodSafetyComponent} from './food-safety/first/first-health-disaster.component';
+import {FourthFoodSafetyComponent} from './food-safety/fourth/fourth-health-disaster.component';
+import {ThirdFoodSafetyComponent} from './food-safety/third/third-health-disaster.component';
 
 
 @NgModule({
     declarations: [
+        FirstFoodSafetyComponent,
+        FourthFoodSafetyComponent,
+        ThirdFoodSafetyComponent,
         SecondFoodSafetyComponent,
         SecondAnimalEpidemicComponent,
         SecondInfluenzaComponent,

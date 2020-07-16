@@ -1,1 +1,30 @@
-<p>fourth-health-disaster works!</p>
+<nz-page-header class="site-page-header" nzTitle="预案信息详情"></nz-page-header>
+<div class="normal-wrap">
+    <div class="form-wrap">
+        <nz-card nzTitle="▏预案名称" [nzBordered]="false">
+            <nz-descriptions>
+                <nz-descriptions-item nzTitle="预案名称">{{this.dataInfo.planName}}</nz-descriptions-item>
+            </nz-descriptions>
+        </nz-card>
+        <nz-card nzTitle="▏总指挥" [nzBordered]="false">
+            <nz-descriptions>
+                <nz-descriptions-item nzTitle="负责部门"
+                                      [nzSpan]="1">{{this.commanderInfos.deptName}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="座机">{{this.commanderInfos.deptPhone}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="岗位职责">{{this.commanderInfos.resyDetail}}</nz-descriptions-item>
+            </nz-descriptions>
+        </nz-card>
+        <nz-card nzTitle="▏管理小队" [nzBordered]="false">
+            <nz-card nzType="inner" [nzTitle]="txt['resyName']" [nzBordered]="false" *ngFor="let txt of teamInfos">
+                <nz-descriptions>
+                    <nz-descriptions-item nzTitle="小队岗位" [nzSpan]="1">{{txt['resyName']}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="负责部门">{{txt['deptName']}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="座机">{{txt['deptPhone']}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="岗位职责">{{txt['resyDetail']}}</nz-descriptions-item>
+                </nz-descriptions>
+            </nz-card>
+        </nz-card>
+
+        <button class="send-msg" nz-button nzType="primary" (click)="sendMsg()" nzDanger>一键发送信息</button>
+    </div>
+</div>
