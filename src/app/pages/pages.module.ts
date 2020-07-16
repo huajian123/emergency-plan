@@ -10,10 +10,13 @@ import {StatusWarningModule} from './status-warning/status-warning.module';
 import {LocalEmergencyModule} from './local-emergency/local-emergency.module';
 import { ExpertWarehouseComponent } from './expert-warehouse/expert-warehouse.component';
 import { ResourceWarehouseComponent } from './resource-warehouse/resource-warehouse.component';
+import { SysSettingComponent } from './sys-setting/sys-setting.component';
+import {MyNgZorroModule} from '../share/my-ng-zorro/my-ng-zorro.module';
+import {NzBadgeModule} from "ng-zorro-antd";
 
 
 @NgModule({
-    declarations: [ExpertWarehouseComponent, ResourceWarehouseComponent],
+    declarations: [ExpertWarehouseComponent, ResourceWarehouseComponent, SysSettingComponent],
     imports: [
         CommonModule,
         LoginModule,
@@ -23,7 +26,8 @@ import { ResourceWarehouseComponent } from './resource-warehouse/resource-wareho
         PublicHealthRoutingModule,
         PeopleManageRoutingModule,
         StatusWarningModule,
-        LocalEmergencyModule
+        LocalEmergencyModule,
+        MyNgZorroModule,
     ],
     exports: [
         LoginModule,

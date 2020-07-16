@@ -20,7 +20,6 @@ export class LoginPageComponent implements OnInit {
     }
 
 
-
     /*临时*/
     goAlert() {
         this.modal.info({
@@ -29,8 +28,13 @@ export class LoginPageComponent implements OnInit {
         });
     }
 
+    // 跳转到系统配置界面
+    goSysSetting() {
+        window.open(localUrl + '/hazard-system-setting', '_blank');
+    }
+
     // 跳转到专家库
-    goExpertWarehouse(){
+    goExpertWarehouse() {
         window.open(localUrl + '/hazard-expert-warehouse', '_blank');
     }
 
@@ -52,7 +56,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转省级联动
     goProvincialLinkage() {
-         window.open(localUrl + '/hazard-provincial/provincial-linkage/first-drought-pro', '_blank');
+        window.open(localUrl + '/hazard-provincial/provincial-linkage/first-drought-pro', '_blank');
     }
 
     // 跳转地方响应
@@ -61,7 +65,7 @@ export class LoginPageComponent implements OnInit {
     }
 
     // 跳转到资源调配
-    goResourcesWarehouse(){
+    goResourcesWarehouse() {
         window.open(localUrl + '/hazard-resource-warehouse', '_blank');
     }
 

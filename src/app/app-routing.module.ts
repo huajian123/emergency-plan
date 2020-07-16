@@ -10,6 +10,7 @@ import {LocalEmergencyLayoutComponent} from './layout/local-emergency-layout/loc
 import {ExpertWarehouseComponent} from './pages/expert-warehouse/expert-warehouse.component';
 import {ResourceWarehouseComponent} from './pages/resource-warehouse/resource-warehouse.component';
 import {ProvincialLinkageLayoutComponent} from './layout/provincial-linkage-layout/provincial-linkage-layout.component';
+import {SysSettingComponent} from './pages/sys-setting/sys-setting.component';
 
 
 const routes: Routes = [
@@ -80,6 +81,10 @@ const routes: Routes = [
     {
         path: 'hazard-expert-warehouse',
         component: ExpertWarehouseComponent,
+    },
+    {
+        path: 'hazard-system-setting',
+        component: SysSettingComponent,
     },
     {
         path: 'hazard-resource-warehouse',

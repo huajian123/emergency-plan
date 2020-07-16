@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {
+    NzBadgeModule,
     NzBreadCrumbModule,
     NzButtonModule,
     NzCardModule,
@@ -62,6 +63,7 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzButtonModule,
         NzEmptyModule,
         NzResultModule,
+        NzBadgeModule
     ],
     exports: [
         NzFormModule,
@@ -94,6 +96,7 @@ import {NzSpaceModule} from 'ng-zorro-antd/space';
         NzButtonModule,
         NzEmptyModule,
         NzResultModule,
+        NzBadgeModule
     ]
 })
 export class MyNgZorroModule {
