@@ -20,10 +20,16 @@ import {SecondRailTrafficComponent} from './rail-traffic/second/second-accident-
 import {SecondRailwayAccidentComponent} from './railway-accident/second/second-accident-disaster.component';
 import {SecondSpecialEquipmentComponent} from './special-equipment/second/second-accident-disaster.component';
 import {SecondWaterSearchRescueComponent} from './water-search-rescue/second/second-accident-disaster.component';
+import {FirstHazardousChemicalsComponent} from './hazardous-chemicals/first/first-accident-disaster.component';
+import {FourthHazardousChemicalsComponent} from './hazardous-chemicals/fourth/fourth-accident-disaster.component';
+import {ThirdHazardousChemicalsComponent} from './hazardous-chemicals/third/third-accident-disaster.component';
 
 
 @NgModule({
     declarations: [
+        FourthHazardousChemicalsComponent,
+        ThirdHazardousChemicalsComponent,
+        FirstHazardousChemicalsComponent,
         SecondRoadTrafficComponent,
         SecondEnvironmentalComponent,
         SecondRadiationAccidentComponent,

@@ -100,21 +100,6 @@ export class FourthEarthquakeDisasterComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        /*  this.activatedRoute.queryParams.subscribe(param => {
-              this.cityId = param.cityId;
-              this.type = param.type;
-              if (this.cityId === null || this.type === null) {
-                  return;
-              }
-              this.dataServices.getNameList({id: this.cityId, type: this.type}).subscribe(res => {
-                  if (res === null) {
-                      return;
-                  } else {
-                      this.cityName = res;
-                      this.isTrue = true;
-                  }
-              });
-          });*/
         this.getNaturalDisastersDetail();
 
     }
