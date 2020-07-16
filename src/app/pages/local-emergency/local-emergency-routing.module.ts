@@ -21,10 +21,10 @@ import {FourthEarthquakeDisasterComponent} from './natural-disasters/earthquake-
 const routes: Routes = [
     {path: '', redirectTo: 'drought-and-flood-frist', pathMatch: 'full'},
     /*旱涝*/
-    {path: 'drought-and-flood-first', component: FirstDroughtFloodComponent, data: {title: '汛旱一级', keep: false}},
-    {path: 'drought-and-flood-second', component: SecondDroughtFloodComponent, data: {title: '汛旱二级', keep: false}},
-    {path: 'drought-and-flood-third', component: ThirdDroughtFloodComponent, data: {title: '汛旱三级', keep: false}},
-    {path: 'drought-and-flood-fourth', component: FourthDroughtFloodComponent, data: {title: '汛旱四级', keep: false}},
+    {path: 'drought-and-flood-first', component: FirstDroughtFloodComponent, data: {title: '汛旱一级', keep: true}},
+    {path: 'drought-and-flood-second', component: SecondDroughtFloodComponent, data: {title: '汛旱二级', keep: true}},
+    {path: 'drought-and-flood-third', component: ThirdDroughtFloodComponent, data: {title: '汛旱三级', keep: true}},
+    {path: 'drought-and-flood-fourth', component: FourthDroughtFloodComponent, data: {title: '汛旱四级', keep: true}},
     /*地震*/
     {path: 'earthquake-disaster-first', component: FirstEarthquakeDisasterComponent, data: {title: '地震一级', keep: false}},
     {path: 'earthquake-disaster-second', component: SecondEarthquakeDisasterComponent, data: {title: '地震二级', keep: false}},

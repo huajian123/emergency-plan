@@ -627,25 +627,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/local-emergencyous-chemicals-first',
+                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/local-emergencyous-chemicals-second',
+                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/local-emergencyous-chemicals-third',
+                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/local-emergencyous-chemicals-fourth',
+                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-fourth',
                         }]
                 },
                 {
