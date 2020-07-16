@@ -19,6 +19,7 @@ import {ThirdHazardousChemicalsComponent} from './accident-disasters/hazardous-c
 import {FirstHazardousChemicalsComponent} from './accident-disasters/hazardous-chemicals/first-hazardous-chemicals/first-hazardous-chemicals.component';
 import {SecondHazardousChemicalsComponent} from './accident-disasters/hazardous-chemicals/second-hazardous-chemicals/second-hazardous-chemicals.component';
 import {FourthHazardousChemicalsComponent} from './accident-disasters/hazardous-chemicals/fourth-hazardous-chemicals/fourth-hazardous-chemicals.component';
+import {TotalBudgetComponent} from './total-plan/total-budget/total-budget.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {FourthHazardousChemicalsComponent} from './accident-disasters/hazardous-
         FirstHazardousChemicalsComponent,
         SecondHazardousChemicalsComponent,
         FourthHazardousChemicalsComponent,
+        TotalBudgetComponent,
     ],
     imports: [
         ShareModule,

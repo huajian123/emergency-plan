@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {DisasterLevelEnum, TotalPlan} from '../../../core/vo-common/BusinessEnum';
-import {CommanderInfoModel, TotalPlanListService, TotalPlanModel} from 'src/app/services/biz-services/total-plan-list.service';
+import {CommanderInfoModel, TotalPlanListService, TotalPlanModel} from '../../../../services/biz-services/total-plan-list.service';
+import {DisasterLevelEnum, TotalPlan} from '../../../../core/vo-common/BusinessEnum';
 
 @Component({
     selector: 'app-total-budget',

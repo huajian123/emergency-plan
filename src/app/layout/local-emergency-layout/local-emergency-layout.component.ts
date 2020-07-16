@@ -11,6 +11,13 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
     isCollapsed = false;
     menus: Menu[] = [
         {
+            title: '总预案',
+            icon: 'icontotal',
+            open: false,
+            selected: false,
+            path: '/hazard-regional-response/local-emergency/total-plan',
+        },
+        {
             title: '自然灾害类',
             icon: 'iconnatura',
             open: false,

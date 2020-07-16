@@ -16,10 +16,13 @@ import {FirstEarthquakeDisasterComponent} from './natural-disasters/earthquake-d
 import {SecondEarthquakeDisasterComponent} from './natural-disasters/earthquake-disasters/second-earthquake-disaster/second-earthquake-disaster.component';
 import {ThirdEarthquakeDisasterComponent} from './natural-disasters/earthquake-disasters/third-earthquake-disaster/third-earthquake-disaster.component';
 import {FourthEarthquakeDisasterComponent} from './natural-disasters/earthquake-disasters/fourth-earthquake-disaster/fourth-earthquake-disaster.component';
+import {TotalBudgetComponent} from '../total-plan/total-budget/total-budget.component';
 
 
 const routes: Routes = [
-    {path: '', redirectTo: 'drought-and-flood-frist', pathMatch: 'full'},
+    {path: '', redirectTo: 'total-plan', pathMatch: 'full'},
+    /*总预案*/
+    {path: 'total-plan', component: TotalBudgetComponent, data: {title: '总预案', keep: true}},
     /*旱涝*/
     {path: 'drought-and-flood-first', component: FirstDroughtFloodComponent, data: {title: '汛旱一级', keep: true}},
     {path: 'drought-and-flood-second', component: SecondDroughtFloodComponent, data: {title: '汛旱二级', keep: true}},

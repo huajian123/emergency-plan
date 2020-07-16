@@ -61,7 +61,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转地方响应
     goLocalEmergency() {
-        window.open(localUrl + '/hazard-regional-response/local-emergency/drought-and-flood-first', '_blank');
+        window.open(localUrl + '/hazard-regional-response/local-emergency/total-plan', '_blank');
     }
 
     // 跳转到资源调配
