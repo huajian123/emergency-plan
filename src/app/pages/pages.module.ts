@@ -8,11 +8,10 @@ import {PublicHealthRoutingModule} from './public-health/public-health-routing.m
 import {PeopleManageRoutingModule} from './people-manage/people-manage-routing.module';
 import {StatusWarningModule} from './status-warning/status-warning.module';
 import {LocalEmergencyModule} from './local-emergency/local-emergency.module';
-import { ExpertWarehouseComponent } from './expert-warehouse/expert-warehouse.component';
-import { ResourceWarehouseComponent } from './resource-warehouse/resource-warehouse.component';
-import { SysSettingComponent } from './sys-setting/sys-setting.component';
+import {ExpertWarehouseComponent} from './expert-warehouse/expert-warehouse.component';
+import {ResourceWarehouseComponent} from './resource-warehouse/resource-warehouse.component';
+import {SysSettingComponent} from './sys-setting/sys-setting.component';
 import {MyNgZorroModule} from '../share/my-ng-zorro/my-ng-zorro.module';
-import {NzBadgeModule} from "ng-zorro-antd";
 
 
 @NgModule({

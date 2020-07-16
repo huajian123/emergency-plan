@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转决策指挥
     goEmergency() {
-        window.open(localUrl + '/hazard/natural-disaster/drought-and-flood-first', '_blank');
+        window.open(localUrl + '/hazard/total-plan/total-budget', '_blank');
     }
 
     // 跳转状态预警

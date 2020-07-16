@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Menu} from './sidebar-nav/sidebar-nav.component';
-import {EVENT_KEY} from "../../../environments/staticVariable";
+import {EVENT_KEY} from '../../../environments/staticVariable';
 
 @Component({
     selector: 'app-defalut',
@@ -12,6 +12,13 @@ export class LayoutDefalutComponent implements OnInit, OnDestroy {
     isManage = false;
     isCollapsed = false;
     menus: Menu[] = [
+        {
+            title: '总预案',
+            icon: 'icontotal',
+            open: false,
+            selected: false,
+            path: '/hazard/total-plan/total-budget',
+        },
         {
             title: '自然灾害类',
             icon: 'iconnatura',

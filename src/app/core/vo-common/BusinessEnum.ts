@@ -77,8 +77,12 @@ export interface LoginInfoModel {
     role: number;
 }
 
+export enum TotalPlan {
+    Zero = 0
+}
 
 export enum DisasterLevelEnum {
+    LevelZero = 0,
     LevelOne = 1,
     LevelTwo = 2,
     LevelThree = 3,

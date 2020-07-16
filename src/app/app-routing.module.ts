@@ -19,7 +19,7 @@ const routes: Routes = [
         path: 'hazard',
         component: LayoutDefalutComponent,
         children: [
-            {path: '', redirectTo: 'natural-disaster', pathMatch: 'full'},
+            {path: '', redirectTo: 'total-plan', pathMatch: 'full'},
             {
                 path: 'natural-disaster',
                 loadChildren: () => import('./pages/natural-disasters/natural-disasters.module').then(m => m.NaturalDisastersModule)
@@ -35,6 +35,10 @@ const routes: Routes = [
             {
                 path: 'social-security',
                 loadChildren: () => import('./pages/social-security/social-security.module').then(m => m.SocialSecurityModule)
+            },
+            {
+                path: 'total-plan',
+                loadChildren: () => import('./pages/total-plan/total-plan.module').then(m => m.TotalPlanModule)
             },
         ],
     },
