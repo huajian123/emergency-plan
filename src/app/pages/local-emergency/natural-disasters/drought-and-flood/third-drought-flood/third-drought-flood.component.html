@@ -1,1 +1,7 @@
-<p>third-drought-flood works!</p>
+<ng-container *ngIf="currentPage===pageTypeEnum.List">
+    <app-region-list (returnCityName)="clickCities($event)"></app-region-list>
+</ng-container>
+
+<ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
+    <app-region-city-detail [data]="dataList" (returnBack)="returnToList($event)"></app-region-city-detail>
+</ng-container>

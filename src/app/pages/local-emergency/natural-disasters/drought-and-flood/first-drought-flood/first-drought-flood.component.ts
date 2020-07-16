@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DisasterLevelEnum, NaturalEnum, PageTypeEnum} from '../../../../../core/vo-common/BusinessEnum';
-import {CommanderInfoModel, NaturalDisastersListService,} from '../../../../../services/biz-services/natural-disasters-list.service';
+import {CommanderInfoModel, NaturalDisastersListService} from '../../../../../services/biz-services/natural-disasters-list.service';
 
 
 @Component({
@@ -49,7 +49,6 @@ export class FirstDroughtFloodComponent implements OnInit {
             id: this.naturalEnum.DroughtAndFlood,
             planGrade: this.disasterLevel.LevelOne
         }).subscribe(res => {
-            console.log(res.planDeptResyEntities);
             if (res.planDeptResyEntities === null) {
                 this.dataList = {object: null, array: []};
             } else {
