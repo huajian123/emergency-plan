@@ -1,25 +1,33 @@
-<nz-page-header class="site-page-header" nzTitle="信息详情"></nz-page-header>
-<div class="normal-wrap">
-    <div class="form-wrap">
-        <nz-card nzTitle="▏总指挥" [nzBordered]="false">
-            <nz-descriptions>
-                <nz-descriptions-item nzTitle="负责部门"
-                                      [nzSpan]="1">{{this.commanderInfos.deptName}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="座机">{{this.commanderInfos.deptPhone}}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="岗位职责">{{this.commanderInfos.resyDetail}}</nz-descriptions-item>
-            </nz-descriptions>
-        </nz-card>
-        <nz-card nzTitle="▏管理小队" [nzBordered]="false">
-            <nz-card nzType="inner" [nzTitle]="txt['resyName']" [nzBordered]="false" *ngFor="let txt of teamInfos">
+<ng-container *ngIf="data.array.length>0">
+    <nz-page-header class="site-page-header" nzTitle="信息详情"></nz-page-header>
+    <div class="normal-wrap">
+        <div class="form-wrap">
+            <nz-card nzTitle="▏总指挥" [nzBordered]="false">
                 <nz-descriptions>
-                    <nz-descriptions-item nzTitle="小队岗位" [nzSpan]="1">{{txt['resyName']}}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="负责部门">{{txt['deptName']}}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="座机">{{txt['deptPhone']}}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="岗位职责">{{txt['resyDetail']}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="负责部门"
+                                          [nzSpan]="1">{{data.object.deptName}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="座机">{{data.object.deptPhone}}</nz-descriptions-item>
+                    <nz-descriptions-item nzTitle="岗位职责">{{data.object.resyDetail}}</nz-descriptions-item>
                 </nz-descriptions>
             </nz-card>
-        </nz-card>
+            <nz-card nzTitle="▏管理小队" [nzBordered]="false">
+                <nz-card nzType="inner" [nzTitle]="txt['resyName']" [nzBordered]="false" *ngFor="let txt of data.array">
+                    <nz-descriptions>
+                        <nz-descriptions-item nzTitle="小队岗位" [nzSpan]="1">{{txt['resyName']}}</nz-descriptions-item>
+                        <nz-descriptions-item nzTitle="负责部门">{{txt['deptName']}}</nz-descriptions-item>
+                        <nz-descriptions-item nzTitle="座机">{{txt['deptPhone']}}</nz-descriptions-item>
+                        <nz-descriptions-item nzTitle="岗位职责">{{txt['resyDetail']}}</nz-descriptions-item>
+                    </nz-descriptions>
+                </nz-card>
+            </nz-card>
+        </div>
     </div>
-</div>
-
-
+    <nz-footer>
+        <button nz-button nzType="primary" (click)="returnToList()">返回</button>
+    </nz-footer>
+</ng-container>
+<nz-result *ngIf="data.array.length===0" nzStatus="404" nzTitle="暂时没有数据" nzSubTitle="请联系管理员">
+    <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="sendMsg()">联系管理员</button>
+    </div>
+</nz-result>

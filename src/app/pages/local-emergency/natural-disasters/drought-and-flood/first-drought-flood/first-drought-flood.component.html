@@ -1,7 +1,7 @@
 <ng-container *ngIf="currentPage===pageTypeEnum.List">
-    <app-region-list [kind]="'fangxun'" [level]="'1'" (clickCity)="clickCity($event)"></app-region-list>
+    <app-region-list (returnCityName)="clickCities($event)"></app-region-list>
 </ng-container>
 
 <ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
-    <app-region-city-detail [data]="dataList"></app-region-city-detail>
+    <app-region-city-detail [data]="dataList" (returnBack)="returnToList($event)"></app-region-city-detail>
 </ng-container>

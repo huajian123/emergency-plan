@@ -1,10 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {
-    CommanderInfoModel,
-    NaturalDisastersListService,
-    NaturalDisastersModel
-} from '../../../services/biz-services/natural-disasters-list.service';
-import {DisasterLevelEnum, NaturalEnum} from '../../../core/vo-common/BusinessEnum';
+import {PageTypeEnum} from '../../../core/vo-common/BusinessEnum';
+import {NzMessageService} from 'ng-zorro-antd';
+
 
 @Component({
     selector: 'app-region-city-detail',
@@ -12,68 +9,34 @@ import {DisasterLevelEnum, NaturalEnum} from '../../../core/vo-common/BusinessEn
     styleUrls: ['./region-city-detail.component.less']
 })
 export class RegionCityDetailComponent implements OnInit {
-    @Input() currentPageNum: number;
+    currentPage: number;
+    pageTypeEnum = PageTypeEnum;
     @Output() returnBack: EventEmitter<any>;
-    @Input() id: number;
-    @Input() data: any;
-    dataInfo: NaturalDisastersModel;
-    commanderInfos: CommanderInfoModel;
-    teamInfos: CommanderInfoModel[];
-    naturalEnum = NaturalEnum;
-    disasterLevel = DisasterLevelEnum;
-
-    constructor(private dataService: NaturalDisastersListService) {
-        this.dataInfo = {
-            id: null,
-            planGrade: null,
-            accidentType: null,
-            planName: '',
-            planDeptResyEntities: [],
-        };
-        this.teamInfos = [];
-        this.commanderInfos = {
-            id: null,
-            resyName: '',
-            resyDetail: '',
+    @Input() data: {
+        object: {
             deptName: '',
             deptPhone: '',
-            grade: null
-        };
+            resyName: '',
+            resyDetail: ''
+        },
+        array: Array<number>
+    };
+
+
+    constructor(public message?: NzMessageService) {
         this.returnBack = new EventEmitter<any>();
+
     }
 
-    async getNaturalDisastersDetail() {
-        await this.dataService.getNaturalDisastersList({
-            id: this.naturalEnum.DroughtAndFlood,
-            planGrade: this.disasterLevel.LevelTwo
-        }).subscribe(res => {
-            this.dataInfo = res;
-            this.dataInfo.planDeptResyEntities.forEach(item => {
-                switch (item.grade) {
-                    case 0:
-                        this.commanderInfos = {
-                            resyName: item.resyName,
-                            resyDetail: item.resyDetail,
-                            deptPhone: item.deptPhone,
-                            deptName: item.deptName
-                        };
-                        break;
-                    default:
-                        const data = {
-                            resyName: item.resyName,
-                            resyDetail: item.resyDetail,
-                            deptPhone: item.deptPhone,
-                            deptName: item.deptName
-                        };
-                        this.teamInfos.push(data);
-                        break;
-                }
-            });
-        });
+    sendMsg() {
+        this.message.success('已通知管理员');
+    }
+
+    returnToList() {
+        this.returnBack.emit();
     }
 
     ngOnInit(): void {
         console.log(this.data);
-        this.getNaturalDisastersDetail();
     }
 }
