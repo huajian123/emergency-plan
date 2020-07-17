@@ -1,6 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DisasterLevelEnum, TotalPlan} from '../../../core/vo-common/BusinessEnum';
-import {CommanderInfoModel, TotalPlanListService, TotalPlanModel} from 'src/app/services/biz-services/total-plan-list.service';
+import {
+    CommanderInfoModel,
+    TotalPlanListService,
+    TotalPlanModel
+} from 'src/app/services/biz-services/total-plan-list.service';
+import {NzMessageService} from "ng-zorro-antd";
 
 @Component({
     selector: 'app-total-budget',
@@ -17,7 +22,7 @@ export class TotalBudgetComponent implements OnInit {
     totalPlan = TotalPlan;
     disasterLevel = DisasterLevelEnum;
 
-    constructor(private dataService: TotalPlanListService) {
+    constructor(private dataService: TotalPlanListService, public message?: NzMessageService) {
         this.dataInfo = {
             id: null,
             planGrade: null,
@@ -35,6 +40,10 @@ export class TotalBudgetComponent implements OnInit {
             grade: null
         };
         this.returnBack = new EventEmitter<any>();
+    }
+
+    sendMsg() {
+        this.message.success('发送信息成功');
     }
 
     async getTotalPlanDetail() {
