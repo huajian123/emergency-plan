@@ -1,1 +1,87 @@
-<p>hazardous-chemicals-warning works!</p>
+<nz-page-header class="site-page-header" nzTitle="危险化学品灾害判别"></nz-page-header>
+<div class="normal-wrap" style="padding: 50px;">
+    <div nz-row [nzGutter]="24" class="nzgutter">
+        <div nz-col nzSpan="11">
+            发生灾害地区
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.province"
+                       (ngModelChange)="changeProvince($event)">
+                <nz-option *ngFor="let item of provinceData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+            </nz-select>
+            市
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.city">
+                <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
+            </nz-select>
+            区(县)
+        </div>
+        <div nz-col nzSpan="13">
+            <nz-space>
+                <nz-space-item>
+                    <div class="first"><a [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-first']"
+                                          target="_blank" *ngIf="disabled">启动一级</a>
+                        <span *ngIf="!disabled">启动一级</span>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="second"><a
+                            [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-second']"
+                            target="_blank" *ngIf="disabled">启动二级</a><span *ngIf="!disabled">启动二级</span></div>
+
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="third"><a
+                            [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-third']"
+                            [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank"
+                            *ngIf="disabled">启动三级</a>
+                        <span *ngIf="!disabled">启动三级</span>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="fourth"><span>启动四级</span></div>
+                </nz-space-item>
+            </nz-space>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col nzSpan="24">
+            <table>
+                <thead>
+                <tr>
+                    <td width="197">危化品生产安全事故</td>
+                    <td width="320">特别重大</td>
+                    <td width="320">重大</td>
+                    <td width="320">较大</td>
+                    <td width="320">一般</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="color-bg">初判指标</td>
+                    <td>造成<b>30人以上死亡，或者100人</b>以上重伤（包括急性工业中毒，下同），或者1亿元以上直接经济损失的事故。
+                    </td>
+                    <td>造成<b>10人以上、30人以下</b>死亡，或者<b>50人以上、100人以下重伤，或者5000万元以上、1亿元以下</b>直接经济损失的事故。
+                    </td>
+                    <td>造成<b>3人以上、10人以下死亡</b>，或者<b>10人以上、50人以下重伤，或者1000万元以上、5000万元以下</b>直接经济损失的事故。
+                    </td>
+                    <td>造成<b>3人以下死亡，或者10人</b>以下重伤，或者<b>1000万元以下</b>直接经济损失的事故。</td>
+                </tr>
+                <tr>
+                    <td class="color-bg">分级响应</td>
+                    <td><b>Ⅰ级响应</b>按《国家危险化学品事故灾难应急预案》执行，由国务院或有关部门组织指挥，省指挥部及相关部门服从指挥，迅速启动应急响应程序，实施抢险救援。</td>
+                    <td><b>Ⅱ级响应</b>由省指挥部或其指派的省有关部门组织实施，负责具体指挥和处置。省指挥部成立现场应急指挥部，统一指挥现场应急处置工作，及时向省人民政府和国务院报告，超出其应急救援处置能力或事故进一步扩大时，请求国务院协调支援。各应急救援工作组赶赴现场，开展现场抢险救援、危险源控制、现场监测评估、医疗救护、人员疏散转移等工作。事发地人民政府按照省指挥部的统一部署全力开展应急救援。
+                    </td>
+                    <td><b>Ⅲ级响应</b>由设区市、县（市、区）人民政府根据事故或险情的严重程度启动应急响应程序，组织、指挥应急救援和事故处置，超出其应急救援处置能力或事故进一步扩大时，及时报请上级人民政府协调应急救援工作。
+                    </td>
+                    <td><b>Ⅳ级响应</b>由设区市、县（市、区）人民政府根据事故或险情的严重程度启动应急响应程序，组织、指挥应急救援和事故处置，超出其应急救援处置能力或事故进一步扩大时，及时报请上级人民政府协调应急救援工作。
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2">注：“以上”含本数，“以下”不含本数。</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+

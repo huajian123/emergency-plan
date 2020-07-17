@@ -1,1 +1,95 @@
-<p>food-safety-warning works!</p>
+<nz-page-header class="site-page-header" nzTitle="食品安全灾害判别"></nz-page-header>
+<div class="normal-wrap" style="padding: 50px;">
+    <div nz-row [nzGutter]="24" class="nzgutter">
+        <div nz-col nzSpan="11">
+            发生灾害地区
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.province"
+                       (ngModelChange)="changeProvince($event)">
+                <nz-option *ngFor="let item of provinceData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+            </nz-select>
+            市
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.city">
+                <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
+            </nz-select>
+            区(县)
+        </div>
+        <div nz-col nzSpan="13">
+            <nz-space>
+                <nz-space-item>
+                    <div class="first"><a [routerLink]="['/hazard/public-health/food-safety-first']"
+                                          target="_blank" *ngIf="disabled">启动一级</a>
+                        <span *ngIf="!disabled">启动一级</span>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="second"><a
+                            [routerLink]="['/hazard/public-health/food-safety-second']"
+                            target="_blank" *ngIf="disabled">启动二级</a><span *ngIf="!disabled">启动二级</span></div>
+
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="third"><a
+                            [routerLink]="['/hazard/public-health/food-safety-third']"
+                            [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank"
+                            *ngIf="disabled">启动三级</a>
+                        <span *ngIf="!disabled">启动三级</span>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="fourth"><span>启动四级</span></div>
+                </nz-space-item>
+            </nz-space>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col nzSpan="24">
+            <table>
+                <thead>
+                <tr>
+                    <td width="197">食品安全事故</td>
+                    <td width="auto">评估指标</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="color-bg">特别重大</td>
+                    <td>1.事故影响范围涉及<b>2个以上</b>省份或国（境）外（含港澳台地区），造成特别严重健康损害后果的：或经评估认为事故危害特别严重的。<br/>
+                        2. 一起食品安全事故出现<b>30人以上</b>死亡的。<br/>
+                        3.<b>国务院认定</b>的其他特别重大级别食品安全事故。
+                    </td>
+                </tr>
+                <tr>
+                    <td class="color-bg">重大</td>
+                    <td>1.事故影响范围涉及<b>2个以上</b>设区市，造成或经评估认为可能造成对社会公众健康产生严重损害的食品安全事故。<br/>
+                        2.发现在我国<b>首次出现</b>的新的污染物引起的食品安全事故，造成严重健康损害后果，并有扩散趋势的。<br/>
+                        3.一起食品安全事故造成健康损害人数在<b>100人以上</b>并出现死亡病例：或出现10人以上、30人以下死亡的。<br/>
+                        4.<b>省级人民政府认定</b>的其他重大级别食品安全事故。
+                    </td>
+                </tr>
+                <tr>
+                    <td class="color-bg">较大</td>
+                    <td>
+                        1.事故影响范围涉及<b>2个以上县（市、区）</b>，已造成严重健康损害后果的。<br/>
+                        2.一起食品安全事故造成健康损害人数在<b>100人以上</b>；或出现<b>10人以下</b>死亡病例的。<br/>
+                        3.设区市人民政府认定的其他较大级别食品安全事故。
+                    </td>
+                </tr>
+                <tr>
+                    <td class="color-bg">一般</td>
+                    <td>
+                        1.存在健康损害的污染食品，在<b>1个县（市、区）行政区</b>内已造成严重健康损害后果的。<br/>
+                        2. 一起食品安全事故造成健康损害人数在<b>30人以上、100人以下</b>，且未出现死亡病例的。<br/>
+                        3.<b>县（市、区）人民政府</b>认定的其他一 ~般级别食品安全事故。
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2">注：“以上”含本数，“以下”不含本数。</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
