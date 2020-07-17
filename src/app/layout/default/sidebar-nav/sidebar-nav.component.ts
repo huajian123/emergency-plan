@@ -56,12 +56,14 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
         if (!this.menus) {
             return;
         }
+        const index = this.routerPath.indexOf('?') === -1 ? this.routerPath.length : this.routerPath.indexOf('?');
+        const routePath = this.routerPath.substring(0, index);
         for (const item of this.menus) {
             item.open = false;
             item.selected = false;
             // 一级菜单
             if (!item.children || item.children.length === 0) {
-                if (item.path === this.routerPath) {
+                if (item.path === routePath) {
                     item.selected = true;
                 }
                 continue;
@@ -71,7 +73,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
                 subItem.selected = false;
                 subItem.open = false;
                 if (!subItem.children || subItem.children.length === 0) {
-                    if (subItem.path === this.routerPath) {
+                    if (subItem.path === routePath) {
                         item.open = true;
                         item.selected = true;
                         subItem.selected = true;
@@ -80,7 +82,7 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
                     continue;
                 }
                 for (const thirdItem of subItem.children) {
-                    if (thirdItem.path === this.routerPath) {
+                    if (thirdItem.path === routePath) {
                         item.open = true;
                         item.selected = true;
                         subItem.selected = true;
