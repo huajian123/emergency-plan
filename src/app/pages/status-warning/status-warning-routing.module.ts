@@ -46,7 +46,7 @@ import {TotalPlanComponent} from './total-plan/total-plan.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'total-plan', pathMatch: 'full'},
-    {path: 'total-plan', component: TotalPlanComponent, data: {title: '总预案判别', keep: false}},
+    {path: 'total-plan', component: TotalPlanComponent, data: {title: '总预案判别', keep: true}},
     /*自然灾害*/
     {path: 'natural-drought-and-flood-level', component: DroughtAndFloodWarningComponent, data: {title: '汛旱灾害判别', keep: false}},
     {path: 'natural-earthquake-level', component: EarthquakeWarningComponent, data: {title: '地震灾害判别', keep: false}},

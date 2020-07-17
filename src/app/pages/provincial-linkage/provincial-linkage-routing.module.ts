@@ -21,7 +21,7 @@ import {TotalPlanComponent} from './total-plan/total-plan.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'total-plan-pro', pathMatch: 'full'},
-  {path: 'total-plan-pro', component: TotalPlanComponent, data: {title: '总预案', keep: false}},
+  {path: 'total-plan-pro', component: TotalPlanComponent, data: {title: '总预案', keep: true}},
   /*防汛防旱*/
   {path: 'first-drought-pro', component: FirstDroughtProComponent, data: {title: '汛旱一级', keep: false}},
   {path: 'second-drought-pro', component: SecondDroughtProComponent, data: {title: '汛旱二级', keep: false}},

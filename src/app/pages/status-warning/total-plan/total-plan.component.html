@@ -1,214 +1,23 @@
-<header>自然灾害类别</header>
-<div class="organization-wrap">
-    <div class="organization-item">
-        <h5>水旱灾害</h5>
-        <span>特别重大水旱灾害包括：<br>
-           1: 一个流域发生特大洪水，或多个流域同时发生大洪水。<br>
-           2: 长江大河等干流重要河段堤防发生决口。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
 
-    <div class="organization-item">
-        <h5>气象灾害</h5>
-        <span>特别重大气象灾害包括：<br>
-           1: 特大暴雨、大雪、龙卷风、台风等极端天气气候事件影响重要城市和５０平方公里以上较大区域，造成３０人以上死亡，或５０００万元以上经济损失的气象灾害。<br>
-           2: 全省范围内将出现极端天气气候事件或极强灾害性天气过程，并会造成特大人员伤亡和巨大经济损失的气象灾害。<br>
-           。。。<br>
-        </span>
-    </div>
-
-    <div class="organization-item">
-        <h5>地震灾害</h5>
-        <span>特别重大气象灾害包括：<br>
-           1: 造成３００人以上死亡，直接经济损失占全省上年地区生产总值１％以上的地震。<br>
-           2: 发生在人口较密集地区７级以上地震。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
+<ng-container *ngIf="currentPage===pageTypeEnum.List">
+    <ng-container *ngFor="let indicator of indicatorIntro;">
+        <header>{{indicator.kind}}</header>
+        <div class="organization-wrap">
+            <div class="organization-item" *ngFor="let item of indicator.disaster">
+                <h5>{{item.name}}</h5>
+                <span>{{item.subName}}：<br>
+                <span style="padding:0" *ngFor="let desc of item.desc">{{desc}}</span><br>。。。<br>
+                </span>
+                <div class="btn">
+                    <button nz-button nzType="primary" (click)="item.goDetail(item.name)">进入详情</button>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>地质灾害</h5>
-        <span>特别重大地质灾害包括：<br>
-           1: 因山体崩塌、滑坡、泥石流、地面塌陷、地裂缝等灾害造成３０人以上死亡，或直接经济损失１０００万元以上的地质灾害。<br>
-           2: 受地质灾害威胁，需转移人数在１０００人以上，或潜在可能造成的经济损失在１亿元以上的灾害险情。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>海洋灾害</h5>
-        <span>特别重大海洋灾害包括：<br>
-           1: 风暴潮、巨浪、海啸、赤潮等造成３０人以上死亡，或５０００万元以上经济损失的海洋灾害。<br>
-           2: 对沿海重要城市或５０平方公里以上较大区域经济、社会和群众生产、生活等造成特别严重影响的海洋灾害。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-    <div class="organization-item">
-        <h5>生物灾害</h5>
-        <span>特别重大生物灾害包括：<br>
-           1: 在包括我省在内的２个以上省（市）病虫草等有害生物暴发流行，或新传入我国的有害生物在包括我省在内的２个以上省（市）内发生，或在省内２个以上市发生，对农业和林业造成巨大危害的生物灾害。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-    <div class="organization-item">
-        <h5>森林火灾</h5>
-        <span>特别重大森林火灾包括：<br>
-           1: 受害森林面积超过１０００公顷、火场仍未得到有效控制的火灾。<br>
-           2: 造成３０人以上死亡或造成重大影响和财产损失的森林火灾。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-</div>
-<header>事故灾难类</header>
-
-<div class="organization-wrap">
-    <div class="organization-item">
-        <h5>安全事故</h5>
-        <span>特别重大安全事故包括：<br>
-           1: 造成３０人以上死亡（含失踪），或危及３０人以上生命安全，或１亿元以上直接经济损失，或１００人以上中毒（重伤），或需要紧急转移安置１０万人以上的安全事故。<br>
-           2: 铁路繁忙干线、国家高速公路网线路遭受破坏，造成行车中断，经抢修４８小时内无法恢复通车。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>特别重大环境污染和生态破坏事故包括</h5>
-        <span>特别重大安全事故包括：<br>
-           1: 因环境污染造成重要城市主要水源地取水中断的污染事故。<br>
-           2: 因危险化学品（含剧毒品）生产和贮运中发生泄漏，严重影响人民群众生产、生活和生态环境的污染事故。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-</div>
-
-<header>公共卫生事件类</header>
-
-<div class="organization-wrap">
-    <div class="organization-item">
-        <h5>公共卫生事件</h5>
-        <span>特别重大公共卫生事件：<br>
-           1: 发生传染性非典型肺炎、人感染高致病性禽流感病例，疫情有扩散趋势。<br>
-           2: 涉及包括我省在内的多个省份的群体性不明原因疾病，并有扩散趋势。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>动物疫情</h5>
-        <span>特别重大动物疫情：<br>
-           1: 高致病性禽流感在２１日内，相邻省（市）有１０个以上县（市、区）发生疫情；或在我省２０个以上县（市、区）发生或１０个以上县（市、区）连片发生疫情。<br>
-           2: 口蹄疫在１４日内，包括我省在内的５个以上省份发生严重疫情，且疫区连片。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-</div>
-
-<header>社会安全事件类</header>
-
-<div class="organization-wrap">
-    <div class="organization-item">
-        <h5>群体性事件</h5>
-        <span>特别重大群体性事件：<br>
-           1: 一次参与人数５０００人以上，严重影响社会稳定的事件。<br>
-           2: 冲击、围攻县级以上党政军机关和要害部门，打、砸、抢、烧乡镇以上党政军机关的事件。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>涉外突发事件</h5>
-        <span>特别重大群体性事件：<br>
-           1: 一次造成３０人以上死亡或１００人以上伤亡的境外涉及我省或省内涉外事件。<br>
-           2: 造成我省驻外的机构和人员安全及财产重大损失，造成外国驻我省机构和人员安全及重大财产损失，并具有重大政治和社会影响的涉外事件。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-    <div class="organization-item">
-        <h5>恐怖袭击事件</h5>
-        <span>特别重大群体性事件：<br>
-           1: 利用生物战剂、化学毒剂进行大规模袭击或攻击生产、贮存、运输生化毒物设施、工具的。<br>
-           2: 利用核爆炸、核辐射进行袭击或攻击核设施、核材料装运工具的。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-    <div class="organization-item">
-        <h5>刑事案件</h5>
-        <span>特别重大刑事案件：<br>
-           1: 一次造成１０人以上死亡的杀人、爆炸、纵火、毒气、投放危险物质和邮寄危险物品等案件，或在公共场所造成６人以上死亡的案件，或采取绑架、劫持人质等手段，造成恶劣社会影响或可能造成严重后果的案件。<br>
-           2: 抢劫金融机构或运钞车，盗窃金融机构现金１００万元以上的案件。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-</div>
+    </ng-container>
+</ng-container>
 
 
-<header>经济安全事件类</header>
+<ng-container *ngIf="currentPage===pageTypeEnum.DetailOrExamine">
+    <app-criteria-detail (returnBack)="currentPage=pageTypeEnum.List" [indicator]="selIndicator"></app-criteria-detail>
+</ng-container>
 
-<div class="organization-wrap">
-    <div class="organization-item">
-        <h5>金融突发事件</h5>
-        <span>特别重大金融突发事件：<br>
-           1: 在我省发生的具有全国性影响的金融（含证券、期货）突发事件。<br>
-           2: 金融行业已出现或将要出现连锁反应，需要各有关部门协同配合共同处置的金融突发事件。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-
-    <div class="organization-item">
-        <h5>影响市场稳定的突发事件</h5>
-        <span>特别重大突发事件：<br>
-           1: 在２个以上市发生重要生活必需品市场异常波动，供应短缺。<br>
-           2: 在相邻省（市）的相邻区域有２个以上市发生重要生活必需品市场异常波动，供应短缺。<br>
-           。。。<br>
-        </span>
-        <div class="btn">
-            <button  nz-button nzType="primary" >进入详情</button>
-        </div>
-    </div>
-</div>

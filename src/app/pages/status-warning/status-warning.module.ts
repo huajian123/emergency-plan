@@ -44,6 +44,7 @@ import {ReliefSuppliesWarningComponent} from './social-security-warning/relief-s
 import {TerroristAttacksWarningComponent} from './social-security-warning/terrorist-attacks-warning/terrorist-attacks-warning.component';
 import {RoadTrafficWarningComponent} from './accident-disaster-warning/road-traffic-warning/road-traffic-warning.component';
 import { TotalPlanComponent } from './total-plan/total-plan.component';
+import { CriteriaDetailComponent } from './total-plan/criteria-detail/criteria-detail.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { TotalPlanComponent } from './total-plan/total-plan.component';
         ReliefSuppliesWarningComponent,
         TerroristAttacksWarningComponent,
         RoadTrafficWarningComponent,
-        TotalPlanComponent],
+        TotalPlanComponent,
+        CriteriaDetailComponent],
     imports: [
         CommonModule,
         StatusWarningRoutingModule,

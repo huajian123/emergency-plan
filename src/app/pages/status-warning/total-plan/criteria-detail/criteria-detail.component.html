@@ -1,0 +1,87 @@
+<div class="normal-wrap" style="padding: 50px;">
+    <div nz-row [nzGutter]="24" class="nzgutter">
+        <!--<div nz-col nzSpan="11">
+            发生灾害地区
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.province"
+                       (ngModelChange)="changeProvince($event)">
+                <nz-option *ngFor="let item of provinceData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+            </nz-select>
+            市
+            <nz-select nzPlaceHolder="请下拉选择" [(ngModel)]="selected.city">
+                <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
+            </nz-select>
+            区(县)
+        </div>-->
+        <div nz-col nzSpan="13">
+            <nz-space>
+                <nz-space-item>
+                    <div class="first"><a [routerLink]="['/hazard/total-plan/total-budget']"
+                                          target="_blank">启动一级</a>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="second"><a
+                            [routerLink]="['/hazard/total-plan/total-budget']"
+                            target="_blank">启动二级</a></div>
+
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="third"><a
+                            [routerLink]="['/hazard/total-plan/total-budget']"
+                            [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank"
+                          >启动三级</a>
+                    </div>
+                </nz-space-item>
+                <nz-space-item>
+                    <div class="fourth"><span>启动四级</span></div>
+                </nz-space-item>
+            </nz-space>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col nzSpan="24">
+            <table>
+                <thead>
+                <tr>
+                    <td width="197">{{indicator.disasterName}}</td>
+                    <td width="320">特别重大</td>
+                    <td width="320">重大</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="color-bg">初判指标</td>
+                    <td>
+                        <span *ngFor="let item of indicator.oneLevel;let index=index;">
+                            {{index + 1}}、{{item}}<br/>
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let item of indicator.twoLevel;let index=index;">
+                            {{index + 1}}、{{item}}<br/>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="color-bg">分级响应</td>
+                    <td><b>Ⅰ级响应</b>；响应机构：<b>省{{indicator.disasterName}}救灾指挥部</b>。根据需要，报请国家{{indicator.disasterName}}
+                        救灾指挥机构
+                    </td>
+                    <td><b>Ⅱ级响应</b>；响应机构：<b>省{{indicator.disasterName}}救灾指挥部</b>。根据需要，报请国家{{indicator.disasterName}}
+                        救灾指挥机构
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        注1：对一些比较敏感或发生在敏感地区、敏感时间，或可能演化为特别重大、重大突发公共事件的信息报送和分级处置，不受上述标准限制。<br/>
+                        注2：上述标准中“以上”包括本数。<br/>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <button style="margin-top: 20px" (click)="returnToBack()" nz-button nzType="primary">返回</button>
+</div>
