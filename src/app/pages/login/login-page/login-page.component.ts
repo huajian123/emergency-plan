@@ -51,12 +51,12 @@ export class LoginPageComponent implements OnInit {
 
     // 跳转状态预警
     goStatusWarning() {
-        window.open(localUrl + '/hazard-status/status-warning/natural-drought-and-flood-level', '_blank');
+        window.open(localUrl + '/hazard-status/status-warning', '_blank');
     }
 
     // 跳转省级联动
     goProvincialLinkage() {
-        window.open(localUrl + '/hazard-provincial/provincial-linkage/first-drought-pro', '_blank');
+        window.open(localUrl + '/hazard-provincial/provincial-linkage', '_blank');
     }
 
     // 跳转地方响应
