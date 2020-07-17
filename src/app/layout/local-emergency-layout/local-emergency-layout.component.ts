@@ -262,25 +262,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/environmental-first',
+                            path: '/hazard-regional-response/local-emergency/environmental-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/environmental-second',
+                            path: '/hazard-regional-response/local-emergency/environmental-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/environmental-third',
+                            path: '/hazard-regional-response/local-emergency/environmental-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/environmental-fourth',
+                            path: '/hazard-regional-response/local-emergency/environmental-fourth',
                         }]
                 },
                 {
@@ -293,25 +293,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/radiation-accident-first',
+                            path: '/hazard-regional-response/local-emergency/radiation-accident-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/radiation-accident-second',
+                            path: '/hazard-regional-response/local-emergency/radiation-accident-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/radiation-accident-third',
+                            path: '/hazard-regional-response/local-emergency/radiation-accident-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/radiation-accident-fourth',
+                            path: '/hazard-regional-response/local-emergency/radiation-accident-fourth',
                         }]
                 },
                 {
@@ -324,25 +324,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/algae-outbreak-first',
+                            path: '/hazard-regional-response/local-emergency/algae-outbreak-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/algae-outbreak-second',
+                            path: '/hazard-regional-response/local-emergency/algae-outbreak-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/algae-outbreak-third',
+                            path: '/hazard-regional-response/local-emergency/algae-outbreak-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/algae-outbreak-fourth',
+                            path: '/hazard-regional-response/local-emergency/algae-outbreak-fourth',
                         }]
                 },
                 {
@@ -355,25 +355,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/lake-flooding-first',
+                            path: '/hazard-regional-response/local-emergency/lake-flooding-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/lake-flooding-second',
+                            path: '/hazard-regional-response/local-emergency/lake-flooding-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/lake-flooding-third',
+                            path: '/hazard-regional-response/local-emergency/lake-flooding-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/lake-flooding-fourth',
+                            path: '/hazard-regional-response/local-emergency/lake-flooding-fourth',
                         }]
                 },
                 {
@@ -386,7 +386,7 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/pollution-weather-first',
+                            path: '/hazard-regional-response/local-emergency/pollution-weather-first',
                         },
                         {
                             title: '二级灾害',
@@ -398,13 +398,13 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/pollution-weather-third',
+                            path: '/hazard-regional-response/local-emergency/pollution-weather-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/pollution-weather-fourth',
+                            path: '/hazard-regional-response/local-emergency/pollution-weather-fourth',
                         }]
                 },
                 {
@@ -417,25 +417,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/nuclear-event-first',
+                            path: '/hazard-regional-response/local-emergency/nuclear-event-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/nuclear-event-second',
+                            path: '/hazard-regional-response/local-emergency/nuclear-event-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/nuclear-event-third',
+                            path: '/hazard-regional-response/local-emergency/nuclear-event-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/nuclear-event-fourth',
+                            path: '/hazard-regional-response/local-emergency/nuclear-event-fourth',
                         }]
                 },
                 {
@@ -448,25 +448,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/special-equipment-first',
+                            path: '/hazard-regional-response/local-emergency/special-equipment-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/special-equipment-second',
+                            path: '/hazard-regional-response/local-emergency/special-equipment-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/special-equipment-third',
+                            path: '/hazard-regional-response/local-emergency/special-equipment-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/special-equipment-fourth',
+                            path: '/hazard-regional-response/local-emergency/special-equipment-fourth',
                         }]
                 },
                 {
@@ -479,25 +479,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/railway-accident-first',
+                            path: '/hazard-regional-response/local-emergency/railway-accident-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/railway-accident-second',
+                            path: '/hazard-regional-response/local-emergency/railway-accident-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/railway-accident-third',
+                            path: '/hazard-regional-response/local-emergency/railway-accident-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/railway-accident-fourth',
+                            path: '/hazard-regional-response/local-emergency/railway-accident-fourth',
                         }]
                 },
                 {
@@ -510,25 +510,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/port-local-emergencyous-chemicals-first',
+                            path: '/hazard-regional-response/local-emergency/port-local-emergencyous-chemicals-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/port-local-emergencyous-chemicals-second',
+                            path: '/hazard-regional-response/local-emergency/port-local-emergencyous-chemicals-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/port-local-emergencyous-chemicals-third',
+                            path: '/hazard-regional-response/local-emergency/port-local-emergencyous-chemicals-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/port-local-emergencyous-chemicals-fourth',
+                            path: '/hazard-regional-response/local-emergency/port-local-emergencyous-chemicals-fourth',
                         }]
                 },
                 {
@@ -541,25 +541,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/blackout-first',
+                            path: '/hazard-regional-response/local-emergency/blackout-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/blackout-second',
+                            path: '/hazard-regional-response/local-emergency/blackout-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/blackout-third',
+                            path: '/hazard-regional-response/local-emergency/blackout-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/blackout-fourth',
+                            path: '/hazard-regional-response/local-emergency/blackout-fourth',
                         }]
                 },
                 {
@@ -572,25 +572,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/fire-accident-first',
+                            path: '/hazard-regional-response/local-emergency/fire-accident-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/fire-accident-second',
+                            path: '/hazard-regional-response/local-emergency/fire-accident-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/fire-accident-third',
+                            path: '/hazard-regional-response/local-emergency/fire-accident-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/fire-accident-fourth',
+                            path: '/hazard-regional-response/local-emergency/fire-accident-fourth',
                         }]
                 },
                 {
@@ -603,25 +603,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/communication-first',
+                            path: '/hazard-regional-response/local-emergency/communication-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/communication-second',
+                            path: '/hazard-regional-response/local-emergency/communication-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/communication-third',
+                            path: '/hazard-regional-response/local-emergency/communication-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/communication-fourth',
+                            path: '/hazard-regional-response/local-emergency/communication-fourth',
                         }]
                 },
                 {
@@ -634,25 +634,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-first',
+                            path: '/hazard-regional-response/local-emergency/hazardous-chemicals-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-second',
+                            path: '/hazard-regional-response/local-emergency/hazardous-chemicals-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-third',
+                            path: '/hazard-regional-response/local-emergency/hazardous-chemicals-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/hazardous-chemicals-fourth',
+                            path: '/hazard-regional-response/local-emergency/hazardous-chemicals-fourth',
                         }]
                 },
                 {
@@ -665,25 +665,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/production-safety-first',
+                            path: '/hazard-regional-response/local-emergency/production-safety-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/production-safety-second',
+                            path: '/hazard-regional-response/local-emergency/production-safety-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/production-safety-third',
+                            path: '/hazard-regional-response/local-emergency/production-safety-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/production-safety-fourth',
+                            path: '/hazard-regional-response/local-emergency/production-safety-fourth',
                         }]
                 },
                 {
@@ -696,25 +696,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/forest-fire-first',
+                            path: '/hazard-regional-response/local-emergency/forest-fire-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/forest-fire-second',
+                            path: '/hazard-regional-response/local-emergency/forest-fire-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/forest-fire-third',
+                            path: '/hazard-regional-response/local-emergency/forest-fire-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/forest-fire-fourth',
+                            path: '/hazard-regional-response/local-emergency/forest-fire-fourth',
                         }]
                 },
                 {
@@ -727,25 +727,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/water-search-rescue-first',
+                            path: '/hazard-regional-response/local-emergency/water-search-rescue-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/water-search-rescue-second',
+                            path: '/hazard-regional-response/local-emergency/water-search-rescue-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/water-search-rescue-third',
+                            path: '/hazard-regional-response/local-emergency/water-search-rescue-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/water-search-rescue-fourth',
+                            path: '/hazard-regional-response/local-emergency/water-search-rescue-fourth',
                         }]
                 },
                 {
@@ -758,25 +758,25 @@ export class LocalEmergencyLayoutComponent implements OnInit, OnDestroy {
                             title: '一级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/rail-traffic-first',
+                            path: '/hazard-regional-response/local-emergency/rail-traffic-first',
                         },
                         {
                             title: '二级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/rail-traffic-second',
+                            path: '/hazard-regional-response/local-emergency/rail-traffic-second',
                         },
                         {
                             title: '三级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/rail-traffic-third',
+                            path: '/hazard-regional-response/local-emergency/rail-traffic-third',
                         },
                         {
                             title: '四级灾害',
                             open: false,
                             selected: false,
-                            path: '/hazard-regional-response/local-emergencys/rail-traffic-fourth',
+                            path: '/hazard-regional-response/local-emergency/rail-traffic-fourth',
                         }]
                 },
             ]

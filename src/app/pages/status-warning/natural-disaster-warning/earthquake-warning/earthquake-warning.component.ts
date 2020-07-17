@@ -21,9 +21,11 @@ export class EarthquakeWarningComponent implements OnInit {
     cityData: OptionsInterface[];
     selected: SelectedInterface;
     dataInfo: CitiesNameModel[];
+    disabled: boolean;
 
 
     constructor(private dataService: CitiesNameService) {
+        this.disabled = false;
         this.provinceData = [];
         this.cityData = [];
         this.selected = {
@@ -47,6 +49,7 @@ export class EarthquakeWarningComponent implements OnInit {
         this.dataInfo.find(data => data.id === eve).countDTOS.forEach(item => {
             this.cityData.push({value: item.id, label: item.countName});
         });
+        this.disabled = true;
     }
 
     ngOnInit(): void {

@@ -17,22 +17,26 @@
             <nz-space>
                 <nz-space-item>
                     <div class="first"><a [routerLink]="['/hazard/natural-disaster/earthquake-disaster-first']"
-                                          target="_blank">启动一级</a>
+                                          target="_blank" *ngIf="disabled">启动一级</a>
+                        <span *ngIf="!disabled">启动一级</span>
                     </div>
                 </nz-space-item>
                 <nz-space-item>
                     <div class="second"><a
                             [routerLink]="['/hazard/natural-disaster/earthquake-disaster-second']"
-                            target="_blank">启动二级</a></div>
+                            target="_blank" *ngIf="disabled">启动二级</a><span *ngIf="!disabled">启动二级</span></div>
+
                 </nz-space-item>
                 <nz-space-item>
                     <div class="third"><a
                             [routerLink]="['/hazard/natural-disaster/earthquake-disaster-third']"
-                            [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank">启动三级</a>
+                            [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank"
+                            *ngIf="disabled">启动三级</a>
+                        <span *ngIf="!disabled">启动三级</span>
                     </div>
                 </nz-space-item>
                 <nz-space-item>
-                    <div class="fourth">启动四级</div>
+                    <div class="fourth"><span>启动四级</span></div>
                 </nz-space-item>
             </nz-space>
         </div>
