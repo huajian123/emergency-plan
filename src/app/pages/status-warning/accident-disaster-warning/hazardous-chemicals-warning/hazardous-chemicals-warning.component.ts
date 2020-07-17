@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CitiesNameModel, CitiesNameService} from 'src/app/services/biz-services/earthquake-warning-list.service';
+import {NzMessageService} from 'ng-zorro-antd';
 
 export interface OptionsInterface {
     value: number;
@@ -24,7 +25,7 @@ export class HazardousChemicalsWarningComponent implements OnInit {
     disabled: boolean;
 
 
-    constructor(private dataService: CitiesNameService) {
+    constructor(private dataService: CitiesNameService, public message?: NzMessageService) {
         this.disabled = false;
         this.provinceData = [];
         this.cityData = [];
@@ -32,6 +33,10 @@ export class HazardousChemicalsWarningComponent implements OnInit {
             province: '',
             city: ''
         };
+    }
+
+    start() {
+        this.message.success('请选择所在地区范围');
     }
 
     async getEarthquakeWarningList() {

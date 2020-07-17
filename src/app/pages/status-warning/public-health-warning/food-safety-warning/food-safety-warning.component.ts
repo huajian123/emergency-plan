@@ -4,6 +4,7 @@ import {
     OptionsInterface,
     SelectedInterface
 } from '../../accident-disaster-warning/hazardous-chemicals-warning/hazardous-chemicals-warning.component';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
     selector: 'app-food-safety-warning',
@@ -18,7 +19,7 @@ export class FoodSafetyWarningComponent implements OnInit {
     disabled: boolean;
 
 
-    constructor(private dataService: CitiesNameService) {
+    constructor(private dataService: CitiesNameService, public message?: NzMessageService) {
         this.disabled = false;
         this.provinceData = [];
         this.cityData = [];
@@ -26,6 +27,10 @@ export class FoodSafetyWarningComponent implements OnInit {
             province: '',
             city: ''
         };
+    }
+
+    start() {
+        this.message.success('请选择所在地区范围');
     }
 
     async getEarthquakeWarningList() {

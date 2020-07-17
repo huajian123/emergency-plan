@@ -18,21 +18,21 @@
                 <nz-space-item>
                     <div class="first"><a [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-first']"
                                           target="_blank" *ngIf="disabled">启动一级</a>
-                        <span *ngIf="!disabled">启动一级</span>
+                        <span *ngIf="!disabled" (click)="start()">启动一级</span>
                     </div>
                 </nz-space-item>
                 <nz-space-item>
                     <div class="second"><a
                             [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-second']"
-                            target="_blank" *ngIf="disabled">启动二级</a><span *ngIf="!disabled">启动二级</span></div>
-
+                            target="_blank" *ngIf="disabled">启动二级</a>
+                        <span *ngIf="!disabled" (click)="start()">启动二级</span></div>
                 </nz-space-item>
                 <nz-space-item>
                     <div class="third"><a
                             [routerLink]="['/hazard/accident-disaster/hazardous-chemicals-third']"
                             [queryParams]="{provinceId:this.selected.province,type:'0'}" target="_blank"
                             *ngIf="disabled">启动三级</a>
-                        <span *ngIf="!disabled">启动三级</span>
+                        <span *ngIf="!disabled" (click)="start()">启动三级</span>
                     </div>
                 </nz-space-item>
                 <nz-space-item>
