@@ -5,6 +5,7 @@ import {
     CommanderInfoModel
 } from '../../../../services/biz-services/accident-disasters-list.service';
 import {AccidentEnum, DisasterLevelEnum} from '../../../../core/vo-common/BusinessEnum';
+import {NzMessageService} from "ng-zorro-antd";
 
 @Component({
     selector: 'app-second-accident-disaster',
@@ -21,7 +22,7 @@ export class SecondHazardousChemicalsComponent implements OnInit {
     accidentEnum = AccidentEnum;
     disasterLevel = DisasterLevelEnum;
 
-    constructor(private dataService: AccidentDisastersListService) {
+    constructor(private dataService: AccidentDisastersListService, public message?: NzMessageService) {
         this.dataInfo = {
             id: null,
             planGrade: null,
@@ -39,6 +40,10 @@ export class SecondHazardousChemicalsComponent implements OnInit {
             grade: null
         };
         this.returnBack = new EventEmitter<any>();
+    }
+
+    sendMsg() {
+        this.message.success('发送信息成功');
     }
 
     async getAccidentDisastersDetail() {
