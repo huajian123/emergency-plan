@@ -223,7 +223,7 @@ export class PlansAddEditComponent implements OnInit {
         this.items.at(index).get('resyDetail').setValue(this.resyOptions.find(res => res.value === e).resyDetail);
     }
 
-    /*管理小队中部门下拉*/
+    /*工作组中部门下拉*/
     changeSelValue(e, index) {
         if (e === null) {
             return;
