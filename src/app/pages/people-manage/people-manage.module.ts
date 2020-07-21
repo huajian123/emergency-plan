@@ -11,6 +11,8 @@ import {TeamsAddEditComponent} from './management-teams/teams-add-edit/teams-add
 import {DepartmentsAddEditComponent} from './management-departments/departments-add-edit/departments-add-edit.component';
 import {PlansAddEditComponent} from './management-plans/plans-add-edit/plans-add-edit.component';
 import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail.component';
+import {UserManageComponent} from './user-manage/user-manage.component';
+import {UserAddEditComponent} from './user-manage/user-add-edit/user-add-edit.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {PlansDetailComponent} from './management-plans/plans-detail/plans-detail
         TeamsAddEditComponent,
         DepartmentsAddEditComponent,
         PlansAddEditComponent,
-        PlansDetailComponent],
+        PlansDetailComponent,
+        UserManageComponent,
+        UserAddEditComponent],
     imports: [
         CommonModule,
         PeopleManageRoutingModule,

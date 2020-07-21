@@ -117,12 +117,10 @@ export class PlansAddEditComponent implements OnInit {
         let submitHandel = null;
         if (!this.id) {
             params.createBy = this.loginInfo.createBy;
-            console.log(params);
             submitHandel = this.dataService.addPlan(params).subscribe();
         } else {
             params.id = this.id;
             params.updateBy = this.loginInfo.account;
-            console.log(params);
             submitHandel = this.dataService.editPlan(params).subscribe();
         }
 
@@ -153,7 +151,6 @@ export class PlansAddEditComponent implements OnInit {
     /*获取预案详情*/
     async getDetail() {
         await this.dataService.getPlanDetail(this.id).subscribe(data => {
-            console.log(data);
             this.validateForm.patchValue(data);
             this.validateForm.get('accidentId').setValue(data.accidentId);
             data.planDeptResyEntities.forEach(item => {

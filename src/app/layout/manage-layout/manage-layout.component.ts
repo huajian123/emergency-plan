@@ -33,6 +33,12 @@ export class ManageLayoutComponent implements OnInit {
             selected: false,
             path: '/hazard-manage/people-manage/plans',
         },
+        {
+            title: '用户管理',
+            icon: 'user',
+            selected: false,
+            path: '/hazard-manage/people-manage/users',
+        },
     ];
 
     constructor() {

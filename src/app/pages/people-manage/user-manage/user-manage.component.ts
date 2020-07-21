@@ -1,26 +1,28 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {MyTableConfig} from 'src/app/share/comment/ant-table/ant-table.component';
-import {PlanListModel, PlanListService} from 'src/app/services/biz-services/plan-list.service';
+import {MyTableConfig} from '../../../share/comment/ant-table/ant-table.component';
+import {LoginInfoModel, PageTypeEnum} from '../../../core/vo-common/BusinessEnum';
 import {NzModalService, NzTableQueryParams} from 'ng-zorro-antd';
-import {PageTypeEnum} from 'src/app/core/vo-common/BusinessEnum';
+import {GoBackParam} from '../../../core/vo-common/ReturnBackVo';
+import {UserManageModel, UserManageService} from 'src/app/services/biz-services/user-list.service';
+import {EVENT_KEY} from '../../../../environments/staticVariable';
+import {SearchCommonVO} from '../../../VO/types';
 import {concatMap} from 'rxjs/operators';
-import {SearchCommonVO} from 'src/app/VO/types';
-import {GoBackParam} from 'src/app/core/vo-common/ReturnBackVo';
 
 @Component({
-    selector: 'app-management-plans',
-    templateUrl: './management-plans.component.html',
-    styleUrls: ['./management-plans.component.less']
+    selector: 'app-user-manage',
+    templateUrl: './user-manage.component.html',
+    styleUrls: ['./user-manage.component.less']
 })
-export class ManagementPlansComponent implements OnInit {
+export class UserManageComponent implements OnInit {
     tableConfig: MyTableConfig;
     @ViewChild('operationTpl', {static: true}) operationTpl: TemplateRef<any>;
-    dataList: PlanListModel[];
+    dataList: UserManageModel[];
     itemId: number;
     currentPage: number;
     pageTypeEnum = PageTypeEnum;
+    loginInfo: LoginInfoModel;
 
-    constructor(private dataService: PlanListService, private modal: NzModalService) {
+    constructor(private dataService: UserManageService, private modal: NzModalService) {
         this.currentPage = this.pageTypeEnum.List;
         this.dataList = [];
     }
@@ -38,19 +40,14 @@ export class ManagementPlansComponent implements OnInit {
         this.currentPage = this.pageTypeEnum.AddOrEdit;
     }
 
-    detail(id) {
-        this.itemId = id;
-        this.currentPage = this.pageTypeEnum.DetailOrExamine;
-    }
-
     /*删除*/
     del(id) {
         const that = this;
         this.modal.confirm({
             nzTitle: '<i>确定删除此项？</i>',
             nzOnOk: () => {
-                this.dataService.getPlanListDelete(id).pipe(concatMap(() => {
-                    return this.getDataList({pageIndex: this.tableConfig.pageIndex} as NzTableQueryParams);
+                this.dataService.userDelete({delId: id, myId: this.loginInfo.id}).pipe(concatMap(() => {
+                    return this.getDataList();
                 })).subscribe();
             },
             nzOkText: '确定',
@@ -65,15 +62,20 @@ export class ManagementPlansComponent implements OnInit {
         this.tableConfig = {
             headers: [
                 {
-                    title: '预案名称',
+                    title: '账号名称',
                     width: 100,
-                    field: 'planName',
+                    field: 'account',
                 },
                 {
-                    title: '事故类型',
+                    title: '账号密码',
                     width: 100,
-                    field: 'accidentType',
-                    pipe: 'accidentType'
+                    field: 'password',
+                },
+                {
+                    title: '账号角色',
+                    width: 100,
+                    field: 'role',
+                    pipe: 'roleManage',
                 },
                 {
                     title: '操作',
@@ -88,19 +90,13 @@ export class ManagementPlansComponent implements OnInit {
         };
     }
 
-
-    // 修改一页几条
-    changePageSize(e) {
-        this.tableConfig.pageSize = e;
-    }
-
     async getDataList(e?: NzTableQueryParams) {
         this.tableConfig.loading = true;
         const params: SearchCommonVO<any> = {
             pageSize: this.tableConfig.pageSize,
             pageNum: e?.pageIndex || this.tableConfig.pageIndex
         };
-        await this.dataService.getPlanList(params).subscribe((data) => {
+        await this.dataService.userLoginList(params).subscribe((data) => {
             const {list, total, pageNum} = data;
             this.dataList = list || [];
             this.tableConfig.total = total;
@@ -119,10 +115,10 @@ export class ManagementPlansComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.loginInfo = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo));
         this.initTable();
         this.getDataList();
     }
 
 
 }
-
