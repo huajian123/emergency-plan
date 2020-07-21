@@ -5,7 +5,7 @@ import {
     CommanderInfoModel
 } from '../../../../services/biz-services/accident-disasters-list.service';
 import {AccidentEnum, DisasterLevelEnum} from '../../../../core/vo-common/BusinessEnum';
-import {NzMessageService} from "ng-zorro-antd";
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
     selector: 'app-second-accident-disaster',
