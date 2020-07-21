@@ -107,6 +107,11 @@ export class UserManageComponent implements OnInit {
         });
     }
 
+    // 修改一页几条
+    changePageSize(e) {
+        this.tableConfig.pageSize = e;
+    }
+
     async returnToList(e?: GoBackParam) {
         this.currentPage = this.pageTypeEnum.List;
         if (!(!!e && e.refesh)) {
