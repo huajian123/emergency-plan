@@ -44,6 +44,30 @@ import {FirstTyphoonDisasterComponent} from './natural-disasters/typhoon-disaste
 import {SecondTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/second-typhoon-disaster/second-typhoon-disaster.component';
 import {ThirdTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/third-typhoon-disaster/third-typhoon-disaster.component';
 import {FourthTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/fourth-typhoon-disaster/fourth-typhoon-disaster.component';
+import {FirstAnimalEpidemicComponent} from './public-health/animal-epidemic/first-animal-epidemic/first-animal-epidemic.component';
+import {SecondAnimalEpidemicComponent} from './public-health/animal-epidemic/second-animal-epidemic/second-animal-epidemic.component';
+import {ThirdAnimalEpidemicComponent} from './public-health/animal-epidemic/third-animal-epidemic/third-animal-epidemic.component';
+import {FourthAnimalEpidemicComponent} from './public-health/animal-epidemic/fourth-animal-epidemic/fourth-animal-epidemic.component';
+import {FirstInfluenzaComponent} from './public-health/influenza/first-influenza/first-influenza.component';
+import {SecondInfluenzaComponent} from './public-health/influenza/second-influenza/second-influenza.component';
+import {ThirdInfluenzaComponent} from './public-health/influenza/third-influenza/third-influenza.component';
+import {FourthInfluenzaComponent} from './public-health/influenza/fourth-influenza/fourth-influenza.component';
+import {FirstMedicalAidComponent} from './public-health/medical-aid/first-medical-aid/first-medical-aid.component';
+import {SecondMedicalAidComponent} from './public-health/medical-aid/second-medical-aid/second-medical-aid.component';
+import {ThirdMedicalAidComponent} from './public-health/medical-aid/third-medical-aid/third-medical-aid.component';
+import {FourthMedicalAidComponent} from './public-health/medical-aid/fourth-medical-aid/fourth-medical-aid.component';
+import {FirstPlagueControlComponent} from './public-health/plague-control/first-plague-control/first-plague-control.component';
+import {SecondPlagueControlComponent} from './public-health/plague-control/second-plague-control/second-plague-control.component';
+import {ThirdPlagueControlComponent} from './public-health/plague-control/third-plague-control/third-plague-control.component';
+import {FourthPlagueControlComponent} from './public-health/plague-control/fourth-plague-control/fourth-plague-control.component';
+import {FirstPublicHealthComponent} from './public-health/public-health-event/first-public-health/first-public-health.component';
+import {SecondPublicHealthComponent} from './public-health/public-health-event/second-public-health/second-public-health.component';
+import {ThirdPublicHealthComponent} from './public-health/public-health-event/third-public-health/third-public-health.component';
+import {FourthPublicHealthComponent} from './public-health/public-health-event/fourth-public-health/fourth-public-health.component';
+import {FirstSafetyMedicalComponent} from './public-health/safety-medical-devices/first-safety-medical/first-safety-medical.component';
+import {SecondSafetyMedicalComponent} from './public-health/safety-medical-devices/second-safety-medical/second-safety-medical.component';
+import {ThirdSafetyMedicalComponent} from './public-health/safety-medical-devices/third-safety-medical/third-safety-medical.component';
+import {FourthSafetyMedicalComponent} from './public-health/safety-medical-devices/fourth-safety-medical/fourth-safety-medical.component';
 
 
 @NgModule({
@@ -89,6 +113,30 @@ import {FourthTyphoonDisasterComponent} from './natural-disasters/typhoon-disast
         SecondTyphoonDisasterComponent,
         ThirdTyphoonDisasterComponent,
         FourthTyphoonDisasterComponent,
+        FirstAnimalEpidemicComponent,
+        SecondAnimalEpidemicComponent,
+        ThirdAnimalEpidemicComponent,
+        FourthAnimalEpidemicComponent,
+        FirstInfluenzaComponent,
+        SecondInfluenzaComponent,
+        ThirdInfluenzaComponent,
+        FourthInfluenzaComponent,
+        FirstMedicalAidComponent,
+        SecondMedicalAidComponent,
+        ThirdMedicalAidComponent,
+        FourthMedicalAidComponent,
+        FirstPlagueControlComponent,
+        SecondPlagueControlComponent,
+        ThirdPlagueControlComponent,
+        FourthPlagueControlComponent,
+        FirstPublicHealthComponent,
+        SecondPublicHealthComponent,
+        ThirdPublicHealthComponent,
+        FourthPublicHealthComponent,
+        FirstSafetyMedicalComponent,
+        SecondSafetyMedicalComponent,
+        ThirdSafetyMedicalComponent,
+        FourthSafetyMedicalComponent,
     ],
     imports: [
         ShareModule,

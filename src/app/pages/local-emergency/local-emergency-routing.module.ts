@@ -41,6 +41,30 @@ import {FirstBlackoutComponent} from './accident-disasters/blackout/first-blacko
 import {SecondBlackoutComponent} from './accident-disasters/blackout/second-blackout/second-blackout.component';
 import {ThirdBlackoutComponent} from './accident-disasters/blackout/third-blackout/third-blackout.component';
 import {FourthBlackoutComponent} from './accident-disasters/blackout/fourth-blackout/fourth-blackout.component';
+import {FirstAnimalEpidemicComponent} from './public-health/animal-epidemic/first-animal-epidemic/first-animal-epidemic.component';
+import {SecondAnimalEpidemicComponent} from './public-health/animal-epidemic/second-animal-epidemic/second-animal-epidemic.component';
+import {ThirdAnimalEpidemicComponent} from './public-health/animal-epidemic/third-animal-epidemic/third-animal-epidemic.component';
+import {FourthAnimalEpidemicComponent} from './public-health/animal-epidemic/fourth-animal-epidemic/fourth-animal-epidemic.component';
+import {FirstInfluenzaComponent} from './public-health/influenza/first-influenza/first-influenza.component';
+import {SecondInfluenzaComponent} from './public-health/influenza/second-influenza/second-influenza.component';
+import {ThirdInfluenzaComponent} from './public-health/influenza/third-influenza/third-influenza.component';
+import {FourthInfluenzaComponent} from './public-health/influenza/fourth-influenza/fourth-influenza.component';
+import {FirstPlagueControlComponent} from './public-health/plague-control/first-plague-control/first-plague-control.component';
+import {SecondPlagueControlComponent} from './public-health/plague-control/second-plague-control/second-plague-control.component';
+import {ThirdPlagueControlComponent} from './public-health/plague-control/third-plague-control/third-plague-control.component';
+import {FourthPlagueControlComponent} from './public-health/plague-control/fourth-plague-control/fourth-plague-control.component';
+import {FirstMedicalAidComponent} from './public-health/medical-aid/first-medical-aid/first-medical-aid.component';
+import {SecondMedicalAidComponent} from './public-health/medical-aid/second-medical-aid/second-medical-aid.component';
+import {ThirdMedicalAidComponent} from './public-health/medical-aid/third-medical-aid/third-medical-aid.component';
+import {FourthMedicalAidComponent} from './public-health/medical-aid/fourth-medical-aid/fourth-medical-aid.component';
+import {FirstSafetyMedicalComponent} from './public-health/safety-medical-devices/first-safety-medical/first-safety-medical.component';
+import {SecondSafetyMedicalComponent} from './public-health/safety-medical-devices/second-safety-medical/second-safety-medical.component';
+import {ThirdSafetyMedicalComponent} from './public-health/safety-medical-devices/third-safety-medical/third-safety-medical.component';
+import {FourthSafetyMedicalComponent} from './public-health/safety-medical-devices/fourth-safety-medical/fourth-safety-medical.component';
+import {FirstPublicHealthComponent} from './public-health/public-health-event/first-public-health/first-public-health.component';
+import {SecondPublicHealthComponent} from './public-health/public-health-event/second-public-health/second-public-health.component';
+import {ThirdPublicHealthComponent} from './public-health/public-health-event/third-public-health/third-public-health.component';
+import {FourthPublicHealthComponent} from './public-health/public-health-event/fourth-public-health/fourth-public-health.component';
 
 
 const routes: Routes = [
@@ -82,6 +106,36 @@ const routes: Routes = [
     {path: 'food-safety-second', component: SecondFoodSafetyComponent, data: {title: '食品安全二级', keep: false}},
     {path: 'food-safety-third', component: ThirdFoodSafetyComponent, data: {title: '食品安全三级', keep: false}},
     {path: 'food-safety-fourth', component: FourthFoodSafetyComponent, data: {title: '食品安全四级', keep: false}},
+    /*动物疫情*/
+    {path: 'animal-epidemic-first', component: FirstAnimalEpidemicComponent, data: {title: '动物疫情一级', keep: false}},
+    {path: 'animal-epidemic-second', component: SecondAnimalEpidemicComponent, data: {title: '动物疫情二级', keep: false}},
+    {path: 'animal-epidemic-third', component: ThirdAnimalEpidemicComponent, data: {title: '动物疫情三级', keep: false}},
+    {path: 'animal-epidemic-fourth', component: FourthAnimalEpidemicComponent, data: {title: '动物疫情四级', keep: false}},
+    /*流感*/
+    {path: 'influenza-first', component: FirstInfluenzaComponent, data: {title: '流感一级', keep: false}},
+    {path: 'influenza-second', component: SecondInfluenzaComponent, data: {title: '流感二级', keep: false}},
+    {path: 'influenza-third', component: ThirdInfluenzaComponent, data: {title: '流感三级', keep: false}},
+    {path: 'influenza-fourth', component: FourthInfluenzaComponent, data: {title: '流感四级', keep: false}},
+    /*鼠疫*/
+    {path: 'plague-control-first', component: FirstPlagueControlComponent, data: {title: '鼠疫一级', keep: false}},
+    {path: 'plague-control-second', component: SecondPlagueControlComponent, data: {title: '鼠疫二级', keep: false}},
+    {path: 'plague-control-third', component: ThirdPlagueControlComponent, data: {title: '鼠疫三级', keep: false}},
+    {path: 'plague-control-fourth', component: FourthPlagueControlComponent, data: {title: '鼠疫四级', keep: false}},
+    /*医疗救急*/
+    {path: 'medical-aid-first', component: FirstMedicalAidComponent, data: {title: '医疗救急一级', keep: false}},
+    {path: 'medical-aid-second', component: SecondMedicalAidComponent, data: {title: '医疗救急二级', keep: false}},
+    {path: 'medical-aid-third', component: ThirdMedicalAidComponent, data: {title: '医疗救急三级', keep: false}},
+    {path: 'medical-aid-fourth', component: FourthMedicalAidComponent, data: {title: '医疗救急全四级', keep: false}},
+    /*公共卫生*/
+    {path: 'public-health-event-first', component: FirstPublicHealthComponent, data: {title: '医疗救急一级', keep: false}},
+    {path: 'public-health-event-second', component: SecondPublicHealthComponent, data: {title: '医疗救急二级', keep: false}},
+    {path: 'public-health-event-third', component: ThirdPublicHealthComponent, data: {title: '医疗救急三级', keep: false}},
+    {path: 'public-health-event-fourth', component: FourthPublicHealthComponent, data: {title: '医疗救急全四级', keep: false}},
+    /*医疗器械*/
+    {path: 'safety-medical-devices-first', component: FirstSafetyMedicalComponent, data: {title: '医疗器械一级', keep: false}},
+    {path: 'safety-medical-devices-second', component: SecondSafetyMedicalComponent, data: {title: '医疗器械二级', keep: false}},
+    {path: 'safety-medical-devices-third', component: ThirdSafetyMedicalComponent, data: {title: '医疗器械三级', keep: false}},
+    {path: 'safety-medical-devices-fourth', component: FourthSafetyMedicalComponent, data: {title: '医疗器械四级', keep: false}},
     /*危化品*/
     {path: 'hazardous-chemicals-first', component: FirstHazardousChemicalsComponent, data: {title: '危化品一级', keep: false}},
     {path: 'hazardous-chemicals-second', component: SecondHazardousChemicalsComponent, data: {title: '危化品二级', keep: false}},
