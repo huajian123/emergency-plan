@@ -20,6 +20,30 @@ import {FirstHazardousChemicalsComponent} from './accident-disasters/hazardous-c
 import {SecondHazardousChemicalsComponent} from './accident-disasters/hazardous-chemicals/second-hazardous-chemicals/second-hazardous-chemicals.component';
 import {FourthHazardousChemicalsComponent} from './accident-disasters/hazardous-chemicals/fourth-hazardous-chemicals/fourth-hazardous-chemicals.component';
 import {TotalBudgetComponent} from './total-plan/total-budget/total-budget.component';
+import {FirstAlgaeOutbreakComponent} from './accident-disasters/algae-outbreak/first-algae-outbreak/first-algae-outbreak.component';
+import {SecondAlgaeOutbreakComponent} from './accident-disasters/algae-outbreak/second-algae-outbreak/second-algae-outbreak.component';
+import {ThirdAlgaeOutbreakComponent} from './accident-disasters/algae-outbreak/third-algae-outbreak/third-algae-outbreak.component';
+import {FourthAlgaeOutbreakComponent} from './accident-disasters/algae-outbreak/fourth-algae-outbreak/fourth-algae-outbreak.component';
+import {FirstBlackoutComponent} from './accident-disasters/blackout/first-blackout/first-blackout.component';
+import {SecondBlackoutComponent} from './accident-disasters/blackout/second-blackout/second-blackout.component';
+import {ThirdBlackoutComponent} from './accident-disasters/blackout/third-blackout/third-blackout.component';
+import {FourthBlackoutComponent} from './accident-disasters/blackout/fourth-blackout/fourth-blackout.component';
+import {FirstGeologicalDisasterComponent} from './natural-disasters/geological-disaster/first-geological-disaster/first-geological-disaster.component';
+import {SecondGeologicalDisasterComponent} from './natural-disasters/geological-disaster/second-geological-disaster/second-geological-disaster.component';
+import {ThirdGeologicalDisasterComponent} from './natural-disasters/geological-disaster/third-geological-disaster/third-geological-disaster.component';
+import {FourthGeologicalDisasterComponent} from './natural-disasters/geological-disaster/fourth-geological-disaster/fourth-geological-disaster.component';
+import {FirstMeteorologicalDisasterComponent} from './natural-disasters/meteorological-disaster/first-meteorological-disaster/first-meteorological-disaster.component';
+import {SecondMeteorologicalDisasterComponent} from './natural-disasters/meteorological-disaster/second-meteorological-disaster/second-meteorological-disaster.component';
+import {ThirdMeteorologicalDisasterComponent} from './natural-disasters/meteorological-disaster/third-meteorological-disaster/third-meteorological-disaster.component';
+import {FourthMeteorologicalDisasterComponent} from './natural-disasters/meteorological-disaster/fourth-meteorological-disaster/fourth-meteorological-disaster.component';
+import {FirstDisasterReliefComponent} from './natural-disasters/natural-disaster-relief/first-disaster-relief/first-disaster-relief.component';
+import {SecondDisasterReliefComponent} from './natural-disasters/natural-disaster-relief/second-disaster-relief/second-disaster-relief.component';
+import {ThirdDisasterReliefComponent} from './natural-disasters/natural-disaster-relief/third-disaster-relief/third-disaster-relief.component';
+import {FourthDisasterReliefComponent} from './natural-disasters/natural-disaster-relief/fourth-disaster-relief/fourth-disaster-relief.component';
+import {FirstTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/first-typhoon-disaster/first-typhoon-disaster.component';
+import {SecondTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/second-typhoon-disaster/second-typhoon-disaster.component';
+import {ThirdTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/third-typhoon-disaster/third-typhoon-disaster.component';
+import {FourthTyphoonDisasterComponent} from './natural-disasters/typhoon-disaster/fourth-typhoon-disaster/fourth-typhoon-disaster.component';
 
 
 @NgModule({
@@ -41,6 +65,30 @@ import {TotalBudgetComponent} from './total-plan/total-budget/total-budget.compo
         SecondHazardousChemicalsComponent,
         FourthHazardousChemicalsComponent,
         TotalBudgetComponent,
+        FirstAlgaeOutbreakComponent,
+        SecondAlgaeOutbreakComponent,
+        ThirdAlgaeOutbreakComponent,
+        FourthAlgaeOutbreakComponent,
+        FirstBlackoutComponent,
+        SecondBlackoutComponent,
+        ThirdBlackoutComponent,
+        FourthBlackoutComponent,
+        FirstGeologicalDisasterComponent,
+        SecondGeologicalDisasterComponent,
+        ThirdGeologicalDisasterComponent,
+        FourthGeologicalDisasterComponent,
+        FirstMeteorologicalDisasterComponent,
+        SecondMeteorologicalDisasterComponent,
+        ThirdMeteorologicalDisasterComponent,
+        FourthMeteorologicalDisasterComponent,
+        FirstDisasterReliefComponent,
+        SecondDisasterReliefComponent,
+        ThirdDisasterReliefComponent,
+        FourthDisasterReliefComponent,
+        FirstTyphoonDisasterComponent,
+        SecondTyphoonDisasterComponent,
+        ThirdTyphoonDisasterComponent,
+        FourthTyphoonDisasterComponent,
     ],
     imports: [
         ShareModule,
