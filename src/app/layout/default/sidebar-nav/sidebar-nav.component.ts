@@ -51,6 +51,20 @@ export class SidebarNavComponent implements OnInit, OnDestroy {
             });
     }
 
+    // 改变当前菜单展示状态
+    changeOpen(menu, isSecondLevel?: boolean) {
+        this.menus.forEach((item) => {
+            if (!!item.children && item.children.length > 0 && isSecondLevel) {
+                item.children.forEach((subItem) => {
+                    subItem.open = false;
+                });
+            } else {
+                item.open = false;
+            }
+        });
+        menu.open = true;
+    }
+
 
     clickMenuItem() {
         if (!this.menus) {

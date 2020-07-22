@@ -10,7 +10,8 @@
                 </a>
             </li>
             <!--二级菜单-->
-            <li *ngIf="menu.children&&menu.children.length>0" nz-submenu [(nzOpen)]="menu.open" [nzTitle]="menu.title"
+            <li *ngIf="menu.children&&menu.children.length>0" nz-submenu (nzOpenChange)="changeOpen(menu)"
+                [(nzOpen)]="menu.open" [nzTitle]="menu.title"
                 [nzIcon]="menu.icon">
                 <ul>
                     <ng-container *ngFor="let menuSecond of menu.children">
@@ -22,6 +23,7 @@
                         </li>
                         <!--三级菜单-->
                         <li *ngIf="menuSecond.children&&menuSecond.children.length>0" nz-submenu
+                            (nzOpenChange)="changeOpen(menuSecond,true)"
                             [(nzOpen)]="menuSecond.open" [nzTitle]="menuSecond.title" [nzIcon]="menuSecond.icon">
                             <ul>
                                 <li nz-menu-item [nzSelected]="menuThird.selected"
