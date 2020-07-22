@@ -10,7 +10,7 @@
                 </a>
             </li>
             <!--二级菜单-->
-            <li *ngIf="menu.children&&menu.children.length>0" nz-submenu (nzOpenChange)="changeOpen(menu)"
+            <li *ngIf="menu.children&&menu.children.length>0" nz-submenu (nzOpenChange)="changeOpen(menu,menus)"
                 [(nzOpen)]="menu.open" [nzTitle]="menu.title"
                 [nzIcon]="menu.icon">
                 <ul>
@@ -23,7 +23,7 @@
                         </li>
                         <!--三级菜单-->
                         <li *ngIf="menuSecond.children&&menuSecond.children.length>0" nz-submenu
-                            (nzOpenChange)="changeOpen(menuSecond,true)"
+                            (nzOpenChange)="changeOpen(menuSecond,menu.children)"
                             [(nzOpen)]="menuSecond.open" [nzTitle]="menuSecond.title" [nzIcon]="menuSecond.icon">
                             <ul>
                                 <li nz-menu-item [nzSelected]="menuThird.selected"
