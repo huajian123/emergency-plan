@@ -24,6 +24,12 @@ header {
     color: #7EFAFC;
     letter-spacing: 1.58px;
   }
+
+  @media screen and (max-width: 1440px) {
+    h1 {
+      line-height: 113px;
+    }
+  }
 }
 
 
