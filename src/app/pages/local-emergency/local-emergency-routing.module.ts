@@ -65,6 +65,42 @@ import {FirstPublicHealthComponent} from './public-health/public-health-event/fi
 import {SecondPublicHealthComponent} from './public-health/public-health-event/second-public-health/second-public-health.component';
 import {ThirdPublicHealthComponent} from './public-health/public-health-event/third-public-health/third-public-health.component';
 import {FourthPublicHealthComponent} from './public-health/public-health-event/fourth-public-health/fourth-public-health.component';
+import {FirstTerroristAttacksComponent} from './social-security/terrorist-attacks/first-terrorist-attacks/first-terrorist-attacks.component';
+import {SecondTerroristAttacksComponent} from './social-security/terrorist-attacks/second-terrorist-attacks/second-terrorist-attacks.component';
+import {ThirdTerroristAttacksComponent} from './social-security/terrorist-attacks/third-terrorist-attacks/third-terrorist-attacks.component';
+import {FourthTerroristAttacksComponent} from './social-security/terrorist-attacks/fourth-terrorist-attacks/fourth-terrorist-attacks.component';
+import {FirstReliefSuppliesComponent} from './social-security/relief-supplies/first-relief-supplies/first-relief-supplies.component';
+import {SecondReliefSuppliesComponent} from './social-security/relief-supplies/second-relief-supplies/second-relief-supplies.component';
+import {ThirdReliefSuppliesComponent} from './social-security/relief-supplies/third-relief-supplies/third-relief-supplies.component';
+import {FourthReliefSuppliesComponent} from './social-security/relief-supplies/fourth-relief-supplies/fourth-relief-supplies.component';
+import {FirstPriceChangesComponent} from './social-security/price-changes/first-price-changes/first-price-changes.component';
+import {SecondPriceChangesComponent} from './social-security/price-changes/second-price-changes/second-price-changes.component';
+import {FourthPriceChangesComponent} from './social-security/price-changes/fourth-price-changes/fourth-price-changes.component';
+import {ThirdPriceChangesComponent} from './social-security/price-changes/third-price-changes/third-price-changes.component';
+import {FirstGrainEmergencyComponent} from './social-security/grain-emergency/first-grain-emergency/first-grain-emergency.component';
+import {SecondGrainEmergencyComponent} from './social-security/grain-emergency/second-grain-emergency/second-grain-emergency.component';
+import {ThirdGrainEmergencyComponent} from './social-security/grain-emergency/third-grain-emergency/third-grain-emergency.component';
+import {FourthGrainEmergencyComponent} from './social-security/grain-emergency/fourth-grain-emergency/fourth-grain-emergency.component';
+import {FirstNetworkInformationComponent} from './social-security/network-information-security/first-network-information/first-network-information.component';
+import {SecondNetworkInformationComponent} from './social-security/network-information-security/second-network-information/second-network-information.component';
+import {ThirdNetworkInformationComponent} from './social-security/network-information-security/third-network-information/third-network-information.component';
+import {FourthNetworkInformationComponent} from './social-security/network-information-security/fourth-network-information/fourth-network-information.component';
+import {FirstForeignAffairsComponent} from './social-security/foreign-affairs/first-foreign-affairs/first-foreign-affairs.component';
+import {SecondForeignAffairsComponent} from './social-security/foreign-affairs/second-foreign-affairs/second-foreign-affairs.component';
+import {ThirdForeignAffairsComponent} from './social-security/foreign-affairs/third-foreign-affairs/third-foreign-affairs.component';
+import {FourthForeignAffairsComponent} from './social-security/foreign-affairs/fourth-foreign-affairs/fourth-foreign-affairs.component';
+import {FirstFinancialAccidentComponent} from './social-security/financial-accident/first-financial-accident/first-financial-accident.component';
+import {SecondFinancialAccidentComponent} from './social-security/financial-accident/second-financial-accident/second-financial-accident.component';
+import {ThirdFinancialAccidentComponent} from './social-security/financial-accident/third-financial-accident/third-financial-accident.component';
+import {FourthFinancialAccidentComponent} from './social-security/financial-accident/fourth-financial-accident/fourth-financial-accident.component';
+import {FirstGovernmentDebtComponent} from './social-security/government-debt/first-government-debt/first-government-debt.component';
+import {SecondGovernmentDebtComponent} from './social-security/government-debt/second-government-debt/second-government-debt.component';
+import {ThirdGovernmentDebtComponent} from './social-security/government-debt/third-government-debt/third-government-debt.component';
+import {FourthGovernmentDebtComponent} from './social-security/government-debt/fourth-government-debt/fourth-government-debt.component';
+import {FirstCommissaryEmergencyComponent} from './social-security/commissary-emergency/first-commissary-emergency/first-commissary-emergency.component';
+import {SecondCommissaryEmergencyComponent} from './social-security/commissary-emergency/second-commissary-emergency/second-commissary-emergency.component';
+import {ThirdCommissaryEmergencyComponent} from './social-security/commissary-emergency/third-commissary-emergency/third-commissary-emergency.component';
+import {FourthCommissaryEmergencyComponent} from './social-security/commissary-emergency/fourth-commissary-emergency/fourth-commissary-emergency.component';
 
 
 const routes: Routes = [
@@ -147,10 +183,60 @@ const routes: Routes = [
     {path: 'algae-outbreak-third', component: ThirdAlgaeOutbreakComponent, data: {title: '蓝藻三级', keep: false}},
     {path: 'algae-outbreak-fourth', component: FourthAlgaeOutbreakComponent, data: {title: '蓝藻四级', keep: false}},
     /*停电*/
-    {path: 'blackout--first', component: FirstBlackoutComponent, data: {title: '停电一级', keep: false}},
-    {path: 'blackout--second', component: SecondBlackoutComponent, data: {title: '停电二级', keep: false}},
-    {path: 'blackout--third', component: ThirdBlackoutComponent, data: {title: '停电三级', keep: false}},
-    {path: 'blackout--fourth', component: FourthBlackoutComponent, data: {title: '停电四级', keep: false}},
+    {path: 'blackout-first', component: FirstBlackoutComponent, data: {title: '停电一级', keep: false}},
+    {path: 'blackout-second', component: SecondBlackoutComponent, data: {title: '停电二级', keep: false}},
+    {path: 'blackout-third', component: ThirdBlackoutComponent, data: {title: '停电三级', keep: false}},
+    {path: 'blackout-fourth', component: FourthBlackoutComponent, data: {title: '停电四级', keep: false}},
+    /*恐怖袭击*/
+    {path: 'terrorist-attacks-first', component: FirstTerroristAttacksComponent, data: {title: '恐怖袭击一级', keep: false}},
+    {path: 'terrorist-attacks-second', component: SecondTerroristAttacksComponent, data: {title: '恐怖袭击二级', keep: false}},
+    {path: 'terrorist-attacks-third', component: ThirdTerroristAttacksComponent, data: {title: '恐怖袭击三级', keep: false}},
+    {path: 'terrorist-attacks-fourth', component: FourthTerroristAttacksComponent, data: {title: '恐怖袭击四级', keep: false}},
+    /*群体性事件*/
+    {path: 'mass-incident-first', component: FirstReliefSuppliesComponent, data: {title: '群体性事件一级', keep: false}},
+    {path: 'mass-incident-second', component: SecondReliefSuppliesComponent, data: {title: '群体性事件二级', keep: false}},
+    {path: 'mass-incident-third', component: ThirdReliefSuppliesComponent, data: {title: '群体性事件三级', keep: false}},
+    {path: 'mass-incident-fourth', component: FourthReliefSuppliesComponent, data: {title: '群体性事件四级', keep: false}},
+    /*价格异动*/
+    {path: 'price-changes-first', component: FirstPriceChangesComponent, data: {title: '价格异动一级', keep: false}},
+    {path: 'price-changes-second', component: SecondPriceChangesComponent, data: {title: '价格异动二级', keep: false}},
+    {path: 'price-changes-third', component: ThirdPriceChangesComponent, data: {title: '价格异动三级', keep: false}},
+    {path: 'price-changes-fourth', component: FourthPriceChangesComponent, data: {title: '价格异动四级', keep: false}},
+    /*粮食应急*/
+    {path: 'grain-emergency-first', component: FirstGrainEmergencyComponent, data: {title: '粮食应急一级', keep: false}},
+    {path: 'grain-emergency-second', component: SecondGrainEmergencyComponent, data: {title: '粮食应急二级', keep: false}},
+    {path: 'grain-emergency-third', component: ThirdGrainEmergencyComponent, data: {title: '粮食应急三级', keep: false}},
+    {path: 'grain-emergency-fourth', component: FourthGrainEmergencyComponent, data: {title: '粮食应急四级', keep: false}},
+    /*网络与信息安全*/
+    {path: 'network-information-security-first', component: FirstNetworkInformationComponent, data: {title: '网络与信息一级', keep: false}},
+    {path: 'network-information-security-second', component: SecondNetworkInformationComponent, data: {title: '网络与信息二级', keep: false}},
+    {path: 'network-information-security-third', component: ThirdNetworkInformationComponent, data: {title: '网络与信息三级', keep: false}},
+    {path: 'network-information-security-fourth', component: FourthNetworkInformationComponent, data: {title: '网络与信息四级', keep: false}},
+    /*涉外事件*/
+    {path: 'foreign-affairs-first', component: FirstForeignAffairsComponent, data: {title: '涉外突发一级', keep: false}},
+    {path: 'foreign-affairs-second', component: SecondForeignAffairsComponent, data: {title: '涉外突发二级', keep: false}},
+    {path: 'foreign-affairs-third', component: ThirdForeignAffairsComponent, data: {title: '涉外突发三级', keep: false}},
+    {path: 'foreign-affairs-fourth', component: FourthForeignAffairsComponent, data: {title: '涉外突发四级', keep: false}},
+    /*金融突发*/
+    {path: 'financial-accident-first', component: FirstFinancialAccidentComponent, data: {title: '金融突发一级', keep: false}},
+    {path: 'financial-accident-second', component: SecondFinancialAccidentComponent, data: {title: '金融突发二级', keep: false}},
+    {path: 'financial-accident-third', component: ThirdFinancialAccidentComponent, data: {title: '金融突发三级', keep: false}},
+    {path: 'financial-accident-fourth', component: FourthFinancialAccidentComponent, data: {title: '金融突发四级', keep: false}},
+    /*政府性债务*/
+    {path: 'government-debt-first', component: FirstGovernmentDebtComponent, data: {title: '政府债务一级', keep: false}},
+    {path: 'government-debt-second', component: SecondGovernmentDebtComponent, data: {title: '政府债务二级', keep: false}},
+    {path: 'government-debt-third', component: ThirdGovernmentDebtComponent, data: {title: '政府债务三级', keep: false}},
+    {path: 'government-debt-fourth', component: FourthGovernmentDebtComponent, data: {title: '政府债务四级', keep: false}},
+    /*军粮应急*/
+    {path: 'commissary-emergency-first', component: FirstCommissaryEmergencyComponent, data: {title: '军粮应急一级', keep: false}},
+    {path: 'commissary-emergency-second', component: SecondCommissaryEmergencyComponent, data: {title: '军粮应急二级', keep: false}},
+    {path: 'commissary-emergency-third', component: ThirdCommissaryEmergencyComponent, data: {title: '军粮应急三级', keep: false}},
+    {path: 'commissary-emergency-fourth', component: FourthCommissaryEmergencyComponent, data: {title: '军粮应急四级', keep: false}},
+    /*救灾物资*/
+    {path: 'relief-supplies-first', component: FirstReliefSuppliesComponent, data: {title: '救灾物资一级', keep: false}},
+    {path: 'relief-supplies-second', component: SecondReliefSuppliesComponent, data: {title: '救灾物资二级', keep: false}},
+    {path: 'relief-supplies-third', component: ThirdReliefSuppliesComponent, data: {title: '救灾物资三级', keep: false}},
+    {path: 'relief-supplies-fourth', component: FourthReliefSuppliesComponent, data: {title: '救灾物资四级', keep: false}},
 ];
 
 @NgModule({
