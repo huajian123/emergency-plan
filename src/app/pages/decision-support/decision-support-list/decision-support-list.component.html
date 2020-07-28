@@ -1,0 +1,25 @@
+<header>决策支持</header>
+<section class="file-wrap">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'inline'">
+        <nz-form-item>
+            <nz-form-label nzRequired>灾害类型</nz-form-label>
+            <nz-form-control>
+                <nz-select (ngModelChange)="changeAccidentIdValue($event)" nzPlaceHolder="下拉选择类型"
+                           formControlName="accidentType">
+                    <nz-option *ngFor="let item of accidentTypeOptions" [nzLabel]="item.label"
+                               [nzValue]="item.value"></nz-option>
+                </nz-select>
+            </nz-form-control>
+            <nz-form-control>
+                <nz-select nzPlaceHolder="下拉选择名称" formControlName="accidentId">
+                    <nz-option *ngFor="let item of temporaryNameOptions" [nzLabel]="item.label"
+                               [nzValue]="item.value"></nz-option>
+                </nz-select>
+            </nz-form-control>
+            <nz-form-control>
+                <button nz-button nzType="primary" class="marginRight">提交</button>
+                <button nz-button nzType="default" (click)="rest()">取消</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</section>

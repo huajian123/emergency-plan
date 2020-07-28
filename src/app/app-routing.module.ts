@@ -11,6 +11,7 @@ import {ExpertWarehouseComponent} from './pages/expert-warehouse/expert-warehous
 import {ResourceWarehouseComponent} from './pages/resource-warehouse/resource-warehouse.component';
 import {ProvincialLinkageLayoutComponent} from './layout/provincial-linkage-layout/provincial-linkage-layout.component';
 import {SysSettingComponent} from './pages/sys-setting/sys-setting.component';
+import {DecisionSupportListComponent} from './pages/decision-support/decision-support-list/decision-support-list.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
             },
 
         ],
+    },
+    {
+        path: 'hazard-decision-support',
+        component: DecisionSupportListComponent,
     },
     {
         path: 'hazard-status',

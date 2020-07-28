@@ -12,6 +12,7 @@ import {ExpertWarehouseComponent} from './expert-warehouse/expert-warehouse.comp
 import {ResourceWarehouseComponent} from './resource-warehouse/resource-warehouse.component';
 import {SysSettingComponent} from './sys-setting/sys-setting.component';
 import {MyNgZorroModule} from '../share/my-ng-zorro/my-ng-zorro.module';
+import {DecisionSupportModule} from './decision-support/decision-support.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {MyNgZorroModule} from '../share/my-ng-zorro/my-ng-zorro.module';
         PeopleManageRoutingModule,
         StatusWarningModule,
         LocalEmergencyModule,
+        DecisionSupportModule,
         MyNgZorroModule,
     ],
     exports: [
@@ -36,7 +38,8 @@ import {MyNgZorroModule} from '../share/my-ng-zorro/my-ng-zorro.module';
         PublicHealthRoutingModule,
         PeopleManageRoutingModule,
         StatusWarningModule,
-        LocalEmergencyModule
+        LocalEmergencyModule,
+        DecisionSupportModule
     ]
 })
 export class PagesModule {
