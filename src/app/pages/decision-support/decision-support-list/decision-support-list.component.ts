@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {MapPipe, MapSet} from '../../../share/directives/pipe/map.pipe';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 
 interface OptionsInterface {
-    value: string | number;
+    value: number;
     label: string;
 }
 
@@ -13,7 +13,9 @@ interface OptionsInterface {
     styleUrls: ['./decision-support-list.component.less']
 })
 export class DecisionSupportListComponent implements OnInit {
-    validateForm: FormGroup;
+    currentPage: number;
+    accidentType: number;
+    accidentId: number;
     /*中间数组变量*/
     temporaryNameOptions: OptionsInterface[];
     /*灾害类型下拉*/
@@ -27,7 +29,9 @@ export class DecisionSupportListComponent implements OnInit {
     /*社会安全下拉*/
     socialSecurityNameOptions: OptionsInterface[];
 
-    constructor(private fb: FormBuilder) {
+    constructor() {
+        this.accidentType = null;
+        this.accidentId = null;
         this.temporaryNameOptions = [];
         this.accidentTypeOptions = [];
         this.naturalNameOptions = [];
@@ -35,12 +39,6 @@ export class DecisionSupportListComponent implements OnInit {
         this.socialSecurityNameOptions = [];
     }
 
-    submitForm() {
-        Object.keys(this.validateForm.controls).forEach(key => {
-            this.validateForm.controls[key].markAsDirty();
-            this.validateForm.controls[key].updateValueAndValidity();
-        });
-    }
 
     changeAccidentIdValue(index) {
         this.temporaryNameOptions = [];
@@ -59,23 +57,21 @@ export class DecisionSupportListComponent implements OnInit {
                     this.temporaryNameOptions = this.socialSecurityNameOptions;
                     break;
             }
-            this.validateForm.get('accidentId').reset();
+            this.accidentId = null;
         }
     }
 
-    initForm() {
-        this.validateForm = this.fb.group({
-            accidentType: [null, [Validators.required]],
-            accidentId: [null, [Validators.required]],
-        });
+
+    goRest() {
+        this.accidentType = null;
+        this.accidentId = null;
     }
 
-    rest() {
-        this.validateForm.reset();
+    goSure() {
+        this.currentPage = this.accidentId;
     }
 
     ngOnInit(): void {
-        this.initForm();
         this.accidentTypeOptions = [...MapPipe.transformMapToArray(MapSet.accidentType)];
         this.naturalNameOptions = [...MapPipe.transformMapToArray(MapSet.naturalDisastersType)];
         this.accidentNameOptions = [...MapPipe.transformMapToArray(MapSet.accidentDisastersType)];

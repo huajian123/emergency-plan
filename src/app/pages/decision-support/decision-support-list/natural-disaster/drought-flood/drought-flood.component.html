@@ -1,0 +1,26 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label nzRequired>灾害类型</nz-form-label>
+        <nz-form-control nzSpan="7">
+            <input nz-input placeholder="输入名称" formControlName="responsibilityName"/>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzRequired>灾害名称</nz-form-label>
+        <nz-form-control nzSpan="7">
+            <input nz-input placeholder="输入名称" formControlName="responsibilityName"/>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzRequired>级别等级</nz-form-label>
+        <nz-form-control nzSpan="7">
+            <input nz-input placeholder="输入名称" formControlName="responsibilityName"/>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzOffset="3">
+            <button nz-button nzType="primary" class="btn">提交</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+
