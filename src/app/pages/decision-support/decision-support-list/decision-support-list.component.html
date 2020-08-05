@@ -12,30 +12,34 @@
     <button nz-button nzType="primary" class="marginRight" (click)="goSure()">确定</button>
     <button nz-button nzType="default" (click)="goRest()">重置</button>
 </section>
-<section style="width: 800px;margin:auto;">
+<section style="max-width: 1820px;margin:auto;">
+    <!--重置界面-->
+    <ng-container *ngIf="currentPage===numVariable.zero">
+        <nz-empty></nz-empty>
+    </ng-container>
     <!--汛旱-->
-    <ng-container *ngIf="currentPage===1">
-        <app-drought-flood [type]="accidentType" [id]="accidentId"></app-drought-flood>
+    <ng-container *ngIf="currentPage===numVariable.one">
+        <app-drought-flood [id]="accidentId"></app-drought-flood>
     </ng-container>
     <!--地震-->
-    <ng-container *ngIf="currentPage===2">
-        <app-earthquake [type]="accidentType" [id]="accidentId"></app-earthquake>
+    <ng-container *ngIf="currentPage===numVariable.two">
+        <app-earthquake [id]="accidentId"></app-earthquake>
     </ng-container>
     <!--气象-->
-    <ng-container *ngIf="currentPage===3">
-        <app-meteorological [type]="accidentType" [id]="accidentId"></app-meteorological>
+    <ng-container *ngIf="currentPage===numVariable.three">
+        <app-meteorological [id]="accidentId"></app-meteorological>
     </ng-container>
     <!--自然灾害救助-->
-    <ng-container *ngIf="currentPage===4">
-        <app-disaster-relief [type]="accidentType" [id]="accidentId"></app-disaster-relief>
+    <ng-container *ngIf="currentPage===numVariable.four">
+        <app-disaster-relief [id]="accidentId"></app-disaster-relief>
     </ng-container>
     <!--地质-->
     <ng-container *ngIf="currentPage===5">
-        <app-geological [type]="accidentType" [id]="accidentId"></app-geological>
+        <app-geological [id]="accidentId"></app-geological>
     </ng-container>
     <!--台风-->
     <ng-container *ngIf="currentPage===6">
-        <app-typhoon [type]="accidentType" [id]="accidentId"></app-typhoon>
+        <app-typhoon [id]="accidentId"></app-typhoon>
     </ng-container>
     <!--交通-->
     <ng-container *ngIf="currentPage===7">
@@ -90,8 +94,8 @@
 
     </ng-container>
     <!--危化品-->
-    <ng-container *ngIf="currentPage===20">
-
+    <ng-container *ngIf="currentPage===numVariable.twenty">
+        <app-hazardous-chemicals [id]="accidentId"></app-hazardous-chemicals>
     </ng-container>
     <!--生产-->
     <ng-container *ngIf="currentPage===21">

@@ -1,0 +1,86 @@
+<section class="layout-content">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div nz-row [nzGutter]="15" [nzJustify]="'center'">
+            <div nz-col [nzSpan]="4">
+                <nz-form-item>
+                    <nz-form-label>死亡人数（个）</nz-form-label>
+                    <nz-form-control nzSpan="7">
+                        <nz-input-number placeholder="输入死亡人数" formControlName="peopleDie" [nzMin]="1"></nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="6">
+                <nz-form-item>
+                    <nz-form-label>重伤及急性工业中毒人数（个）</nz-form-label>
+                    <nz-form-control nzSpan="7">
+                        <nz-input-number placeholder="输入重伤及中毒人数" formControlName="peopleInjury"
+                                         [nzMin]="1"></nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="5">
+                <nz-form-item>
+                    <nz-form-label>直接经济损失（万）</nz-form-label>
+                    <nz-form-control nzSpan="7">
+                        <nz-input-number placeholder="输入经济损失" formControlName="propertyLoss"
+                                         [nzMin]="1"></nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row [nzGutter]="15" [nzJustify]="'center'">
+            <div nz-col [nzSpan]="5">
+                <nz-form-item>
+                    <nz-form-label>现场失踪人数（人）</nz-form-label>
+                    <nz-form-control nzSpan="7">
+                        <nz-input-number placeholder="输入失踪人数" formControlName="peopleLoss"
+                                         [nzMin]="1"></nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="5">
+                <nz-form-item>
+                    <nz-form-label>毒性气体储量（吨）</nz-form-label>
+                    <nz-form-control nzSpan="7">
+                        <nz-input-number placeholder="输入气体储量" formControlName="toxicGas" [nzMin]="0"
+                                         [nzPrecision]="6"></nz-input-number>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="5"></div>
+        </div>
+        <div nz-row [nzGutter]="15" [nzJustify]="'center'">
+            <div nz-col [nzSpan]="15">
+                <nz-form-label>发生灾害地区</nz-form-label>
+                <nz-select nzPlaceHolder="下拉选择" [(ngModel)]="selected.province"
+                           (ngModelChange)="changeProvince($event)" [ngModelOptions]="{standalone: true}">
+                    <nz-option *ngFor="let item of provinceData" [nzValue]="item.value"
+                               [nzLabel]="item.label"></nz-option>
+                </nz-select>
+                市
+                <nz-select nzPlaceHolder="下拉选择" [(ngModel)]="selected.city" [ngModelOptions]="{standalone: true}">
+                    <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
+                </nz-select>
+                <nz-form-label nzNoColon>区(县)</nz-form-label>
+            </div>
+        </div>
+        <div nz-row [nzGutter]="5">
+            <div nz-col [nzSpan]="5" nzOffset="5">
+                <nz-form-item>
+                    <nz-form-control>
+                        <button nz-button nzType="primary" class="btn">级别研判</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+    </form>
+</section>
+<ng-container *ngIf="currentPage===numVariable.one">
+    <app-level-one></app-level-one>
+</ng-container>
+<ng-container *ngIf="currentPage===numVariable.two">
+    <app-level-two></app-level-two>
+</ng-container>
+<ng-container *ngIf="currentPage===numVariable.three">
+    <app-level-three></app-level-three>
+</ng-container>

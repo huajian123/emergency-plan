@@ -1,9 +1,9 @@
 
- .login-container {
-   height: 100%;
-   min-width: 1300px;
-   background: url(../../../../assets/imgs/suzhou-login/bg.png) no-repeat;
-   background-size: 100% 100%;
+.login-container {
+  height: 100%;
+  min-width: 1300px;
+  background: url(../../../../assets/imgs/suzhou-login/bg.png) no-repeat;
+  background-size: 100% 100%;
 }
 
 header {
@@ -41,30 +41,33 @@ main {
   width: 100%;
   height: calc(100% - 56px - 170px);
 }
- .entrances {
-   width: 1250px;
-   display: flex;
-   height: 100%;
-   margin: 0 auto;
-   align-items: flex-end;
-   justify-content: space-between;
-   flex-wrap:wrap;
 
- }
- .entry {
-   width: 260px;
-   height: 246px;
-   background: url(../../../../assets/imgs/suzhou-login/entry-bg.png) no-repeat;
-   background-size: 100% 100%;
-   font-size: 26px;
-   color: #00FDFF;
-   cursor: pointer;
-   font-family: PingFangSC-Semibold;
-   text-align: center;
- }
- .entry img{
-   width: 154px;
-   height: 130px;
-   display: block;
-   margin: 35px auto 10px;
- }
+.entrances {
+  max-width: 1200px;
+  display: flex;
+  margin: 200px auto;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+
+
+}
+
+.entry {
+  width: 260px;
+  height: 246px;
+  background: url(../../../../assets/imgs/suzhou-login/entry-bg.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 26px;
+  color: #00FDFF;
+  cursor: pointer;
+  font-family: PingFangSC-Semibold;
+  text-align: center;
+}
+
+.entry img {
+  width: 154px;
+  height: 130px;
+  display: block;
+  margin: 35px auto 10px;
+}

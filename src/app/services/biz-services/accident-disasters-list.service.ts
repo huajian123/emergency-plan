@@ -28,6 +28,22 @@ export interface CommanderInfoModel {
     grade?: number;
 }
 
+/*受灾评判等级指标参数*/
+export interface ShowDecideGradeModel {
+    accidentId: number;
+    peopleDie?: number;
+    peopleInjury?: number;
+    peopleLoss?: number;
+    propertyLoss?: number;
+    toxicGas?: number;
+}
+
+/*地震*/
+export interface EarthquakeModel extends ShowDecideGradeModel {
+    earthquakeLand?: number;
+    earthquakeSea?: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -42,5 +58,8 @@ export class AccidentDisastersListService extends BaseHttp {
         return this.get('/plan/' + DisasterEnum.AccidentDisaster + '/' + param.id + '/' + param.planGrade, {});
     }
 
+    public getDecideGrade(params: ShowDecideGradeModel): Observable<any> {
+        return this.post('/decide', params);
+    }
 
 }

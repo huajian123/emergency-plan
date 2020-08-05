@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>huidaodingbu</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-40.0%" y="-40.0%" width="180.0%" height="180.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.476736861   0 0 0 0 0.92394135  0 0 0 0.490630463 0"
+                           type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.953659784">
+        <g id="标注二级备份" transform="translate(-1833.000000, -3657.000000)" fill-rule="nonzero">
+            <g id="huidaodingbu" filter="url(#filter-1)" transform="translate(1840.000000, 3661.000000)">
+                <path d="M25,0 C11.1925,0 0,11.1925 0,25 C0,38.8075 11.1925,50 25,50 C38.8075,50 50,38.8075 50,25 C50,11.1925 38.8075,0 25,0 Z"
+                      id="形状" fill="#1990FF"></path>
+                <path d="M36.2975,29.54125 C35.87625,29.54125 35.4925,29.37 35.21625,29.095 L26.50125,20.38375 L26.50125,40.6175 C26.50125,41.4604246 25.8179246,42.1437499 24.975,42.1437499 C24.1320754,42.1437499 23.44875,41.4604246 23.44875,40.6175 L23.44875,20.43125 L14.81125,29.06875 C14.4287525,29.4612956 13.8658897,29.6199627 13.3346865,29.4849829 C12.8034834,29.3500032 12.3846422,28.9418832 12.2359365,28.4143579 C12.0872308,27.8868326 12.2312525,27.3200456 12.61375,26.9275 L23.88875,15.6525 C24.1747005,15.3484348 24.5727857,15.1748663 24.9901782,15.1722384 C25.4075708,15.1696696 25.8077861,15.3382685 26.0975,15.63875 L37.38375,26.92625 L37.38375,26.92875 C37.8197794,27.3677143 37.9490771,28.0258141 37.7115359,28.5971156 C37.4739948,29.1684171 36.9162173,29.5408383 36.2975,29.54125 L36.2975,29.54125 Z"
+                      id="路径" fill="#FFFFFF"></path>
+                <path d="M37.74,13.7625 L12.26,13.7625 C11.4461164,13.7221532 10.8069421,13.050508 10.8069421,12.235625 C10.8069421,11.420742 11.4461164,10.7490968 12.26,10.70875 L37.74,10.70875 C38.2959169,10.6928423 38.8165504,10.9803337 39.0992027,11.4592954 C39.381855,11.9382571 39.381855,12.5329929 39.0992027,13.0119546 C38.8165504,13.4909163 38.2959169,13.7784077 37.74,13.7625 L37.74,13.7625 Z"
+                      id="路径" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,10 +10,16 @@ import {GeologicalComponent} from './decision-support-list/natural-disaster/geol
 import {MeteorologicalComponent} from './decision-support-list/natural-disaster/meteorological/meteorological.component';
 import {DisasterReliefComponent} from './decision-support-list/natural-disaster/disaster-relief/disaster-relief.component';
 import {TyphoonComponent} from './decision-support-list/natural-disaster/typhoon/typhoon.component';
+import {AlgaeOutbreakComponent} from './decision-support-list/accident-disaster/algae-outbreak/algae-outbreak.component';
+import {BlackoutComponent} from './decision-support-list/accident-disaster/blackout/blackout.component';
+import {HazardousChemicalsComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/hazardous-chemicals.component';
+import {LevelOneComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-one/level-one.component';
+import {LevelTwoComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-two/level-two.component';
+import {LevelThreeComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-three/level-three.component';
 
 
 @NgModule({
-    declarations: [DecisionSupportListComponent, DroughtFloodComponent, DecisionTreeComponent, EarthquakeComponent, GeologicalComponent, MeteorologicalComponent, DisasterReliefComponent, TyphoonComponent],
+    declarations: [DecisionSupportListComponent, DroughtFloodComponent, DecisionTreeComponent, EarthquakeComponent, GeologicalComponent, MeteorologicalComponent, DisasterReliefComponent, TyphoonComponent, AlgaeOutbreakComponent, BlackoutComponent, HazardousChemicalsComponent, LevelOneComponent, LevelTwoComponent, LevelThreeComponent],
     imports: [
         ShareModule,
         CommonModule,

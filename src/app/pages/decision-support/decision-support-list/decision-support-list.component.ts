@@ -1,6 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {MapPipe, MapSet} from '../../../share/directives/pipe/map.pipe';
 
+export enum VariableEnum {
+    zero = 0,
+    one = 1,
+    two = 2,
+    three = 3,
+    four = 4,
+    twenty = 20
+}
 
 interface OptionsInterface {
     value: number;
@@ -16,6 +24,7 @@ export class DecisionSupportListComponent implements OnInit {
     currentPage: number;
     accidentType: number;
     accidentId: number;
+    numVariable = VariableEnum;
     /*中间数组变量*/
     temporaryNameOptions: OptionsInterface[];
     /*灾害类型下拉*/
@@ -65,6 +74,7 @@ export class DecisionSupportListComponent implements OnInit {
     goRest() {
         this.accidentType = null;
         this.accidentId = null;
+        this.currentPage = 0;
     }
 
     goSure() {
