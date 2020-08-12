@@ -38,6 +38,7 @@ export class HazardousChemicalsComponent implements OnInit {
             province: '',
             city: ''
         };
+        this.currentPage = this.numVariable.two;
     }
 
     showConfirm(e): void {

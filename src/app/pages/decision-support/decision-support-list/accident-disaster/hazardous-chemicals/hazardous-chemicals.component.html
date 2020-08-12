@@ -74,72 +74,9 @@
             </div>
         </div>
     </form>
-    <!-- <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-         <div nz-row [nzGutter]="24">
-             <div nz-col [nzSpan]="8">
-                 <nz-form-item>
-                     <nz-form-label>死亡人数（个）</nz-form-label>
-                     <nz-form-control nzSpan="7">
-                         <nz-input-number placeholder="输入死亡人数" formControlName="peopleDie" [nzMin]="1"></nz-input-number>
-                     </nz-form-control>
-                 </nz-form-item>
-             </div>
-             <div nz-col [nzSpan]="8">
-                 <nz-form-item>
-                     <nz-form-label>重伤及急性工业中毒人数（个）</nz-form-label>
-                     <nz-form-control nzSpan="7">
-                         <nz-input-number placeholder="输入重伤及中毒人数" formControlName="peopleInjury"
-                                          [nzMin]="1"></nz-input-number>
-                     </nz-form-control>
-                 </nz-form-item>
-             </div>
-             <div nz-col [nzSpan]="8">
-                 <nz-form-item>
-                     <nz-form-label>直接经济损失（万）</nz-form-label>
-                     <nz-form-control nzSpan="7">
-                         <nz-input-number placeholder="输入经济损失" formControlName="propertyLoss"
-                                          [nzMin]="1"></nz-input-number>
-                     </nz-form-control>
-                 </nz-form-item>
-             </div>
-         </div>
-         <div nz-row [nzGutter]="24">
-             <div nz-col [nzSpan]="8">
-                 <nz-form-item>
-                     <nz-form-label [nzSpan]="17">现场失踪人数（人）</nz-form-label>
-                     <nz-form-control nzSpan="7">
-                         <nz-input-number placeholder="输入失踪人数" formControlName="peopleLoss"
-                                          [nzMin]="1"></nz-input-number>
-                     </nz-form-control>
-                 </nz-form-item>
-             </div>
-             <div nz-col [nzSpan]="8">
-                 <nz-form-item>
-                     <nz-form-label>毒性气体储量（吨）</nz-form-label>
-                     <nz-form-control nzSpan="7">
-                         <nz-input-number placeholder="输入气体储量" formControlName="toxicGas" [nzMin]="0"
-                                          [nzPrecision]="6"></nz-input-number>
-                     </nz-form-control>
-                 </nz-form-item>
-             </div>
-             <div nz-col [nzSpan]="8"></div>
-         </div>
-         <div nz-row [nzGutter]="24">
-             <div nz-col [nzSpan]="10">
-                 <nz-form-label>发生灾害地区</nz-form-label>
-                 <nz-select nzPlaceHolder="下拉选择" [(ngModel)]="selected.province"
-                            (ngModelChange)="changeProvince($event)" [ngModelOptions]="{standalone: true}">
-                     <nz-option *ngFor="let item of provinceData" [nzValue]="item.value"
-                                [nzLabel]="item.label"></nz-option>
-                 </nz-select>
-                 市
-                 <nz-select nzPlaceHolder="下拉选择" [(ngModel)]="selected.city" [ngModelOptions]="{standalone: true}">
-                     <nz-option *ngFor="let c of cityData" [nzValue]="c.value" [nzLabel]="c.label"></nz-option>
-                 </nz-select>
-                 <nz-form-label nzNoColon>区(县)</nz-form-label>
-             </div>
-         </div>
-     </form>-->
+    <div class="drive">
+        <div class="show-btn"></div>
+    </div>
 </section>
 <ng-container *ngIf="currentPage===numVariable.one">
     <app-level-one></app-level-one>

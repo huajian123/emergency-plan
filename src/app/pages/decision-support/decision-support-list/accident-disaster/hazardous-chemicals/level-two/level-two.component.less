@@ -1,94 +1,66 @@
-.ant-back-top-inner {
-  height: 64px;
-  width: 64px;
-  background: url("../../../../../../../assets/imgs/up.svg");
+// background: url(../../../../../../../assets/imgs/hexagon-arrow.png) no-repeat;
+.hexagon-wrap {
+  margin-top: 60px;
+  padding: 0 30px;
+
+  .hexagon-item {
+    background: url(../../../../../../../assets/imgs/hexagon-unsel.png) no-repeat;
+    background-size: 100% 100%;
+    height: 245px;
+    width: 225px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 245px;
+
+  }
+  .empty-div{
+    height: 245px;
+    width: 225px;
+    background: transparent;
+  }
+  .empty-div-arrow{
+    height: 23px;
+    width: 43px;
+    background: transparent;
+  }
+
+  .hexagon-arrow {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
+
+  .hexagon-arrow-left {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-left.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
 }
 
-.first, .second, .third, .fourth {
-  font-family: PingFang-SC-Medium;
-  font-size: 18px;
-  color: #FFFFFF;
-  text-align: center;
-  width: auto;
-  padding: 0 18px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.first {
-  margin-right: 15px;
-  background-color: #FF6C6D;
-}
 
 
-.second {
-  margin-right: 15px;
-  background-color: #FF9934;
-}
+.pos-reltive {
+  position: relative;
+  .abs-arrow{
+    position: absolute;
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-down.png) no-repeat;
+    background-size: 100% 100%;
+    height: 43px;
+    width: 22px;
+    line-height: 284px;
+  }
+  .abs-arrow-right:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    right: 105px;
+  }
 
-
-.third {
-  margin-right: 15px;
-  background-color: #FFC34D;
-}
-
-
-.fourth {
-  cursor: not-allowed;
-  background-color: #1990FF;
-}
-
-.color-bg {
-  font-weight: bold;
-  text-align: center;
-  background: #FAFAFA;
-  vertical-align: middle !important;
-}
-
-.person {
-  text-align: left !important;
-}
-
-table {
-  font-family: PingFangSC-Medium;
-  cellpadding: 0;
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  color: #323233;
-}
-
-tbody tr td {
-  padding: 10px 5px;
-  font-size: 14px;
-  color: #323233;
-  line-height: 28px;
-  border: 1px solid #E8E8E8;
-  vertical-align: middle;
-  text-align: center;
-}
-
-thead td {
-  text-align: center;
-  background-color: #FAFAFA;
-  line-height: 60px;
-  border: 1px solid #E8E8E8;
-  color: #1D1D1E;
-  font-weight: bold;
-}
-
-.fontweight {
-  font-weight: bold;
-  color: #1990FF !important;
-}
-
-tfoot td {
-  padding-top: 30px;
-  border: none;
-  text-align: left;
-  font-size: 12px;
-  color: #666463;
-  line-height: 22px;
+  .abs-arrow-left:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    left: 98px;
+  }
 }
