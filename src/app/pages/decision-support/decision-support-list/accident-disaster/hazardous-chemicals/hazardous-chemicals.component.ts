@@ -21,6 +21,7 @@ export enum VariableEnum {
     styleUrls: ['./hazardous-chemicals.component.less']
 })
 export class HazardousChemicalsComponent implements OnInit {
+    isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
     currentPage: number;
     numVariable = VariableEnum;
@@ -39,6 +40,7 @@ export class HazardousChemicalsComponent implements OnInit {
             city: ''
         };
         this.currentPage = this.numVariable.two;
+        this.isShowStandard = true;
     }
 
     showConfirm(e): void {
