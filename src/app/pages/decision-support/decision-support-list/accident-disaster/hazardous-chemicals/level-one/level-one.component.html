@@ -550,7 +550,34 @@
         </div>
     </div>
 </div>
-<!--弹框样式二-->
+<!--弹窗样式二-->
+<div class="modal" *ngIf="isVisible">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>省人民政府</h3>
+    <div class="space-middle">
+        <div><span>联系人</span>：李小萌</div>
+        <div><span>联系方式</span>：15784324567</div>
+        <div>
+            <span>岗位职责</span>：
+            <div class="cla">
+                1、研究提出后方指挥部建立建议方案<br/>
+                2、提出先期工作组人员组成建议名单
+            </div>
+        </div>
+        <br/>
+        <div>
+            <span>完成进度</span>：
+            <div class="clas">
+                <textarea rows="10" cols="30"></textarea>
+                <button nz-button nzType="primary" class="btn">提交</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹框样式三-->
 <!--<div class="modals">
     <div class="closeButton" (click)="handleCancel()">
         <img src="../../../../../../../assets/imgs/tree/close.png"
