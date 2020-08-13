@@ -16,10 +16,11 @@ import {HazardousChemicalsComponent} from './decision-support-list/accident-disa
 import {LevelOneComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-one/level-one.component';
 import {LevelTwoComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-two/level-two.component';
 import {LevelThreeComponent} from './decision-support-list/accident-disaster/hazardous-chemicals/level-three/level-three.component';
+import { TreeTplComponent } from './decision-support-list/accident-disaster/hazardous-chemicals/tree-tpl/tree-tpl.component';
 
 
 @NgModule({
-    declarations: [DecisionSupportListComponent, DroughtFloodComponent, DecisionTreeComponent, EarthquakeComponent, GeologicalComponent, MeteorologicalComponent, DisasterReliefComponent, TyphoonComponent, AlgaeOutbreakComponent, BlackoutComponent, HazardousChemicalsComponent, LevelOneComponent, LevelTwoComponent, LevelThreeComponent],
+    declarations: [DecisionSupportListComponent, DroughtFloodComponent, DecisionTreeComponent, EarthquakeComponent, GeologicalComponent, MeteorologicalComponent, DisasterReliefComponent, TyphoonComponent, AlgaeOutbreakComponent, BlackoutComponent, HazardousChemicalsComponent, LevelOneComponent, LevelTwoComponent, LevelThreeComponent, TreeTplComponent],
     imports: [
         ShareModule,
         CommonModule,

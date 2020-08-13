@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {MapPipe, MapSet} from '../../../share/directives/pipe/map.pipe';
 
 export enum VariableEnum {
@@ -79,6 +79,9 @@ export class DecisionSupportListComponent implements OnInit {
     }
 
     goSure() {
+        if (this.accidentId === null || this.accidentType === null) {
+            return;
+        }
         this.currentPage = this.accidentId;
     }
 
