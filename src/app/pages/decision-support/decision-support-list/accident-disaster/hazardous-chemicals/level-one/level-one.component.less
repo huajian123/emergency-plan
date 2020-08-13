@@ -6,8 +6,19 @@
   text-align: center;
   font-family: PingFangSC-Regular;
   padding: 50px 120px;
-  height: 20000px;
   background: linear-gradient(#174D8A, #010610);
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
 }
 
 .flex-columer {
@@ -142,7 +153,6 @@ h3 {
   position: absolute;
   top: 70px;
   right: 21px;
-
 }
 
 .clas {
@@ -172,7 +182,23 @@ h3 {
 }
 
 
-.modals {
+.modal-three {
+  font-size: 20px;
+  font-weight: lighter;
+  width: 1125px;
+  height: 875px;
+  background: url("../../../../../../../assets/imgs/tree/222.png") no-repeat;
+  background-size: 100% 100%;
+  font-family: PingFangSC-Medium;
+  color: #FFFFFF;
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modal-two {
   font-size: 20px;
   font-weight: lighter;
   width: 685px;
@@ -188,6 +214,21 @@ h3 {
   transform: translateX(-50%) translateY(-50%);
 }
 
+.modal-two div span {
+  display: inline-block;
+  width: 95px;
+  text-align: right;
+  font-size: 22px;
+}
+
+.modal-two div {
+  font-size: 20px;
+}
+
+.space-middle-two {
+  margin: 54px 108px 0 108px;
+}
+
 .line-content {
   margin-top: 25px;
   width: 250px;
@@ -198,4 +239,11 @@ textarea {
   border: 1px solid rgba(68, 164, 255, 0.73);
   border-radius: 4px;
   border-radius: 4px;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 20px;
+}
+
+:focus {
+  outline: none;
 }
