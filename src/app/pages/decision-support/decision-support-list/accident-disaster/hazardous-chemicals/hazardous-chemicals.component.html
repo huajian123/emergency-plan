@@ -55,17 +55,16 @@
                     <nz-form-control [nzSpan]="20">
                         <div nz-row>
                             <div nz-col [nzSpan]="4">
-                                <nz-select class="margin-none" nzPlaceHolder="下拉选择" [(ngModel)]="selected.province"
-                                           (ngModelChange)="changeProvince($event)"
-                                           [ngModelOptions]="{standalone: true}">
+                                <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="cityId"
+                                           (ngModelChange)="changeProvince($event)">
                                     <nz-option *ngFor="let item of provinceData" [nzValue]="item.value"
                                                [nzLabel]="item.label"></nz-option>
                                 </nz-select>
                             </div>
                             <div nz-col class="font-sel" [nzSpan]="1">市</div>
                             <div nz-col [nzSpan]="4">
-                                <nz-select class="margin-none" nzPlaceHolder="下拉选择" [(ngModel)]="selected.city"
-                                           [ngModelOptions]="{standalone: true}">
+                                <nz-select class="margin-none" nzPlaceHolder="下拉选择"  formControlName="areaId"
+                                          >
                                     <nz-option *ngFor="let c of cityData" [nzValue]="c.value"
                                                [nzLabel]="c.label"></nz-option>
                                 </nz-select>
@@ -90,3 +89,7 @@
 <ng-container *ngIf="currentPage===numVariable.three">
     <app-level-three></app-level-three>
 </ng-container>
+
+<footer *ngIf="currentPage!==0">
+    <div class="send-btn"><img src="assets/imgs/send-icon.svg" alt="">发 布</div>
+</footer>

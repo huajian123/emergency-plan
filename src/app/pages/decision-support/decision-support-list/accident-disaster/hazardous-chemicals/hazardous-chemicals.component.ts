@@ -7,7 +7,7 @@ import {
 } from '../../../../status-warning/natural-disaster-warning/earthquake-warning/earthquake-warning.component';
 import {AccidentDisastersListService} from 'src/app/services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
-import {debounceTime, distinctUntilChanged} from "rxjs/operators";
+import {debounceTime, distinctUntilChanged, first, map, tap} from 'rxjs/operators';
 
 export enum VariableEnum {
     one = 1,
@@ -40,41 +40,11 @@ export class HazardousChemicalsComponent implements OnInit {
             province: '',
             city: ''
         };
-        this.currentPage = this.numVariable.two;
         this.isShowStandard = true;
-    }
-
-    showConfirm(e): void {
-        this.modal.confirm({
-                nzContent: `确定启动 ${e} 级应急响应`,
-                nzOnOk: () => {
-                    this.currentPage = e;
-                },
-                nzOkText: '启动',
-                nzCancelText: '关闭',
-                nzOnCancel: () => {
-                    console.log('未启动应急方案');
-                },
-            },
-        )
-        ;
+        this.currentPage = 0;
     }
 
     submitForm() {
-        Object.keys(this.validateForm.controls).forEach(key => {
-            this.validateForm.controls[key].markAsDirty();
-            this.validateForm.controls[key].updateValueAndValidity();
-        });
-        if (this.validateForm.invalid) {
-            return false;
-        }
-        const params = this.validateForm.getRawValue();
-        params.accidentId = this.id;
-        this.dataServicers.getDecideGrade(params).subscribe(res => {
-            if (res != null) {
-                this.showConfirm(res);
-            }
-        });
     }
 
     initForm() {
@@ -84,6 +54,8 @@ export class HazardousChemicalsComponent implements OnInit {
             economicLoss: [null],
             peopleLoss: [null],
             toxicGas: [null],
+            cityId: [null],
+            areaId: [null],
         });
     }
 
@@ -105,9 +77,22 @@ export class HazardousChemicalsComponent implements OnInit {
         });
     }
 
-    subForm() {
+    async subForm() {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
-            console.log('调用接口研判等级，根据不同的等级展示不同的六边形组件');
+            res.accidentId = this.id;
+            this.dataServicers.getDecideGrade(res).subscribe(grade => {
+                this.currentPage = grade;
+                const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
+                const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
+                const paramAreaName = `${cityName}${areaName}` || ' ';
+                this.dataService.getGroupInfo({
+                    accidentId: this.id,
+                    cityName: paramAreaName,
+                    grade
+                }).subscribe(result => {
+                    console.log(result);
+                });
+            });
         });
     }
 

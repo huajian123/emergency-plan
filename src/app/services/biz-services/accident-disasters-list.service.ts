@@ -62,4 +62,5 @@ export class AccidentDisastersListService extends BaseHttp {
         return this.post('/decide', params);
     }
 
+
 }

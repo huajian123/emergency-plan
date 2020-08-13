@@ -11,7 +11,10 @@ export class TreeTplComponent implements OnInit {
     constructor() {
     }
 
-    ngOnInit(): void {
+    showModal(id) {
+
     }
 
+    ngOnInit(): void {
+    }
 }

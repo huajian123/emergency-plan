@@ -37,6 +37,11 @@ export class CitiesNameService extends BaseHttp {
     public getNameList(param: { id: number, type: number }): Observable<any> {
         return this.get('/city', {id: param.id, type: param.type});
     }
+
+
+    public getGroupInfo(param: { accidentId: number, cityName: string, grade: number }): Observable<any> {
+        return this.get('/responsibility', param);
+    }
 }
 
 
