@@ -1,1 +1,561 @@
-<p>level-one works!</p>
+<div class="tree-diagram">
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div (click)="showModal(0)" [ngClass]="{'rootChange':isArray[0]}">省指挥部</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+            <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div (click)="showModal(1)" [ngClass]="{'nodeChange':isArray[1]}">总指挥</div>
+            <div (click)="showModal(2)" [ngClass]="{'nodeChange':isArray[2]}">副总指挥</div>
+            <div>应急管理办公室</div>
+            <div class="lastone">成员</div>
+        </div>
+        <div class="step">
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="lastone"><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>省人民政府指定</div>
+            <div>省人民政府指定</div>
+            <div>省指挥部下设</div>
+            <div class="lastone">成员单位</div>
+        </div>
+        <div class="step">
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="lastone"><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>分管副省长</div>
+            <div class="hidden"></div>
+            <div class="long">省应急管理厅：应急指挥中心</div>
+            <div class="lastone">分管应急副厅长</div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!--省级接警-->
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>应急指挥中心</div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!--预警监测-->
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>应急指挥中心</div>
+            <div class="lastone">危化处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省气象局</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>风险监测和综合减灾处</div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!--信息研判-->
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>危化处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>应急指挥中心</div>
+        </div>
+    </div>
+    <br/>
+    <!--信息上报-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理办公室</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>应急指挥中心</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>办公室</div>
+        </div>
+    </div>
+    <!--先期处置-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>事发单位</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>事故地人民政府</div>
+        </div>
+    </div>
+    <!--启动应急响应-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>办公室</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省指挥部</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>区域合作处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>应急指挥中心</div>
+            <div class="lastone">办公室</div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!--分组开展应急救援工作-->
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>综合协调组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>专业处置组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>警戒疏散组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>交通管制组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>医疗救护组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>环境气象监测组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>综合保障组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>应急专家组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!---->
+    <br/>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>舆情新闻组</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>牵头部门（单位）</div>
+            <div class="lastone">配合部门（单位）</div>
+        </div>
+    </div>
+    <!--救援力量调度及保障-->
+
+    <!--应急物资调度及保障-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>救灾和物资保障处</div>
+            <div class="lastone">办公室</div>
+        </div>
+    </div>
+    <!--通信、电力保障方案-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理厅</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>科技和信息化处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省通信管理局</div>
+        </div>
+    </div>
+    <!--现场信息采集-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>科技和信息化处</div>
+            <div class="lastone">应急指挥中心</div>
+        </div>
+    </div>
+    <!--辅助指挥决策信息-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>科技和信息化处</div>
+            <div class="lastone">应急指挥中心</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省气象局</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省生态环境厅</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省民政厅</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省教育厅</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>江苏海事局</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>连云港海事局</div>
+        </div>
+    </div>
+    <!--事态控制-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省委宣传部</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>设区市人民政府</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省指挥部</div>
+        </div>
+    </div>
+    <!--善后处理与事故调查-->
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>事发地人民政府</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省卫生健康委员会</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省生态环境厅</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省应急管理厅</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>规划财务处</div>
+            <div class="lastone">调查评估和统计处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>保监部门</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>规划财务处</div>
+        </div>
+    </div>
+    <br/>
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div>省人民政府</div>
+        </div>
+        <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        <div class="secondStep">
+            <div>调查评估和统计处</div>
+        </div>
+    </div>
+</div>
+<!--弹框样式一-->
+<div class="modal" *ngIf="isVisible">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>省人民政府</h3>
+    <div class="space-middle">
+        <div><span>联系人</span>：李小萌</div>
+        <div><span>联系方式</span>：15784324567</div>
+        <div>
+            <span>岗位职责</span>：
+            <div class="cla">
+                1、研究提出后方指挥部建立建议方案<br/>
+                2、提出先期工作组人员组成建议名单
+            </div>
+        </div>
+        <br/>
+        <div>
+            <span>完成进度</span>：
+            <div class="clas">
+                研究部门已经就位<br/>
+                消防部门已经就位
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹框样式二-->
+<!--<div class="modals">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>配合部门</h3>
+    <div class="flex-columer" style="justify-content: space-around;align-items:flex-start;margin-top: 15px;">
+        <div>
+            <ul class="line-time">
+                <li>省军区</li>
+                <li>武警江苏省总队</li>
+                <li>事发地人民政府</li>
+                <li>事发单位</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="line-content">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+</div>-->
