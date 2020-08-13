@@ -15,10 +15,6 @@
     </section>
 
     <section class="judgment-wrap">
-        <!--重置界面-->
-        <ng-container *ngIf="currentPage===numVariable.zero">
-            <nz-empty></nz-empty>
-        </ng-container>
         <!--汛旱-->
         <ng-container *ngIf="currentPage===numVariable.one">
             <app-drought-flood [id]="accidentId"></app-drought-flood>
@@ -184,6 +180,9 @@
 
         </ng-container>
     </section>
+    <footer *ngIf="currentPage!==numVariable.zero">
+        <div class="send-btn"><img src="assets/imgs/send-icon.svg" alt="">发 布</div>
+    </footer>
 </main>
 
 

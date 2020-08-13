@@ -46,7 +46,7 @@ export class DecisionSupportListComponent implements OnInit {
         this.naturalNameOptions = [];
         this.publicHealthNameOptions = [];
         this.socialSecurityNameOptions = [];
-        this.currentPage = this.numVariable.twenty;
+        this.currentPage = this.numVariable.zero;
     }
 
 
