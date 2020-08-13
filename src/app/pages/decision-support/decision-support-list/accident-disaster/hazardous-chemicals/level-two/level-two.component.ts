@@ -7,7 +7,13 @@ import {fromEvent} from 'rxjs';
     styleUrls: ['./level-two.component.less']
 })
 export class LevelTwoComponent implements OnInit {
+    currentTree = 1;
+
     constructor(public element: ElementRef, private renderer2: Renderer2) {
+    }
+
+    changeTree(num) {
+        this.currentTree = num;
     }
 
     ngOnInit(): void {

@@ -7,6 +7,7 @@ import {
 } from '../../../../status-warning/natural-disaster-warning/earthquake-warning/earthquake-warning.component';
 import {AccidentDisastersListService} from 'src/app/services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
+import {debounceTime, distinctUntilChanged} from "rxjs/operators";
 
 export enum VariableEnum {
     one = 1,
@@ -79,8 +80,8 @@ export class HazardousChemicalsComponent implements OnInit {
     initForm() {
         this.validateForm = this.fb.group({
             peopleDie: [null],
-            peopleInjury: [null],
-            propertyLoss: [null],
+            peoplePoisoning: [null],
+            economicLoss: [null],
             peopleLoss: [null],
             toxicGas: [null],
         });
@@ -104,9 +105,16 @@ export class HazardousChemicalsComponent implements OnInit {
         });
     }
 
+    subForm() {
+        this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
+            console.log('调用接口研判等级，根据不同的等级展示不同的六边形组件');
+        });
+    }
+
     ngOnInit(): void {
         this.initForm();
         this.getEarthquakeWarningList();
+        this.subForm();
     }
 
 }
