@@ -89,7 +89,7 @@ export class HazardousChemicalsComponent implements OnInit {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
-                this.currentPage = grade;
+                this.currentPage = grade.grade;
                 const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
                 const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
                 this.cityName = `${cityName}${areaName}` || ' ';

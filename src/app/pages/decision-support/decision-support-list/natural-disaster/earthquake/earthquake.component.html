@@ -75,13 +75,13 @@
     <div [ngClass]="{'show-btn':isShowStandard,'hide-btn':!isShowStandard}" (click)="isShowStandard=!isShowStandard"></div>
 </div>
 <ng-container *ngIf="currentPage===numVariable.one">
-    <app-level-one [responsibilityEntities]="responsibilityEntities"></app-level-one>
+    <app-earth-level-one [responsibilityEntities]="responsibilityEntities"></app-earth-level-one>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.two">
-    <app-level-two [cityName]="cityName" [responsibilityEntities]="responsibilityEntities"></app-level-two>
+    <app-earth-level-two [cityName]="cityName" [responsibilityEntities]="responsibilityEntities"></app-earth-level-two>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.three||currentPage===numVariable.four">
-    <app-level-three [responsibilityEntities]="responsibilityEntities"></app-level-three>
+    <app-earth-level-three [responsibilityEntities]="responsibilityEntities"></app-earth-level-three>
 </ng-container>
 
 <footer *ngIf="currentPage!==0">

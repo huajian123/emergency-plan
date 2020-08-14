@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
-import {DepartInfoModel} from "../../../../../../services/biz-services/earthquake-warning-list.service";
-import {fromEvent} from "rxjs";
+import {DepartInfoModel} from '../../../../../../services/biz-services/earthquake-warning-list.service';
+import {fromEvent} from 'rxjs';
 
 @Component({
   selector: 'app-earth-level-two',

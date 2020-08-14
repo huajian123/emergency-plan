@@ -58,7 +58,7 @@ export class AccidentDisastersListService extends BaseHttp {
         return this.get('/plan/' + DisasterEnum.AccidentDisaster + '/' + param.id + '/' + param.planGrade, {});
     }
 
-    public getDecideGrade(params: ShowDecideGradeModel): Observable<any> {
+    public getDecideGrade(params: ShowDecideGradeModel): Observable<{ plnId: number, grade: number; }> {
         return this.post('/decide', params);
     }
 
