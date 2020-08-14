@@ -1,222 +1,83 @@
-.tree-diagram {
-  font-size: 25px;
-  color: #FFFFFF;
-  letter-spacing: 0;
-  text-align: center;
-  font-family: PingFangSC-Regular;
-  padding: 50px 120px;
-  background: linear-gradient(#174D8A, #010610);
+
+.mt-90 {
+  margin-top: 90px;
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
+.hexagon-wrap {
+  margin-top: 60px;
+  padding: 0 80px;
 
-.clearfix {
-  zoom: 1;
-}
+  .hexagon-item {
+    cursor: pointer;
+    background: url(../../../../../../../assets/imgs/hexagon-unsel.png) no-repeat;
+    background-size: 100% 100%;
+    height: 245px;
+    width: 225px;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.flex-columer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: start;
-}
+  .hexagon-item-click {
+    background: url(../../../../../../../assets/imgs/checked-hexagon.png) no-repeat;
+    background-size: 100% 100%;
+    height: 245px;
+    width: 225px;
+  }
 
-.firstStep div {
-  cursor: pointer;
-  width: 238px;
-  height: 54px;
-  line-height: 54px;
-  background: url("../../../../../../../assets/imgs/tree/11.png");
-  background-size: 100% 100%;
-}
+  .empty-div {
+    height: 245px;
+    width: 225px;
+    background: transparent;
+  }
 
-.rootChange {
-  background: url("../../../../../../../assets/imgs/tree/11-1.png") !important;
-}
+  .empty-div-arrow {
+    height: 23px;
+    width: 43px;
+    background: transparent;
+  }
 
-.nodeChange {
-  background: url("../../../../../../../assets/imgs/tree/12-1.png") !important;
-}
+  .hexagon-arrow {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
 
-.secondStep div {
-  cursor: pointer;
-  width: 311px;
-  height: 54px;
-  line-height: 54px;
-  background: url("../../../../../../../assets/imgs/tree/12.png");
-  background-size: 100% 100%;
-}
-
-.threeStep div {
-  cursor: pointer;
-  width: 311px;
-  height: 54px;
-  margin-bottom: 25px;
-  line-height: 54px;
-  background: url("../../../../../../../assets/imgs/tree/12.png");
-  background-size: 100% 100%;
-}
-
-.step div {
-  width: 71px;
-  height: 51px;
-  margin-bottom: 25px;
+  .hexagon-arrow-left {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-left.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
 }
 
 
-.lastone {
-  margin-bottom: 0 !important;
-}
+.pos-reltive {
+  position: relative;
 
-.hidden {
-  opacity: 0;
-}
+  .abs-arrow {
+    position: absolute;
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-down.png) no-repeat;
+    background-size: 100% 100%;
+    height: 43px;
+    width: 22px;
+    line-height: 284px;
+  }
 
-.imgLines {
-  width: 71px;
-  height: 50px;
-}
+  .abs-arrow-right:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    right: 105px;
+  }
 
-.imgLine {
-  width: 71px;
-  height: 79px;
-}
-
-.imgLiner {
-  width: 61px;
-  height: 76px;
-}
-
-.oneImg {
-  width: 26px !important;
-  height: 2px !important;
-  margin-bottom: 45px;
-}
-
-.threeStep .long {
-  width: 460px;
-  height: 54px;
-  line-height: 54px;
-  background: url("../../../../../../../assets/imgs/tree/13.png");
-  background-size: 100% 100%;
-}
-
-h3 {
-  margin-top: 2%;
-  margin-left: 30px;
-  font-size: 26px;
-  color: #5CFFEC;
-}
-
-.space-middle {
-  margin: 54px 65px 54px 65px;
-}
-
-.closeButton {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
+  .abs-arrow-left:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    left: 98px;
+  }
 }
 
 
-.modal {
-  font-size: 20px;
-  font-weight: lighter;
-  width: 684px;
-  min-height: 456px;
-  height: auto;
-  background: url("../../../../../../../assets/imgs/tree/333.png") no-repeat;
-  background-size: 100% 100%;
-  font-family: PingFangSC-Medium;
-  color: #FFFFFF;
-  position: fixed;
-  z-index: 99;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.modal div span {
-  display: inline-block;
-  width: 95px;
-  font-size: 22px;
-}
-
-.modal div {
-  font-size: 20px;
-}
-
-.space-middle {
-  margin: 54px 108px 10px 108px;
-}
-
-
-textarea {
-  border: 1px solid rgba(68, 164, 255, 0.73);
-  border-radius: 4px;
-  border-radius: 4px;
-  resize: none;
-  background-color: rgba(255, 255, 255, 0);
-  font-size: 20px;
-}
-
-:focus {
-  outline: none;
-}
-
-/*ssssssss*/
-.modal-big {
-  font-size: 20px;
-  font-weight: lighter;
-  width: 1124px;
-  height: 874px;
-  background: url("../../../../../../../assets/imgs/tree/111.png") no-repeat;
-  background-size: 100% 100%;
-  font-family: PingFangSC-Medium;
-  color: #FFFFFF;
-  position: fixed;
-  z-index: 99;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.line-time li {
-  font-family: PingFangSC-Medium;
-  font-size: 24px;
-  color: #FFFFFF;
-  text-align: center;
-  width: 450px;
-  height: 77px;
-  line-height: 77px;
-  background: url("../../../../../../../assets/imgs/tree/01.png") no-repeat;
-  background-size: 100% 100%;
-}
-
-
-.line-content li {
-  margin-top: 25px;
-  width: 540px;
-  min-height: 400px;
-  height: auto;
-  border: 1px solid #5D8AFF;
-  box-shadow: inset 0 0 20px 0 rgba(126, 250, 252, 0.22);
-}
-
-.line-space-middle {
-  margin: 50px 50px;
-}
-
-.line-time li.active {
-  background: url("../../../../../../../assets/imgs/tree/01-1.png") no-repeat !important;
-}

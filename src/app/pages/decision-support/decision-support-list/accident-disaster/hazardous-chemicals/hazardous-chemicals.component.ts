@@ -98,6 +98,7 @@ export class HazardousChemicalsComponent implements OnInit {
                     this.responsibilityEntities = result.responsibilityEntities;
                     console.log(   this.responsibilityEntities );
                     this.currentPage = grade;
+                    console.log(this.currentPage);
                 });
             });
         });

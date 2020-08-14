@@ -1,1 +1,15 @@
-<p>level-three works!</p>
+
+<div class="hexagon-wrap">
+    <div nz-row [nzJustify]="'space-between'" class="pos-reltive" nzAlign="middle">
+        <div nz-col class="hexagon-item hexagon-item-click" (click)="changeTree(15)">事故信息接收</div>
+        <div nz-col class="hexagon-arrow"></div>
+        <div nz-col class="hexagon-item" (click)="changeTree(16)">应急指导</div>
+        <div nz-col class="empty-div"></div>
+        <div nz-col class="empty-div-arrow"></div>
+        <div nz-col class="empty-div"></div>
+        <div nz-col class="empty-div-arrow"></div>
+    </div>
+</div>
+<app-tree-tpl [responsibilityEntities]="responsibilityEntities" [currentNum]="currentTree"></app-tree-tpl>
+
+

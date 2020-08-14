@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
+import {DepartInfoModel} from '../../../../../../services/biz-services/earthquake-warning-list.service';
+import {fromEvent} from 'rxjs';
 
 
 @Component({
@@ -7,75 +9,29 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./level-one.component.less']
 })
 export class LevelOneComponent implements OnInit {
-    isVisible = false;
-    isArray: any[];
-    isNum: number;
-    tabId: number;
-    tabs = [
-        {
-            id: 1,
-            name: '省军区'
-        },
-        {
-            id: 2,
-            name: '武警江苏省总队'
-        },
-        {
-            id: 3,
-            name: '事发地人民政府'
-        },
-        {
-            id: 4,
-            name: '事发单位'
-        },
-        {
-            id: 5,
-            name: '其他配合部门'
-        },
-        {
-            id: 6,
-            name: '其他配合部门'
-        }
-    ];
+    currentTree = 1;
+    @Input() responsibilityEntities: DepartInfoModel;
 
-
-    constructor() {
-        this.tabId = 1;
-        this.isNum = null;
-        this.isArray = [false, false, false, false, false, false, false, false, false];
+    constructor(public element: ElementRef, private renderer2: Renderer2) {
     }
 
-    chooseTab(type) {
-        this.tabId = type;
-    }
-
-    showModal(e): void {
-        this.isNum = e;
-        if (e == null) {
-            return;
-        }
-        switch (e) {
-            case 0:
-                this.isArray[0] = true;
-                break;
-            case 1:
-                this.isArray[1] = true;
-                break;
-            case 2:
-                this.isArray[2] = true;
-                break;
-            default:
-                return;
-        }
-        this.isVisible = true;
-    }
-
-    handleCancel(): void {
-        this.isVisible = false;
-        this.isArray[this.isNum] = false;
+    changeTree(num) {
+        this.currentTree = num;
     }
 
     ngOnInit(): void {
+        const temp = this.element.nativeElement.getElementsByClassName('hexagon-item');
+        // tslint:disable-next-line:prefer-for-of
+        for (let i = 0; i < temp.length; i++) {
+            const mouseClick = fromEvent(temp[i], 'click');
+            const subscription = mouseClick.subscribe(() => {
+                // tslint:disable-next-line:prefer-for-of
+                for (let j = 0; j < temp.length; j++) {
+                    this.renderer2.removeClass(temp[j], 'hexagon-item-click');
+                }
+                this.renderer2.addClass(temp[i], 'hexagon-item-click');
+            });
+        }
     }
 
 }

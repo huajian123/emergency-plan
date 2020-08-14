@@ -1,1 +1,125 @@
-<p>blackout works!</p>
+<div class="tree-diagram">
+    <div class="flex-columer">
+        <div class="firstStep">
+            <div (click)="showModal(0)" [ngClass]="{'rootChange':isArray[0]}">省指挥部</div>
+        </div>
+        <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+        <div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+            <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+            <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+            <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div (click)="showModal(1)" [ngClass]="{'nodeChange':isArray[1]}">总指挥</div>
+            <div (click)="showModal(2)" [ngClass]="{'nodeChange':isArray[2]}">副总指挥</div>
+            <div>应急管理办公室</div>
+            <div class="lastone">成员</div>
+        </div>
+        <div class="step">
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="lastone"><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>省人民政府指定</div>
+            <div>省人民政府指定</div>
+            <div>省指挥部下设</div>
+            <div class="lastone">成员单位</div>
+        </div>
+        <div class="step">
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="lastone"><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+        </div>
+        <div class="threeStep">
+            <div>分管副省长</div>
+            <div class="hidden"></div>
+            <div class="long">省应急管理厅：应急指挥中心</div>
+            <div class="lastone">分管应急副厅长</div>
+        </div>
+    </div>
+</div>
+<!--弹窗样式一、二-->
+<!--<div class="modal" *ngIf="isVisible">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>省人民政府</h3>
+    <div class="space-middle">
+        <div><span>&emsp;联系人</span>：李小萌</div>
+        <div><span>联系方式</span>：15784324567</div>
+        <div class="clearfix">
+            <span>岗位职责</span>：
+            <div style="float: right;font-size: 20px;width: 350px;">
+                1、研究提出后方指挥部建立建议方案<br/>
+            </div>
+        </div>
+       &lt;!&ndash; <div class="clearfix">
+            <span>完成进度</span>：
+            <div style="float: right;font-size: 20px;">
+                <textarea rows="5" cols="30"></textarea><br/>
+                <button nz-button nzType="primary" class="btn">提交</button>
+            </div>
+        </div>&ndash;&gt;
+        <div style="position:relative;">
+            <span>完成进度</span>：
+            <div style="position: absolute;top: 0;left: 120px;">
+                研究部门已经就位<br/>
+                消防部门已经就位
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--弹框样式三-->
+<div class="modal-big" *ngIf="isVisible">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>配合部门</h3>
+    <div class="flex-columer" style="justify-content: space-around;align-items:flex-start;margin-top: 20px;">
+        <div>
+            <ul class="line-time">
+                <li *ngFor="let tab of tabs" (click)="chooseTab(tab.id)"
+                    [ngClass]="{'active':tabId==tab.id}">{{tab.name}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="line-content">
+                <li *ngIf="tabId==1">
+                    <div class="line-space-middle">
+                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">李小萌</span></div>
+                        <div><span>联系方式</span>：<span style="margin-left: 15px;">15784324567</span></div>
+                        <div class="clearfix">
+                            <span>岗位职责</span>：
+                            <div style="float: right;font-size: 20px;width: 320px;">
+                                根据地方政府需求，协调现役专业力量支援协助危化品生产安全事故救援。<br/>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <span>完成进度</span>：
+                            <div style="float: right;font-size: 20px;">
+                                <textarea rows="5" cols="30"></textarea><br/>
+                                <button nz-button nzType="primary" class="btn">提交</button>
+                            </div>
+                        </div>
+                        <!--  <div style="position: relative;">
+                              <span>完成进度</span>：
+                              <div style="position:absolute;left: 120px;top: 0;">
+                                  研究部门已经就位<br/>
+                                  消防部门已经就位
+                              </div>
+                          </div>-->
+                    </div>
+                </li>
+                <li *ngIf="tabId==2">2</li>
+                <li *ngIf="tabId==3">3</li>
+                <li *ngIf="tabId==4">4</li>
+                <li *ngIf="tabId==5">4</li>
+                <li *ngIf="tabId==6">4</li>
+            </ul>
+        </div>
+    </div>
+</div>

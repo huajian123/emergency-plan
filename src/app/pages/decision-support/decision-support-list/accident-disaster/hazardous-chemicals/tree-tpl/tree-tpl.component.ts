@@ -1,6 +1,6 @@
 import {Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
-import {DepartInfoModel} from "../../../../../../services/biz-services/earthquake-warning-list.service";
+import {DepartInfoModel} from '../../../../../../services/biz-services/earthquake-warning-list.service';
 
 @Component({
     selector: 'app-tree-tpl',

@@ -499,6 +499,33 @@
             </div>
         </div>
     </ng-container>
+
+    <!--三四级灾害-->
+    <!--事故信息接受-->
+    <ng-container *ngIf="currentNum===15">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(1, $event)">
+                <div>应急指挥中心</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <!--应急指导-->
+    <ng-container *ngIf="currentNum===16">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(1, $event)">
+                <div>危险化学品安全监督管理处</div>
+            </div>
+        </div>
+    </ng-container>
 </div>
 
 
