@@ -25,3 +25,8 @@ export class SearchCommonVO<T> {
     pageSize: number;
     searchDTO?: T;
 }
+
+export enum UserRole {
+    User,
+    Manage
+}

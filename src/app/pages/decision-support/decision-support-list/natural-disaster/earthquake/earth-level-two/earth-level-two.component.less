@@ -1,0 +1,83 @@
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+.hexagon-wrap {
+  margin-top: 60px;
+  padding: 0 80px;
+
+  .hexagon-item {
+    cursor: pointer;
+    background: url(../../../../../../../assets/imgs/hexagon-unsel.png) no-repeat;
+    background-size: 100% 100%;
+    height: 245px;
+    width: 225px;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hexagon-item-click {
+    background: url(../../../../../../../assets/imgs/checked-hexagon.png) no-repeat;
+    background-size: 100% 100%;
+    height: 245px;
+    width: 225px;
+  }
+
+  .empty-div {
+    height: 245px;
+    width: 225px;
+    background: transparent;
+  }
+
+  .empty-div-arrow {
+    height: 23px;
+    width: 43px;
+    background: transparent;
+  }
+
+  .hexagon-arrow {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
+
+  .hexagon-arrow-left {
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-left.png) no-repeat;
+    background-size: 100% 100%;
+    height: 23px;
+    width: 43px;
+    line-height: 284px;
+  }
+}
+
+
+.pos-reltive {
+  position: relative;
+
+  .abs-arrow {
+    position: absolute;
+    background: url(../../../../../../../assets/imgs/hexagon-arrow-down.png) no-repeat;
+    background-size: 100% 100%;
+    height: 43px;
+    width: 22px;
+    line-height: 284px;
+  }
+
+  .abs-arrow-right:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    right: 105px;
+  }
+
+  .abs-arrow-left:extend(.pos-reltive .abs-arrow) {
+    bottom: -60px;
+    left: 98px;
+  }
+}
+
+

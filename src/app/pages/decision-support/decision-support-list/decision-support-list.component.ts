@@ -1,5 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {MapPipe, MapSet} from '../../../share/directives/pipe/map.pipe';
+import {EVENT_KEY} from '../../../../environments/staticVariable';
+import {UserRole} from "../../../VO/types";
 
 export enum VariableEnum {
     zero = 0,
@@ -21,6 +23,8 @@ interface OptionsInterface {
     styleUrls: ['./decision-support-list.component.less']
 })
 export class DecisionSupportListComponent implements OnInit {
+    userRole: number;
+    userRoleEnum = UserRole;
     currentPage: number;
     accidentType: number;
     accidentId: number;
@@ -91,6 +95,7 @@ export class DecisionSupportListComponent implements OnInit {
         this.accidentNameOptions = [...MapPipe.transformMapToArray(MapSet.accidentDisastersType)];
         this.publicHealthNameOptions = [...MapPipe.transformMapToArray(MapSet.publicHealthType)];
         this.socialSecurityNameOptions = [...MapPipe.transformMapToArray(MapSet.socialSecurityType)];
+        this.userRole = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo)).role;
     }
 
 }
