@@ -3,9 +3,9 @@
         <div nz-row>
             <div nz-col [nzSpan]="8">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">死亡和失踪总人数（人）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">死亡人数（含失踪）</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="死亡和失踪总人数（人）" formControlName="peopleDie"
+                        <nz-input-number nzPlaceHolder="死亡人数（含失踪）" formControlName="peopleLossAndDie"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
@@ -14,8 +14,11 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="12">直接经济损失</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="直接经济损失" formControlName="peoplePoisoning"
-                                         [nzMin]="1"></nz-input-number>
+                        <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="propertyLossGrade"
+                                   (ngModelChange)="changeProvince($event)">
+                            <nz-option *ngFor="let item of earthquakeEconomicLevelOptions" [nzValue]="item.value"
+                                       [nzLabel]="item.label"></nz-option>
+                        </nz-select>
                     </nz-form-control>
                 </nz-form-item>
             </div>
@@ -23,30 +26,21 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="12">省陆地行政区域震级</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="省陆地行政区域震级" formControlName="economicLoss"
+                        <nz-input-number nzPlaceHolder="省陆地行政区域震级" formControlName="earthquakeLand"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
-            <div nz-col [nzSpan]="8">
+            <div nz-col [nzSpan]="24">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">近海海域50千米震级</nz-form-label>
+                    <nz-form-label [nzSpan]="12">近海海域50千米震级或我省陆地边界50千米以内的邻省震级</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="近海海域50千米震级" formControlName="peopleLoss"
+                        <nz-input-number nzPlaceHolder="近海海域50千米震级" formControlName="earthquakeSea"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
-            <div nz-col [nzSpan]="14">
-                <nz-form-item>
-                    <nz-form-label [nzSpan]="12">我省陆地边界50千米以内的邻省震级</nz-form-label>
-                    <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="我省陆地边界50千米以内的邻省震级" formControlName="toxicGas"
-                                         [nzMin]="1"></nz-input-number>
-                    </nz-form-control>
-                </nz-form-item>
-            </div>
-            <div nz-col [nzSpan]="8"></div>
+           <!-- <div nz-col [nzSpan]="8"></div>-->
         </div>
         <div nz-row>
             <div nz-col [nzSpan]="24">

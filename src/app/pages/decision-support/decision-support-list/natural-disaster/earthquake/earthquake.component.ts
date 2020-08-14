@@ -12,6 +12,7 @@ import {
 import {AccidentDisastersListService} from '../../../../../services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
+import {MapPipe, MapSet} from "../../../../../share/directives/pipe/map.pipe";
 
 export enum VariableEnum {
     one = 1,
@@ -37,6 +38,7 @@ export class EarthquakeComponent implements OnInit {
     dataInfo: CitiesNameModel[];
     responsibilityEntities: DepartInfoModel[];
     cityName: string;
+    earthquakeEconomicLevelOptions: OptionsInterface[];
 
     constructor(private fb: FormBuilder, private dataService: CitiesNameService, private dataServicers: AccidentDisastersListService,
                 public message: NzMessageService, private modal: NzModalService) {
@@ -50,6 +52,7 @@ export class EarthquakeComponent implements OnInit {
         this.currentPage = 0;
         this.responsibilityEntities = [];
         this.cityName = '';
+        this.earthquakeEconomicLevelOptions = [];
     }
 
     submitForm() {
@@ -57,11 +60,10 @@ export class EarthquakeComponent implements OnInit {
 
     initForm() {
         this.validateForm = this.fb.group({
-            peopleDie: [null],
-            peoplePoisoning: [null],
-            economicLoss: [null],
-            peopleLoss: [null],
-            toxicGas: [null],
+            peopleLossAndDie: [null],
+            propertyLossGrade: [null],
+            earthquakeLand: [null],
+            earthquakeSea: [null],
             cityId: [null],
             areaId: [null],
         });
@@ -105,6 +107,8 @@ export class EarthquakeComponent implements OnInit {
         this.initForm();
         this.getEarthquakeWarningList();
         this.subForm();
+        this.earthquakeEconomicLevelOptions = [...MapPipe.transformMapToArray(MapSet.earthquakeEconomicLevel)];
+        console.log(this.earthquakeEconomicLevelOptions);
     }
 
 }
