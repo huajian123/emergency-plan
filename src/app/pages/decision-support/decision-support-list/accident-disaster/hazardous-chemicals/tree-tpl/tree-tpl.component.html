@@ -149,7 +149,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(18, $event)">省人民政府</div>
-                <div class="lastone" (click)="showModal(17, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(17, $event)">配合部门（单位）</div>
             </div>
         </div>
         <br/>
@@ -545,7 +545,7 @@
         <div class="clearfix">
             <span>完成进度</span>：
             <div style="float: right;font-size: 20px;">
-                <textarea rows="5" cols="33" [(ngModel)]="process"></textarea><br/>
+                <textarea rows="5" cols="33" [(ngModel)]="data.completeSchedule"></textarea><br/>
                 <button nz-button nzType="primary" class="btn" (click)="submitBtu()">提交</button>
             </div>
         </div>
@@ -567,27 +567,29 @@
     <div class="flex-columer" style="justify-content: space-around;align-items:flex-start;margin-top: 20px;">
         <div>
             <ul class="line-time">
-                <li *ngFor="let tab of tabs" (click)="chooseTab(tab.id)"
-                    [ngClass]="{'active':tabId==tab.id}">{{tab.name}}</li>
+                <li *ngFor="let tab of tabData" (click)="chooseTab(tab.id)"
+                    [ngClass]="{'active':tabId==tab.id}">{{tab.responsibilityName}}</li>
             </ul>
         </div>
         <div>
             <ul class="line-content">
                 <li *ngIf="tabId==1">
                     <div class="line-space-middle">
-                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">李小萌</span></div>
-                        <div><span>联系方式</span>：<span style="margin-left: 15px;">15784324567</span></div>
+                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">{{tabContent.linkman}}</span></div>
+                        <div><span>联系方式</span>：<span style="margin-left: 15px;">{{tabContent.linkPhone}}</span></div>
                         <div class="clearfix">
                             <span>岗位职责</span>：
                             <div style="float: right;font-size: 20px;width: 320px;">
-                                根据地方政府需求，协调现役专业力量支援协助危化品生产安全事故救援。<br/>
+                                <ng-container *ngFor="let item of tabContent.responsibilityDetailSort;let i =index;">
+                                    {{i + 1}}、{{item}}<br/>
+                                </ng-container>
                             </div>
                         </div>
                         <div class="clearfix">
                             <span>完成进度</span>：
                             <div style="float: right;font-size: 20px;">
-                                <textarea rows="5" cols="30"></textarea><br/>
-                                <button nz-button nzType="primary" class="btn">提交</button>
+                                <textarea rows="5" cols="30" [(ngModel)]="tabContent.completeSchedule"></textarea><br/>
+                                <button nz-button nzType="primary" class="btn" (click)="submitBtu()">提交</button>
                             </div>
                         </div>
                         <!--  <div style="position: relative;">
@@ -599,11 +601,6 @@
                           </div>-->
                     </div>
                 </li>
-                <li *ngIf="tabId==2">2</li>
-                <li *ngIf="tabId==3">3</li>
-                <li *ngIf="tabId==4">4</li>
-                <li *ngIf="tabId==5">4</li>
-                <li *ngIf="tabId==6">4</li>
             </ul>
         </div>
     </div>

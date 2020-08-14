@@ -2,7 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {
     CitiesNameService,
     DepartInfoModel,
-    UpdateScheduleDTO
+    DepartInfoTabModel,
+    UpdateScheduleDTO,
 } from '../../../../../../services/biz-services/earthquake-warning-list.service';
 
 @Component({
@@ -13,44 +14,19 @@ import {
 export class TreeTplComponent implements OnInit {
     @Input() currentNum;
     @Input() cityName;
-    process: string;
     @Input() responsibilityEntities: DepartInfoModel[];
     isVisible = false;
     isWithVisible = false;
     data: DepartInfoModel;
     scheduleParam: UpdateScheduleDTO;
     tabId: number;
-    tabs = [
-        {
-            id: 1,
-            name: '省军区'
-        },
-        {
-            id: 2,
-            name: '武警江苏省总队'
-        },
-        {
-            id: 3,
-            name: '事发地人民政府'
-        },
-        {
-            id: 4,
-            name: '事发单位'
-        },
-        {
-            id: 5,
-            name: '其他配合部门'
-        },
-        {
-            id: 6,
-            name: '其他配合部门'
-        }
-    ];
+    tabData: DepartInfoTabModel[];
+    tabContent: DepartInfoTabModel;
 
     constructor(private dataService: CitiesNameService) {
         this.tabId = 1;
         this.scheduleParam = {id: null, completeSchedule: ''};
-        this.process = '';
+        this.tabData = [];
     }
 
     chooseTab(type) {
@@ -69,27 +45,37 @@ export class TreeTplComponent implements OnInit {
 
     showModal(id, e) {
         this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
-            console.log(res);
             this.data = res.responsibilityEntities;
-            console.log(this.data);
             this.isVisible = true;
         });
     }
 
     showBigModal(id, e) {
-        this.data = this.responsibilityEntities.find((item) => {
-            return item.id === id;
+        this.dataService.getGroupIdInfo({id, cityName: this.cityName}).subscribe(res => {
+            const tabDataObject = {
+                id: res.id,
+                responsibilityName: res.responsibilityName
+            };
+            this.tabData.push(tabDataObject);
+            this.tabContent = res;
+            this.isWithVisible = true;
         });
-        this.isWithVisible = true;
+        /*console.log(this.tabData);
+        console.log(this.data);*/
     }
 
     submitBtu() {
         const object = {
             id: this.data.id,
-            completeSchedule: this.process
+            completeSchedule: this.data.completeSchedule
         };
         this.dataService.getSchedule(object).subscribe(res => {
-            this.isVisible = false;
+            if (this.isVisible) {
+                return !this.isVisible;
+            }
+            if (this.isWithVisible) {
+                return !this.isWithVisible;
+            }
         });
     }
 

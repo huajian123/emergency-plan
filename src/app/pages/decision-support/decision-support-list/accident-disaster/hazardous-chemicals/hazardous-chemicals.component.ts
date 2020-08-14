@@ -93,16 +93,6 @@ export class HazardousChemicalsComponent implements OnInit {
                 const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
                 const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
                 this.cityName = `${cityName}${areaName}` || ' ';
-                /* this.dataService.getGroupInfo({
-                     accidentId: this.id,
-                     cityName: paramAreaName,
-                     grade
-                 }).subscribe(result => {
-                     this.responsibilityEntities = result.responsibilityEntities;
-                     console.log(this.responsibilityEntities);
-                     this.currentPage = grade;
-                     console.log(this.currentPage);
-                 });*/
             });
         });
     }

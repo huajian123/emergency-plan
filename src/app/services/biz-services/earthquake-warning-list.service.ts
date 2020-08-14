@@ -18,10 +18,17 @@ export interface DepartInfoModel {
 }
 
 
-export interface DisasterDataModel {
+export interface DepartInfoTabModel {
     id: number;
-    accidentName: string;
-    responsibilityEntities: DepartInfoModel[];
+    responsibilityName: string;
+    accidentPlanId?: number;
+    completeSchedule?: string;
+    coordinate?: number;
+    linkman?: string;
+    linkPhone?: string;
+    responsibilityDetail?: string;
+    responsibilityDetailSort?: string[];
+
 }
 
 export interface CitiesNameModel {
@@ -64,6 +71,11 @@ export class CitiesNameService extends BaseHttp {
 
     public getGroupInfo(param: { id: number, cityName: string }): Observable<any> {
         return this.get('/responsibility/' + param.id, param);
+    }
+
+    /*根据小组id查询配合部门*/
+    public getGroupIdInfo(param: { id: number, cityName: string }): Observable<DepartInfoModel> {
+        return this.get('//coordinate/' + param.id, param);
     }
 
     /*完成进度修改*/
