@@ -8,26 +8,32 @@ import {NzMessageService} from 'ng-zorro-antd';
 
 export interface DepartInfoModel {
     id: number;
+    accidentName?: number;
+    responsibilityEntities: ResponsibilityEntitiesModel;
+}
+
+export interface ResponsibilityEntitiesModel {
+    id: number;
     accidentPlanId: number;
     responsibilityName: string;
     responsibilityDetail: string;
     completeSchedule: string;
     linkman: string;
+    coordinate?: number;
     linkPhone: string;
     responsibilityDetailSort: string[];
 }
 
-
 export interface DepartInfoTabModel {
     id: number;
     responsibilityName: string;
-    accidentPlanId?: number;
-    completeSchedule?: string;
-    coordinate?: number;
-    linkman?: string;
-    linkPhone?: string;
-    responsibilityDetail?: string;
-    responsibilityDetailSort?: string[];
+    accidentPlanId: number;
+    completeSchedule: string;
+    coordinate: number;
+    linkman: string;
+    linkPhone: string;
+    responsibilityDetail: string;
+    responsibilityDetailSort: string[];
 
 }
 
@@ -69,17 +75,17 @@ export class CitiesNameService extends BaseHttp {
     }
 
 
-    public getGroupInfo(param: { id: number, cityName: string }): Observable<any> {
+    public getGroupInfo(param: { id: number, cityName: string }): Observable<DepartInfoModel> {
         return this.get('/responsibility/' + param.id, param);
     }
 
     /*根据小组id查询配合部门*/
-    public getGroupIdInfo(param: { id: number, cityName: string }): Observable<DepartInfoModel> {
+    public getGroupIdInfo(param: { id: number, cityName: string }): Observable<ResponsibilityEntitiesModel[]> {
         return this.get('//coordinate/' + param.id, param);
     }
 
     /*完成进度修改*/
-    public getSchedule(params: UpdateScheduleDTO): Observable<any> {
+    public getSchedule(params: UpdateScheduleDTO): Observable<UpdateScheduleDTO> {
         return this.put('/schedule', params);
     }
 }

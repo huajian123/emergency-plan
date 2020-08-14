@@ -2,9 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {
     CitiesNameService,
     DepartInfoModel,
-    DepartInfoTabModel,
+    ResponsibilityEntitiesModel,
     UpdateScheduleDTO,
 } from '../../../../../../services/biz-services/earthquake-warning-list.service';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
     selector: 'app-tree-tpl',
@@ -12,25 +13,65 @@ import {
     styleUrls: ['./tree-tpl.component.less'],
 })
 export class TreeTplComponent implements OnInit {
+    tabId: number;
     @Input() currentNum;
     @Input() cityName;
     @Input() responsibilityEntities: DepartInfoModel[];
-    isVisible = false;
-    isWithVisible = false;
-    data: DepartInfoModel;
+    isVisible: boolean;
+    isWithVisible: boolean;
+    data: ResponsibilityEntitiesModel;
     scheduleParam: UpdateScheduleDTO;
-    tabId: number;
-    tabData: DepartInfoTabModel[];
-    tabContent: DepartInfoTabModel;
+    tabContent: ResponsibilityEntitiesModel[];
 
-    constructor(private dataService: CitiesNameService) {
-        this.tabId = 1;
+    constructor(private dataService: CitiesNameService, public message: NzMessageService) {
         this.scheduleParam = {id: null, completeSchedule: ''};
-        this.tabData = [];
+        this.isWithVisible = false;
+        this.isVisible = false;
+        this.tabContent = [];
+
     }
 
-    chooseTab(type) {
-        this.tabId = type;
+    chooseTab(typeNum) {
+        this.tabId = typeNum;
+    }
+
+
+    showModal(id, e) {
+        this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
+            this.data = res.responsibilityEntities;
+            console.log(res.responsibilityEntities);
+            console.log(this.data);
+            this.isVisible = true;
+        });
+    }
+
+    showBigModal(id, e) {
+        this.dataService.getGroupIdInfo({id, cityName: this.cityName}).subscribe(res => {
+            this.tabContent = res;
+            this.tabId = this.tabContent[0].id;
+            this.isWithVisible = true;
+        });
+    }
+
+    submitBtu() {
+        const object = {
+            id: this.data.id,
+            completeSchedule: this.data.completeSchedule
+        };
+        this.dataService.getSchedule(object).subscribe(res => {
+            this.isVisible = false;
+        });
+    }
+
+    submitWithBtu() {
+        const temp = this.tabContent.find((item) => item.id === this.tabId);
+        const objects = {
+            id: this.tabId,
+            completeSchedule: temp.completeSchedule
+        };
+        this.dataService.getSchedule(objects).subscribe(res => {
+            this.message.success('修改成功');
+        });
     }
 
     /*关闭弹窗一二*/
@@ -41,42 +82,6 @@ export class TreeTplComponent implements OnInit {
     /*关闭弹窗三*/
     handlerCancel() {
         this.isWithVisible = false;
-    }
-
-    showModal(id, e) {
-        this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
-            this.data = res.responsibilityEntities;
-            this.isVisible = true;
-        });
-    }
-
-    showBigModal(id, e) {
-        this.dataService.getGroupIdInfo({id, cityName: this.cityName}).subscribe(res => {
-            const tabDataObject = {
-                id: res.id,
-                responsibilityName: res.responsibilityName
-            };
-            this.tabData.push(tabDataObject);
-            this.tabContent = res;
-            this.isWithVisible = true;
-        });
-        /*console.log(this.tabData);
-        console.log(this.data);*/
-    }
-
-    submitBtu() {
-        const object = {
-            id: this.data.id,
-            completeSchedule: this.data.completeSchedule
-        };
-        this.dataService.getSchedule(object).subscribe(res => {
-            if (this.isVisible) {
-                return !this.isVisible;
-            }
-            if (this.isWithVisible) {
-                return !this.isWithVisible;
-            }
-        });
     }
 
     ngOnInit(): void {

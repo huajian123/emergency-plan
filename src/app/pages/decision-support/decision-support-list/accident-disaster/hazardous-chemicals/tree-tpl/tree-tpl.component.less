@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+ul {
+  margin-bottom: 0 !important;
+}
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -188,6 +192,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  overflow: hidden;
 }
 
 .line-time li {
@@ -204,7 +209,6 @@ textarea {
 
 
 .line-content li {
-  margin-top: 25px;
   width: 540px;
   min-height: 400px;
   height: auto;
@@ -213,7 +217,7 @@ textarea {
 }
 
 .line-space-middle {
-  margin: 50px 50px;
+  margin: 40px 50px 0;
 }
 
 .line-time li.active {

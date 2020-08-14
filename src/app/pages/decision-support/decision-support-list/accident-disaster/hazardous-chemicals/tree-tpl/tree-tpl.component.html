@@ -567,20 +567,20 @@
     <div class="flex-columer" style="justify-content: space-around;align-items:flex-start;margin-top: 20px;">
         <div>
             <ul class="line-time">
-                <li *ngFor="let tab of tabData" (click)="chooseTab(tab.id)"
-                    [ngClass]="{'active':tabId==tab.id}">{{tab.responsibilityName}}</li>
+                <li *ngFor="let tab of tabContent;" (click)="chooseTab(tab['id'])"
+                    [ngClass]="{'active':tabId==tab['id']}">{{tab['responsibilityName']}}</li>
             </ul>
         </div>
         <div>
-            <ul class="line-content">
-                <li *ngIf="tabId==1">
+            <ul class="line-content" *ngFor="let index of tabContent">
+                <li *ngIf="tabId==index['id']">
                     <div class="line-space-middle">
-                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">{{tabContent.linkman}}</span></div>
-                        <div><span>联系方式</span>：<span style="margin-left: 15px;">{{tabContent.linkPhone}}</span></div>
+                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">{{index['linkman']}}</span></div>
+                        <div><span>联系方式</span>：<span style="margin-left: 15px;">{{index['linkPhone']}}</span></div>
                         <div class="clearfix">
                             <span>岗位职责</span>：
                             <div style="float: right;font-size: 20px;width: 320px;">
-                                <ng-container *ngFor="let item of tabContent.responsibilityDetailSort;let i =index;">
+                                <ng-container *ngFor="let item of index['responsibilityDetailSort'];let i =index;">
                                     {{i + 1}}、{{item}}<br/>
                                 </ng-container>
                             </div>
@@ -588,8 +588,8 @@
                         <div class="clearfix">
                             <span>完成进度</span>：
                             <div style="float: right;font-size: 20px;">
-                                <textarea rows="5" cols="30" [(ngModel)]="tabContent.completeSchedule"></textarea><br/>
-                                <button nz-button nzType="primary" class="btn" (click)="submitBtu()">提交</button>
+                                <textarea rows="5" cols="30" [(ngModel)]="index['completeSchedule']"></textarea><br/>
+                                <button nz-button nzType="primary" class="btn" (click)="submitWithBtu()">提交</button>
                             </div>
                         </div>
                         <!--  <div style="position: relative;">
