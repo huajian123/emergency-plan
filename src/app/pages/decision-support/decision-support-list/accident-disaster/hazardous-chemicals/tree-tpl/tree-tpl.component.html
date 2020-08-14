@@ -6,7 +6,7 @@
                 <div>应急管理厅</div>
             </div>
             <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
-            <div class="secondStep">
+            <div class="secondStep" (click)="showModal(1, $event)">
                 <div>应急指挥中心</div>
             </div>
         </div>
@@ -491,4 +491,38 @@
             </div>
         </div>
     </ng-container>
+</div>
+
+
+<div class="modal" *ngIf="isVisible">
+    <div class="closeButton" (click)="handleCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>省人民政府</h3>
+    <div class="space-middle">
+        <div><span>&emsp;联系人</span>：{{data.linkman}}</div>
+        <div><span>联系方式</span>：{{data.linkPhone}}</div>
+        <div class="clearfix">
+            <span>岗位职责</span>：
+            <div style="float: right;font-size: 20px;width: 350px;">
+                <ng-container *ngFor="let item of data.responsibilityDetailSort;let i =index;">
+                    {{i + 1}}、{{item}}<br/>
+                </ng-container>
+            </div>
+        </div>
+        <div class="clearfix">
+            <span>完成进度</span>：
+            <div style="float: right;font-size: 20px;">
+                <textarea rows="5" cols="30"></textarea><br/>
+                <button nz-button nzType="primary" class="btn">提交</button>
+            </div>
+        </div>
+        <!-- <div style="position:relative;">
+             <span>完成进度</span>：
+             <div style="position: absolute;top: 0;left: 120px;">
+                 研究部门已经就位<br/>
+                 消防部门已经就位
+             </div>
+         </div>-->
+    </div>
 </div>

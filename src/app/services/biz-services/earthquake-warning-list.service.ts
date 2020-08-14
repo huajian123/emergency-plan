@@ -6,6 +6,24 @@ import {Observable} from 'rxjs';
 import {NzMessageService} from 'ng-zorro-antd';
 
 
+export interface DepartInfoModel {
+    id: number;
+    accidentPlanId: number;
+    responsibilityName: string;
+    responsibilityDetail: string;
+    completeSchedule: string;
+    linkman: string;
+    linkPhone: string;
+    responsibilityDetailSort: string[];
+}
+
+
+export interface DisasterDataModel {
+    id: number;
+    accidentName: string;
+    responsibilityEntities: DepartInfoModel[];
+}
+
 export interface CitiesNameModel {
     id: number;
     cityName: string;
@@ -39,7 +57,7 @@ export class CitiesNameService extends BaseHttp {
     }
 
 
-    public getGroupInfo(param: { accidentId: number, cityName: string, grade: number }): Observable<any> {
+    public getGroupInfo(param: { accidentId: number, cityName: string, grade: number }): Observable<DisasterDataModel> {
         return this.get('/responsibility', param);
     }
 }

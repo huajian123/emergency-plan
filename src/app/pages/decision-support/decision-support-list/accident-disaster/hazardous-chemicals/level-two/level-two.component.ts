@@ -1,5 +1,6 @@
-import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 import {fromEvent} from 'rxjs';
+import {DepartInfoModel} from '../../../../../../services/biz-services/earthquake-warning-list.service';
 
 @Component({
     selector: 'app-level-two',
@@ -8,6 +9,7 @@ import {fromEvent} from 'rxjs';
 })
 export class LevelTwoComponent implements OnInit {
     currentTree = 1;
+    @Input() responsibilityEntities: DepartInfoModel;
 
     constructor(public element: ElementRef, private renderer2: Renderer2) {
     }

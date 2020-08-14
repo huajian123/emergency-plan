@@ -1,6 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {CitiesNameModel, CitiesNameService} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {
+    CitiesNameModel,
+    CitiesNameService,
+    DepartInfoModel
+} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {
     OptionsInterface,
     SelectedInterface
@@ -31,6 +35,7 @@ export class HazardousChemicalsComponent implements OnInit {
     cityData: OptionsInterface[];
     selected: SelectedInterface;
     dataInfo: CitiesNameModel[];
+    responsibilityEntities: DepartInfoModel[];
 
     constructor(private fb: FormBuilder, private dataService: CitiesNameService, private dataServicers: AccidentDisastersListService,
                 public message: NzMessageService, private modal: NzModalService) {
@@ -42,6 +47,7 @@ export class HazardousChemicalsComponent implements OnInit {
         };
         this.isShowStandard = true;
         this.currentPage = 0;
+        this.responsibilityEntities = [];
     }
 
     submitForm() {
@@ -81,7 +87,6 @@ export class HazardousChemicalsComponent implements OnInit {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
-                this.currentPage = grade;
                 const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
                 const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
                 const paramAreaName = `${cityName}${areaName}` || ' ';
@@ -90,7 +95,9 @@ export class HazardousChemicalsComponent implements OnInit {
                     cityName: paramAreaName,
                     grade
                 }).subscribe(result => {
-                    console.log(result);
+                    this.responsibilityEntities = result.responsibilityEntities;
+                    console.log(   this.responsibilityEntities );
+                    this.currentPage = grade;
                 });
             });
         });

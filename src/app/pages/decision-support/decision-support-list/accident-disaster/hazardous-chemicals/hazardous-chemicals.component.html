@@ -84,7 +84,7 @@
     <app-level-one></app-level-one>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.two">
-    <app-level-two></app-level-two>
+    <app-level-two [responsibilityEntities]="responsibilityEntities"></app-level-two>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.three">
     <app-level-three></app-level-three>
