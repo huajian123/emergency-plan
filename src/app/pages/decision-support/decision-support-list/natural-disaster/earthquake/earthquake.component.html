@@ -3,45 +3,45 @@
         <div nz-row>
             <div nz-col [nzSpan]="8">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">死亡人数（人）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">死亡和失踪总人数（人）</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="死亡人数（人）" formControlName="peopleDie"
+                        <nz-input-number nzPlaceHolder="死亡和失踪总人数（人）" formControlName="peopleDie"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
             <div nz-col [nzSpan]="8">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">重伤及急性工业中毒人数（人）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">直接经济损失</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="重伤及急性工业中毒人数（人）" formControlName="peoplePoisoning"
+                        <nz-input-number nzPlaceHolder="直接经济损失" formControlName="peoplePoisoning"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
             <div nz-col [nzSpan]="8">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">直接经济损失（万元）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">省陆地行政区域震级</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="直接经济损失（万元）" formControlName="economicLoss"
+                        <nz-input-number nzPlaceHolder="省陆地行政区域震级" formControlName="economicLoss"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
             <div nz-col [nzSpan]="8">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">现场失踪人数（人）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">近海海域50千米震级</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="现场失踪人数（人）" formControlName="peopleLoss"
+                        <nz-input-number nzPlaceHolder="近海海域50千米震级" formControlName="peopleLoss"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>
             </div>
-            <div nz-col [nzSpan]="8">
+            <div nz-col [nzSpan]="14">
                 <nz-form-item>
-                    <nz-form-label [nzSpan]="12">毒性气体储量（吨）</nz-form-label>
+                    <nz-form-label [nzSpan]="12">我省陆地边界50千米以内的邻省震级</nz-form-label>
                     <nz-form-control [nzSpan]="12">
-                        <nz-input-number nzPlaceHolder="毒性气体储量（吨）" formControlName="toxicGas"
+                        <nz-input-number nzPlaceHolder="我省陆地边界50千米以内的邻省震级" formControlName="toxicGas"
                                          [nzMin]="1"></nz-input-number>
                     </nz-form-control>
                 </nz-form-item>

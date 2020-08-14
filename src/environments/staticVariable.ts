@@ -1,5 +1,5 @@
 export const EVENT_KEY = {
-    loginInfo: 'loginInfo',
+    loginInfo: 'ghloginInfo',
 };
 
 export const CESIUM_URL = {
