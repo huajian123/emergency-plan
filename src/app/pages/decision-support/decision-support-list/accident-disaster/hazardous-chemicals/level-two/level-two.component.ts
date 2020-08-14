@@ -10,6 +10,7 @@ import {DepartInfoModel} from '../../../../../../services/biz-services/earthquak
 export class LevelTwoComponent implements OnInit {
     currentTree = 1;
     @Input() responsibilityEntities: DepartInfoModel;
+    @Input() cityName: string;
 
     constructor(public element: ElementRef, private renderer2: Renderer2) {
     }

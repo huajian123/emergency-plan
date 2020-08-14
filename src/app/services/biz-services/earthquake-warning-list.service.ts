@@ -38,6 +38,11 @@ export interface CountDTOSModel {
     emergentUrl: string;
 }
 
+export interface UpdateScheduleDTO {
+    completeSchedule: string;
+    id: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -57,8 +62,13 @@ export class CitiesNameService extends BaseHttp {
     }
 
 
-    public getGroupInfo(param: { accidentId: number, cityName: string, grade: number }): Observable<DisasterDataModel> {
-        return this.get('/responsibility', param);
+    public getGroupInfo(param: { id: number, cityName: string }): Observable<any> {
+        return this.get('/responsibility/' + param.id, param);
+    }
+
+    /*完成进度修改*/
+    public getSchedule(params: UpdateScheduleDTO): Observable<any> {
+        return this.put('/schedule', params);
     }
 }
 

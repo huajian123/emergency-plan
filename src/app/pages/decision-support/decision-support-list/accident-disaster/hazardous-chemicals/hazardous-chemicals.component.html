@@ -84,12 +84,12 @@
     <app-level-one [responsibilityEntities]="responsibilityEntities"></app-level-one>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.two">
-    <app-level-two [responsibilityEntities]="responsibilityEntities"></app-level-two>
+    <app-level-two [cityName]="cityName" [responsibilityEntities]="responsibilityEntities"></app-level-two>
 </ng-container>
 <ng-container *ngIf="currentPage===numVariable.three||currentPage===numVariable.four">
     <app-level-three [responsibilityEntities]="responsibilityEntities"></app-level-three>
 </ng-container>
 
 <footer *ngIf="currentPage!==0">
-    <div class="send-btn"><img src="assets/imgs/send-icon.svg" alt="">发 布</div>
+    <div class="send-btn" (click)="sendMsg()"><img src="assets/imgs/send-icon.svg" alt="">发 布</div>
 </footer>

@@ -164,7 +164,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(22, $event)">省消防救援总队</div>
-                <div class="lastone" (click)="showModal(21, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(21, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -180,7 +180,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(28, $event)">省公安厅</div>
-                <div class="lastone" (click)="showModal(27, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(27, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -196,7 +196,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(32, $event)">省公安厅</div>
-                <div class="lastone" (click)="showModal(31, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(31, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -212,7 +212,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(35, $event)">省卫生健康委员会</div>
-                <div class="lastone" (click)="showModal(34, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(34, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -228,7 +228,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(38, $event)">省生态环境厅</div>
-                <div class="lastone" (click)="showModal(37, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(37, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -244,7 +244,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(50, $event)">省人民政府</div>
-                <div class="lastone" (click)="showModal(49, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(49, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -260,7 +260,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(63, $event)">省应急管理办公室</div>
-                <div class="lastone" (click)="showModal(62, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(62, $event)">配合部门（单位）</div>
             </div>
         </div>
         <!---->
@@ -276,7 +276,7 @@
             </div>
             <div class="threeStep">
                 <div (click)="showModal(69, $event)">省委宣传部</div>
-                <div class="lastone" (click)="showModal(68, $event)">配合部门（单位）</div>
+                <div class="lastone" (click)="showBigModal(68, $event)">配合部门（单位）</div>
             </div>
         </div>
     </ng-container>
@@ -525,7 +525,7 @@
     </ng-container>
 </div>
 
-
+<!--弹窗样式一、二-->
 <div class="modal" *ngIf="isVisible">
     <div class="closeButton" (click)="handleCancel()">
         <img src="../../../../../../../assets/imgs/tree/close.png"
@@ -545,8 +545,8 @@
         <div class="clearfix">
             <span>完成进度</span>：
             <div style="float: right;font-size: 20px;">
-                <textarea rows="5" cols="33"></textarea><br/>
-                <button nz-button nzType="primary" class="btn">提交</button>
+                <textarea rows="5" cols="33" [(ngModel)]="process"></textarea><br/>
+                <button nz-button nzType="primary" class="btn" (click)="submitBtu()">提交</button>
             </div>
         </div>
         <!-- <div style="position:relative;">
@@ -556,5 +556,55 @@
                  消防部门已经就位
              </div>
          </div>-->
+    </div>
+</div>
+<!--弹窗样式三-->
+<div class="modal-big" *ngIf="isWithVisible">
+    <div class="closeButton" (click)="handlerCancel()">
+        <img src="../../../../../../../assets/imgs/tree/close.png"
+             alt=""></div>
+    <h3>配合部门</h3>
+    <div class="flex-columer" style="justify-content: space-around;align-items:flex-start;margin-top: 20px;">
+        <div>
+            <ul class="line-time">
+                <li *ngFor="let tab of tabs" (click)="chooseTab(tab.id)"
+                    [ngClass]="{'active':tabId==tab.id}">{{tab.name}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="line-content">
+                <li *ngIf="tabId==1">
+                    <div class="line-space-middle">
+                        <div><span>&emsp;联系人</span>：<span style="margin-left: 35px;">李小萌</span></div>
+                        <div><span>联系方式</span>：<span style="margin-left: 15px;">15784324567</span></div>
+                        <div class="clearfix">
+                            <span>岗位职责</span>：
+                            <div style="float: right;font-size: 20px;width: 320px;">
+                                根据地方政府需求，协调现役专业力量支援协助危化品生产安全事故救援。<br/>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <span>完成进度</span>：
+                            <div style="float: right;font-size: 20px;">
+                                <textarea rows="5" cols="30"></textarea><br/>
+                                <button nz-button nzType="primary" class="btn">提交</button>
+                            </div>
+                        </div>
+                        <!--  <div style="position: relative;">
+                              <span>完成进度</span>：
+                              <div style="position:absolute;left: 120px;top: 0;">
+                                  研究部门已经就位<br/>
+                                  消防部门已经就位
+                              </div>
+                          </div>-->
+                    </div>
+                </li>
+                <li *ngIf="tabId==2">2</li>
+                <li *ngIf="tabId==3">3</li>
+                <li *ngIf="tabId==4">4</li>
+                <li *ngIf="tabId==5">4</li>
+                <li *ngIf="tabId==6">4</li>
+            </ul>
+        </div>
     </div>
 </div>

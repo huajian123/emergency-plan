@@ -1,17 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {
-    CitiesNameModel,
-    CitiesNameService,
-    DepartInfoModel
-} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {CitiesNameModel, CitiesNameService, DepartInfoModel} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {
     OptionsInterface,
     SelectedInterface
 } from '../../../../status-warning/natural-disaster-warning/earthquake-warning/earthquake-warning.component';
 import {AccidentDisastersListService} from 'src/app/services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
-import {debounceTime, distinctUntilChanged, first, map, tap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 
 export enum VariableEnum {
     one = 1,
@@ -36,6 +32,7 @@ export class HazardousChemicalsComponent implements OnInit {
     selected: SelectedInterface;
     dataInfo: CitiesNameModel[];
     responsibilityEntities: DepartInfoModel[];
+    cityName: string;
 
     constructor(private fb: FormBuilder, private dataService: CitiesNameService, private dataServicers: AccidentDisastersListService,
                 public message: NzMessageService, private modal: NzModalService) {
@@ -48,6 +45,7 @@ export class HazardousChemicalsComponent implements OnInit {
         this.isShowStandard = true;
         this.currentPage = 0;
         this.responsibilityEntities = [];
+        this.cityName = '';
     }
 
     submitForm() {
@@ -83,23 +81,28 @@ export class HazardousChemicalsComponent implements OnInit {
         });
     }
 
+    sendMsg() {
+        this.message.success('发布成功');
+    }
+
     async subForm() {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
+                this.currentPage = grade;
                 const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
                 const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
-                const paramAreaName = `${cityName}${areaName}` || ' ';
-                this.dataService.getGroupInfo({
-                    accidentId: this.id,
-                    cityName: paramAreaName,
-                    grade
-                }).subscribe(result => {
-                    this.responsibilityEntities = result.responsibilityEntities;
-                    console.log(   this.responsibilityEntities );
-                    this.currentPage = grade;
-                    console.log(this.currentPage);
-                });
+                this.cityName = `${cityName}${areaName}` || ' ';
+                /* this.dataService.getGroupInfo({
+                     accidentId: this.id,
+                     cityName: paramAreaName,
+                     grade
+                 }).subscribe(result => {
+                     this.responsibilityEntities = result.responsibilityEntities;
+                     console.log(this.responsibilityEntities);
+                     this.currentPage = grade;
+                     console.log(this.currentPage);
+                 });*/
             });
         });
     }
