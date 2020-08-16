@@ -1,13 +1,22 @@
-
 <div class="hexagon-wrap">
     <div nz-row [nzJustify]="'space-between'" class="pos-reltive" nzAlign="middle">
-        <div nz-col class="hexagon-item hexagon-item-click" (click)="changeTree(15)">事故信息接收</div>
+        <div nz-col class="hexagon-item hexagon-item-click" (click)="changeTree(15)">先期处置</div>
         <div nz-col class="hexagon-arrow"></div>
-        <div nz-col class="hexagon-item" (click)="changeTree(16)">应急指导</div>
+        <div nz-col class="hexagon-item" (click)="changeTree(16)">事故信息接收</div>
+        <div nz-col class="hexagon-arrow"></div>
+        <div nz-col class="hexagon-item" (click)="changeTree(17)">应急指导</div>
+        <div nz-col class="hexagon-arrow"></div>
+        <div nz-col class="hexagon-item" (click)="changeTree(18)">灾情报送</div>
+        <div class="abs-arrow-right"></div>
+    </div>
+    <div nz-row [nzJustify]="'space-between'" class="mt-90" nzAlign="middle">
         <div nz-col class="empty-div"></div>
         <div nz-col class="empty-div-arrow"></div>
         <div nz-col class="empty-div"></div>
         <div nz-col class="empty-div-arrow"></div>
+        <div nz-col class="hexagon-item" (click)="changeTree(19)">应急处置</div>
+        <div nz-col class="hexagon-arrow-left"></div>
+        <div nz-col class="hexagon-item" (click)="changeTree(20)">应急结束</div>
     </div>
 </div>
 <app-earth-tree-tpl [responsibilityEntities]="responsibilityEntities" [currentNum]="currentTree"></app-earth-tree-tpl>

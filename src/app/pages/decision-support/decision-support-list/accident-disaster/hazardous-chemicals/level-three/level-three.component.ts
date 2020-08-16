@@ -9,7 +9,7 @@ import {fromEvent} from 'rxjs';
 })
 export class LevelThreeComponent implements OnInit {
 
-    currentTree = 1;
+    currentTree = 15;
     @Input() responsibilityEntities: DepartInfoModel;
 
     constructor(public element: ElementRef, private renderer2: Renderer2) {
