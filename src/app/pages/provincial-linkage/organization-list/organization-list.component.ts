@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {
-    ProvincialLinkageModel,
-    ProvincialLinkageService
-} from '../../../services/biz-services/provincial-linkage.service';
+import {ProvincialLinkageModel, ProvincialLinkageService} from '../../../services/biz-services/provincial-linkage.service';
 import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
@@ -29,11 +26,9 @@ export class OrganizationListComponent implements OnInit {
 
     getDataList() {
         this.dataService.getProvincialLinkage(this.accidentId, this.accidentType, this.planGrade).subscribe(res => {
-            console.log(res);
             if (res) {
                 this.data = res;
             }
-            console.log(this.data);
         });
     }
 
