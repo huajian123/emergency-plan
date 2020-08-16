@@ -90,6 +90,7 @@ export class HazardousChemicalsComponent implements OnInit {
     }
 
     sendMsg() {
+        console.log(this.plnId);
         this.dataService.getPublish({id: this.plnId, cityName: this.cityName}).subscribe(re => {
             this.message.success('发布成功');
         });
@@ -99,6 +100,7 @@ export class HazardousChemicalsComponent implements OnInit {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
+                console.log(grade);
                 this.plnId = grade.plnId;
                 this.currentPage = grade.grade;
                 const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';

@@ -11,7 +11,7 @@ import {fromEvent} from 'rxjs';
 export class LevelOneComponent implements OnInit {
     currentTree = 1;
     @Input() responsibilityEntities: DepartInfoModel;
-
+    @Input() cityName: string;
     constructor(public element: ElementRef, private renderer2: Renderer2) {
     }
 

@@ -50,7 +50,7 @@ export class TreeTplComponent implements OnInit {
         this.setInterval = setInterval(() => {
             this.tabId = typeNum;
             this.getGroupIdInfoDetail(typeNum);
-        }, 50);
+        }, 500);
     }
 
 
@@ -66,7 +66,7 @@ export class TreeTplComponent implements OnInit {
                         this.data = res2.responsibilityEntities;
                     });
                 }
-            }, 50);
+            }, 500);
         });
     }
 

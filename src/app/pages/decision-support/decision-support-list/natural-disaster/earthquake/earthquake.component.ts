@@ -4,7 +4,12 @@ import {
     OptionsInterface,
     SelectedInterface
 } from '../../../../status-warning/natural-disaster-warning/earthquake-warning/earthquake-warning.component';
-import {CitiesNameModel, CitiesNameService, DepartInfoModel} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {
+    CitiesNameModel,
+    CitiesNameService,
+    DepartInfoModel,
+    PublishAlarmModel
+} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {AccidentDisastersListService} from '../../../../../services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
@@ -25,6 +30,7 @@ export enum VariableEnum {
 export class EarthquakeComponent implements OnInit {
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
+    @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
     currentPage: number;
     numVariable = VariableEnum;
     validateForm: FormGroup;
@@ -94,7 +100,6 @@ export class EarthquakeComponent implements OnInit {
     async subForm() {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
-            console.log(res.accidentId);
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
                 this.plnId = grade.plnId;
                 this.currentPage = grade.grade;
@@ -106,11 +111,16 @@ export class EarthquakeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.initForm();
-        this.getEarthquakeWarningList();
-        this.subForm();
+        // 管理员登陆
+        if (!this.selAlarm) {
+            this.initForm();
+            this.getEarthquakeWarningList();
+            this.subForm();
+        }else{
+            this.currentPage = this.selAlarm.accidentGrade;
+            this.cityName = this.selAlarm.accidentAddress;
+        }
         this.earthquakeEconomicLevelOptions = [...MapPipe.transformMapToArray(MapSet.earthquakeEconomicLevel)];
-        console.log(this.earthquakeEconomicLevelOptions);
     }
 
 }
