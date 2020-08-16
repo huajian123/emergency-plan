@@ -536,7 +536,7 @@
         <div><span>联系方式</span>：{{data.linkPhone}}</div>
         <div class="clearfix">
             <span>岗位职责</span>：
-            <div style="float: right;font-size: 20px;width: 350px;">
+            <div class="sty">
                 <ng-container *ngFor="let item of data.responsibilityDetailSort;let i =index;">
                     {{i + 1}}、{{item}}<br/>
                 </ng-container>
@@ -544,14 +544,14 @@
         </div>
         <div class="clearfix" *ngIf="userRole===userRoleEnum.Manage;">
             <span>完成进度</span>：
-            <div style="float: right;font-size: 20px;">
+            <div class="cer">
                 <textarea [(ngModel)]="data.completeSchedule"></textarea><br/>
                 <button nz-button nzType="primary" (click)="submitBtu()">提交</button>
             </div>
         </div>
         <div style="position:relative;" *ngIf="userRole===userRoleEnum.User;">
             <span>完成进度</span>：
-            <div style="position: absolute;top: 0;left: 120px;">
+            <div class="posi">
                 {{data.completeSchedule}}
             </div>
         </div>
@@ -593,7 +593,7 @@
                         </div>
                         <div style="position: relative;" *ngIf="userRole===userRoleEnum.User;">
                             <span>完成进度</span>：
-                            <div style="position:absolute;left: 120px;top: 0;">
+                            <div class="posi">
                                 {{bigModalData.completeSchedule}}
                             </div>
                         </div>
