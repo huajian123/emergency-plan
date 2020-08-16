@@ -94,6 +94,11 @@ export class CitiesNameService extends BaseHttp {
         return this.get('/coordinate/' + param.id, param);
     }
 
+    /*根据小组id查询配合部门详情*/
+    public getGroupIdInfoDetail(id): Observable<ResponsibilityEntitiesModel> {
+        return this.get('/coordinate-detail/' + id);
+    }
+
     /*完成进度修改*/
     public getSchedule(params: UpdateScheduleDTO): Observable<UpdateScheduleDTO> {
         return this.put('/schedule', params);

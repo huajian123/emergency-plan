@@ -93,6 +93,7 @@ export class DecisionSupportListComponent implements OnInit {
 
     getPublishAlarm() {
         this.dataService.getPublishAlarm().subscribe(res => {
+            console.log(res);
             if (res[0].accidentPublish) {
                 this.selAlarm = res[0];
                 this.currentPage = res[0].accidentId;
@@ -110,6 +111,9 @@ export class DecisionSupportListComponent implements OnInit {
         this.userRole = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo)).role;
         if (this.userRole === this.userRoleEnum.User) {
             this.getPublishAlarm();
+            setInterval(() => {
+                this.getPublishAlarm();
+            }, 5000);
         }
     }
 
