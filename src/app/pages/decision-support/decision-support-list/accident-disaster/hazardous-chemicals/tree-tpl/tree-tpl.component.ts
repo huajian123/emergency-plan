@@ -6,6 +6,8 @@ import {
     UpdateScheduleDTO,
 } from '../../../../../../services/biz-services/earthquake-warning-list.service';
 import {NzMessageService} from 'ng-zorro-antd';
+import {EVENT_KEY} from "../../../../../../../environments/staticVariable";
+import {UserRole} from "../../../../../../VO/types";
 
 @Component({
     selector: 'app-tree-tpl',
@@ -22,7 +24,8 @@ export class TreeTplComponent implements OnInit {
     data: ResponsibilityEntitiesModel;
     scheduleParam: UpdateScheduleDTO;
     tabContent: ResponsibilityEntitiesModel[];
-
+    userRole: number;
+    userRoleEnum = UserRole;
     constructor(private dataService: CitiesNameService, public message: NzMessageService) {
         this.scheduleParam = {id: null, completeSchedule: ''};
         this.isWithVisible = false;
@@ -39,6 +42,7 @@ export class TreeTplComponent implements OnInit {
     showModal(id, e) {
         this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
             this.data = res.responsibilityEntities;
+            console.log(res);
             this.isVisible = true;
         });
     }
@@ -83,5 +87,6 @@ export class TreeTplComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.userRole = JSON.parse(window.sessionStorage.getItem(EVENT_KEY.loginInfo)).role;
     }
 }
