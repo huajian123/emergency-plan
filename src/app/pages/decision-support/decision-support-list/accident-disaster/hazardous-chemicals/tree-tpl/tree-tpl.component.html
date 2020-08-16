@@ -587,7 +587,7 @@
                         <div class="clearfix" *ngIf="userRole===userRoleEnum.Manage;">
                             <span>完成进度</span>：
                             <div class="grids-size">
-                                <textarea [(ngModel)]="index['completeSchedule']"></textarea><br/>
+                                <textarea class='area' [(ngModel)]="index['completeSchedule']"></textarea><br/>
                                 <button nz-button nzType="primary" (click)="submitWithBtu()">提交</button>
                             </div>
                         </div>
