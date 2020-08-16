@@ -38,6 +38,7 @@ export class EarthTreeTplComponent implements OnInit {
 
     showModal(id, e) {
         this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
+            console.log(res.responsibilityEntities);
             this.data = res.responsibilityEntities;
             this.isVisible = true;
         });
