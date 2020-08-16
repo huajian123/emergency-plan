@@ -1,269 +1,14 @@
 <div class="tree-diagram">
-    <!--省级接警-->
+    <!--初报、正式报告-->
     <ng-container *ngIf="currentNum===1">
         <div class="flex-columer">
             <div class="firstStep">
-                <div>应急管理厅</div>
-            </div>
-            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
-            <div class="secondStep">
-                <div (click)="showModal(1, $event)">应急指挥中心</div>
+                <div (click)="showModal(156, $event)">地震局相关处室</div>
             </div>
         </div>
     </ng-container>
-    <!--预警监测-->
+    <!--灾情研判分析-->
     <ng-container *ngIf="currentNum===2">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div>应急管理厅</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(2, $event)">应急指挥中心</div>
-                <div (click)="showModal(3, $event)">危化处</div>
-                <div class="lastone" (click)="showModal(4, $event)">风险监测和综合减灾处</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(5, $event)">省气象局</div>
-            </div>
-        </div>
-    </ng-container>
-    <!--信息研判-->
-    <ng-container *ngIf="currentNum===3">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div>应急管理厅</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(7, $event)">应急指挥中心</div>
-                <div class="lastone" (click)="showModal(6, $event)">危化处</div>
-            </div>
-        </div>
-    </ng-container>
-    <!--信息上报-->
-    <ng-container *ngIf="currentNum===4">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(10, $event)">省应急管理办公室</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div>应急管理厅</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(8, $event)">应急指挥中心</div>
-                <div class="lastone" (click)="showModal(9, $event)">办公室</div>
-            </div>
-        </div>
-    </ng-container>
-
-    <!--先期处置-->
-    <ng-container *ngIf="currentNum===5">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(11, $event)">事发单位</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(12, $event)">事故地人民政府</div>
-            </div>
-        </div>
-    </ng-container>
-
-    <!--启动应急响应-->
-    <ng-container *ngIf="currentNum===6">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(14, $event)">省指挥部</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div>应急管理厅</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(16, $event)">应急指挥中心</div>
-                <div (click)="showModal(13, $event)">办公室</div>
-                <div class="lastone" (click)="showModal(15, $event)">区域合作处</div>
-            </div>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="currentNum===7">
-        <!--分组开展应急救援工作-->
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(17, $event)">综合协调组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(18, $event)">省人民政府</div>
-                <div class="lastone" (click)="showBigModal(17, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(21, $event)">专业处置组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(22, $event)">省消防救援总队</div>
-                <div class="lastone" (click)="showBigModal(21, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(27, $event)">警戒疏散组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(28, $event)">省公安厅</div>
-                <div class="lastone" (click)="showBigModal(27, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(31, $event)">交通管制组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(32, $event)">省公安厅</div>
-                <div class="lastone" (click)="showBigModal(31, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(34, $event)">医疗救护组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(35, $event)">省卫生健康委员会</div>
-                <div class="lastone" (click)="showBigModal(34, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(37, $event)">环境气象监测组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(38, $event)">省生态环境厅</div>
-                <div class="lastone" (click)="showBigModal(37, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(49, $event)">综合保障组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(50, $event)">省人民政府</div>
-                <div class="lastone" (click)="showBigModal(49, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(62, $event)">应急专家组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(63, $event)">省应急管理办公室</div>
-                <div class="lastone" (click)="showBigModal(62, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-        <!---->
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(68, $event)">舆情新闻组</div>
-            </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(69, $event)">省委宣传部</div>
-                <div class="lastone" (click)="showBigModal(68, $event)">配合部门（单位）</div>
-            </div>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="currentNum===8">
-        <!--救援力量调度及保障-->
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
@@ -275,32 +20,148 @@
                 <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
             </div>
             <div class="threeStep">
-                <div (click)="showModal(73, $event)">应急指挥中心</div>
-                <div (click)="showModal(74, $event)">危化处</div>
-                <div class="lastone" (click)="showModal(75, $event)">区域合作处</div>
+                <div (click)="showModal(161, $event)">地震地质处</div>
+                <div (click)="showModal(160, $event)">救灾处</div>
+                <div class="lastone" (click)="showModal(158, $event)">指挥中心</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(157, $event)">地震局相关处室</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(159, $event)">省消防总队相关处室</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--应急响应建议-->
+    <ng-container *ngIf="currentNum===3">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep">
+                <div (click)="showModal(162, $event)">地震地质处</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--向上级部门报告-->
+    <ng-container *ngIf="currentNum===4">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(163, $event)">指挥中心</div>
+                <div class="lastone" (click)="showModal(164, $event)">地震地质处</div>
             </div>
         </div>
     </ng-container>
 
-    <!--应急物资调度及保障-->
+    <!--省领导赴现场方案-->
+    <ng-container *ngIf="currentNum===5">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep">
+                <div (click)="showModal(165, $event)">办公室</div>
+            </div>
+        </div>
+
+    </ng-container>
+
+    <!--先期工作组人员名单-->
+    <ng-container *ngIf="currentNum===6">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(166, $event)">地震地质处</div>
+                <div class="lastone" (click)="showModal(167, $event)">救援协调处</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--现场指挥部组建方案-->
+    <ng-container *ngIf="currentNum===7">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(17, $event)">省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(168, $event)">地震地质处</div>
+                <div class="lastone" (click)="showBigModal(169, $event)">救援协调处</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--救援力量投入方案-->
+    <ng-container *ngIf="currentNum===8">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(171, $event)">救援协调处</div>
+                <div (click)="showModal(170, $event)">地震地质处</div>
+                <div class="lastone" (click)="showModal(173, $event)">指挥中心</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(172, $event)">省消防总队相关处室</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <!--通信保障方案-->
     <ng-container *ngIf="currentNum===9">
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
             </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep">
+                <div (click)="showModal(174, $event)">科信处</div>
             </div>
-            <div class="threeStep">
-                <div (click)="showModal(76, $event)">救灾和物资保障处</div>
-                <div class="lastone" (click)="showModal(77, $event)">办公室</div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(175, $event)">省消防总队相关处室</div>
             </div>
         </div>
     </ng-container>
 
-    <!--通信、电力保障方案-->
+    <!--救灾资金、物资支持方案-->
     <ng-container *ngIf="currentNum===10">
         <div class="flex-columer">
             <div class="firstStep">
@@ -308,149 +169,38 @@
             </div>
             <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
             <div class="secondStep">
-                <div (click)="showModal(78, $event)">科技和信息化处</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(79, $event)">省通信管理局</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(80, $event)">江苏能源监管办</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(81, $event)">省电力公司</div>
+                <div (click)="showModal(176, $event)">救灾处</div>
             </div>
         </div>
     </ng-container>
 
-    <!--现场信息采集-->
+    <!--发布救灾捐赠公告-->
     <ng-container *ngIf="currentNum===11">
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
             </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(82, $event)">科技和信息化处</div>
-                <div class="lastone" (click)="showModal(83, $event)">应急指挥中心</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(84, $event)">省气象局</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(85, $event)">省生态环境厅</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(86, $event)">省民政厅</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(87, $event)">省教育厅</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(88, $event)">江苏海事局</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(89, $event)">连云港海事局</div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep">
+                <div (click)="showModal(177, $event)">救灾处</div>
             </div>
         </div>
     </ng-container>
 
-    <!--辅助指挥决策信息-->
+    <!--新闻方案-->
     <ng-container *ngIf="currentNum===12">
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
             </div>
-            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
-            <div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
-                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
-            </div>
-            <div class="threeStep">
-                <div (click)="showModal(90, $event)">科技和信息化处</div>
-                <div class="lastone" (click)="showModal(91, $event)">应急指挥中心</div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep">
+                <div (click)="showModal(178, $event)">新闻处</div>
             </div>
         </div>
     </ng-container>
-
-
-    <!--事态控制-->
+    <!--辅助指挥决策“一张图”-->
     <ng-container *ngIf="currentNum===13">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(92, $event)">省委宣传部</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(93, $event)">设区市人民政府</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(94, $event)">省指挥部</div>
-            </div>
-        </div>
-    </ng-container>
-
-    <!--善后处理与事故调查-->
-    <ng-container *ngIf="currentNum===14">
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(95, $event)">事发地人民政府</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(96, $event)">省卫生健康委员会</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(97, $event)">省民政厅</div>
-            </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(98, $event)">省生态环境厅</div>
-            </div>
-        </div>
-        <br/>
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
@@ -461,46 +211,163 @@
                 <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
             </div>
             <div class="threeStep">
-                <div (click)="showModal(99, $event)">规划财务处</div>
-                <div class="lastone" (click)="showModal(102, $event)">调查评估和统计处</div>
+                <div (click)="showModal(179, $event)">指挥中心</div>
+                <div class="lastone" (click)="showModal(180, $event)">科信处</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <!--现场信息采集-->
+    <ng-container *ngIf="currentNum===14">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(183, $event)">省消防总队相关处室</div>
             </div>
         </div>
         <br/>
         <div class="flex-columer">
             <div class="firstStep">
-                <div (click)="showModal(100, $event)">保监部门</div>
+                <div>省应急管理厅</div>
             </div>
-        </div>
-        <br/>
-        <div class="flex-columer">
-            <div class="firstStep">
-                <div (click)="showModal(101, $event)">省人民政府</div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(181, $event)">指挥中心</div>
+                <div (click)="showModal(182, $event)">救灾处</div>
+                <div class="lastone" (click)="showModal(184, $event)">科信处</div>
             </div>
         </div>
     </ng-container>
     <!--三四级灾害-->
-    <!--事故信息接受-->
+    <!--先期处置-->
     <ng-container *ngIf="currentNum===15">
         <div class="flex-columer">
             <div class="firstStep">
-                <div>省应急管理厅</div>
+                <div (click)="showModal(186, $event)">事发地人民政府</div>
             </div>
             <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
-            <div class="secondStep" (click)="showModal(1, $event)">
-                <div>应急指挥中心</div>
+            <div class="secondStep" (click)="showModal(185, $event)">
+                <div>事发地抗震救灾指挥部</div>
             </div>
         </div>
     </ng-container>
-
-    <!--应急指导-->
+    <!--事故信息接收-->
     <ng-container *ngIf="currentNum===16">
         <div class="flex-columer">
             <div class="firstStep">
                 <div>省应急管理厅</div>
             </div>
             <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
-            <div class="secondStep" (click)="showModal(1, $event)">
-                <div>危险化学品安全监督管理处</div>
+            <div class="secondStep" (click)="showModal(188, $event)">
+                <div>应急指挥中心</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省地震局</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(187, $event)">
+                <div>地震局相关处室</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--应急指导-->
+    <ng-container *ngIf="currentNum===17">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(95, $event)">省地震局</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(189, $event)">救援协调和预案管理处</div>
+                <div class="lastone" (click)="showModal(190, $event)">地震地质处</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--灾情报送-->
+    <ng-container *ngIf="currentNum===18">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(191, $event)">
+                <div>应急指挥中心</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(192, $event)">省地震局</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(193, $event)">
+                <div>地震地质处</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--应急处置-->
+    <ng-container *ngIf="currentNum===19">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div>省应急管理厅</div>
+            </div>
+            <div class="oneImg"><img src="../../../../../../../assets/imgs/tree/4.png" alt=""></div>
+            <div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/1.png" alt=""></div>
+                <div class="imgLine"><img src="../../../../../../../assets/imgs/tree/2.png" alt=""></div>
+                <div class="imgLines"><img src="../../../../../../../assets/imgs/tree/3.png" alt=""></div>
+            </div>
+            <div class="threeStep">
+                <div (click)="showModal(196, $event)">地震地质处</div>
+                <div (click)="showModal(197, $event)">新闻宣传处</div>
+                <div class="lastone" (click)="showModal(201, $event)">调查评估和统计处</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(194, $event)">省委宣传部</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(195, $event)">省地震局</div>
+            </div>
+        </div>
+        <br/>
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(198, $event)">省公安厅</div>
+            </div>
+        </div>
+    </ng-container>
+    <!--应急结束-->
+    <ng-container *ngIf="currentNum===20">
+        <div class="flex-columer">
+            <div class="firstStep">
+                <div (click)="showModal(200, $event)">事发地人民政府</div>
+            </div>
+            <div><img src="../../../../../../../assets/imgs/tree/5.png" alt=""></div>
+            <div class="secondStep" (click)="showModal(199, $event)">
+                <div>事发地抗震救灾指挥部</div>
             </div>
         </div>
     </ng-container>
