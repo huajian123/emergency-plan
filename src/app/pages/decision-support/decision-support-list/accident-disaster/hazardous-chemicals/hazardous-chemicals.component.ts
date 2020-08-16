@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {
     CitiesNameModel,
@@ -26,7 +26,7 @@ export enum VariableEnum {
     templateUrl: './hazardous-chemicals.component.html',
     styleUrls: ['./hazardous-chemicals.component.less']
 })
-export class HazardousChemicalsComponent implements OnInit {
+export class HazardousChemicalsComponent implements OnInit, OnChanges {
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
     @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
@@ -119,6 +119,12 @@ export class HazardousChemicalsComponent implements OnInit {
         } else {
             this.currentPage = this.selAlarm.accidentGrade;
             this.cityName = this.selAlarm.accidentAddress;
+        }
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (!changes['selAlarm'].firstChange) {
+            this.currentPage = changes['selAlarm'].currentValue.accidentGrade;
         }
     }
 

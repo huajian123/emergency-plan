@@ -50,7 +50,7 @@ export class EarthTreeTplComponent implements OnInit {
         this.setInterval = setInterval(() => {
             this.tabId = typeNum;
             this.getGroupIdInfoDetail(typeNum);
-        }, 500);
+        }, 50);
     }
 
 
@@ -66,7 +66,7 @@ export class EarthTreeTplComponent implements OnInit {
                         this.data = res2.responsibilityEntities;
                     });
                 }
-            }, 500);
+            }, 50);
         });
     }
 

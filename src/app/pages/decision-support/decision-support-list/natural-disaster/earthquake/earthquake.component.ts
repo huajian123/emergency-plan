@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {
     OptionsInterface,
@@ -27,7 +27,7 @@ export enum VariableEnum {
     templateUrl: './earthquake.component.html',
     styleUrls: ['./earthquake.component.less']
 })
-export class EarthquakeComponent implements OnInit {
+export class EarthquakeComponent implements OnInit , OnChanges{
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
     @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
@@ -123,4 +123,9 @@ export class EarthquakeComponent implements OnInit {
         this.earthquakeEconomicLevelOptions = [...MapPipe.transformMapToArray(MapSet.earthquakeEconomicLevel)];
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if (!changes['selAlarm'].firstChange) {
+            this.currentPage = changes['selAlarm'].currentValue.accidentGrade;
+        }
+    }
 }
