@@ -94,6 +94,7 @@ export class EarthquakeComponent implements OnInit {
     async subForm() {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
+            console.log(res.accidentId);
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
                 this.plnId = grade.plnId;
                 this.currentPage = grade.grade;
