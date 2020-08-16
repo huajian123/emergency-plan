@@ -91,7 +91,7 @@ export class CitiesNameService extends BaseHttp {
 
     /*根据小组id查询配合部门*/
     public getGroupIdInfo(param: { id: number, cityName: string }): Observable<ResponsibilityEntitiesModel[]> {
-        return this.get('//coordinate/' + param.id, param);
+        return this.get('/coordinate/' + param.id, param);
     }
 
     /*完成进度修改*/
@@ -101,6 +101,14 @@ export class CitiesNameService extends BaseHttp {
 
     public getPublishAlarm(): Observable<PublishAlarmModel[]> {
         return this.get('/publish-alarm');
+    }
+
+    /*发布预警*/
+    public getPublish(params: { id: number, cityName: string }): Observable<any> {
+        if (!params.cityName) {
+            delete params.cityName;
+        }
+        return this.get('/publish', params);
     }
 }
 

@@ -1,11 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {
-    CitiesNameModel,
-    CitiesNameService,
-    DepartInfoModel,
-    PublishAlarmModel
-} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {CitiesNameModel, CitiesNameService, DepartInfoModel} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {
     OptionsInterface,
     SelectedInterface
@@ -29,7 +24,6 @@ export enum VariableEnum {
 export class HazardousChemicalsComponent implements OnInit {
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
-    @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
     currentPage: number;
     numVariable = VariableEnum;
     validateForm: FormGroup;
@@ -54,9 +48,6 @@ export class HazardousChemicalsComponent implements OnInit {
         this.plnId = 0;
         this.responsibilityEntities = [];
         this.cityName = '';
-    }
-
-    submitForm() {
     }
 
     initForm() {
@@ -89,11 +80,6 @@ export class HazardousChemicalsComponent implements OnInit {
         });
     }
 
-    sendMsg() {
-        this.dataService.getPublish({id: this.plnId, cityName: this.cityName}).subscribe(re => {
-            this.message.success('发布成功');
-        });
-    }
 
     async subForm() {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
@@ -108,16 +94,17 @@ export class HazardousChemicalsComponent implements OnInit {
         });
     }
 
+    sendMsg() {
+        console.log(this.plnId);
+        this.dataService.getPublish({id: this.plnId, cityName: this.cityName}).subscribe(re => {
+            this.message.success('发布成功');
+        });
+    }
+
     ngOnInit(): void {
-        // 管理员登陆
-        if (!this.selAlarm) {
-            this.initForm();
-            this.getEarthquakeWarningList();
-            this.subForm();
-        } else {
-            this.currentPage = this.selAlarm.accidentGrade;
-            this.cityName = this.selAlarm.accidentAddress;
-        }
+        this.initForm();
+        this.getEarthquakeWarningList();
+        this.subForm();
     }
 
 }

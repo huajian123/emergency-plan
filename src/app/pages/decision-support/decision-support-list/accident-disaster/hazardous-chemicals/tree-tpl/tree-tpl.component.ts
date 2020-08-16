@@ -39,8 +39,6 @@ export class TreeTplComponent implements OnInit {
     showModal(id, e) {
         this.dataService.getGroupInfo({id, cityName: this.cityName}).subscribe(res => {
             this.data = res.responsibilityEntities;
-            console.log(res.responsibilityEntities);
-            console.log(this.data);
             this.isVisible = true;
         });
     }
