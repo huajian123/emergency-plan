@@ -4,15 +4,11 @@ import {
     OptionsInterface,
     SelectedInterface
 } from '../../../../status-warning/natural-disaster-warning/earthquake-warning/earthquake-warning.component';
-import {
-    CitiesNameModel,
-    CitiesNameService,
-    DepartInfoModel
-} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {CitiesNameModel, CitiesNameService, DepartInfoModel} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {AccidentDisastersListService} from '../../../../../services/biz-services/accident-disasters-list.service';
 import {NzMessageService, NzModalService} from 'ng-zorro-antd';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
-import {MapPipe, MapSet} from "../../../../../share/directives/pipe/map.pipe";
+import {MapPipe, MapSet} from '../../../../../share/directives/pipe/map.pipe';
 
 export enum VariableEnum {
     one = 1,
@@ -38,6 +34,7 @@ export class EarthquakeComponent implements OnInit {
     dataInfo: CitiesNameModel[];
     responsibilityEntities: DepartInfoModel[];
     cityName: string;
+    plnId: number;
     earthquakeEconomicLevelOptions: OptionsInterface[];
 
     constructor(private fb: FormBuilder, private dataService: CitiesNameService, private dataServicers: AccidentDisastersListService,
@@ -50,6 +47,7 @@ export class EarthquakeComponent implements OnInit {
         };
         this.isShowStandard = true;
         this.currentPage = 0;
+        this.plnId = 0;
         this.responsibilityEntities = [];
         this.cityName = '';
         this.earthquakeEconomicLevelOptions = [];
@@ -88,7 +86,9 @@ export class EarthquakeComponent implements OnInit {
     }
 
     sendMsg() {
-        this.message.success('发布成功');
+        this.dataService.getPublish({id: this.plnId, cityName: this.cityName}).subscribe(re => {
+            this.message.success('发布成功');
+        });
     }
 
     async subForm() {
