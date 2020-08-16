@@ -56,6 +56,16 @@ export interface UpdateScheduleDTO {
     id: number;
 }
 
+// 已经发布预警信息
+export interface PublishAlarmModel {
+    id: number;
+    accidentName: string;
+    accidentId: number;
+    accidentGrade: number;
+    accidentPublish: boolean; // 是否已经发布
+    accidentAddress: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -87,6 +97,10 @@ export class CitiesNameService extends BaseHttp {
     /*完成进度修改*/
     public getSchedule(params: UpdateScheduleDTO): Observable<UpdateScheduleDTO> {
         return this.put('/schedule', params);
+    }
+
+    public getPublishAlarm(): Observable<PublishAlarmModel[]> {
+        return this.get('/publish-alarm');
     }
 }
 

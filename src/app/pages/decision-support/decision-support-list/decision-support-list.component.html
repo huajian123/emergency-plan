@@ -1,6 +1,6 @@
 <main>
     <header>分级应对决策辅助系统</header>
-    <section class="file-wrap">
+    <section class="file-wrap" *ngIf="userRole===userRoleEnum.Manage">
         <nz-form-label>灾害类型</nz-form-label>
         <nz-select (ngModelChange)="changeAccidentIdValue($event)" [(ngModel)]="accidentType" nzPlaceHolder="灾害类型">
             <nz-option *ngFor="let item of accidentTypeOptions" [nzLabel]="item.label"
@@ -93,7 +93,7 @@
         </ng-container>
         <!--危化品-->
         <ng-container *ngIf="currentPage===numVariable.twenty">
-            <app-hazardous-chemicals [id]="accidentId"></app-hazardous-chemicals>
+            <app-hazardous-chemicals [selAlarm]="selAlarm"  [id]="accidentId"></app-hazardous-chemicals>
         </ng-container>
         <!--生产-->
         <ng-container *ngIf="currentPage===21">

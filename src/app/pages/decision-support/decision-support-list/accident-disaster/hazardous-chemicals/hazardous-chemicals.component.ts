@@ -1,6 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {CitiesNameModel, CitiesNameService, DepartInfoModel} from '../../../../../services/biz-services/earthquake-warning-list.service';
+import {
+    CitiesNameModel,
+    CitiesNameService,
+    DepartInfoModel, PublishAlarmModel
+} from '../../../../../services/biz-services/earthquake-warning-list.service';
 import {
     OptionsInterface,
     SelectedInterface
@@ -24,6 +28,7 @@ export enum VariableEnum {
 export class HazardousChemicalsComponent implements OnInit {
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
+    @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
     currentPage: number;
     numVariable = VariableEnum;
     validateForm: FormGroup;
@@ -98,9 +103,15 @@ export class HazardousChemicalsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.initForm();
-        this.getEarthquakeWarningList();
-        this.subForm();
+        // 管理员登陆
+        if (!this.selAlarm) {
+            this.initForm();
+            this.getEarthquakeWarningList();
+            this.subForm();
+        } else {
+            this.currentPage = this.selAlarm.accidentGrade;
+            this.cityName = this.selAlarm.accidentAddress;
+        }
     }
 
 }
