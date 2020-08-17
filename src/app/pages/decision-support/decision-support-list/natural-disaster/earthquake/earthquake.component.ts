@@ -97,9 +97,13 @@ export class EarthquakeComponent implements OnInit, OnChanges {
         this.validateForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(res => {
             res.accidentId = this.id;
             this.dataServicers.getDecideGrade(res).subscribe(grade => {
-                console.log(grade);
-                this.plnId = grade.plnId;
-                this.currentPage = grade.grade;
+                if (grade != null) {
+                    this.plnId = grade.plnId;
+                    this.currentPage = grade.grade;
+                }
+                const cityName = this.provinceData.find((item) => item.value === res.cityId)?.label || '';
+                const areaName = this.cityData.find((item) => item.value === res.areaId)?.label || '';
+                this.cityName = `${cityName}${areaName}` || '';
             });
         });
     }
