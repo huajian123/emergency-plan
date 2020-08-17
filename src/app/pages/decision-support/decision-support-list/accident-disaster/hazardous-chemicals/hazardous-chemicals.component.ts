@@ -62,12 +62,10 @@ export class HazardousChemicalsComponent implements OnInit, OnChanges {
     initForm() {
         this.validateForm = this.fb.group({
             peopleDie: [null],
-            peoplePoisoning: [null],
-            economicLoss: [null],
+            peopleInjury: [null],
+            propertyLoss: [null],
             peopleLoss: [null],
             toxicGas: [null],
-            cityId: [null],
-            areaId: [null],
         });
     }
 
