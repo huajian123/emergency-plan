@@ -27,7 +27,7 @@ export enum VariableEnum {
     templateUrl: './earthquake.component.html',
     styleUrls: ['./earthquake.component.less']
 })
-export class EarthquakeComponent implements OnInit , OnChanges{
+export class EarthquakeComponent implements OnInit, OnChanges {
     isShowStandard: boolean; // 是否展开标准
     @Input() id: number;
     @Input() selAlarm: PublishAlarmModel; // 厅长界面直接传入的选中的预案
@@ -59,18 +59,16 @@ export class EarthquakeComponent implements OnInit , OnChanges{
         this.earthquakeEconomicLevelOptions = [];
     }
 
-    submitForm() {
-    }
-
     initForm() {
         this.validateForm = this.fb.group({
             peopleLossAndDie: [null],
             propertyLossGrade: [null],
             earthquakeLand: [null],
             earthquakeSea: [null],
+            cityId: [null],
+            areaId: [null],
         });
     }
-
 
     async getEarthquakeWarningList() {
         await this.dataService.getCitiesNameList().subscribe(res => {
@@ -112,7 +110,7 @@ export class EarthquakeComponent implements OnInit , OnChanges{
             this.initForm();
             this.getEarthquakeWarningList();
             this.subForm();
-        }else{
+        } else {
             this.currentPage = this.selAlarm.accidentGrade;
             this.cityName = this.selAlarm.accidentAddress;
         }

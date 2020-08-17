@@ -66,6 +66,8 @@ export class HazardousChemicalsComponent implements OnInit, OnChanges {
             propertyLoss: [null],
             peopleLoss: [null],
             toxicGas: [null],
+            cityId: [null],
+            areaId: [null],
         });
     }
 

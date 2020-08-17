@@ -15,8 +15,7 @@
                     <nz-form-item>
                         <nz-form-label [nzSpan]="12">直接经济损失</nz-form-label>
                         <nz-form-control [nzSpan]="12">
-                            <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="propertyLossGrade"
-                                       (ngModelChange)="changeProvince($event)">
+                            <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="propertyLossGrade">
                                 <nz-option *ngFor="let item of earthquakeEconomicLevelOptions" [nzValue]="item.value"
                                            [nzLabel]="item.label"></nz-option>
                             </nz-select>
@@ -38,6 +37,33 @@
                         <nz-form-control [nzSpan]="4">
                             <nz-input-number nzPlaceHolder="近海海域50千米震级" formControlName="earthquakeSea"
                                              [nzMin]="1"></nz-input-number>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row>
+                <div nz-col [nzSpan]="24">
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="4">发生灾害地区</nz-form-label>
+                        <nz-form-control [nzSpan]="20">
+                            <div nz-row>
+                                <div nz-col [nzSpan]="4">
+                                    <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="cityId"
+                                               (ngModelChange)="changeProvince($event)">
+                                        <nz-option *ngFor="let item of provinceData" [nzValue]="item.value"
+                                                   [nzLabel]="item.label"></nz-option>
+                                    </nz-select>
+                                </div>
+                                <div nz-col class="font-sel" [nzSpan]="1">市</div>
+                                <div nz-col [nzSpan]="4">
+                                    <nz-select class="margin-none" nzPlaceHolder="下拉选择" formControlName="areaId"
+                                    >
+                                        <nz-option *ngFor="let c of cityData" [nzValue]="c.value"
+                                                   [nzLabel]="c.label"></nz-option>
+                                    </nz-select>
+                                </div>
+                                <div nz-col class="font-sel" [nzSpan]="3"> 区(县)</div>
+                            </div>
                         </nz-form-control>
                     </nz-form-item>
                 </div>
